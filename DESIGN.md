@@ -26,10 +26,18 @@ Godot 4.7.2, GDScript, Compatibility renderer, fixed 60 Hz physics, 1280×720 re
 
 `app.gd` owns main menu, five-class selection, HUD, pause and retry. Its UI can process while paused; the arena uses pausable processing. Menus use native Godot Controls, keyboard focus and containers. No browser or server is required.
 
-`fighter.gd` implements a CharacterBody2D ground-plane controller. Vertical lane movement changes ground Y; jumping uses a separate height and vertical velocity for side-view action. Hit tests compare lane, facing, reach and jump height. Dodge gives brief invulnerability. The goblin shares combat/knockback but has simple chase/telegraph AI and never loses health.
+`fighter.gd` implements a CharacterBody2D ground-plane controller. Vertical lane movement changes ground Y; jumping uses a separate height and vertical velocity for side-view action. Hit tests compare lane, facing, reach and jump height. Dodge gives brief invulnerability. Enemies share combat/knockback and chase/telegraph AI. Only the training goblin is immortal.
 
-`arena.gd` contains exactly one player and one immortal goblin. It resolves discrete strike signals, counts successful hits/damage and displays temporary damage numbers. Original drawing primitives provide all visuals. No asset pipeline, networking, procedural generator or progression framework is needed for this prototype.
+`arena.gd` contains one player and the current room's enemy roster; training uses one immortal goblin. It resolves discrete strike signals, counts successful hits/damage and displays temporary damage numbers. Enemies and environments use drawing primitives; player art uses the shared character renderer. No networking, procedural generator or progression framework is needed for this slice.
 
 Acceptance: launch native app; Start → choose any of five classes → enter arena; move, jump, dodge and land hits; goblin survives repeated attacks and can hit back; pause freezes combat; defeat and restart work; main menu and Quit work.
 
 Class definitions are shared, read-only typed resources under `game/characters/`. Each defines weapon, color, reach, timing, damage and class skill. Gunner and Mage spawn finite-range projectiles with swept horizontal hit checks, lane/height checks and a fixed firing trajectory aimed at short targets. Projectiles inherit arena pause and are freed with the arena.
+
+## Authored dungeon slice
+
+`dungeons.gd` defines two three-room routes and normal/elite/boss profiles. `arena.gd` owns the live enemy list, room clear detection and gated transitions. `app.gd` exposes dungeon selection, clear/continue screens and retry. The original immortal arena remains training mode (`dungeon_index = -1`).
+
+Melee checks every live enemy in reach. Projectiles choose the first live target crossed in their firing lane; removing an earlier target does not orphan shots aimed down that lane. Defeated enemies stop colliding. Room transitions dispose enemies and projectiles while preserving player health, class and score; entering a new room heals 25 HP. Retry and entering the next dungeon reset the run.
+
+Enemy profiles reuse the existing chase/windup/recovery loop. Elites increase health and reach; bosses alternate basic attacks with a radial ground stomp (Root King) or longer forward sweep (Furnace Lord). The facing and floor warning lock during windup. Lane changes and dodge avoid both specials; jump avoids the ground stomp. Environment colors and primitive landmarks distinguish forest and ruins pending production art.

@@ -29,6 +29,7 @@ func run() -> void:
 	select.button_pressed = true
 	select.pressed.emit()
 	check(not app.find_child("EnterButton", true, false).disabled, "selecting Slayer enables dungeon")
+	app.dungeon_index = -1
 	app.find_child("EnterButton", true, false).pressed.emit()
 	await physics_frame
 	check(app.screen == "arena", "enters dungeon")

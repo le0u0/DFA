@@ -8,6 +8,8 @@ var health_label: Label
 var stats_label: Label
 var pause_panel: Control
 const CHARACTERS = [preload("res://game/characters/slayer.tres"), preload("res://game/characters/gunner.tres"), preload("res://game/characters/fighter.tres"), preload("res://game/characters/mage.tres"), preload("res://game/characters/priest.tres")]
+var dungeon_index := 0
+var encounter_label: Label
 var selected := false
 var selected_character: DemoCharacter
 
@@ -86,6 +88,7 @@ func show_main() -> void:
 	_button(box, "Quit", "QuitButton", func() -> void: get_tree().quit())
 
 func start_art_demo() -> void:
+	dungeon_index = -1
 	selected_character = CHARACTERS[0]
 	selected = true
 	start_dungeon()
@@ -94,6 +97,7 @@ func show_selection() -> void:
 	_clear_ui()
 	_clear_arena()
 	screen = "selection"
+	dungeon_index = 0
 	selected = false
 	selected_character = null
 	var box := _menu("Character selection", "Choose a class · X: attack · Z: class skill")
@@ -105,6 +109,14 @@ func show_selection() -> void:
 		card.toggle_mode = true
 		card.button_group = group
 		cards.append(card)
+	var dungeon_choice := OptionButton.new()
+	dungeon_choice.name = "DungeonChoice"
+	dungeon_choice.custom_minimum_size = Vector2(0, 42)
+	for dungeon: Dictionary in Arena.Dungeons.LIST:
+		dungeon_choice.add_item(dungeon["name"])
+	dungeon_choice.add_item("Training · Immortal goblin")
+	dungeon_choice.item_selected.connect(func(index: int) -> void: dungeon_index = index if index < 2 else -1)
+	box.add_child(dungeon_choice)
 	var enter := _button(box, "Enter dungeon", "EnterButton", start_dungeon)
 	enter.disabled = true
 	for index in range(cards.size()):
@@ -127,6 +139,8 @@ func start_dungeon() -> void:
 	arena = Arena.new()
 	arena.name = "Dungeon"
 	arena.character = selected_character
+	arena.dungeon_index = dungeon_index
+	arena.room_cleared.connect(_on_room_cleared)
 	arena.stats_changed.connect(_update_hud)
 	arena.player_defeated.connect(_on_defeated)
 	_build_hud()
@@ -147,10 +161,10 @@ func _build_hud() -> void:
 	box.add_child(health_label)
 	stats_label = Label.new()
 	box.add_child(stats_label)
-	var hint := Label.new()
-	hint.text = "Training chamber · The goblin cannot die. Dodge its red wind-up."
-	hint.add_theme_font_size_override("font_size", 18)
-	box.add_child(hint)
+	encounter_label = Label.new()
+	encounter_label.text = arena.room_title() + " · Dodge red warnings."
+	encounter_label.add_theme_font_size_override("font_size", 18)
+	box.add_child(encounter_label)
 	var pause_button := Button.new()
 	pause_button.name = "PauseButton"
 	pause_button.text = "Pause [Esc]"
@@ -170,8 +184,16 @@ func _build_hud() -> void:
 	ui.add_child(controls)
 
 func _update_hud(health: int, hits: int, damage: int) -> void:
-	health_label.text = "%s HP: %d / 100     Goblin HP: ∞" % [selected_character.display_name, health]
+	health_label.text = "%s HP: %d / 100" % [selected_character.display_name, health]
 	stats_label.text = "Hits: %d     Total damage: %d" % [hits, damage]
+	if dungeon_index < 0:
+		health_label.text += "     Goblin HP: ∞"
+	else:
+		var alive := 0
+		for enemy in arena.enemies:
+			if enemy.health > 0:
+				alive += 1
+		stats_label.text += "     Enemies: %d" % alive
 
 func pause_game() -> void:
 	if screen != "arena" or get_tree().paused:
@@ -202,15 +224,55 @@ func _show_pause(defeated: bool) -> void:
 	box.add_child(heading)
 	if not defeated:
 		_button(box, "Resume", "ResumeButton", resume_game).grab_focus()
-	var retry := _button(box, "Restart arena", "RestartButton", start_dungeon)
+	var retry := _button(box, "Restart dungeon", "RestartButton", start_dungeon)
 	if defeated:
 		retry.grab_focus()
 	_button(box, "Character selection", "SelectionButton", show_selection)
 	_button(box, "Main menu", "MainMenuButton", show_main)
 	_button(box, "Quit", "QuitButton", func() -> void: get_tree().quit())
 
+func _on_room_cleared() -> void:
+	get_tree().paused = true
+	pause_panel = Control.new()
+	pause_panel.name = "ClearPanel"
+	pause_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	ui.add_child(pause_panel)
+	var shade := ColorRect.new()
+	shade.color = Color(0.04, 0.04, 0.05, 0.9)
+	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	pause_panel.add_child(shade)
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	pause_panel.add_child(center)
+	var box := VBoxContainer.new()
+	box.custom_minimum_size = Vector2(520, 0)
+	box.add_theme_constant_override("separation", 14)
+	center.add_child(box)
+	var heading := Label.new()
+	heading.text = "Dungeon cleared!" if arena.room_index == 2 else "Room cleared · Recover 25 HP on entry"
+	heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	box.add_child(heading)
+	if arena.room_index < 2:
+		_button(box, "Next room", "NextRoomButton", _next_room).grab_focus()
+	elif dungeon_index == 0:
+		_button(box, "Enter Emberstone Ruins", "NextDungeonButton", func() -> void:
+			dungeon_index = 1
+			start_dungeon()).grab_focus()
+	else:
+		_button(box, "Replay dungeon", "ReplayButton", start_dungeon).grab_focus()
+	_button(box, "Character selection", "SelectionButton", show_selection)
+	_button(box, "Main menu", "MainMenuButton", show_main)
+
+func _next_room() -> void:
+	ui.remove_child(pause_panel)
+	pause_panel.queue_free()
+	pause_panel = null
+	arena.advance_room()
+	encounter_label.text = arena.room_title() + " · Dodge red warnings."
+	get_tree().paused = false
+
 func resume_game() -> void:
-	if screen != "arena" or arena.player.health <= 0:
+	if screen != "arena" or arena.player.health <= 0 or arena.cleared:
 		return
 	if is_instance_valid(pause_panel):
 		ui.remove_child(pause_panel)
