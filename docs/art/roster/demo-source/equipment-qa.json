@@ -1,0 +1,165 @@
+{
+  "ok": true,
+  "assets": [
+    {
+      "path": "assets/weapons/sword-cyan.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 3193,
+      "color_count": 780,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 3491,
+      "content_bounds": [
+        12,
+        8,
+        36,
+        88
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/weapons/sword-steel.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 3028,
+      "color_count": 721,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 3498,
+      "content_bounds": [
+        12,
+        8,
+        36,
+        88
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/weapons/pistol-0.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 5382,
+      "color_count": 1388,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 2822,
+      "content_bounds": [
+        5,
+        8,
+        43,
+        88
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/weapons/pistol-1.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 5014,
+      "color_count": 1264,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 2834,
+      "content_bounds": [
+        5,
+        8,
+        43,
+        88
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/weapons/gauntlet-0.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 5214,
+      "color_count": 1470,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 2800,
+      "content_bounds": [
+        4,
+        8,
+        44,
+        61
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/weapons/gauntlet-1.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 5419,
+      "color_count": 1490,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 253,
+      "transparent_pixels": 2764,
+      "content_bounds": [
+        4,
+        8,
+        44,
+        61
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/weapons/staff-0.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 2970,
+      "color_count": 756,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 3674,
+      "content_bounds": [
+        13,
+        8,
+        35,
+        88
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/weapons/staff-1.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 48,
+      "height": 96,
+      "bytes": 3133,
+      "color_count": 743,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 3648,
+      "content_bounds": [
+        13,
+        8,
+        35,
+        88
+      ],
+      "problems": []
+    }
+  ]
+}

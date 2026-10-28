@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-28",
+  "tool": "image_gen.imagegen",
+  "status": "awaiting-visual-review",
+  "style_reference": "../slayer/chibi-pixel-reference-v6.png",
+  "source_note": "User-provided Mage and Priest artwork supplied directly to generation as appearance references; no original artwork bundled.",
+  "assets": [
+    {
+      "id": "mage-base-v2",
+      "path": "mage-base-v2.png",
+      "role": "weapon-free base character concept",
+      "frames": 1,
+      "prompt": "Generate ONE WEAPON-FREE BASE CHARACTER CONCEPT for our side-view brawler. Input image 1 is AUTHORITATIVE CHARACTER APPEARANCE reference. Input image 2 is ONLY our approved Slayer CHIBI PIXEL ART STYLE reference. Translate character 1 into style 2; DO NOT copy Slayer costume, hair, cursed arm or weapon. Consistent cute fierce proportions about 2.5 heads tall, oversized expressive head, compact torso, short legs, chunky hands and boots, coarse crisp square pixel clusters, dark stepped outlines and restrained 2-3 shade material blocks. No smooth vector or painted rendering. Full body, three-quarter SIDE VIEW facing SCREEN LEFT, standing relaxed ready-to-equip idle. Both feet on one baseline, BOTH HANDS EMPTY AND FULLY VISIBLE, hands naturally half-open near sides with clear palm/grip space. Arms slightly separated from torso so later weapon sprites can be layered. NO held weapon, staff, cross, hammer, gun, book, shield or equipment strapped on back. Character appearance must remain recognizable without equipment. No detached pieces or sprite sheet. Whole body and hair fit within 10% transparent margin. Genuine transparent background, no scenery, shadow, floor, stand, text, labels or extra characters. Upper-left lighting. This is a character-only concept, not a pose copied from the original artwork. SUBJECT: original base Female Mage in image 1. Preserve RED hair with short straight jagged bangs above eyebrows and several very long thin red side tails flowing behind; pointed elf ears. A TINY BLACK CYLINDRICAL TOP HAT tilted on crown, red band, not a large red hat and not a pointed witch hat. Most recognizable clothing is a BLACK PINSTRIPED long-sleeve split-tail coat with narrow light gray VERTICAL STRIPES on sleeves and long white cuffs, over a red-and-black ruffled magical dress with modest opaque torso coverage. Yellow bow at neck, small dark waist pouch and optional orange round belt ornament seen in original (not a weapon). Legs simple bare/light leggings WITHOUT the previous broad red-black striped stockings. Short BLACK LACE-UP BOOTS with RED pointed folded cuffs and red laces, not tall red armored boots. Keep pinstriped black coat dominant, red ruffles secondary, black tiny hat. Match user's specific reference rather than a generic witch. Neutral standing pose, no raised knee, no staff or floating magic. Both empty hands unobstructed.",
+      "approved": false,
+      "in_engine_reviewed": false,
+      "grip_anchors_authored": false
+    },
+    {
+      "id": "priest-base-v2",
+      "path": "priest-base-v2.png",
+      "role": "weapon-free base character concept",
+      "frames": 1,
+      "prompt": "Generate ONE WEAPON-FREE BASE CHARACTER CONCEPT for our side-view brawler. Input image 1 is AUTHORITATIVE CHARACTER APPEARANCE reference. Input image 2 is ONLY our approved Slayer CHIBI PIXEL ART STYLE reference. Translate character 1 into style 2; DO NOT copy Slayer costume, hair, cursed arm or weapon. Consistent cute fierce proportions about 2.5 heads tall, oversized expressive head, compact torso, short legs, chunky hands and boots, coarse crisp square pixel clusters, dark stepped outlines and restrained 2-3 shade material blocks. No smooth vector or painted rendering. Full body, three-quarter SIDE VIEW facing SCREEN LEFT, standing relaxed ready-to-equip idle. Both feet on one baseline, BOTH HANDS EMPTY AND FULLY VISIBLE, hands naturally half-open near sides with clear palm/grip space. Arms slightly separated from torso so later weapon sprites can be layered. NO held weapon, staff, cross, hammer, gun, book, shield or equipment strapped on back. Character appearance must remain recognizable without equipment. No detached pieces or sprite sheet. Whole body and hair fit within 10% transparent margin. Genuine transparent background, no scenery, shadow, floor, stand, text, labels or extra characters. Upper-left lighting. This is a character-only concept, not a pose copied from the original artwork. SUBJECT: original Male Priest in image 1. Mature broad muscular cleric, SHORT TOUSLED DARK BROWN HAIR, close dark brown beard, stern square face; absolutely NOT white or silver hair. Preserve ASYMMETRIC long clerical coat: his anatomical LEFT shoulder and sleeve (near side, viewer RIGHT in left-facing view) WHITE with dark ornate shoulder band and small GOLD CROSS hanging strap, anatomical RIGHT sleeve (far side viewer LEFT) dark charcoal. BOTH ARMS COVERED, not bare muscular upper arms, not sleeveless paladin tabard. BLACK tall clerical collar and black ribbed shirt, long thin gold edging down front, gold necklace with a cross-and-sun pendant. Long charcoal gray split coat tails with simplified curling patterns near lower hem. GRAY fitted trousers with a single WHITE outer panel and gold stripe on the near leg. Simple black shoes. Dark armored forearm cuffs and black gloves. Broad compact chibi physique, short legs consistent with Slayer. Do not turn into giant armored knight, no white hair, no full white robe. REMOVE original book from hand and REMOVE hammer from back completely. Both gloved empty hands visible, no carried or holstered weapons.",
+      "approved": false,
+      "in_engine_reviewed": false,
+      "grip_anchors_authored": false
+    }
+  ]
+}

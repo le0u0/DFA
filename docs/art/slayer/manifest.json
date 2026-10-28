@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-28",
+  "tool": "image_gen.imagegen",
+  "status": "concepts-awaiting-selection",
+  "reference": "User-provided Slayer screenshot; reference only, not bundled.",
+  "assets": [
+    {
+      "id": "01-pixel-iron-wanderer",
+      "name": "Iron Wanderer",
+      "path": "01-pixel-iron-wanderer.png",
+      "source": "/Users/daphneo/.codex/generated_images/01a181c5-f25b-77e1-beac-5b3b9e63ac2d/exec-fd9529cd-0181-4344-99b7-a88f916bb258.png",
+      "prompt": "Use case: stylized-concept. Create ONE original revamped Slayer playable-character art concept for a Godot 2D side-view dungeon brawler. Input image is reference ONLY for the swordsman archetype and aggressive attitude, never an edit target. Do not recreate the original DFO sprite, blue open vest, exposed torso, or costume. Adult athletic male wandering sword fighter; pale ash hair, oversized sword, one visibly cursed forearm. Invent original costume, hairstyle, armor shapes and weapon. Full body, three-quarter SIDE VIEW facing RIGHT, grounded idle combat-ready stance, both boots on same baseline. Orthographic gameplay view, no perspective foreshortening. Whole sword and body inside frame with 10 percent margins. Strong silhouette readable at approximately 90 pixels tall. Isolated genuine transparent background, no environment, no ground plane, no cast shadow, no labels, no lettering, no watermark, no UI. One character, one weapon, one pose. Upper-left lighting. STYLE 1: meticulous retro pixel-art draft with visible square pixel clusters and crisp stepped contours, restrained 24-color aesthetic, no smooth airbrushing. ORIGINAL DESIGN: short swept ash hair; closed charcoal tunic, cropped ivory shoulder cape, dark olive trousers, heavy iron boots; copper chain bindings around the cursed forearm with restrained ember red glow. Wide angular cleaver-like iron sword with a single notch. Rugged, practical, asymmetric silhouette. Dark outlines and strong readable value separation.",
+      "frames": 1,
+      "approved": false,
+      "in_engine_reviewed": false
+    },
+    {
+      "id": "02-cel-crimson-ronin",
+      "name": "Crimson Ronin",
+      "path": "02-cel-crimson-ronin.png",
+      "source": "/Users/daphneo/.codex/generated_images/01a181c5-f25b-77e1-beac-5b3b9e63ac2d/exec-1e738a47-cd9a-4617-be35-2a0d31f4e97a.png",
+      "prompt": "Use case: stylized-concept. Create ONE original revamped Slayer playable-character art concept for a Godot 2D side-view dungeon brawler. Input image is reference ONLY for the swordsman archetype and aggressive attitude, never an edit target. Do not recreate the original DFO sprite, blue open vest, exposed torso, or costume. Adult athletic male wandering sword fighter; pale ash hair, oversized sword, one visibly cursed forearm. Invent original costume, hairstyle, armor shapes and weapon. Full body, three-quarter SIDE VIEW facing RIGHT, grounded idle combat-ready stance, both boots on same baseline. Orthographic gameplay view, no perspective foreshortening. Whole sword and body inside frame with 10 percent margins. Strong silhouette readable at approximately 90 pixels tall. Isolated genuine transparent background, no environment, no ground plane, no cast shadow, no labels, no lettering, no watermark, no UI. One character, one weapon, one pose. Upper-left lighting. STYLE 2: sharp high-quality 2D anime cel-shaded gameplay art, confident dark contour lines, flat three-tone shadows, clean broad color shapes. ORIGINAL DESIGN: ash-white tied-back medium hair; layered closed burgundy wrap coat split at hips, black fitted pants, ivory samurai-inspired asymmetric shoulder plate, wrapped boots. Cursed forearm glows crimson through cracked dark gauntlet. Huge single-edged sword, angular silver blade and burgundy grip. Sleek athletic adult proportions; bold angular silhouette, not chibi.",
+      "frames": 1,
+      "approved": false,
+      "in_engine_reviewed": false
+    },
+    {
+      "id": "03-ink-ashen-exorcist",
+      "name": "Ashen Exorcist",
+      "path": "03-ink-ashen-exorcist.png",
+      "source": "/Users/daphneo/.codex/generated_images/01a181c5-f25b-77e1-beac-5b3b9e63ac2d/exec-a04abe00-da90-496c-a864-b53737c482cd.png",
+      "prompt": "Use case: stylized-concept. Create ONE original revamped Slayer playable-character art concept for a Godot 2D side-view dungeon brawler. Input image is reference ONLY for the swordsman archetype and aggressive attitude, never an edit target. Do not recreate the original DFO sprite, blue open vest, exposed torso, or costume. Adult athletic male wandering sword fighter; pale ash hair, oversized sword, one visibly cursed forearm. Invent original costume, hairstyle, armor shapes and weapon. Full body, three-quarter SIDE VIEW facing RIGHT, grounded idle combat-ready stance, both boots on same baseline. Orthographic gameplay view, no perspective foreshortening. Whole sword and body inside frame with 10 percent margins. Strong silhouette readable at approximately 90 pixels tall. Isolated genuine transparent background, no environment, no ground plane, no cast shadow, no labels, no lettering, no watermark, no UI. One character, one weapon, one pose. Upper-left lighting. STYLE 3: monochrome sumi-e inspired ink-brush 2D game character art with dry-brush contours and controlled graphic wash shapes; limited vermilion accent ONLY on cursed arm and sword binding. ORIGINAL DESIGN: tousled short white hair; closed layered ash robes cut for combat, long split hem, charcoal sash, black tabi-style armored boots, paper-seal-like unlettered cloth strips on forearm. Broad straight chipped sword with ring pommel. Clear solid opaque silhouette with expressive sparse brush texture, avoid loose scenic ink splashes. Adult athletic proportions.",
+      "frames": 1,
+      "approved": false,
+      "in_engine_reviewed": false
+    },
+    {
+      "id": "04-painted-frostbound-knight",
+      "name": "Frostbound Knight",
+      "path": "04-painted-frostbound-knight.png",
+      "source": "/Users/daphneo/.codex/generated_images/01a181c5-f25b-77e1-beac-5b3b9e63ac2d/exec-a6ab1fca-4c63-4d20-b3f0-56ec5954e247.png",
+      "prompt": "Use case: stylized-concept. Create ONE original revamped Slayer playable-character art concept for a Godot 2D side-view dungeon brawler. Input image is reference ONLY for the swordsman archetype and aggressive attitude, never an edit target. Do not recreate the original DFO sprite, blue open vest, exposed torso, or costume. Adult athletic male wandering sword fighter; pale ash hair, oversized sword, one visibly cursed forearm. Invent original costume, hairstyle, armor shapes and weapon. Full body, three-quarter SIDE VIEW facing RIGHT, grounded idle combat-ready stance, both boots on same baseline. Orthographic gameplay view, no perspective foreshortening. Whole sword and body inside frame with 10 percent margins. Strong silhouette readable at approximately 90 pixels tall. Isolated genuine transparent background, no environment, no ground plane, no cast shadow, no labels, no lettering, no watermark, no UI. One character, one weapon, one pose. Upper-left lighting. STYLE 4: hand-painted stylized dark-fantasy 2D game character, bold brush planes, rich material rendering and restrained detail, strong light-dark separation. ORIGINAL DESIGN: shaggy silver hair; closed midnight teal padded coat, weathered pale steel asymmetric pauldrons, short fur-lined shoulder mantle, belted dark trousers, plated boots. One cursed forearm has dim icy cyan fissures. Massive broad broken-tip sword with worn steel and a leather-wrapped hilt. Broad sturdy adult proportions, rugged silhouette; no photorealism, no blue sleeveless open vest.",
+      "frames": 1,
+      "approved": false,
+      "in_engine_reviewed": false
+    },
+    {
+      "id": "05-lowpoly-obsidian-vanguard",
+      "name": "Obsidian Vanguard",
+      "path": "05-lowpoly-obsidian-vanguard.png",
+      "source": "/Users/daphneo/.codex/generated_images/01a181c5-f25b-77e1-beac-5b3b9e63ac2d/exec-1515c388-9ec6-475d-bb74-bd9797b42d36.png",
+      "prompt": "Use case: stylized-concept. Create ONE original revamped Slayer playable-character art concept for a Godot 2D side-view dungeon brawler. Input image is reference ONLY for the swordsman archetype and aggressive attitude, never an edit target. Do not recreate the original DFO sprite, blue open vest, exposed torso, or costume. Adult athletic male wandering sword fighter; pale ash hair, oversized sword, one visibly cursed forearm. Invent original costume, hairstyle, armor shapes and weapon. Full body, three-quarter SIDE VIEW facing RIGHT, grounded idle combat-ready stance, both boots on same baseline. Orthographic gameplay view, no perspective foreshortening. Whole sword and body inside frame with 10 percent margins. Strong silhouette readable at approximately 90 pixels tall. Isolated genuine transparent background, no environment, no ground plane, no cast shadow, no labels, no lettering, no watermark, no UI. One character, one weapon, one pose. Upper-left lighting. STYLE 5: stylized low-poly 3D character rendered as an orthographic gameplay sprite, deliberately visible planar facets, flat-shaded materials, minimal texture, crisp hard silhouette. ORIGINAL DESIGN: sculptural swept-back silver hair; closed black armored combat tunic, ochre scarf around neck with short tail, asymmetrical basalt-gray shoulder and shin armor, tapered charcoal trousers. Cursed forearm split by warm amber glow. Oversized geometric wedge sword of matte iron with amber inset. Athletic adult proportions with slightly enlarged hands and boots for game readability. No pedestal.",
+      "frames": 1,
+      "approved": false,
+      "in_engine_reviewed": false
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-28",
+  "tool": "image_gen.imagegen",
+  "status": "integrated-demo-draft",
+  "body_layout": {
+    "columns": 4,
+    "rows": 6,
+    "cell_size": 128,
+    "origin": [
+      64,
+      112
+    ],
+    "rows_in_order": [
+      "left-idle",
+      "left-walk",
+      "left-attack",
+      "right-idle",
+      "right-walk",
+      "right-attack"
+    ]
+  },
+  "assets": [
+    {
+      "id": "gunner",
+      "source": "gunner-sheet.png",
+      "runtime": "../../../../assets/characters/gunner/demo-atlas.png",
+      "reference": "/Users/daphneo/Documents/GitHub/dnf-web/docs/art/roster/gunner-chibi-pixel-v1.png",
+      "prompt": "Create a game animation SPRITESHEET of the ONE attached chibi pixel character. Same costume, face, hair, proportions and pixel rendering as reference. NO WEAPONS OR EQUIPMENT HELD OR STRAPPED TO BODY: empty hands for external weapon sprites. Exactly 4 COLUMNS x 6 ROWS, 24 equal SQUARE CELLS, entire canvas width:height 2:3. Genuine transparent background, NO colored backdrop, shadows, labels, panels or grid lines. In every cell body centered x50%, feet at y94%, head around y8%, entire figure inside cell with padding. Uniform scale, baseline and palette in all 24 frames. Keep hands unobstructed and slightly away from torso, hands rendered as simple gripping fists. Crisp dark pixel contours, chunky square clusters, flat 2-3 tone shading. This must be a regular grid suitable for deterministic slicing.\nROW1: four LEFT-facing idle breathing frames.\nROW2: four LEFT-facing WALK cycle frames, visibly alternating legs: near leg forward, passing, far leg forward, passing. Not four copies of the same stride.\nROW3: four LEFT-facing attack body frames described below, no weapon.\nROW4: four RIGHT-facing idle frames.\nROW5: four RIGHT-facing WALK cycle frames, alternating legs.\nROW6: four RIGHT-facing attack body frames.\nBoth directions three-quarter SIDE gameplay view. Correct anatomical asymmetry in each direction, no indiscriminate mirrored body. No effects, no weapons in any frame, no extra figures. Male GUNNER: tousled silver hair, GREEN goggles, long PURPLE split coat, dark high-neck shirt, dark cropped trousers, ammo belt, open-toe sandals. REMOVE BOTH PISTOLS from reference. Both arms normal human. Attack row: anticipation drawing both empty hands toward chest, impact extending near hand straight forward at chest height (shooting pose), recoil raising wrist slightly, recovery returning hand down. Far hand stays lower holding-ready. No pistol drawn. Keep feet fixed in attack row, do not turn into sword fighter.",
+      "frames": 24
+    },
+    {
+      "id": "fighter",
+      "source": "fighter-sheet.png",
+      "runtime": "../../../../assets/characters/fighter/demo-atlas.png",
+      "reference": "/Users/daphneo/Documents/GitHub/dnf-web/docs/art/roster/fighter-chibi-pixel-v1.png",
+      "prompt": "Create a game animation SPRITESHEET of the ONE attached chibi pixel character. Same costume, face, hair, proportions and pixel rendering as reference. NO WEAPONS OR EQUIPMENT HELD OR STRAPPED TO BODY: empty hands for external weapon sprites. Exactly 4 COLUMNS x 6 ROWS, 24 equal SQUARE CELLS, entire canvas width:height 2:3. Genuine transparent background, NO colored backdrop, shadows, labels, panels or grid lines. In every cell body centered x50%, feet at y94%, head around y8%, entire figure inside cell with padding. Uniform scale, baseline and palette in all 24 frames. Keep hands unobstructed and slightly away from torso, hands rendered as simple gripping fists. Crisp dark pixel contours, chunky square clusters, flat 2-3 tone shading. This must be a regular grid suitable for deterministic slicing.\nROW1: four LEFT-facing idle breathing frames.\nROW2: four LEFT-facing WALK cycle frames, visibly alternating legs: near leg forward, passing, far leg forward, passing. Not four copies of the same stride.\nROW3: four LEFT-facing attack body frames described below, no weapon.\nROW4: four RIGHT-facing idle frames.\nROW5: four RIGHT-facing WALK cycle frames, alternating legs.\nROW6: four RIGHT-facing attack body frames.\nBoth directions three-quarter SIDE gameplay view. Correct anatomical asymmetry in each direction, no indiscriminate mirrored body. No effects, no weapons in any frame, no extra figures. Female FIGHTER: long dark brown high ponytail with orange ribbon, orange fitted martial training top, dark shorts/leggings, orange chunky boots with knee protection, cheek bandage. Plain dark fingerless glove bases, REMOVE LARGE ORANGE GAUNTLETS from reference because equipment will be separate. Attack row: wind up near fist beside face, impact near fist extending straight forward, follow-through near fist diagonally low, return both fists to combat guard. Far fist guards face. Fierce cute athletic chibi, no weapons, no magical aura.",
+      "frames": 24
+    },
+    {
+      "id": "mage",
+      "source": "mage-sheet.png",
+      "runtime": "../../../../assets/characters/mage/demo-atlas.png",
+      "reference": "/Users/daphneo/Documents/GitHub/dnf-web/docs/art/roster/mage-base-v2.png",
+      "prompt": "Create a game animation SPRITESHEET of the ONE attached chibi pixel character. Same costume, face, hair, proportions and pixel rendering as reference. NO WEAPONS OR EQUIPMENT HELD OR STRAPPED TO BODY: empty hands for external weapon sprites. Exactly 4 COLUMNS x 6 ROWS, 24 equal SQUARE CELLS, entire canvas width:height 2:3. Genuine transparent background, NO colored backdrop, shadows, labels, panels or grid lines. In every cell body centered x50%, feet at y94%, head around y8%, entire figure inside cell with padding. Uniform scale, baseline and palette in all 24 frames. Keep hands unobstructed and slightly away from torso, hands rendered as simple gripping fists. Crisp dark pixel contours, chunky square clusters, flat 2-3 tone shading. This must be a regular grid suitable for deterministic slicing.\nROW1: four LEFT-facing idle breathing frames.\nROW2: four LEFT-facing WALK cycle frames, visibly alternating legs: near leg forward, passing, far leg forward, passing. Not four copies of the same stride.\nROW3: four LEFT-facing attack body frames described below, no weapon.\nROW4: four RIGHT-facing idle frames.\nROW5: four RIGHT-facing WALK cycle frames, alternating legs.\nROW6: four RIGHT-facing attack body frames.\nBoth directions three-quarter SIDE gameplay view. Correct anatomical asymmetry in each direction, no indiscriminate mirrored body. No effects, no weapons in any frame, no extra figures. Female MAGE: RED hair with short jagged bangs and long thin side tails, tiny BLACK cylindrical hat with RED band, pointed ears, BLACK PINSTRIPED sleeves/coat, white cuffs, yellow bow, red-black layered dress, short black boots with RED pointed folded cuffs. Bare/simple light legs, NOT striped stockings. Preserve reference faithfully. Attack row: empty near hand pulling back at waist for anticipation, extending forward at waist height for impact, follow-through slightly down, returning at waist. Far hand makes a small casting gesture. NO staff, orb, book or effects. Same cute compact proportions.",
+      "frames": 24
+    },
+    {
+      "id": "priest",
+      "source": "priest-sheet.png",
+      "runtime": "../../../../assets/characters/priest/demo-atlas.png",
+      "reference": "/Users/daphneo/Documents/GitHub/dnf-web/docs/art/roster/priest-base-v2.png",
+      "prompt": "Create a game animation SPRITESHEET of the ONE attached chibi pixel character. Same costume, face, hair, proportions and pixel rendering as reference. NO WEAPONS OR EQUIPMENT HELD OR STRAPPED TO BODY: empty hands for external weapon sprites. Exactly 4 COLUMNS x 6 ROWS, 24 equal SQUARE CELLS, entire canvas width:height 2:3. Genuine transparent background, NO colored backdrop, shadows, labels, panels or grid lines. In every cell body centered x50%, feet at y94%, head around y8%, entire figure inside cell with padding. Uniform scale, baseline and palette in all 24 frames. Keep hands unobstructed and slightly away from torso, hands rendered as simple gripping fists. Crisp dark pixel contours, chunky square clusters, flat 2-3 tone shading. This must be a regular grid suitable for deterministic slicing.\nROW1: four LEFT-facing idle breathing frames.\nROW2: four LEFT-facing WALK cycle frames, visibly alternating legs: near leg forward, passing, far leg forward, passing. Not four copies of the same stride.\nROW3: four LEFT-facing attack body frames described below, no weapon.\nROW4: four RIGHT-facing idle frames.\nROW5: four RIGHT-facing WALK cycle frames, alternating legs.\nROW6: four RIGHT-facing attack body frames.\nBoth directions three-quarter SIDE gameplay view. Correct anatomical asymmetry in each direction, no indiscriminate mirrored body. No effects, no weapons in any frame, no extra figures. Male PRIEST: DARK BROWN short tousled hair and close beard, broad mature chibi face, black high-collar shirt, gold cross-sun pendant, asymmetrical white anatomical LEFT shoulder/sleeve with gold cross strap and dark anatomical RIGHT sleeve, long dark patterned coat, gray trousers with white/gold near-leg stripe, black shoes, black gloves, armored cuffs. Both upper arms covered, NO white hair, no sleeveless tabard. NO BOOK OR CROSS OR HAMMER. Attack row: anticipation near hand raised over head with far hand lower ready to support, impact near hand extended forward, follow-through hand diagonally low, recovery hand at waist. Keep anatomy: in LEFT-facing view white LEFT sleeve near viewer and dark RIGHT far side; in RIGHT-facing view white LEFT sleeve far side and dark RIGHT near viewer.",
+      "frames": 24
+    }
+  ],
+  "equipment": {
+    "source": "equipment.png",
+    "prompt": "Create one game EQUIPMENT SPRITE ATLAS. EXACTLY 4 COLUMNS x 2 ROWS, EIGHT equal square cells, canvas aspect ratio 2:1. Genuine fully transparent background, no backdrop, panels, labels or grid lines. One equipment sprite isolated per cell with 15 percent padding. Crisp dark-outlined CHIBI PIXEL ART, chunky visible square clusters and 2-3 shade materials matching a retro fantasy brawler. No hands or characters. Same silhouette and grip position within each column between rows. All long equipment points straight UP.\nColumn1 both rows: one small compact REVOLVER pistol pointing straight UP, grip bottom-right, cylinder readable. Row1 gray steel with brown grip; row2 dark steel with cyan inset, same shape.\nColumn2 both rows: one small FIGHTER KNUCKLE GAUNTLET, a closed fist shaped metal glove overlay, wrist bottom, knuckles top, no forearm or skin. Row1 orange-red metal with charcoal cuff, row2 steel blue metal with charcoal cuff. Do not draw a pair, only one centered gauntlet per cell.\nColumn3 both rows: full-length slender MAGE STAFF, straight wooden shaft with round orb setting at top, hand grip near middle. Row1 brown wood and gold setting with GREEN orb; row2 dark wood silver setting with VIOLET orb. Equal shaft length and orb size.\nColumn4 both rows: heavy PRIEST CROSS weapon, broad physical wooden cross with gold/metal reinforcements, long lower shaft, grip on lower shaft. Row1 brown wood, silver bands and gold caps; row2 dark iron-blue wood with silver bands and blue inset. Clearly cross not hammer, four arms, entire weapon in cell.\nEIGHT TOTAL EQUIPMENT SPRITES, two color/material variants for each class, no other objects. No glow spill, no shadows, no background checkerboard.",
+    "columns": [
+      "pistol",
+      "gauntlet",
+      "staff",
+      "cross"
+    ],
+    "rows": [
+      "variant-0",
+      "variant-1"
+    ],
+    "runtime_directory": "../../../../assets/weapons/"
+  },
+  "normalizer": "tools/normalize-roster-demo.py",
+  "note": "Original generation sources preserved with metadata. Deterministic nearest-neighbor normalization; generated animation remains a prototype."
+}
