@@ -5,7 +5,7 @@ A native offline side-view action game with a future roguelike dungeon structure
 ## First playable demo
 
 - Main menu: Start and Quit.
-- Character selection: one playable sword fighter, Slayer.
+- Character selection: Slayer, Gunner, Fighter, Mage and Priest.
 - Dungeon: one plain arena, one immortal goblin.
 - Movement, run, basic/dash/air attacks, launcher, jump and dodge.
 - Goblin telegraphs and counters; player defeat supports retry.

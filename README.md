@@ -1,17 +1,31 @@
-# Dungeon Fighter Arad — native demo
+# Dungeon Fighter Arad (DFA)
 
-A minimal offline side-view action prototype built with **Godot 4.7.2 / GDScript**. macOS is the development target; Windows remains a supported build target. The browser prototype has been replaced.
+A side-view action game inspired by Dungeon Fighter, built with **Godot 4.7.2 and GDScript**. DFA is heading toward roguelike dungeon runs. Development currently focuses on macOS, with Windows builds also supported.
 
-## Play on macOS
+## Current gameplay
 
-Open `build/macos/Dungeon Fighter Arad.app`.
+Choose **Slayer, Gunner, Fighter, Mage or Priest**, then enter a training arena with an immortal goblin. Each class has a distinct weapon, attack timing, reach and class skill.
+
+| Class | Basic attack | Z skill |
+| --- | --- | --- |
+| Slayer | Sword combo | Upward Slash |
+| Gunner | Pistol shots | Rising Shot |
+| Fighter | Fast punches | Uppercut |
+| Mage | Magic bolts | Flame Burst |
+| Priest | Heavy cross swings | Smite |
+
+Classes share movement and health. Flame Burst and Smite strike around the player; the other class skills strike forward. The goblin reacts to hits, knockback and launches, and telegraphs its own attacks. The player can be defeated and restart. Hits and total damage appear in the HUD.
+
+Graphics are simple geometric placeholders. Procedural dungeons, progression, equipment, saves, audio and co-op are future work. Current combat uses prototype tuning; advancement trees are not implemented.
+
+## Play
+
+With a Godot export available, open `build/macos/Dungeon Fighter Arad.app` on macOS or `build/windows/Dungeon Fighter Arad.exe` on Windows. Builds are generated locally and are not included in the repository.
 
 1. Choose **Start**.
-2. Select **Slayer**, then **Enter dungeon**.
-3. Attack, jump and dodge around the immortal goblin. Red wind-up warns of its attack.
-4. **Esc** pauses. Restart the arena, change character selection, return to the main menu or quit from the pause menu. Defeat offers a restart.
-
-No browser, local server, account or internet connection is needed. The app bundles its runtime and game resources. This is a local development build; public distribution/signing is outside this demo.
+2. Select a class, then **Enter dungeon**.
+3. Move, attack, jump and dodge. Watch the goblin's red attack warning.
+4. Press **Esc** to pause, restart, change class, return to the main menu or quit.
 
 ## Controls
 
@@ -20,54 +34,56 @@ No browser, local server, account or internet connection is needed. The app bund
 | Move along ground plane | Arrow keys |
 | Run | Double-tap left/right; hold second tap |
 | Basic combo / jump attack / running attack | X |
-| Launcher | Z |
+| Class skill | Z |
 | Jump | C |
 | Dodge with brief invulnerability | Space |
 | Pause / resume / back | Esc |
 | Menu navigation / activate | Arrows / Enter |
 
-Only one character and one arena are implemented. The goblin reacts to damage, knockback and launch, but cannot die. The player can be defeated. Hits and total damage are displayed for combat testing.
+## Development
 
-## Scope
-
-The goal is playable controls, not graphics fidelity. All visuals are original geometric placeholders drawn in Godot; no DFO artwork, audio, browser UI, or external asset downloads are used at runtime. There are no full dungeon routes, procedural levels, upgrades, saves, equipment, audio or multiplayer yet. The intended direction is a roguelike dungeon game with side-view action, rather than an exact DFO recreation.
-
-## Develop
-
-Import `project.godot` in Godot **4.7.2**, then press F6/F5 or run:
+Install **Godot 4.7.2**, import `project.godot`, then press **F5**. Alternatively, with `godot` on your PATH:
 
 ```sh
 godot --path .
 ```
 
-A local engine downloaded during development may be available at `.tools/godot/Godot.app/Contents/MacOS/Godot`.
+Run the headless gameplay checks:
 
 ```sh
 godot --headless --path . --import
 godot --headless --path . --script res://tests/native/demo_test.gd
+godot --headless --path . --script res://tests/native/roster_test.gd
 ```
 
-The integration runner checks menu flow, selection, movement, attacks, immortality, lane separation, jump/landing, dodge, pause/resume, defeat and restart. Native window/input testing is separate from headless checks.
+These cover menu flow, all five classes, combat, range and lane separation, projectiles, immortality, jumping, dodging, pause, defeat and restart. Window rendering and physical keyboard input require separate checks.
 
 ## Build
 
-Install matching Godot 4.7.2 export templates through Godot’s Export Template Manager. The local `.tools/godot` editor is already configured in self-contained mode with workspace-local macOS and Windows templates. The presets use the engine’s standard template location.
+Install the matching **Godot 4.7.2 export templates** through Godot's Export Template Manager, then run:
 
 ```sh
 mkdir -p build/macos build/windows
+godot --headless --path . --import
 godot --headless --path . --export-release "macOS" "build/macos/Dungeon Fighter Arad.app"
 godot --headless --path . --export-release "Windows Desktop" "build/windows/Dungeon Fighter Arad.exe"
 ```
 
-The macOS preset produces a universal Intel/Apple Silicon app with a local ad-hoc signature. The Windows preset targets x86_64. A Windows export is not a claim of testing on Windows hardware.
+The macOS preset produces a universal Intel/Apple Silicon app with a local ad-hoc signature. The Windows preset targets x86_64. Windows export has been verified; Windows runtime testing remains outstanding. Public macOS distribution will require signing and notarization.
 
-## Files
+## Project layout
 
-- `game/app.gd`: menus, selection, pause and HUD.
-- `game/fighter.gd`: player controller, goblin AI and side-view combat.
-- `game/arena.gd`: one arena, hit checks and feedback.
+- `game/app.gd`: menus, character selection, pause and HUD.
+- `game/characters/`: class definitions and combat tuning.
+- `game/fighter.gd`: player controls, goblin AI and combat animations.
+- `game/arena.gd`: arena, hit resolution and damage feedback.
+- `game/projectile.gd`: ranged attacks.
 - `scenes/main.tscn`: entry scene.
-- `export_presets.cfg`: macOS and Windows builds.
-- `tests/native/demo_test.gd`: headless integration checks.
+- `tests/native/`: headless gameplay checks.
+- `export_presets.cfg`: macOS and Windows export settings.
 
-Godot Engine is distributed under its MIT license. The Mac demo ZIP includes `GODOT-LICENSES.txt` with engine and third-party notices. See the engine’s bundled notices and https://godotengine.org/license/ . The DFA name and prototype do not imply endorsement by Neople/Nexon.
+## Credits
+
+All current visuals are drawn with Godot primitives. No DFO artwork or audio is bundled. DFA is not affiliated with or endorsed by Neople or Nexon.
+
+Godot Engine uses the [MIT license](https://godotengine.org/license/). Packaged builds must include the applicable engine and third-party notices; `tools/write-licenses.gd` generates these for the macOS package.
