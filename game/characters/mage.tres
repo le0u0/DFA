@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DemoCharacter" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/characters/character.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Mage"
+description = "Staff · magic bolts"
+weapon = "staff"
+tint = Color(0.75, 0.5, 0.95, 1)
+damage = 18
+finisher_damage = 26
+reach = 600.0
+attack_duration = 0.34
+heavy_name = "Flame Burst"
+heavy_damage = 40
+heavy_reach = 160.0
+heavy_duration = 0.55
+heavy_cooldown = 1.6
+launch = 230.0
+projectile_speed = 470.0
+radial_heavy = true

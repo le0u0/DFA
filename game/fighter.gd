@@ -6,6 +6,7 @@ signal hurt(damage: int)
 signal defeated
 
 const FLOOR_BOUNDS := Rect2(80, 235, 1120, 400)
+@export var character: DemoCharacter = preload("res://game/characters/slayer.tres")
 var is_player := false
 var immortal := false
 var ai_enabled := true
@@ -77,9 +78,9 @@ func _physics_process(delta: float) -> void:
 		attack_elapsed += delta
 		if attack_elapsed >= strike_time and not strike_fired:
 			strike_fired = true
-			var damage := 8 if not is_player else 35 if attack_kind == &"heavy" else 24 if combo == 3 else 16
-			var reach := 145.0 if attack_kind == &"heavy" else 125.0 if attack_kind == &"dash" else 105.0
-			var launch := 340.0 if attack_kind == &"heavy" else 130.0 if combo == 3 else 0.0
+			var damage := 8 if not is_player else character.heavy_damage if attack_kind == &"heavy" else character.finisher_damage if combo == 3 else character.damage
+			var reach := character.heavy_reach if is_player and attack_kind == &"heavy" else character.reach + (20.0 if attack_kind == &"dash" else 0.0) if is_player else 105.0
+			var launch := character.launch if attack_kind == &"heavy" else 130.0 if combo == 3 else 0.0
 			strike.emit(self, damage, reach, launch)
 		if attack_kind == &"dash":
 			velocity.x = facing * 340.0
@@ -122,14 +123,14 @@ func _player_input() -> void:
 			invulnerability = maxf(invulnerability, 0.22)
 		if heavy_buffer > 0 and heavy_cooldown == 0 and jump_height == 0:
 			heavy_buffer = 0
-			heavy_cooldown = 1.1
-			begin_attack(&"heavy", 0.45, 0.15)
+			heavy_cooldown = character.heavy_cooldown
+			begin_attack(&"heavy", character.heavy_duration, character.heavy_duration / 3.0)
 		elif attack_buffer > 0 or Input.is_action_pressed(&"attack"):
 			attack_buffer = 0
 			combo = combo % 3 + 1 if combo_timeout > 0 else 1
 			combo_timeout = 0.65
 			var kind: StringName = &"air" if jump_height > 0 else &"dash" if dash_remaining > 0 or running else &"basic"
-			begin_attack(kind, 0.28, 0.09)
+			begin_attack(kind, character.attack_duration, character.attack_duration / 3.0)
 
 func _enemy_input() -> void:
 	if not is_instance_valid(target) or target.health <= 0 or stun > 0 or jump_height > 0 or attack_kind != &"":
@@ -179,7 +180,7 @@ func clear_buffer() -> void:
 func _draw() -> void:
 	draw_ellipse_shadow()
 	var feet := Vector2(0, -jump_height)
-	var color := Color(0.38, 0.65, 0.95) if is_player else Color(0.43, 0.75, 0.35)
+	var color := character.tint if is_player else Color(0.43, 0.75, 0.35)
 	if flash > 0:
 		color = Color.WHITE
 	if is_player and invulnerability > 0 and int(Time.get_ticks_msec() / 70) % 2 == 0:
@@ -199,12 +200,29 @@ func _draw() -> void:
 		var progress := clampf(attack_elapsed / attack_duration, 0, 1)
 		var angle := lerpf(-1.5, 1.2, progress)
 		weapon_end = hand + Vector2(facing * cos(angle) * 65, sin(angle) * 65)
-		if strike_fired and is_player:
+		if strike_fired and is_player and character.projectile_speed == 0:
 			draw_arc(hand, 75, -1.2 if facing > 0 else PI - 1.2, 1.2 if facing > 0 else PI + 1.2, 16, Color(1, 0.85, 0.35, 0.7), 4)
+		if strike_fired and is_player and attack_kind == &"heavy" and character.radial_heavy:
+			draw_arc(feet + Vector2(0, -25), character.heavy_reach, 0, TAU, 40, character.tint, 4)
 		if not is_player and not strike_fired:
 			draw_arc(feet + Vector2(0, -24), 48, 0, TAU, 24, Color(1, 0.3, 0.25), 3)
-	draw_line(hand, weapon_end, Color(0.85, 0.87, 0.9) if is_player else Color(0.65, 0.43, 0.25), 5)
-	draw_string(ThemeDB.fallback_font, feet + Vector2(-22, -body_height - 34), "SLAYER" if is_player else "GOBLIN ∞", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
+	if is_player and character.weapon == "gun":
+		weapon_end = hand + Vector2(facing * 37, 0)
+		draw_line(hand, weapon_end, Color.GRAY, 9)
+		draw_line(hand, hand + Vector2(0, 13), Color.GRAY, 6)
+	elif is_player and character.weapon == "fists":
+		draw_circle(hand + Vector2(facing * (35 if attack_kind != &"" else 7), 0), 11, character.tint.lightened(0.3))
+	elif is_player and character.weapon == "staff":
+		weapon_end = hand + Vector2(facing * 24, -45)
+		draw_line(hand + Vector2(-facing * 10, 25), weapon_end, Color.SADDLE_BROWN, 6)
+		draw_circle(weapon_end, 10, character.tint.lightened(0.3))
+	else:
+		if is_player and character.weapon == "cross":
+			var axis := (weapon_end - hand).normalized()
+			var perpendicular := Vector2(-axis.y, axis.x) * 19
+			draw_line(weapon_end - axis * 18 - perpendicular, weapon_end - axis * 18 + perpendicular, Color.GOLDENROD, 10)
+		draw_line(hand, weapon_end, Color(0.85, 0.87, 0.9) if is_player else Color(0.65, 0.43, 0.25), 5)
+	draw_string(ThemeDB.fallback_font, feet + Vector2(-22, -body_height - 34), character.display_name.to_upper() if is_player else "GOBLIN ∞", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
 
 func draw_ellipse_shadow() -> void:
 	draw_set_transform(Vector2.ZERO, 0, Vector2(1, 0.35))

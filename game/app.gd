@@ -7,7 +7,9 @@ var screen := "main"
 var health_label: Label
 var stats_label: Label
 var pause_panel: Control
+const CHARACTERS = [preload("res://game/characters/slayer.tres"), preload("res://game/characters/gunner.tres"), preload("res://game/characters/fighter.tres"), preload("res://game/characters/mage.tres"), preload("res://game/characters/priest.tres")]
 var selected := false
+var selected_character: DemoCharacter
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -87,19 +89,28 @@ func show_selection() -> void:
 	_clear_arena()
 	screen = "selection"
 	selected = false
-	var box := _menu("Character selection", "One playable character in this prototype")
-	var fighter := _button(box, "Slayer — sword fighter", "SlayerButton", func() -> void: pass)
-	fighter.toggle_mode = true
+	selected_character = null
+	var box := _menu("Character selection", "Choose a class · X: attack · Z: class skill")
+	box.add_theme_constant_override("separation", 10)
+	var group := ButtonGroup.new()
+	var cards: Array[Button] = []
+	for definition: DemoCharacter in CHARACTERS:
+		var card := _button(box, definition.display_name + " — " + definition.description, definition.display_name + "Button", func() -> void: pass)
+		card.toggle_mode = true
+		card.button_group = group
+		cards.append(card)
 	var enter := _button(box, "Enter dungeon", "EnterButton", start_dungeon)
 	enter.disabled = true
-	fighter.pressed.connect(func() -> void:
-		selected = fighter.button_pressed
-		enter.disabled = not selected
-		if selected:
-			enter.grab_focus()
-	)
+	for index in range(cards.size()):
+		cards[index].pressed.connect(_select_character.bind(CHARACTERS[index], enter))
 	_button(box, "Back", "BackButton", show_main)
-	fighter.grab_focus()
+	cards[0].grab_focus()
+
+func _select_character(definition: DemoCharacter, enter: Button) -> void:
+	selected_character = definition
+	selected = true
+	enter.disabled = false
+	enter.grab_focus()
 
 func start_dungeon() -> void:
 	if not selected:
@@ -109,6 +120,7 @@ func start_dungeon() -> void:
 	screen = "arena"
 	arena = Arena.new()
 	arena.name = "Dungeon"
+	arena.character = selected_character
 	arena.stats_changed.connect(_update_hud)
 	arena.player_defeated.connect(_on_defeated)
 	_build_hud()
@@ -146,12 +158,12 @@ func _build_hud() -> void:
 	controls.offset_left = 40
 	controls.offset_top = -56
 	controls.offset_right = -20
-	controls.text = "Arrows: move / double-tap: run   X: attack   Z: launcher   C: jump   Space: dodge"
+	controls.text = "Arrows: move / double-tap: run   X: attack   Z: %s   C: jump   Space: dodge" % selected_character.heavy_name
 	controls.add_theme_font_size_override("font_size", 18)
 	ui.add_child(controls)
 
 func _update_hud(health: int, hits: int, damage: int) -> void:
-	health_label.text = "Slayer HP: %d / 100     Goblin HP: ∞" % health
+	health_label.text = "%s HP: %d / 100     Goblin HP: ∞" % [selected_character.display_name, health]
 	stats_label.text = "Hits: %d     Total damage: %d" % [hits, damage]
 
 func pause_game() -> void:
