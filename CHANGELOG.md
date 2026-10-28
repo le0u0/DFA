@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/le0u0/DFA/compare/v1.1.0...v1.2.0) (2026-10-28)
+
+
+### Features
+
+* add first two dungeons with elite and boss encounters ([dc907c6](https://github.com/le0u0/DFA/commit/dc907c6261bffdf994fc39193bceb32ae1a9f37f))
+* add first two dungeons with elite and boss encounters ([4e0b4ad](https://github.com/le0u0/DFA/commit/4e0b4ad5a075087ef8c0c19382b510fd24f8b409))
+
 ## [1.1.0](https://github.com/le0u0/DFA/compare/v1.0.0...v1.1.0) (2026-10-28)
 
 
