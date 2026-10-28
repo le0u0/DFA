@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.0](https://github.com/le0u0/DFA/compare/v1.0.0...v1.1.0) (2026-10-28)
+
+
+### Features
+
+* add chibi pixel art for all five classes ([3bb4252](https://github.com/le0u0/DFA/commit/3bb42522b5ba7f1b54bebc66fc2b12de5e6d12f7))
+* add chibi pixel gameplay art for all five classes ([ddd28e2](https://github.com/le0u0/DFA/commit/ddd28e2caefdd07170c2fa7c153472731ffcb9ad))
+
 ## 1.0.0 (2026-10-28)
 
 
