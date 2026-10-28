@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "tool": "image_gen.imagegen",
+  "style_reference": "../slayer/chibi-pixel-reference-v6.png",
+  "status": "concepts-awaiting-user-review",
+  "note": "Slayer v6 supplied as the visual style reference. Class appearance notes informed by class artwork search results and official character pages; no original class artwork supplied to generation or bundled. Classic roster gender variants chosen as an assumption.",
+  "assets": [
+    {
+      "id": "gunner",
+      "name": "Gunner",
+      "path": "gunner-chibi-pixel-v1.png",
+      "source_page": "https://www.dfoneople.com/gameinfo/character/Gunner%28M%29",
+      "prompt": "Use case: stylized-concept. Generate ONE new base-class character concept for the same Godot side-view brawler as reference image 1. Image 1 is ONLY the approved chibi pixel STYLE reference (Slayer). Match its 2.5-head chibi proportions, large expressive head, short legs, chunky hands/footwear, crisp square pixel clusters, dark stepped outlines, compact 2-3 tone shading per material, saturated readable palette, upper-left light, serious cute face. NOT smooth vector art, not realistic adult proportions, not painterly illustration. New subject below is NOT Slayer: no cursed arm, no Slayer blue forehead guard, no Slayer white spikes, no Slayer costume copied unless specified. Original DFO base class appearance cues below, not advanced subclass costumes. One full-body character, three-quarter side-view idle facing SCREEN LEFT, feet grounded at same baseline, orthographic gameplay camera. Entire hair, equipment and body fit with at least 10% transparent margins. Genuine transparent background, no scenery, no ground shadow, no checkerboard baked in, no labels, text, UI, watermark, action effects or duplicate figures. Simple design readable when reduced to about 80-100 pixels tall, consistent family with reference. SUBJECT: base Male Gunner from Dungeon Fighter Online. Chibi male adult gunslinger with tousled short SILVER WHITE hair (softer irregular locks, NOT Slayer's upright spike crest), GREEN-LENSED goggles resting above forehead, confident calm eyes. Long PURPLE coat with split flared tails and small light ornamental trim, dark high-neck shirt, dark cropped trousers with simple pale geometric patches, cartridge belt and holster, fingerless gloves, original open-toe sandals with chunky soles. TWO compact steel REVOLVER pistols, one held in each normal hand, barrels pointed down-left in relaxed ready stance; hands and two weapons clearly separated, index fingers outside trigger guards. Both arms ordinary human skin, no curse. Coat must be dominant purple silhouette. Slightly slimmer body than Slayer but same chibi head scale. No cowboy hat, no rifle, no military red coat.",
+      "frames": 1,
+      "in_engine_reviewed": false,
+      "approved": false
+    },
+    {
+      "id": "fighter",
+      "name": "Fighter",
+      "path": "fighter-chibi-pixel-v1.png",
+      "source_page": "https://www.dfoneople.com/gameinfo/character/Fighter%28F%29",
+      "prompt": "Use case: stylized-concept. Generate ONE new base-class character concept for the same Godot side-view brawler as reference image 1. Image 1 is ONLY the approved chibi pixel STYLE reference (Slayer). Match its 2.5-head chibi proportions, large expressive head, short legs, chunky hands/footwear, crisp square pixel clusters, dark stepped outlines, compact 2-3 tone shading per material, saturated readable palette, upper-left light, serious cute face. NOT smooth vector art, not realistic adult proportions, not painterly illustration. New subject below is NOT Slayer: no cursed arm, no Slayer blue forehead guard, no Slayer white spikes, no Slayer costume copied unless specified. Original DFO base class appearance cues below, not advanced subclass costumes. One full-body character, three-quarter side-view idle facing SCREEN LEFT, feet grounded at same baseline, orthographic gameplay camera. Entire hair, equipment and body fit with at least 10% transparent margins. Genuine transparent background, no scenery, no ground shadow, no checkerboard baked in, no labels, text, UI, watermark, action effects or duplicate figures. Simple design readable when reduced to about 80-100 pixels tall, consistent family with reference. SUBJECT: base Female Fighter from Dungeon Fighter Online, recognizably original ORANGE AND BLACK martial-arts design. Adult female athlete represented in cute compact chibi proportions, long DARK BROWN nearly black hair in high flowing ponytail, short side fringe and determined eyes, tiny cheek bandage. Orange sleeveless fitted martial training top, dark modest athletic shorts with opaque dark leggings for gameplay readability, orange-red chunky protective boots with dark knee guards, orange-red forearm guards and fingerless gauntlets. Keep torso coverage and nonsexual athletic look. Two human fists raised in a balanced close-combat guard. Strong short legs, no sword, no gun, no magical staff, no energy aura. Preserve original fighter's warm orange chest / dark lower half / orange boot palette and long ponytail silhouette. Both arms normal.",
+      "frames": 1,
+      "in_engine_reviewed": false,
+      "approved": false
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "path": "mage-chibi-pixel-v1.png",
+      "source_page": "https://www.dfoneople.com/gameinfo/character/Mage%28F%29",
+      "prompt": "Use case: stylized-concept. Generate ONE new base-class character concept for the same Godot side-view brawler as reference image 1. Image 1 is ONLY the approved chibi pixel STYLE reference (Slayer). Match its 2.5-head chibi proportions, large expressive head, short legs, chunky hands/footwear, crisp square pixel clusters, dark stepped outlines, compact 2-3 tone shading per material, saturated readable palette, upper-left light, serious cute face. NOT smooth vector art, not realistic adult proportions, not painterly illustration. New subject below is NOT Slayer: no cursed arm, no Slayer blue forehead guard, no Slayer white spikes, no Slayer costume copied unless specified. Original DFO base class appearance cues below, not advanced subclass costumes. One full-body character, three-quarter side-view idle facing SCREEN LEFT, feet grounded at same baseline, orthographic gameplay camera. Entire hair, equipment and body fit with at least 10% transparent margins. Genuine transparent background, no scenery, no ground shadow, no checkerboard baked in, no labels, text, UI, watermark, action effects or duplicate figures. Simple design readable when reduced to about 80-100 pixels tall, consistent family with reference. SUBJECT: base Female Mage from Dungeon Fighter Online. Small cheerful fierce elf-like fantasy mage with flowing RED-AUBURN hair, pointed ears, RED miniature TOP HAT tilted over hair (short cylindrical top hat, NOT large witch cone hat). Red blouse with ivory frilled collar/cuffs, black fitted waistcoat and black-red layered skirt with ivory trim, dark-and-red striped stockings, chunky dark lace-up boots, small gold/yellow bow at collar and a simple warm orange charm at waist. Modest covered costume, cute nonsexual game character. One wooden magical STAFF held firmly in near hand, topped by a rounded gold setting and green-teal orb, staff resting beside body; other hand open in ready gesture. No elaborate spell effects, no floating familiars, no pumpkin scene. Tiny caster silhouette slightly shorter than Slayer while keeping same family head scale and chunky pixel clusters. No oversized cone-shaped witch hat.",
+      "frames": 1,
+      "in_engine_reviewed": false,
+      "approved": false
+    },
+    {
+      "id": "priest",
+      "name": "Priest",
+      "path": "priest-chibi-pixel-v1.png",
+      "source_page": "https://www.dfoneople.com/gameinfo/character/Priest%28M%29",
+      "prompt": "Use case: stylized-concept. Generate ONE new base-class character concept for the same Godot side-view brawler as reference image 1. Image 1 is ONLY the approved chibi pixel STYLE reference (Slayer). Match its 2.5-head chibi proportions, large expressive head, short legs, chunky hands/footwear, crisp square pixel clusters, dark stepped outlines, compact 2-3 tone shading per material, saturated readable palette, upper-left light, serious cute face. NOT smooth vector art, not realistic adult proportions, not painterly illustration. New subject below is NOT Slayer: no cursed arm, no Slayer blue forehead guard, no Slayer white spikes, no Slayer costume copied unless specified. Original DFO base class appearance cues below, not advanced subclass costumes. One full-body character, three-quarter side-view idle facing SCREEN LEFT, feet grounded at same baseline, orthographic gameplay camera. Entire hair, equipment and body fit with at least 10% transparent margins. Genuine transparent background, no scenery, no ground shadow, no checkerboard baked in, no labels, text, UI, watermark, action effects or duplicate figures. Simple design readable when reduced to about 80-100 pixels tall, consistent family with reference. SUBJECT: base Male Priest from Dungeon Fighter Online, muscular broad-shouldered mature cleric with short swept WHITE GRAY hair, stern square face and close gray stubble. Chibi proportions but noticeably broader torso and hands than Slayer. BLACK clergy tunic, white sleeveless outer tabard/stole with GOLD edges and simple CROSS motifs, layered gray forearm armor, black trousers and heavy dark boots, thick belt. Dark red HOLY BOOK with gold cross attached at hip. ONE oversized heavy plain CROSS weapon (project's Priest uses heavy cross swings), thick steel-bound dark wood with gold crossbar fittings; held as a heavy melee weapon in both hands diagonally beside torso, complete silhouette visible. Echo original priest's black-white-gold clerical identity and powerful armored arms. No glowing halo, no wings, no full plate paladin helmet, no extra hammer. Weapon must unmistakably be a broad physical cross, NOT sword.",
+      "frames": 1,
+      "in_engine_reviewed": false,
+      "approved": false
+    }
+  ]
+}

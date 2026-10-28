@@ -1,0 +1,85 @@
+{
+  "ok": true,
+  "assets": [
+    {
+      "path": "docs/art/roster/fighter-chibi-pixel-v1.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1236,
+      "height": 1273,
+      "bytes": 921770,
+      "color_count": ">65535",
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 989309,
+      "content_bounds": [
+        0,
+        21,
+        1222,
+        1273
+      ],
+      "problems": []
+    },
+    {
+      "path": "docs/art/roster/gunner-chibi-pixel-v1.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1236,
+      "height": 1272,
+      "bytes": 993210,
+      "color_count": ">65535",
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 999257,
+      "content_bounds": [
+        0,
+        25,
+        1226,
+        1272
+      ],
+      "problems": []
+    },
+    {
+      "path": "docs/art/roster/mage-chibi-pixel-v1.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1236,
+      "height": 1273,
+      "bytes": 1024768,
+      "color_count": ">65535",
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 963199,
+      "content_bounds": [
+        0,
+        23,
+        1233,
+        1273
+      ],
+      "problems": []
+    },
+    {
+      "path": "docs/art/roster/priest-chibi-pixel-v1.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 1236,
+      "height": 1273,
+      "bytes": 1059910,
+      "color_count": ">65535",
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 255,
+      "transparent_pixels": 941081,
+      "content_bounds": [
+        0,
+        17,
+        1222,
+        1273
+      ],
+      "problems": []
+    }
+  ]
+}

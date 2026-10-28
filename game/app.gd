@@ -26,7 +26,7 @@ func _ready() -> void:
 	show_main()
 
 func _register_input() -> void:
-	var bindings := {"move_left": KEY_LEFT, "move_right": KEY_RIGHT, "move_up": KEY_UP, "move_down": KEY_DOWN, "attack": KEY_X, "heavy": KEY_Z, "jump": KEY_C, "dash": KEY_SPACE}
+	var bindings := {"move_left": KEY_LEFT, "move_right": KEY_RIGHT, "move_up": KEY_UP, "move_down": KEY_DOWN, "attack": KEY_X, "heavy": KEY_Z, "jump": KEY_C, "dash": KEY_SPACE, "swap_weapon": KEY_V}
 	for action: String in bindings:
 		if not InputMap.has_action(action):
 			InputMap.add_action(action)
@@ -82,7 +82,13 @@ func show_main() -> void:
 	screen = "main"
 	var box := _menu("Dungeon Fighter Arad", "Offline side-view combat demo")
 	_button(box, "Start", "StartButton", show_selection).grab_focus()
+	_button(box, "Slayer art demo", "ArtDemoButton", start_art_demo)
 	_button(box, "Quit", "QuitButton", func() -> void: get_tree().quit())
+
+func start_art_demo() -> void:
+	selected_character = CHARACTERS[0]
+	selected = true
+	start_dungeon()
 
 func show_selection() -> void:
 	_clear_ui()
@@ -159,6 +165,7 @@ func _build_hud() -> void:
 	controls.offset_top = -56
 	controls.offset_right = -20
 	controls.text = "Arrows: move / double-tap: run   X: attack   Z: %s   C: jump   Space: dodge" % selected_character.heavy_name
+	controls.text += "   V: swap equipment"
 	controls.add_theme_font_size_override("font_size", 18)
 	ui.add_child(controls)
 

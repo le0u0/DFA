@@ -1,6 +1,9 @@
 extends CharacterBody2D
 class_name DemoFighter
 
+const CharacterVisual := preload("res://game/character_visual.gd")
+var art: Node2D
+
 signal strike(attacker: DemoFighter, damage: int, reach: float, launch: float)
 signal hurt(damage: int)
 signal defeated
@@ -46,6 +49,10 @@ func _ready() -> void:
 	shape.shape = circle
 	shape.position = Vector2(0, -8)
 	add_child(shape)
+	if is_player:
+		art = CharacterVisual.new()
+		art.name = "CharacterArt"
+		add_child(art)
 	queue_redraw()
 
 func _physics_process(delta: float) -> void:
@@ -94,6 +101,8 @@ func _physics_process(delta: float) -> void:
 	queue_redraw()
 
 func _player_input() -> void:
+	if is_instance_valid(art) and Input.is_action_just_pressed(&"swap_weapon"):
+		art.cycle_weapon()
 	if Input.is_action_just_pressed(&"attack"):
 		attack_buffer = 0.12
 	if Input.is_action_just_pressed(&"heavy"):
@@ -179,6 +188,9 @@ func clear_buffer() -> void:
 
 func _draw() -> void:
 	draw_ellipse_shadow()
+	if is_instance_valid(art):
+		draw_string(ThemeDB.fallback_font, Vector2(-30, -jump_height - 88), character.display_name.to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
+		return
 	var feet := Vector2(0, -jump_height)
 	var color := character.tint if is_player else Color(0.43, 0.75, 0.35)
 	if flash > 0:

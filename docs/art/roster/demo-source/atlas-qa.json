@@ -1,0 +1,105 @@
+{
+  "ok": true,
+  "assets": [
+    {
+      "path": "assets/characters/fighter/demo-atlas.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 512,
+      "height": 768,
+      "bytes": 312422,
+      "color_count": ">65535",
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_pixels": 299611,
+      "content_bounds": [
+        23,
+        33,
+        489,
+        755
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/characters/gunner/demo-atlas.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 512,
+      "height": 768,
+      "bytes": 268829,
+      "color_count": 60280,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_pixels": 317054,
+      "content_bounds": [
+        38,
+        33,
+        476,
+        755
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/characters/mage/demo-atlas.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 512,
+      "height": 768,
+      "bytes": 322155,
+      "color_count": ">65535",
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_pixels": 300478,
+      "content_bounds": [
+        23,
+        33,
+        489,
+        755
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/characters/priest/demo-atlas.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 512,
+      "height": 768,
+      "bytes": 257884,
+      "color_count": 53355,
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_pixels": 315909,
+      "content_bounds": [
+        30,
+        38,
+        485,
+        748
+      ],
+      "problems": []
+    },
+    {
+      "path": "assets/characters/slayer/demo-atlas.png",
+      "format": "PNG",
+      "mode": "RGBA",
+      "width": 512,
+      "height": 768,
+      "bytes": 260939,
+      "color_count": ">65535",
+      "has_alpha": true,
+      "alpha_min": 0,
+      "alpha_max": 254,
+      "transparent_pixels": 317848,
+      "content_bounds": [
+        38,
+        36,
+        475,
+        751
+      ],
+      "problems": []
+    }
+  ]
+}
