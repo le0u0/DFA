@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="DemoCharacter" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/characters/character.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Gunner"
+description = "Pistols · ranged shots"
+weapon = "gun"
+tint = Color(0.95, 0.72, 0.3, 1)
+damage = 14
+finisher_damage = 22
+reach = 700.0
+attack_duration = 0.25
+heavy_name = "Rising Shot"
+heavy_reach = 900.0
+heavy_duration = 0.4
+projectile_speed = 850.0

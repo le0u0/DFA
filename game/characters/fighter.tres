@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="DemoCharacter" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/characters/character.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Fighter"
+description = "Fists · fast close combat"
+weapon = "fists"
+tint = Color(0.95, 0.45, 0.35, 1)
+damage = 12
+finisher_damage = 18
+reach = 75.0
+attack_duration = 0.2
+heavy_name = "Uppercut"
+heavy_damage = 28
+heavy_reach = 95.0
+heavy_duration = 0.36
+heavy_cooldown = 0.9
+launch = 400.0

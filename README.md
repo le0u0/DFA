@@ -1,0 +1,89 @@
+# Dungeon Fighter Arad (DFA)
+
+A side-view action game inspired by Dungeon Fighter, built with **Godot 4.7.2 and GDScript**. DFA is heading toward roguelike dungeon runs. Development currently focuses on macOS, with Windows builds also supported.
+
+## Current gameplay
+
+Choose **Slayer, Gunner, Fighter, Mage or Priest**, then enter a training arena with an immortal goblin. Each class has a distinct weapon, attack timing, reach and class skill.
+
+| Class | Basic attack | Z skill |
+| --- | --- | --- |
+| Slayer | Sword combo | Upward Slash |
+| Gunner | Pistol shots | Rising Shot |
+| Fighter | Fast punches | Uppercut |
+| Mage | Magic bolts | Flame Burst |
+| Priest | Heavy cross swings | Smite |
+
+Classes share movement and health. Flame Burst and Smite strike around the player; the other class skills strike forward. The goblin reacts to hits, knockback and launches, and telegraphs its own attacks. The player can be defeated and restart. Hits and total damage appear in the HUD.
+
+Graphics are simple geometric placeholders. Procedural dungeons, progression, equipment, saves, audio and co-op are future work. Current combat uses prototype tuning; advancement trees are not implemented.
+
+## Play
+
+With a Godot export available, open `build/macos/Dungeon Fighter Arad.app` on macOS or `build/windows/Dungeon Fighter Arad.exe` on Windows. Builds are generated locally and are not included in the repository.
+
+1. Choose **Start**.
+2. Select a class, then **Enter dungeon**.
+3. Move, attack, jump and dodge. Watch the goblin's red attack warning.
+4. Press **Esc** to pause, restart, change class, return to the main menu or quit.
+
+## Controls
+
+| Action | Key |
+| --- | --- |
+| Move along ground plane | Arrow keys |
+| Run | Double-tap left/right; hold second tap |
+| Basic combo / jump attack / running attack | X |
+| Class skill | Z |
+| Jump | C |
+| Dodge with brief invulnerability | Space |
+| Pause / resume / back | Esc |
+| Menu navigation / activate | Arrows / Enter |
+
+## Development
+
+Install **Godot 4.7.2**, import `project.godot`, then press **F5**. Alternatively, with `godot` on your PATH:
+
+```sh
+godot --path .
+```
+
+Run the headless gameplay checks:
+
+```sh
+godot --headless --path . --import
+godot --headless --path . --script res://tests/native/demo_test.gd
+godot --headless --path . --script res://tests/native/roster_test.gd
+```
+
+These cover menu flow, all five classes, combat, range and lane separation, projectiles, immortality, jumping, dodging, pause, defeat and restart. Window rendering and physical keyboard input require separate checks.
+
+## Build
+
+Install the matching **Godot 4.7.2 export templates** through Godot's Export Template Manager, then run:
+
+```sh
+mkdir -p build/macos build/windows
+godot --headless --path . --import
+godot --headless --path . --export-release "macOS" "build/macos/Dungeon Fighter Arad.app"
+godot --headless --path . --export-release "Windows Desktop" "build/windows/Dungeon Fighter Arad.exe"
+```
+
+The macOS preset produces a universal Intel/Apple Silicon app with a local ad-hoc signature. The Windows preset targets x86_64. Windows export has been verified; Windows runtime testing remains outstanding. Public macOS distribution will require signing and notarization.
+
+## Project layout
+
+- `game/app.gd`: menus, character selection, pause and HUD.
+- `game/characters/`: class definitions and combat tuning.
+- `game/fighter.gd`: player controls, goblin AI and combat animations.
+- `game/arena.gd`: arena, hit resolution and damage feedback.
+- `game/projectile.gd`: ranged attacks.
+- `scenes/main.tscn`: entry scene.
+- `tests/native/`: headless gameplay checks.
+- `export_presets.cfg`: macOS and Windows export settings.
+
+## Credits
+
+All current visuals are drawn with Godot primitives. No DFO artwork or audio is bundled. DFA is not affiliated with or endorsed by Neople or Nexon.
+
+Godot Engine uses the [MIT license](https://godotengine.org/license/). Packaged builds must include the applicable engine and third-party notices; `tools/write-licenses.gd` generates these for the macOS package.

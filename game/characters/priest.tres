@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="DemoCharacter" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://game/characters/character.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+display_name = "Priest"
+description = "Cross · heavy sweeping strikes"
+weapon = "cross"
+tint = Color(0.95, 0.88, 0.63, 1)
+damage = 24
+finisher_damage = 32
+reach = 145.0
+attack_duration = 0.4
+heavy_name = "Smite"
+heavy_damage = 50
+heavy_reach = 180.0
+heavy_duration = 0.62
+heavy_cooldown = 1.5
+launch = 210.0
+radial_heavy = true
