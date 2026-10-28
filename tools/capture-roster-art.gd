@@ -10,6 +10,7 @@ func capture() -> void:
 	for definition: DemoCharacter in app.CHARACTERS:
 		app.selected_character = definition
 		app.selected = true
+		app.dungeon_index = -1
 		app.start_dungeon()
 		app.arena.goblin.ai_enabled = false
 		app.arena.player.position = Vector2(550, 450)

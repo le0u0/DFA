@@ -45,6 +45,7 @@ func run() -> void:
 			continue
 		card.button_pressed = true
 		card.pressed.emit()
+		app.dungeon_index = -1
 		app.find_child("EnterButton", true, false).pressed.emit()
 		await physics_frame
 		var definition: Resource = app.arena.get("character")

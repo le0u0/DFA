@@ -1,7 +1,7 @@
 extends Node2D
 
-signal hit(damage: int, direction: float, launch: float)
-var victim: DemoFighter
+signal hit_target(victim: DemoFighter, damage: int, direction: float, launch: float)
+var victims: Array[DemoFighter] = []
 var direction := 1.0
 var speed := 850.0
 var remaining := 700.0
@@ -17,12 +17,20 @@ func _physics_process(delta: float) -> void:
 	position.x += direction * travel
 	height += vertical_speed * delta
 	remaining -= travel
-	if is_instance_valid(victim) and victim.health > 0:
-		var crossed := victim.position.x >= minf(previous_x, position.x) - 16 and victim.position.x <= maxf(previous_x, position.x) + 16
-		if crossed and absf(position.y - victim.position.y) <= 34 and absf(height - victim.jump_height - 30) <= 30:
-			hit.emit(damage, direction, launch)
-			queue_free()
-			return
+	var first: DemoFighter
+	var nearest := INF
+	for candidate in victims:
+		if not is_instance_valid(candidate) or candidate.health <= 0:
+			continue
+		var crossed := candidate.position.x >= minf(previous_x, position.x) - 16 and candidate.position.x <= maxf(previous_x, position.x) + 16
+		var distance := (candidate.position.x - previous_x) * direction
+		if crossed and absf(position.y - candidate.position.y) <= 34 and absf(height - candidate.jump_height - 30) <= 30 and distance < nearest:
+			first = candidate
+			nearest = distance
+	if first != null:
+		hit_target.emit(first, damage, direction, launch)
+		queue_free()
+		return
 	if remaining <= 0 or height < 0:
 		queue_free()
 	queue_redraw()

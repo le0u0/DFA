@@ -3,6 +3,9 @@ class_name DemoFighter
 
 const CharacterVisual := preload("res://game/character_visual.gd")
 var art: Node2D
+var enemy_data: Dictionary = {}
+var max_health := 100
+var enemy_attack_count := 0
 
 signal strike(attacker: DemoFighter, damage: int, reach: float, launch: float)
 signal hurt(damage: int)
@@ -40,6 +43,9 @@ var last_tap := -10.0
 var running := false
 
 func _ready() -> void:
+	if not enemy_data.is_empty():
+		max_health = enemy_data["hp"]
+		health = max_health
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	collision_layer = 1
 	collision_mask = 1
@@ -85,8 +91,8 @@ func _physics_process(delta: float) -> void:
 		attack_elapsed += delta
 		if attack_elapsed >= strike_time and not strike_fired:
 			strike_fired = true
-			var damage := 8 if not is_player else character.heavy_damage if attack_kind == &"heavy" else character.finisher_damage if combo == 3 else character.damage
-			var reach := character.heavy_reach if is_player and attack_kind == &"heavy" else character.reach + (20.0 if attack_kind == &"dash" else 0.0) if is_player else 105.0
+			var damage := int(enemy_data.get("damage", 8)) if not is_player else character.heavy_damage if attack_kind == &"heavy" else character.finisher_damage if combo == 3 else character.damage
+			var reach := character.heavy_reach if is_player and attack_kind == &"heavy" else character.reach + (20.0 if attack_kind == &"dash" else 0.0) if is_player else enemy_reach()
 			var launch := character.launch if attack_kind == &"heavy" else 130.0 if combo == 3 else 0.0
 			strike.emit(self, damage, reach, launch)
 		if attack_kind == &"dash":
@@ -141,16 +147,24 @@ func _player_input() -> void:
 			var kind: StringName = &"air" if jump_height > 0 else &"dash" if dash_remaining > 0 or running else &"basic"
 			begin_attack(kind, character.attack_duration, character.attack_duration / 3.0)
 
+func enemy_reach() -> float:
+	var reach := float(enemy_data.get("reach", 105.0))
+	return reach + 100.0 if attack_kind == &"sweep" else 185.0 if attack_kind == &"stomp" else reach
+
 func _enemy_input() -> void:
 	if not is_instance_valid(target) or target.health <= 0 or stun > 0 or jump_height > 0 or attack_kind != &"":
 		return
 	var difference := target.position - position
 	facing = 1.0 if difference.x >= 0 else -1.0
-	if absf(difference.x) < 90 and absf(difference.y) < 30 and ai_cooldown == 0:
-		ai_cooldown = 1.6
-		begin_attack(&"goblin", 0.85, 0.6)
+	if absf(difference.x) < float(enemy_data.get("reach", 105.0)) - 15 and absf(difference.y) < 30 and ai_cooldown == 0:
+		ai_cooldown = float(enemy_data.get("cooldown", 1.6))
+		enemy_attack_count += 1
+		var special := StringName(enemy_data.get("special", "goblin"))
+		var kind := special if enemy_attack_count % 2 == 0 else &"goblin"
+		var windup := float(enemy_data.get("windup", 0.6)) + (0.25 if kind != &"goblin" else 0.0)
+		begin_attack(kind, windup + 0.4, windup)
 	else:
-		velocity.x = signf(difference.x) * 85.0 if absf(difference.x) > 65 else 0.0
+		velocity.x = signf(difference.x) * float(enemy_data.get("speed", 85.0)) if absf(difference.x) > 65 else 0.0
 		velocity.y = signf(difference.y) * 60.0 if absf(difference.y) > 8 else 0.0
 
 func begin_attack(kind: StringName, duration: float, impact: float) -> void:
@@ -177,6 +191,9 @@ func take_hit(damage: int, direction: float, launch: float) -> bool:
 		invulnerability = 0.65
 	hurt.emit(damage)
 	if health == 0:
+		collision_layer = 0
+		collision_mask = 0
+		visible = is_player
 		defeated.emit()
 	return true
 
@@ -191,13 +208,21 @@ func _draw() -> void:
 	if is_instance_valid(art):
 		draw_string(ThemeDB.fallback_font, Vector2(-30, -jump_height - 88), character.display_name.to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
 		return
+	if not is_player and attack_kind != &"" and not strike_fired:
+		var reach := enemy_reach()
+		var radial := attack_kind == &"stomp"
+		var start := -reach if radial or facing < 0 else -12.0
+		var width := reach * 2 if radial else reach + 12.0
+		var warning := Rect2(Vector2(start, -34), Vector2(width, 68))
+		draw_rect(warning, Color(1, 0.22, 0.12, 0.22))
+		draw_rect(warning, Color(1, 0.4, 0.18, 0.9), false, 2)
 	var feet := Vector2(0, -jump_height)
-	var color := character.tint if is_player else Color(0.43, 0.75, 0.35)
+	var color: Color = character.tint if is_player else enemy_data.get("color", Color(0.43, 0.75, 0.35))
 	if flash > 0:
 		color = Color.WHITE
 	if is_player and invulnerability > 0 and int(Time.get_ticks_msec() / 70) % 2 == 0:
 		color.a = 0.5
-	var body_height := 54.0 if is_player else 36.0
+	var body_height := 54.0 if is_player else 58.0 if enemy_data.get("rank") == "boss" else 44.0 if enemy_data.get("rank") == "elite" else 36.0
 	draw_line(feet + Vector2(-8, -4), feet + Vector2(-5, -22), color, 6)
 	draw_line(feet + Vector2(8, -4), feet + Vector2(5, -22), color, 6)
 	draw_rect(Rect2(feet + Vector2(-13, -body_height), Vector2(26, body_height - 19)), color)
@@ -234,7 +259,15 @@ func _draw() -> void:
 			var perpendicular := Vector2(-axis.y, axis.x) * 19
 			draw_line(weapon_end - axis * 18 - perpendicular, weapon_end - axis * 18 + perpendicular, Color.GOLDENROD, 10)
 		draw_line(hand, weapon_end, Color(0.85, 0.87, 0.9) if is_player else Color(0.65, 0.43, 0.25), 5)
-	draw_string(ThemeDB.fallback_font, feet + Vector2(-22, -body_height - 34), character.display_name.to_upper() if is_player else "GOBLIN ∞", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
+	var title := "GOBLIN ∞" if immortal else str(enemy_data.get("name", "Goblin"))
+	var rank: String = enemy_data.get("rank", "normal")
+	if rank != "normal":
+		title = rank.to_upper() + " · " + title
+		draw_arc(feet + Vector2(0, -body_height - 10), 19, PI, TAU, 12, Color.GOLD, 4)
+	if not immortal and not is_player:
+		draw_rect(Rect2(feet + Vector2(-35, -body_height - 29), Vector2(70, 5)), Color("30292d"))
+		draw_rect(Rect2(feet + Vector2(-35, -body_height - 29), Vector2(70.0 * health / max_health, 5)), Color.GOLD if rank != "normal" else Color.GREEN)
+	draw_string(ThemeDB.fallback_font, feet + Vector2(-55, -body_height - 38), title, HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
 
 func draw_ellipse_shadow() -> void:
 	draw_set_transform(Vector2.ZERO, 0, Vector2(1, 0.35))
