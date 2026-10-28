@@ -1,81 +1,73 @@
-# Dungeon Fighter Arad (DFA)
+# Dungeon Fighter Arad — native demo
 
-Browser adaptation of DFO. The current implementation targets a single-player Mirkwood combat slice with Male Slayer and Male Gunner. The broader nine-dungeon Grand Flores scope remains future work.
+A minimal offline side-view action prototype built with **Godot 4.7.2 / GDScript**. macOS is the development target; Windows remains a supported build target. The browser prototype has been replaced.
 
-## Run
+## Play on macOS
 
-Requires Node.js 20.19+ or 22.12+ and npm.
+Open `build/macos/Dungeon Fighter Arad.app`.
 
-```sh
-npm ci
-npm run dev
-```
+1. Choose **Start**.
+2. Select **Slayer**, then **Enter dungeon**.
+3. Attack, jump and dodge around the immortal goblin. Red wind-up warns of its attack.
+4. **Esc** pauses. Restart the arena, change character selection, return to the main menu or quit from the pause menu. Defeat offers a restart.
 
-Open the local URL printed by Vite (normally http://127.0.0.1:5173). Select a fighter and choose **Enter Mirkwood**. Desktop keyboard required.
+No browser, local server, account or internet connection is needed. The app bundles its runtime and game resources. This is a local development build; public distribution/signing is outside this demo.
 
-```sh
-npm test
-npm run build
-npm run preview
-```
-
-Build output is static in `dist/`; all runtime artwork is local. No account, server, or live asset host is needed to play. Vite can use a relative deployment base with `npm run build -- --base=./`.
-
-## Fixed controls
+## Controls
 
 | Action | Key |
 | --- | --- |
-| Move on ground plane | Arrow keys |
-| Run | Double-tap left/right, hold second tap |
-| Basic attack | X (hold for a continuous combo / shots) |
-| Jump / aerial basic attack | C / X while airborne |
-| Upper Slash / Jack Spike | Z |
-| Ghost Slash / Gatling Gun | A |
-| Guard / Mach Kick | S |
-| Skill 2 command key | Space (reserved; no skill assigned in this slice) |
-| Pause / resume | Escape |
+| Move along ground plane | Arrow keys |
+| Run | Double-tap left/right; hold second tap |
+| Basic combo / jump attack / running attack | X |
+| Launcher | Z |
+| Jump | C |
+| Dodge with brief invulnerability | Space |
+| Pause / resume / back | Esc |
+| Menu navigation / activate | Arrows / Enter |
 
-Core action keys follow classic PC defaults. A/S are fixed DFA skill assignments, not a claim that DFO assigns these skills to those slots by default. Other hotbar slots and directional command sequences are not implemented. Key remapping is unavailable.
+Only one character and one arena are implemented. The goblin reacts to damage, knockback and launch, but cannot die. The player can be defeated. Hits and total damage are displayed for combat testing.
 
-## Play
+## Scope
 
-Clear every enemy to unlock the next exit. Most rooms exit to the right; the approach room exits through the upper-right opening. The minimap and exit hint show the route. Clear the final room, including Tau Beast, to win. A small health recovery is granted between rooms. Pause provides restart and character selection; defeat and victory provide replay.
+The goal is playable controls, not graphics fidelity. All visuals are original geometric placeholders drawn in Godot; no DFO artwork, audio, browser UI, or external asset downloads are used at runtime. There are no full dungeon routes, procedural levels, upgrades, saves, equipment, audio or multiplayer yet. The intended direction is a roguelike dungeon game with side-view action, rather than an exact DFO recreation.
 
-## Fidelity and current limits
+## Develop
 
-Original sourced DFO character and forest artwork is included; there is no generated forest substitute. Source provenance and remaining identity checks are documented in [public/assets/SOURCES.md](public/assets/SOURCES.md). The forest scene is an unmodified DFO image sourced from FND (`src/res/scene/bg/3.jpg`); its exact historical Mirkwood room identity is not verified. The Gunner uses an original red-coat avatar, rather than a verified base-class default costume. The Tau source appearance is not yet confirmed as the exact historical boss variant.
-
-Room compositions, enemy distributions, hit effects, damage, cooldowns, and skill timing are authored for this slice. They are not an exact recreation of the original game. The route uses five connected rooms from A2 to D1; the wiki confirms the endpoints, not this authored route. Only basic Goblin/Thrower/Tau enemies are implemented; the wiki's full named goblin roster remains a fidelity gap. No inventory, equipment, progression, quests, online co-op, audio, advanced classes, or mobile controls.
-
-Sources: [Mirkwood reference](https://wiki.dfo.world/view/Mirkwood), [original resource project](https://github.com/2DScrollGames/DFQ-Original), [community sprite pack thread](https://www.chronocrash.com/forum/threads/supaman-presents-dfo-sprite-sheets.4245/).
-
-## Asset preparation
-
-Prepared images and metadata are checked into `public/assets/`. To reproduce, obtain the source resource project and community sprite sheet listed in `SOURCES.md`, then run with Python + Pillow:
+Import `project.godot` in Godot **4.7.2**, then press F6/F5 or run:
 
 ```sh
-python3 scripts/prepare-assets.py /path/to/DFQ-Original-master \
-  --gunner-sheet '/path/to/DFO Spritesheets/ezgif-5-fcba9dbc4693.png' \
-  --scenery-file /path/to/FND/src/res/scene/bg/3.jpg
+godot --path .
 ```
 
-The preparation script treats Lua metadata as text and never runs downloaded scripts.
-
-## Browser acceptance
-
-`tests/browser/mirkwood.mjs` runs both fighters using browser keyboard input, checks pause/resume and victory, and fails on runtime errors. Set `PLAYWRIGHT_MODULE` to a local Playwright package path and optionally `DFA_URL` to the running app URL:
+A local engine downloaded during development may be available at `.tools/godot/Godot.app/Contents/MacOS/Godot`.
 
 ```sh
-PLAYWRIGHT_MODULE=/path/to/node_modules/playwright node tests/browser/mirkwood.mjs
+godot --headless --path . --import
+godot --headless --path . --script res://tests/native/demo_test.gd
 ```
 
-The included fallback module path is specific to the author's Codex runtime; normal contributors should set the environment variable. The test does not alter game health, damage, enemies, or room state. `window.dfaSnapshot()` exposes a cloned, read-only diagnostic snapshot for its input driver.
+The integration runner checks menu flow, selection, movement, attacks, immortality, lane separation, jump/landing, dodge, pause/resume, defeat and restart. Native window/input testing is separate from headless checks.
 
-## Architecture
+## Build
 
-- `src/game/simulation.ts`: render-independent fixed-step combat and enemy AI.
-- `src/game/input.ts`: fixed bindings and double-tap detection.
-- `src/game/renderer.ts`: Canvas 2D rendering and original sprite atlas.
-- `src/main.ts`: browser loop, focus handling, HUD and menus.
+Install matching Godot 4.7.2 export templates through Godot’s Export Template Manager. The local `.tools/godot` editor is already configured in self-contained mode with workspace-local macOS and Windows templates. The presets use the engine’s standard template location.
 
-Input actions, simulation state and presentation are separate to leave room for future co-op work. No networking implementation or drop-in multiplayer guarantee is implied.
+```sh
+mkdir -p build/macos build/windows
+godot --headless --path . --export-release "macOS" "build/macos/Dungeon Fighter Arad.app"
+godot --headless --path . --export-release "Windows Desktop" "build/windows/Dungeon Fighter Arad.exe"
+```
+
+The macOS preset produces a universal Intel/Apple Silicon app with a local ad-hoc signature. The Windows preset targets x86_64. A Windows export is not a claim of testing on Windows hardware.
+
+## Files
+
+- `game/app.gd`: menus, selection, pause and HUD.
+- `game/fighter.gd`: player controller, goblin AI and side-view combat.
+- `game/arena.gd`: one arena, hit checks and feedback.
+- `scenes/main.tscn`: entry scene.
+- `export_presets.cfg`: macOS and Windows builds.
+- `tests/native/demo_test.gd`: headless integration checks.
+
+Godot Engine is distributed under its MIT license. The Mac demo ZIP includes `GODOT-LICENSES.txt` with engine and third-party notices. See the engine’s bundled notices and https://godotengine.org/license/ . The DFA name and prototype do not imply endorsement by Neople/Nexon.
