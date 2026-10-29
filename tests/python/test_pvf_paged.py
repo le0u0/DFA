@@ -8,6 +8,7 @@ import struct
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 import zlib
 from collections import OrderedDict
@@ -70,6 +71,25 @@ class PagedTests(unittest.TestCase):
         words = [0x69706B6E, 0, 0, 0, 0, 0, count, 0, 16, 1, 4, 8]
         size = 48 + count * 24 + 4 + 8 + 8 + 16
         self.assertIsNone(reader.header_fields(struct.pack('<12I', *words), size))
+
+    def test_name_pool_uses_disk_mapping_and_a_separate_size_limit(self):
+        raw = (b'character/swordman/animation\0' * 10000)
+        with patch.object(reader, 'LIMIT', 64):
+            pool = reader.inflate_pool(zlib.compress(raw), len(raw), 'test')
+        try:
+            self.assertIsInstance(pool, reader.mmap.mmap)
+            self.assertEqual(pool[:], raw)
+            self.assertEqual(pool.find(b'swordman'), raw.find(b'swordman'))
+        finally:
+            pool.close()
+
+    def test_name_pool_rejects_bad_sizes_and_checksums(self):
+        raw = b'test pool' * 10000
+        encoded = zlib.compress(raw)
+        for size, data in [(len(raw) - 1, encoded), (len(raw) + 1, encoded),
+                           (len(raw), encoded[:-1]), (reader.POOL_LIMIT + 1, encoded)]:
+            with self.assertRaises((ValueError, zlib.error)):
+                reader.inflate_pool(data, size, 'test')
 
     def test_validates_matching_client_and_extracts_payload(self):
         archive, sealed, exe, payload, wide, _ = fixture()

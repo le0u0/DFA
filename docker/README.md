@@ -73,3 +73,8 @@ If extraction reports that no client material validated the PVF header, upload t
 which validation stage failed and the input ZIP members’ sizes/checksums; it does
 not export executable content or keys. This failure still needs investigation:
 passing fixture tests does not establish support for your particular game archive.
+
+Large retail filename pools are decoded to temporary disk storage inside the
+container and removed when it exits. Allow up to 4 GiB of temporary free space in
+Docker Desktop; this still does not unpack the game. The helper prints each
+pool’s compressed and expanded size and reports progress through the file index.

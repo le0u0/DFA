@@ -7,12 +7,15 @@ is independently implemented and does not bundle client keys or executables.
 """
 from collections import OrderedDict
 import re
+import mmap
+import tempfile
 import struct
 import zlib
 
 PAGE = 10 * 1024 * 1024
 GUARD = 10 * 1024
 LIMIT = 256 * 1024 * 1024
+POOL_LIMIT = 0x7FFFFFFF  # Name pools declare a signed 32-bit inflated length.
 MASK = 0xFFFFFFFF
 PEM = re.compile(rb'-----BEGIN (?:RSA )?PRIVATE KEY-----[\s\S]{1,8192}?-----END (?:RSA )?PRIVATE KEY-----')
 HEX = re.compile(rb'(?<![0-9a-fA-F])[0-9a-fA-F]{64}(?![0-9a-fA-F])')
@@ -130,12 +133,40 @@ def unlock(header, size, sealed, keys, metadata):
 
 def inflate(data, expected):
     if not 0 <= expected <= LIMIT:
-        raise ValueError('Unsupported decompressed section size')
+        raise ValueError(f'Unsupported body section size: {expected:,} bytes (limit {LIMIT:,})')
     decoder = zlib.decompressobj()
     result = decoder.decompress(data, expected + 1)
     if len(result) != expected or not decoder.eof:
         raise ValueError('PVF compressed section failed size/checksum validation')
     return result
+
+
+def inflate_pool(data, expected, label):
+    """Validate large name pools while keeping inflated bytes out of Python RAM.
+
+    An anonymous mapping retains the temporary file until the reader is released;
+    no unpacked pool is left behind in the user's output folder.
+    """
+    if not 0 <= expected <= POOL_LIMIT:
+        raise ValueError(f'Unsupported {label} name-pool size: {expected:,} bytes (limit {POOL_LIMIT:,})')
+    decoder = zlib.decompressobj()
+    total = 0
+    with tempfile.TemporaryFile() as target:
+        for offset in range(0, len(data), 65536):
+            pending = data[offset:offset + 65536]
+            while pending:
+                raw = decoder.decompress(pending, min(1024 * 1024, expected - total + 1))
+                total += len(raw)
+                if total > expected:
+                    raise ValueError(f'{label} name pool exceeds its declared size')
+                target.write(raw)
+                pending = decoder.unconsumed_tail
+        if total != expected or not decoder.eof:
+            raise ValueError(f'{label} name pool failed size/checksum validation: expected {expected:,}, got {total:,} bytes')
+        if not total:
+            return b''
+        target.flush()
+        return mmap.mmap(target.fileno(), 0, access=mmap.ACCESS_READ)
 
 
 class PagedPVF:
@@ -165,7 +196,8 @@ class PagedPVF:
                 continue
             if not 0 < length <= len(encoded) - cursor:
                 raise ValueError('Invalid name-pool extent')
-            self.pools.append(inflate(section(encoded[cursor:cursor + length], key, 0x269EC9), expected))
+            print(f'Decoding {key} name pool: {length:,} compressed / {expected:,} expanded bytes (temporary disk storage).', flush=True)
+            self.pools.append(inflate_pool(section(encoded[cursor:cursor + length], key, 0x269EC9), expected, key))
             cursor += length
         group_offset = names_offset + len(encoded)
         groups = section(self.read_at(group_offset, self.header['groups'] * 8), 'Gidx')
@@ -181,11 +213,20 @@ class PagedPVF:
         print('Resolving action filenames.', flush=True)
         self.entries = []
         classes = ('swordman', 'gunner', 'fighter', 'mage', 'priest')
+        prefixes = tuple(f'character/{c}/' for c in classes)
+        directories = {}
         for number, (name, directory, group, offset, length, kind) in enumerate(struct.iter_unpack('<6I', table), 1):
             if number % 500_000 == 0:
                 print(f'Checked {number:,} / {count:,} file records.', flush=True)
-            path = (self.resolve(directory).rstrip('/') + '/' + self.resolve(name)).replace('\\', '/').lower().lstrip('/')
-            if not path.startswith(tuple(f'character/{c}/' for c in classes)) or not path.endswith(('.ani', '.chr')):
+            if directory not in directories:
+                if len(directories) >= 65536:
+                    directories.clear()
+                directories[directory] = self.resolve(directory).replace('\\', '/').lower().strip('/') + '/'
+            folder = directories[directory]
+            if not folder.startswith(prefixes):
+                continue
+            path = folder + self.resolve(name).replace('\\', '/').lower()
+            if not path.endswith(('.ani', '.chr')):
                 continue
             if '..' in path.split('/') or group >= len(self.group_index) or offset + length > self.group_index[group][1]:
                 raise ValueError('Invalid action entry or group boundary')
