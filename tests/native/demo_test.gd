@@ -21,6 +21,12 @@ func run() -> void:
 	check(app.screen == "main", "opens on main menu")
 	check(app.find_child("StartButton", true, false) != null, "main has Start")
 	check(app.find_child("QuitButton", true, false) != null, "main has Quit")
+	check(app.ui.find_children("*", "Button", true, false).size() == 2, "main has only Start and Quit")
+	check(app.find_child("ArtDemoButton", true, false) == null and app.find_child("AnimationLabButton", true, false) == null, "separate Slayer demo entries removed")
+	var offline_subtitle := false
+	for label in app.ui.find_children("*", "Label", true, false):
+		offline_subtitle = offline_subtitle or "Offline" in label.text
+	check(not offline_subtitle, "offline subtitle removed")
 	app.find_child("StartButton", true, false).pressed.emit()
 	await process_frame
 	check(app.screen == "selection", "Start opens character selection")

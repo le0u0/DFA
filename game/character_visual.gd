@@ -1,8 +1,11 @@
 extends Node2D
 
+const SlayerVisual := preload("res://game/slayer_animation_proof.gd")
+
 # Rows: left idle/walk/attack, then right idle/walk/attack. No body mirroring.
+# Slayer uses six columns; other draft classes use four.
 const BODIES := {
-	"sword": preload("res://assets/characters/slayer/demo-atlas.png"),
+	"sword": preload("res://assets/characters/slayer/animation-proof/body-atlas.png"),
 	"gun": preload("res://assets/characters/gunner/demo-atlas.png"),
 	"fists": preload("res://assets/characters/fighter/demo-atlas.png"),
 	"staff": preload("res://assets/characters/mage/demo-atlas.png"),
@@ -15,14 +18,6 @@ const EQUIPMENT := {
 	"staff": [preload("res://assets/weapons/staff-0.png"), preload("res://assets/weapons/staff-1.png")],
 	"cross": [preload("res://assets/weapons/cross-0.png"), preload("res://assets/weapons/cross-1.png")],
 }
-const HANDS := [
-	[Vector2(58, 92), Vector2(58, 92), Vector2(58, 92), Vector2(58, 92)],
-	[Vector2(57, 78), Vector2(57, 78), Vector2(57, 78), Vector2(57, 78)],
-	[Vector2(51, 41), Vector2(38, 78), Vector2(42, 94), Vector2(44, 86)],
-	[Vector2(87, 93), Vector2(87, 93), Vector2(87, 93), Vector2(87, 93)],
-	[Vector2(87, 84), Vector2(87, 84), Vector2(87, 84), Vector2(87, 84)],
-	[Vector2(89, 41), Vector2(96, 78), Vector2(85, 94), Vector2(85, 86)],
-]
 var weapon_index := 0
 var row := 3
 var frame := 0
@@ -31,6 +26,7 @@ var actor
 var body: Texture2D
 var equipment: Array
 var weapon_kind := "sword"
+var slayer_visual: Node2D
 
 func _ready() -> void:
 	actor = get_parent()
@@ -38,24 +34,32 @@ func _ready() -> void:
 	body = BODIES[weapon_kind]
 	equipment = EQUIPMENT[weapon_kind]
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	if weapon_kind == "sword":
+		slayer_visual = SlayerVisual.new()
+		slayer_visual.name = "SlayerBody"
+		slayer_visual.repeat_attack = false
+		add_child(slayer_visual)
 
 func _physics_process(delta: float) -> void:
 	clock += delta
 	var direction: float = actor.facing
 	row = 3 if direction > 0 else 0
 	var attacking: bool = actor.attack_kind != &""
-	if actor.health <= 0:
-		frame = 3
-	elif attacking:
-		row += 2
-		var progress: float = clampf(actor.attack_elapsed / maxf(actor.attack_duration, 0.001), 0, 0.999)
-		# Impact pose starts at the existing one-third strike time.
-		frame = 0 if progress < 1.0 / 3.0 else 1 if progress < 0.55 else 2 if progress < 0.8 else 3
-	elif actor.velocity.length() > 1 and actor.stun <= 0:
-		row += 1
-		frame = int(clock * (12 if actor.running else 8)) % 4
+	if weapon_kind == "sword":
+		_update_slayer()
 	else:
-		frame = int(clock * 4) % 4
+		if actor.health <= 0:
+			frame = 3
+		elif attacking:
+			row += 2
+			var progress: float = clampf(actor.attack_elapsed / maxf(actor.attack_duration, 0.001), 0, 0.999)
+			# Impact pose starts at the existing one-third strike time.
+			frame = 0 if progress < 1.0 / 3.0 else 1 if progress < 0.55 else 2 if progress < 0.8 else 3
+		elif actor.velocity.length() > 1 and actor.stun <= 0:
+			row += 1
+			frame = int(clock * (12 if actor.running else 8)) % 4
+		else:
+			frame = int(clock * 4) % 4
 	position.y = -actor.jump_height
 	modulate = Color.WHITE if actor.flash <= 0 else Color(1.7, 1.7, 1.7)
 	if actor.health <= 0:
@@ -64,15 +68,39 @@ func _physics_process(delta: float) -> void:
 		modulate.a = 0.5
 	queue_redraw()
 
+func _update_slayer() -> void:
+	var action := "idle"
+	if actor.health <= 0:
+		frame = 5
+	elif actor.attack_kind != &"":
+		action = "attack"
+		var progress: float = clampf(actor.attack_elapsed / maxf(actor.attack_duration, 0.001), 0.0, 0.999)
+		# Preserve gameplay's one-third impact boundary; this is still draft art.
+		frame = 0 if progress < 1.0 / 6.0 else 1 if progress < 1.0 / 3.0 else 2 if progress < 0.55 else 3 if progress < 0.75 else 4 if progress < 0.9 else 5
+	elif actor.velocity.length() > 1 and actor.stun <= 0:
+		action = "walk"
+		# Original run definitions/retargeted run art are not available yet.
+		frame = int(clock * (12 if actor.running else 8)) % 6
+	else:
+		frame = int(clock / 0.18) % 6
+	row = (3 if actor.facing > 0 else 0) + ["idle", "walk", "attack"].find(action)
+	slayer_visual.action = action
+	slayer_visual.facing = "right" if actor.facing > 0 else "left"
+	slayer_visual.weapon_index = weapon_index
+	slayer_visual.seek(frame)
+
 func cycle_weapon() -> void:
 	weapon_index = (weapon_index + 1) % equipment.size()
+	if is_instance_valid(slayer_visual):
+		slayer_visual.weapon_index = weapon_index
+		slayer_visual.queue_redraw()
 	queue_redraw()
 
 func _hand(offhand := false) -> Vector2:
 	var right := row >= 3
 	var action := row % 3
 	if weapon_kind == "sword":
-		return HANDS[row][frame] - Vector2(64, 112)
+		return slayer_visual.hand_anchor()
 	# Pixel anchors authored against normalized body cells, not weapon bounds.
 	var left: Array
 	var facing_right: Array
@@ -124,6 +152,8 @@ func _draw_equipment(offhand := false) -> void:
 	draw_set_transform(Vector2.ZERO)
 
 func _draw() -> void:
+	if is_instance_valid(slayer_visual):
+		return
 	# Most grips sit behind the body hand; gauntlets cover the base glove.
 	if weapon_kind != "fists":
 		_draw_equipment()

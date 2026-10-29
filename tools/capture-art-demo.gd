@@ -7,7 +7,10 @@ func capture() -> void:
 	var app = load("res://scenes/main.tscn").instantiate()
 	root.add_child(app)
 	await process_frame
-	app.start_art_demo()
+	app.find_child("StartButton", true, false).pressed.emit()
+	app.find_child("SlayerButton", true, false).pressed.emit()
+	app.dungeon_index = -1
+	app.find_child("EnterButton", true, false).pressed.emit()
 	app.arena.goblin.ai_enabled = false
 	app.arena.player.position = Vector2(550, 450)
 	await create_timer(0.3).timeout

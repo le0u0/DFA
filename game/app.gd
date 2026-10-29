@@ -1,6 +1,5 @@
 extends Node
 
-const AnimationLab := preload("res://scenes/animation_lab.tscn")
 const Arena := preload("res://game/arena.gd")
 var arena: DemoArena
 var ui: Control
@@ -50,7 +49,7 @@ func _clear_arena() -> void:
 		arena.queue_free()
 	arena = null
 
-func _menu(title: String, subtitle: String) -> VBoxContainer:
+func _menu(title: String, subtitle := "") -> VBoxContainer:
 	var center := CenterContainer.new()
 	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	ui.add_child(center)
@@ -63,11 +62,12 @@ func _menu(title: String, subtitle: String) -> VBoxContainer:
 	heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	heading.add_theme_font_size_override("font_size", 38)
 	box.add_child(heading)
-	var sub := Label.new()
-	sub.text = subtitle
-	sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	sub.add_theme_font_size_override("font_size", 18)
-	box.add_child(sub)
+	if not subtitle.is_empty():
+		var sub := Label.new()
+		sub.text = subtitle
+		sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		sub.add_theme_font_size_override("font_size", 18)
+		box.add_child(sub)
 	return box
 
 func _button(box: VBoxContainer, title: String, node_name: String, callback: Callable) -> Button:
@@ -83,25 +83,9 @@ func show_main() -> void:
 	_clear_ui()
 	_clear_arena()
 	screen = "main"
-	var box := _menu("Dungeon Fighter Arad", "Offline side-view combat demo")
+	var box := _menu("Dungeon Fighter Arad")
 	_button(box, "Start", "StartButton", show_selection).grab_focus()
-	_button(box, "Slayer art demo", "ArtDemoButton", start_art_demo)
-	_button(box, "Slayer animation lab", "AnimationLabButton", show_animation_lab)
 	_button(box, "Quit", "QuitButton", func() -> void: get_tree().quit())
-
-func show_animation_lab() -> void:
-	_clear_ui()
-	_clear_arena()
-	screen = "animation_lab"
-	var lab := AnimationLab.instantiate()
-	lab.back_requested.connect(show_main)
-	ui.add_child(lab)
-
-func start_art_demo() -> void:
-	dungeon_index = -1
-	selected_character = CHARACTERS[0]
-	selected = true
-	start_dungeon()
 
 func show_selection() -> void:
 	_clear_ui()
@@ -299,7 +283,7 @@ func _on_defeated() -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_cancel") and not event.is_echo():
 		get_viewport().set_input_as_handled()
-		if screen == "selection" or screen == "animation_lab":
+		if screen == "selection":
 			show_main()
 		elif screen == "arena":
 			if get_tree().paused:

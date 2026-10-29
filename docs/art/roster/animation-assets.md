@@ -2,9 +2,9 @@
 
 Status: idle/walk/attack proof integrated for all five classes; the complete action set remains planned. See [playable roster demo](gameplay-demo.md). Based on current `game/fighter.gd`, `game/projectile.gd` and class resources on 2026-10-28.
 
-## Slayer motion proof
+## Current gameplay integration
 
-The separate [Slayer animation lab](../slayer/animation-proof/README.md) now provides a recreated chibi idle/walk/basic-attack proof using extracted DFO poses as motion reference. It includes six frames per facing/action, independent equipment and review controls. It does not replace the existing combat renderer or complete the action plan below. Right windup currently holds guard after an anatomy-swapped generated frame was rejected.
+The latest six-frame Slayer source sheet is now used through **Start**, alongside the other four classes. Separate inspection/demo menu entries have been removed. Original DFO action definitions are still missing: sprite images alone do not establish frame order, durations or action variants. Source-faithful run and attacks must be mapped from those definitions before further retargeting is called complete.
 
 ## Production order
 

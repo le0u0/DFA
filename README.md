@@ -16,18 +16,20 @@ Choose **Slayer, Gunner, Fighter, Mage or Priest**, then choose one of two autho
 
 Classes share movement and health. Flame Burst and Smite strike around the player; the other class skills strike forward. The goblin reacts to hits, knockback and launches, and telegraphs its own attacks. The player can be defeated and restart. Hits and total damage appear in the HUD.
 
-All five classes now use chibi pixel body animation with separate equipment sprites. Choose **Start**, select a class and enter the arena; press **V** to switch between two equipment appearances. The **Slayer art demo** shortcut still enters Slayer directly. Idle, walk and attack strips have separate left/right frames. The goblin remains a geometric placeholder. Additional actions currently reuse these draft poses. See [roster art demo details](docs/art/roster/gameplay-demo.md).
+All five classes now use chibi pixel body animation with separate equipment sprites. Choose **Start**, select a class and enter the arena; press **V** to switch between two equipment appearances. Idle, walk and attack strips have separate left/right frames. The goblin remains a geometric placeholder. Additional actions currently reuse these draft poses. See [roster art demo details](docs/art/roster/gameplay-demo.md).
 
-## Slayer animation proof
+## Animation status
 
-Choose **Slayer animation lab** on the main menu for the new DFO-motion-inspired chibi proof: idle/walk/attack, independently authored facings, slow playback, frame stepping and separate sword swapping. This is an isolated art-review scene; combat still uses the existing renderer. See [test instructions and known limits](docs/art/slayer/animation-proof/README.md).
+All character testing uses **Start → character → dungeon**. Slayer now uses the latest six-frame chibi idle/walk/attack artwork in normal gameplay; the other classes retain four-frame prototype strips. **V** changes equipment appearance. Separate Slayer demo screens have been removed.
+
+Original DFO sprite images have been extracted, but their action sequences and timings have not yet been imported. Current run and attack animations are provisional and do not faithfully reproduce the original game. See [animation status and action-reference extraction](docs/art/slayer/animation-proof/README.md).
 
 ## First two dungeons
 
 - **Mosswood Outskirts:** Forest approach → Briar Sentinel elite → Root King boss. Root King alternates a forward strike with a stomp that can be jumped or avoided by changing lanes.
 - **Emberstone Ruins:** Ash courtyard → Obsidian Warden elite → Furnace Lord boss. Furnace Lord alternates a forward strike with an extended sweep; dodge or move out of its marked lane.
 
-Each dungeon has three authored rooms, mortal enemies, enemy health bars and red attack-area warnings. Defeat every enemy to unlock **Next room**. Entering the next room restores 25 HP, capped at 100; health and hit totals otherwise carry between rooms. Boss clear offers the next dungeon or replay. Both dungeons are directly selectable with any class. Restart begins the selected dungeon from room one. Training remains available in the dungeon dropdown and through the Slayer art demo.
+Each dungeon has three authored rooms, mortal enemies, enemy health bars and red attack-area warnings. Defeat every enemy to unlock **Next room**. Entering the next room restores 25 HP, capped at 100; health and hit totals otherwise carry between rooms. Boss clear offers the next dungeon or replay. Both dungeons are directly selectable with any class. Restart begins the selected dungeon from room one. Training remains available in the dungeon dropdown.
 
 Enemies and scenery use drawing primitives; these are playable encounter blockouts with prototype tuning.
 
@@ -58,7 +60,7 @@ With a Godot export available, open `build/macos/Dungeon Fighter Arad.app` on ma
 
 ## Test in a browser with Docker
 
-Install/open Docker Desktop, then run `npm start` in this checkout (requires npm; no `npm install` needed). The direct Docker command is `docker compose up --build`. Open **http://localhost:8080** in Chrome and choose **Slayer animation lab**. Godot is built inside the container. See [Mac setup, controls and Docker details](docker/README.md).
+Install/open Docker Desktop, then run `npm start` in this checkout (requires npm; no `npm install` needed). The direct Docker command is `docker compose up --build`. Open **http://localhost:8080** in Chrome and choose **Start**. Godot is built inside the container. See [Mac setup, controls and Docker details](docker/README.md).
 
 ## Development
 

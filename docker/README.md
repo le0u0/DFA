@@ -13,16 +13,17 @@ npm start
 
 After this initial update, launch with just **`npm start`** (equivalently `npm run start`). No `npm install` is required: the package contains no dependencies, only Docker shortcuts. Node/npm must be installed to use the shortcut; the direct command `docker compose up --build` remains available with Docker Desktop alone. Startup does not pull Git changes automatically. Run `git pull --ff-only` when you want updates; it stops if your local and remote histories have diverged instead of creating a merge commit.
 
-Wait for the build and server startup, then open **http://localhost:8080** and choose **Slayer animation lab**. Click inside the game before using the keyboard. The first build downloads the engine and web template; subsequent builds reuse the cached tools. After pulling new art/code, run `npm start` again.
+Wait for the build and server startup, then open **http://localhost:8080** and choose **Start**, select your character, then enter a dungeon. Click inside the game before using the keyboard. The first build downloads the engine and web template; subsequent builds reuse the cached tools. After pulling new art/code, run `npm start` again.
 
-- **1 / 2 / 3:** idle / walk / attack
-- **F:** switch facing
-- **P:** pause / resume
-- **, / .:** step backward / forward
-- **V:** steel sword / cyan sword / body only
-- **Esc:** main menu
+- **Arrows:** move; double-tap left/right to run
+- **X:** basic attack / combo
+- **Z:** class skill
+- **C:** jump
+- **Space:** dodge
+- **V:** change equipment appearance
+- **Esc:** pause / resume
 
-Choose **0.25×** and **Show grip / feet** to inspect attachment and foot registration. The right windup still holds guard as documented in the [animation-proof notes](../docs/art/slayer/animation-proof/README.md). This does not turn the draft art into final animations.
+For repeatable tests, select **Training · Immortal goblin** in the dungeon dropdown. Test all five classes through the same Start flow. Slayer uses the latest chibi source sheet; source-faithful run/attack remapping is still pending. See [animation status](../docs/art/slayer/animation-proof/README.md).
 
 Stop with **Ctrl+C**, then remove the stopped service with:
 
@@ -44,7 +45,7 @@ The multi-stage Dockerfile downloads Godot **4.6.3**, checks the executable's SH
 
 The serving image contains Python and the exported files, runs as an unprivileged user, and is about **153 MiB** uncompressed. Docker Desktop itself and build caches need additional disk space. The server sets WebAssembly MIME type, no-cache behavior, and cross-origin isolation headers. Game state is not persisted by this preview container.
 
-Validated here on Linux/amd64: complete Docker build/export, container startup as the unprivileged user, HTTP HTML/JS/WASM/PCK responses and headers, and Chromium/WebGL 2 loading. Browser checks exercised lab entry, attack selection, facing, paused frame stepping, cyan/body-only swapping, and Esc back to the main menu; no browser or script errors were reported. Physical Mac/arm64 and Safari have not been tested in this environment.
+Validated here on Linux/amd64: complete Docker build/export, container startup as the unprivileged user, HTTP HTML/JS/WASM/PCK responses and headers, and Chromium/WebGL 2 loading. The initial browser validation exercised the previous inspection controls. That screen has since been removed; current testing uses Start and the normal gameplay controls. Physical Mac/arm64 and Safari have not been tested in this environment.
 
 In managed cloud environments with an injected HTTPS proxy CA, the optional BuildKit secret is supported:
 

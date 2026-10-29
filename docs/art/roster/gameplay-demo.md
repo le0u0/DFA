@@ -10,7 +10,7 @@ Choose **Start → class → Enter dungeon**. **V** switches between two equipme
 | Mage | Corrected v2: black hat, pinstriped coat, red hair | Green / violet orb staff |
 | Priest | Corrected v2: dark hair/beard, asymmetric sleeves | Wood/gold / dark blue heavy cross |
 
-Every body atlas has 24 frames: left idle/walk/attack and right idle/walk/attack, four frames each. Both facings have their own source cells. Runtime body cells are 128×128 with origin (64,112) and nearest filtering. The shared renderer is `game/character_visual.gd`; it selects class textures, hand anchors, weapon angles and equipment layer order. Gauntlets overlay body gloves; other equipment sits behind the grip hand.
+The four non-Slayer body atlases have 24 frames: left idle/walk/attack and right idle/walk/attack, four frames each. Both facings have their own source cells. Runtime body cells are 128×128 with origin (64,112) and nearest filtering. The shared renderer is `game/character_visual.gd`; it selects class textures, hand anchors, weapon angles and equipment layer order. Gauntlets overlay body gloves; other equipment sits behind the grip hand.
 
 Attack impact poses still start at the gameplay strike time (one third of attack duration). Projectile spawning, damage, range, launch, cooldown, collision and targeting remain unchanged. V is cosmetic, not an inventory or equipment-stats system.
 
@@ -28,7 +28,7 @@ The older grid export included disconnected shoe/hair fragments from neighboring
 
 All five legacy atlases were regenerated. [Pixel-difference QA](sprite-cell-cleanup-qa.json) confirms that only stray pixels became transparent; all remaining pixels, cell sizes, scale and registration are identical. Equipment textures were preserved with the `--bodies-only` option. Five Python regression checks include the reported Fighter pose and faint-alpha/raised-hand cases. Run them with `python3 -m unittest discover -s tests/python -v` (requires Pillow).
 
-The newer six-frame Slayer proof is a separate **Slayer animation lab** menu entry. Choosing a class through Start still uses the older four-frame gameplay renderer; changing the startup command to `npm start` does not change character art.
+Slayer now uses the newer six-frame chibi source through Start. All testing uses normal gameplay; separate Slayer demo entries have been removed. Original run and attack sequences are still pending action-definition extraction.
 
 ## Verification
 

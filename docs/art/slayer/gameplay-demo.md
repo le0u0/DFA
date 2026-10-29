@@ -2,7 +2,7 @@
 
 This first proof has been extended to the [full five-class roster](../roster/gameplay-demo.md). The details below describe Slayer's initial asset set.
 
-Choose **Slayer art demo** on the main menu, or select Slayer through Start. Existing movement/combat keys remain; **V** cycles Steel / Cyan sword appearance. This swap is visual only and preserves combat stats.
+Select Slayer through **Start → Slayer → dungeon**. The old separate demo shortcut has been removed. This document records the initial four-frame asset set; current Slayer gameplay uses the newer six-frame source described in [animation status](animation-proof/README.md). Existing movement/combat keys remain; **V** cycles Steel / Cyan sword appearance. This swap is visual only and preserves combat stats.
 
 ## Implemented
 

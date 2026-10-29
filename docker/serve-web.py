@@ -23,8 +23,8 @@ if __name__ == "__main__":
     print(
         "\nDFA browser preview is ready.\n"
         "Open http://localhost:8080 in your browser.\n"
-        "Choose 'Slayer animation lab' on the main menu.\n"
-        "1/2/3: idle/walk/attack | F: facing | P: pause | ,/.: step | V: sword\n"
+        "Choose Start, select a character and enter a dungeon.\n"
+        "Arrows: move / double-tap to run | X: attack | Z: skill | C: jump | V: equipment\n"
         "Leave this terminal running. Press Ctrl+C to stop.\n",
         flush=True,
     )

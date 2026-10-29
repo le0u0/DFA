@@ -1,65 +1,46 @@
-# Slayer chibi animation proof
+# Slayer animation source and gameplay status
 
-A separate **Slayer animation lab** on the main menu previews recreated chibi idle, walk and basic attack animations. The decoded DFO art was used to study poses, weight shifts and layering; its sprites are not the lab's runtime artwork. Approved Slayer v6 remains the costume/proportion reference.
+Test through **Start → Slayer → Enter dungeon**, the same flow as every other character. The separate Slayer art demo and animation lab have been removed, along with the main menu's Offline subtitle.
 
-![Godot animation lab](preview.png)
+Slayer's latest recreated chibi idle/walk/attack sheet is now connected to gameplay. It has six frames per action/facing, independently authored facings and separate sword equipment. Normal movement, damage, hit windows, collision and equipment stats remain controlled by the existing game code.
 
-Paired-facing captures: [idle](idle-preview.gif), [walk](walk-preview.gif), [attack](attack-preview.gif). These use the lab timing; they are visual-review clips, not recorded gameplay.
+## Why these actions do not yet match DFO
 
-## Test on your Mac
+The supplied NPKs yielded sprite images and numeric frame indices. They did not establish which frames form each run, combo stage, aerial/running attack or skill, nor the original delays and attack events. The earlier prototype used generic generated poses; running reused the walk strip at a higher rate. That is not a completed recreation of the original actions.
 
-Without a native Godot installation, use the [Docker/browser setup](../../../../docker/README.md). The steps below use the native editor.
+Connecting the latest Slayer sheet through Start does not resolve that missing mapping. Its attacks remain provisional, the right windup holds guard, and running still reuses walk art. The other four classes retain their older four-frame source sheets. These are explicit remaining tasks, not verified source-faithful animations.
 
-In your existing DFA checkout:
+The next input is the original basic `.ani` action definitions and `.chr` links from `Script.pvf`, followed by a frame-by-frame retargeting pass into our approved chibi designs. Preserve original action variants, pose order and durations; keep body/equipment separate. If source timing differs from current combat tuning, assess the impact boundary explicitly rather than silently changing gameplay to fit generated art.
 
-```sh
-git fetch origin
-git switch dfo-character-animations
-```
+## Extract the missing reference on your Mac
 
-Open `project.godot` in Godot, press **F5**, then choose **Slayer animation lab**. The previous Slayer art demo still enters the unchanged combat arena.
-
-1. Press **1**, **2**, **3** to review idle, walk and basic attack.
-2. Press **F** to compare independently authored left/right views. The magenta arm must stay anatomically left; the normal braced right hand holds the sword.
-3. Choose **0.25×**, then press **P** to pause. Use **,** / **.** or the frame buttons to inspect each pose. Stepping pauses playback; **P** resumes.
-4. Press **V** to cycle Steel, Cyan and Body only. Check the sword stays attached to the normal hand and the body art does not change when swapping equipment.
-5. Enable **Show grip / feet**. Yellow marks the authored hand anchor; cyan marks the foot origin. Check for visible grip gaps, floating soles, size changes and costume/arm changes across frames.
-6. Turn off **Loop attack** to inspect the recovery hold. Reselect Attack or turn looping on to restart. **Esc** returns to the main menu.
-
-The large view is 3× inspection scale; the small view is 1× gameplay size. Check both: an enlarged frame can conceal readability problems at game scale. Current acceptance is a style/motion proof, not final production approval.
-
-## Scope and known limits
-
-- Six clips, 36 registered 128×128 cells: six idle/walk/attack frames for each facing. One source scale of 0.4; frames are translated to a common foot baseline, not independently resized.
-- New body art was generated using `image_gen.imagegen`, then sliced and registered. Source images, complete prompts and provenance are preserved here. Runtime atlas, timing, grips and registration live in `assets/characters/slayer/animation-proof/`.
-- Walk poses now alternate legs/arms. Idle differences remain subtle. Artwork still needs pixel-grid/palette and motion polish.
-- Generated right overhead windup had swapped cursed-arm anatomy. That cell is deliberately excluded; right attack frame 2 holds the guard pose. The left attack retains its overhead pose. Do not treat the two facings as a finished, matching sword technique.
-- Weapon grips and angles are authored for these normalized cells. Weapons remain separate; body fingers cover the grip. Dedicated foreground hands, per-pose occlusion, full swing arcs and grip cleanup remain unfinished.
-- Attack timing is a provisional 0.6-second clip, entering impact at 0.2 seconds (one third). This visual-only lab does not change actual damage, hit windows, collision, movement or existing gameplay rendering.
-- Run, jump, dodge, skills, hit, defeat and the other four classes have not been recreated in this proof. Original Mage/Priest weapon mapping remains separate extraction work.
-
-## Verification
-
-Tested with Godot **4.6.3** in this cloud workspace (the repository's documented development version is 4.7.2). Editor import and real OpenGL rendering succeeded. Captured all 36 lab frames; inspected impact poses in both facings, idle/walk grips and the left overhead pose. A small right-walk grip offset was corrected during this review.
-
-- Animation lab: **24 checks passed** (controls, freeze/step, facings, equipment isolation, impact boundary, recovery, main-menu return and unchanged gameplay entry).
-- Existing demo / roster / art / dungeon suites: **487 checks passed**.
-- macOS resource-pack export succeeded; the 24 lab checks also passed when run against the exported pack, including runtime JSON loading. This does not constitute a macOS application-bundle export or a physical Mac test.
+With `~/Documents/DFO.zip` still present, run in this repository:
 
 ```sh
-godot --headless --path . --editor --import --quit
-godot --headless --path . --script res://tests/native/animation_lab_test.gd
+python3 tools/extract-dfo-action-reference.py
 ```
 
-Rebuild the atlas with Python 3 and Pillow:
+Upload **Documents/DFO-action-reference.zip** in our chat. This standard-library-only tool reads the PVF index and selected data directly inside the ZIP; it does not unpack the 44 GB game or write the entire 667 MB PVF. The reference output is kept below the per-file upload limit. If this client uses an unsupported PVF variant, it creates `DFO-action-diagnostic.zip` instead; upload that diagnostic.
+
+The container reader is checked against an independently assembled encrypted PVF fixture. It has not yet been tested against this user's actual Script.pvf, which is not present in the cloud workspace.
+
+## Test gameplay on your Mac
+
+Use the [Docker/browser setup](../../../../docker/README.md), or open `project.godot` in Godot and press F5.
+
+1. Choose **Start**, select **Slayer** and choose **Training · Immortal goblin** for repeatable checks.
+2. Use arrows to walk and double-tap left/right to run; compare the current fallback visually, without treating it as the original run.
+3. Use **X** for combos, **Z** for class skill, **C** for jump, **Space** for dodge and **V** to compare separate swords.
+4. Use **Esc** to pause or return through the pause menu.
+
+## Preserved art sources
+
+Unmodified generated source sheets, prompts and provenance remain here. Runtime atlas, authored timing/grips and registration are in `assets/characters/slayer/animation-proof/`. One source scale is used for all cells. A generated right overhead pose with swapped cursed-arm anatomy was deliberately rejected; the runtime guard hold remains a known visual limitation.
+
+Historical paired-facing inspection captures: [idle](idle-preview.gif), [walk](walk-preview.gif), [attack](attack-preview.gif). They are source-sheet review clips, not evidence of matched original gameplay animation.
+
+Rebuild source assets with Python/Pillow:
 
 ```sh
 python3 tools/normalize-slayer-animation-proof.py
-```
-
-For real-renderer captures (requires a graphical display):
-
-```sh
-mkdir -p build
-godot --path . --script res://tools/capture-animation-lab.gd
 ```

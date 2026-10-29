@@ -22,13 +22,16 @@ func run() -> void:
 	var app := Main.instantiate()
 	root.add_child(app)
 	await tick()
-	app.find_child("ArtDemoButton", true, false).pressed.emit()
+	app.find_child("StartButton", true, false).pressed.emit()
+	app.find_child("SlayerButton", true, false).pressed.emit()
+	app.dungeon_index = -1
+	app.find_child("EnterButton", true, false).pressed.emit()
 	await tick()
 	var player: DemoFighter = app.arena.player
 	app.arena.goblin.ai_enabled = false
 	var visual: Node2D = player.art
-	check(visual != null, "Art demo installs Slayer renderer")
-	check(visual.body.get_size() == Vector2(512, 768), "Body atlas has 24 fixed cells")
+	check(visual != null, "Start installs Slayer renderer")
+	check(visual.body.get_size() == Vector2(768, 768), "Slayer body atlas has 36 fixed cells")
 	check(visual.row == 3, "Right idle uses authored right-facing row")
 	player.facing = -1
 	await tick()
@@ -48,7 +51,7 @@ func run() -> void:
 	await tick()
 	check(visual.row == 2 and visual.frame == 0, "Attack starts with anticipation")
 	await tick(14)
-	check(visual.frame == 1, "Impact pose follows existing strike timing")
+	check(visual.frame == 2, "Impact pose follows existing strike timing")
 	app.pause_game()
 	var previous_clock: float = visual.clock
 	var previous_frame: int = visual.frame
@@ -62,7 +65,7 @@ func run() -> void:
 	check(visual.weapon_index == 0, "Sword selection cycles back")
 	player.health = 0
 	await tick(10)
-	check(visual.row == 0 and visual.frame == 3, "Defeated player holds a still pose")
+	check(visual.row == 0 and visual.frame == 5, "Defeated player holds a still pose")
 	for definition: DemoCharacter in app.CHARACTERS:
 		app.selected_character = definition
 		app.selected = true
@@ -73,7 +76,7 @@ func run() -> void:
 		visual = player.art
 		var prefix := definition.display_name + ": "
 		check(visual != null and visual.weapon_kind == definition.weapon, prefix + "class renderer selected")
-		check(visual.body.get_size() == Vector2(512, 768), prefix + "24-frame atlas available")
+		check(visual.body.get_size() == (Vector2(768, 768) if definition.weapon == "sword" else Vector2(512, 768)), prefix + "class atlas available")
 		check(visual.equipment.size() == 2, prefix + "two independent equipment sprites")
 		player.facing = -1
 		Input.action_press("move_left")
@@ -82,12 +85,12 @@ func run() -> void:
 		Input.action_release("move_left")
 		player.begin_attack(&"basic", 0.6, 0.2)
 		await tick(15)
-		check(visual.row == 2 and visual.frame == 1, prefix + "left attack impact")
+		check(visual.row == 2 and visual.frame == (2 if definition.weapon == "sword" else 1), prefix + "left attack impact")
 		await tick(30)
 		player.facing = 1
 		player.begin_attack(&"heavy", 0.6, 0.2)
 		await tick(15)
-		check(visual.row == 5 and visual.frame == 1, prefix + "right skill impact")
+		check(visual.row == 5 and visual.frame == (2 if definition.weapon == "sword" else 1), prefix + "right skill impact")
 		var before_damage: int = player.character.damage
 		var before_reach: float = player.character.reach
 		Input.action_press("swap_weapon")
