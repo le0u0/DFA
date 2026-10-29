@@ -54,6 +54,23 @@ def fixture():
 
 
 class PagedTests(unittest.TestCase):
+    def test_accepts_validated_retail_header_with_five_million_entries(self):
+        # Archive metadata from the user's v2 diagnostic, not client key material.
+        words = [1768975214, 1770107553, 436067158, 1078246173,
+                 2099461360, 2777282625, 5040333, 210426238,
+                 456653428, 70911, 48217952, 40672958]
+        raw = struct.pack('<12I', *words)
+        fields = reader.header_fields(raw, 667079666)
+        self.assertIsNotNone(fields)
+        self.assertEqual(fields['files'], 5040333)
+        self.assertIsNone(reader.header_fields(raw, 667079667))
+
+    def test_rejects_index_that_exceeds_memory_bound(self):
+        count = reader.LIMIT // 24 + 1
+        words = [0x69706B6E, 0, 0, 0, 0, 0, count, 0, 16, 1, 4, 8]
+        size = 48 + count * 24 + 4 + 8 + 8 + 16
+        self.assertIsNone(reader.header_fields(struct.pack('<12I', *words), size))
+
     def test_validates_matching_client_and_extracts_payload(self):
         archive, sealed, exe, payload, wide, _ = fixture()
         keys, metadata = reader.client_material(io.BytesIO(exe))

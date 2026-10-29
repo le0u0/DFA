@@ -71,7 +71,7 @@ def header_fields(plain, size):
         return None
     words = struct.unpack('<12I', plain)
     count, body, groups, hashes, names = words[6], words[8], words[9], words[10], words[11]
-    if not (0 < count <= 2_000_000 and 0 < groups < 100_000 and 0 < names <= LIMIT and hashes > 0):
+    if not (0 < count * 24 <= LIMIT and 0 < groups < 100_000 and 0 < names <= LIMIT and hashes > 0):
         return None
     if 48 + count * 24 + hashes + names + groups * 8 + body != size:
         return None
@@ -181,7 +181,9 @@ class PagedPVF:
         print('Resolving action filenames.', flush=True)
         self.entries = []
         classes = ('swordman', 'gunner', 'fighter', 'mage', 'priest')
-        for name, directory, group, offset, length, kind in struct.iter_unpack('<6I', table):
+        for number, (name, directory, group, offset, length, kind) in enumerate(struct.iter_unpack('<6I', table), 1):
+            if number % 500_000 == 0:
+                print(f'Checked {number:,} / {count:,} file records.', flush=True)
             path = (self.resolve(directory).rstrip('/') + '/' + self.resolve(name)).replace('\\', '/').lower().lstrip('/')
             if not path.startswith(tuple(f'character/{c}/' for c in classes)) or not path.endswith(('.ani', '.chr')):
                 continue
