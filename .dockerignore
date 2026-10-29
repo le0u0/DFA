@@ -1,0 +1,13 @@
+.git
+.godot
+.tools
+build
+docs
+tests
+export_templates
+feature_profiles
+script_templates
+text_editor_themes
+.DS_Store
+*.tmp
+**/__pycache__

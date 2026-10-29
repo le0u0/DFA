@@ -56,6 +56,10 @@ With a Godot export available, open `build/macos/Dungeon Fighter Arad.app` on ma
 | Pause / resume / back | Esc |
 | Menu navigation / activate | Arrows / Enter |
 
+## Test in a browser with Docker
+
+Install/open Docker Desktop, then run `docker compose up --build` in this checkout. Open **http://localhost:8080** in Chrome and choose **Slayer animation lab**. Godot is built inside the container. See [Mac setup, controls and Docker details](docker/README.md).
+
 ## Development
 
 Install **Godot 4.7.2**, import `project.godot`, then press **F5**. Alternatively, with `godot` on your PATH:

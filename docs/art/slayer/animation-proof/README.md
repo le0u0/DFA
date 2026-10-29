@@ -8,6 +8,8 @@ Paired-facing captures: [idle](idle-preview.gif), [walk](walk-preview.gif), [att
 
 ## Test on your Mac
 
+Without a native Godot installation, use the [Docker/browser setup](../../../../docker/README.md). The steps below use the native editor.
+
 In your existing DFA checkout:
 
 ```sh
