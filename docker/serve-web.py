@@ -19,4 +19,13 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    ThreadingHTTPServer(("0.0.0.0", 8080), partial(Handler, directory=Path.cwd())).serve_forever()
+    server = ThreadingHTTPServer(("0.0.0.0", 8080), partial(Handler, directory=Path.cwd()))
+    print(
+        "\nDFA browser preview is ready.\n"
+        "Open http://localhost:8080 in your browser.\n"
+        "Choose 'Slayer animation lab' on the main menu.\n"
+        "1/2/3: idle/walk/attack | F: facing | P: pause | ,/.: step | V: sword\n"
+        "Leave this terminal running. Press Ctrl+C to stop.\n",
+        flush=True,
+    )
+    server.serve_forever()
