@@ -18,6 +18,10 @@ Classes share movement and health. Flame Burst and Smite strike around the playe
 
 All five classes now use chibi pixel body animation with separate equipment sprites. Choose **Start**, select a class and enter the arena; press **V** to switch between two equipment appearances. The **Slayer art demo** shortcut still enters Slayer directly. Idle, walk and attack strips have separate left/right frames. The goblin remains a geometric placeholder. Additional actions currently reuse these draft poses. See [roster art demo details](docs/art/roster/gameplay-demo.md).
 
+## Slayer animation proof
+
+Choose **Slayer animation lab** on the main menu for the new DFO-motion-inspired chibi proof: idle/walk/attack, independently authored facings, slow playback, frame stepping and separate sword swapping. This is an isolated art-review scene; combat still uses the existing renderer. See [test instructions and known limits](docs/art/slayer/animation-proof/README.md).
+
 ## First two dungeons
 
 - **Mosswood Outskirts:** Forest approach → Briar Sentinel elite → Root King boss. Root King alternates a forward strike with a stomp that can be jumped or avoided by changing lanes.

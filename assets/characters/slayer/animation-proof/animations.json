@@ -1,0 +1,1205 @@
+{
+  "version": 1,
+  "cell_size": [
+    128,
+    128
+  ],
+  "origin": [
+    64,
+    112
+  ],
+  "columns": 6,
+  "rows": 6,
+  "clips": {
+    "idle_left": {
+      "row": 0,
+      "durations": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ],
+      "loop": true,
+      "impact_frame": -1,
+      "hands": [
+        [
+          48,
+          91
+        ],
+        [
+          48,
+          91
+        ],
+        [
+          48,
+          91
+        ],
+        [
+          48,
+          91
+        ],
+        [
+          48,
+          91
+        ],
+        [
+          48,
+          91
+        ]
+      ],
+      "sword_angles": [
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35
+      ]
+    },
+    "walk_left": {
+      "row": 1,
+      "durations": [
+        0.11,
+        0.11,
+        0.11,
+        0.11,
+        0.11,
+        0.11
+      ],
+      "loop": true,
+      "impact_frame": -1,
+      "hands": [
+        [
+          44,
+          87
+        ],
+        [
+          48,
+          91
+        ],
+        [
+          48,
+          91
+        ],
+        [
+          45,
+          91
+        ],
+        [
+          46,
+          90
+        ],
+        [
+          46,
+          90
+        ]
+      ],
+      "sword_angles": [
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35
+      ]
+    },
+    "attack_left": {
+      "row": 2,
+      "durations": [
+        0.1,
+        0.1,
+        0.13,
+        0.1,
+        0.1,
+        0.07
+      ],
+      "loop": false,
+      "impact_frame": 2,
+      "hands": [
+        [
+          43,
+          91
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          33,
+          77
+        ],
+        [
+          34,
+          94
+        ],
+        [
+          43,
+          90
+        ],
+        [
+          44,
+          91
+        ]
+      ],
+      "sword_angles": [
+        -2.35,
+        -0.25,
+        -1.35,
+        -2.2,
+        -2.35,
+        -2.35
+      ]
+    },
+    "idle_right": {
+      "row": 3,
+      "durations": [
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18,
+        0.18
+      ],
+      "loop": true,
+      "impact_frame": -1,
+      "hands": [
+        [
+          84,
+          91
+        ],
+        [
+          84,
+          91
+        ],
+        [
+          84,
+          91
+        ],
+        [
+          84,
+          91
+        ],
+        [
+          84,
+          91
+        ],
+        [
+          84,
+          91
+        ]
+      ],
+      "sword_angles": [
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35
+      ]
+    },
+    "walk_right": {
+      "row": 4,
+      "durations": [
+        0.11,
+        0.11,
+        0.11,
+        0.11,
+        0.11,
+        0.11
+      ],
+      "loop": true,
+      "impact_frame": -1,
+      "hands": [
+        [
+          84,
+          91
+        ],
+        [
+          83,
+          91
+        ],
+        [
+          85,
+          91
+        ],
+        [
+          83,
+          92
+        ],
+        [
+          84,
+          82
+        ],
+        [
+          84,
+          91
+        ]
+      ],
+      "sword_angles": [
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35
+      ]
+    },
+    "attack_right": {
+      "row": 5,
+      "durations": [
+        0.1,
+        0.1,
+        0.13,
+        0.1,
+        0.1,
+        0.07
+      ],
+      "loop": false,
+      "impact_frame": 2,
+      "hands": [
+        [
+          84,
+          91
+        ],
+        [
+          84,
+          91
+        ],
+        [
+          95,
+          79
+        ],
+        [
+          93,
+          94
+        ],
+        [
+          84,
+          91
+        ],
+        [
+          84,
+          91
+        ]
+      ],
+      "sword_angles": [
+        2.35,
+        2.35,
+        1.35,
+        2.2,
+        2.35,
+        2.35
+      ]
+    }
+  },
+  "source_scale": 0.4,
+  "registration": [
+    {
+      "row": 0,
+      "column": 0,
+      "source_column": 0,
+      "source_box": [
+        0,
+        0,
+        223,
+        223
+      ],
+      "visible_bounds": [
+        65,
+        26,
+        180,
+        217
+      ],
+      "position": [
+        41,
+        36
+      ],
+      "size": [
+        46,
+        76
+      ]
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "source_column": 1,
+      "source_box": [
+        223,
+        0,
+        428,
+        223
+      ],
+      "visible_bounds": [
+        47,
+        26,
+        164,
+        217
+      ],
+      "position": [
+        41,
+        36
+      ],
+      "size": [
+        47,
+        76
+      ]
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "source_column": 2,
+      "source_box": [
+        428,
+        0,
+        633,
+        223
+      ],
+      "visible_bounds": [
+        45,
+        26,
+        164,
+        217
+      ],
+      "position": [
+        40,
+        36
+      ],
+      "size": [
+        48,
+        76
+      ]
+    },
+    {
+      "row": 0,
+      "column": 3,
+      "source_column": 3,
+      "source_box": [
+        633,
+        0,
+        838,
+        223
+      ],
+      "visible_bounds": [
+        45,
+        25,
+        162,
+        217
+      ],
+      "position": [
+        41,
+        35
+      ],
+      "size": [
+        47,
+        77
+      ]
+    },
+    {
+      "row": 0,
+      "column": 4,
+      "source_column": 4,
+      "source_box": [
+        838,
+        0,
+        1043,
+        223
+      ],
+      "visible_bounds": [
+        41,
+        26,
+        161,
+        218
+      ],
+      "position": [
+        40,
+        35
+      ],
+      "size": [
+        48,
+        77
+      ]
+    },
+    {
+      "row": 0,
+      "column": 5,
+      "source_column": 5,
+      "source_box": [
+        1043,
+        0,
+        1254,
+        223
+      ],
+      "visible_bounds": [
+        42,
+        26,
+        162,
+        218
+      ],
+      "position": [
+        40,
+        35
+      ],
+      "size": [
+        48,
+        77
+      ]
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "source_column": 0,
+      "source_box": [
+        0,
+        223,
+        223,
+        427
+      ],
+      "visible_bounds": [
+        62,
+        5,
+        192,
+        201
+      ],
+      "position": [
+        38,
+        34
+      ],
+      "size": [
+        52,
+        78
+      ]
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "source_column": 1,
+      "source_box": [
+        223,
+        223,
+        428,
+        427
+      ],
+      "visible_bounds": [
+        44,
+        5,
+        165,
+        200
+      ],
+      "position": [
+        40,
+        34
+      ],
+      "size": [
+        48,
+        78
+      ]
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "source_column": 2,
+      "source_box": [
+        428,
+        223,
+        633,
+        427
+      ],
+      "visible_bounds": [
+        45,
+        5,
+        173,
+        200
+      ],
+      "position": [
+        39,
+        34
+      ],
+      "size": [
+        51,
+        78
+      ]
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "source_column": 3,
+      "source_box": [
+        633,
+        223,
+        838,
+        427
+      ],
+      "visible_bounds": [
+        43,
+        5,
+        169,
+        202
+      ],
+      "position": [
+        39,
+        33
+      ],
+      "size": [
+        50,
+        79
+      ]
+    },
+    {
+      "row": 1,
+      "column": 4,
+      "source_column": 4,
+      "source_box": [
+        838,
+        223,
+        1043,
+        427
+      ],
+      "visible_bounds": [
+        43,
+        5,
+        172,
+        202
+      ],
+      "position": [
+        38,
+        33
+      ],
+      "size": [
+        52,
+        79
+      ]
+    },
+    {
+      "row": 1,
+      "column": 5,
+      "source_column": 5,
+      "source_box": [
+        1043,
+        223,
+        1254,
+        427
+      ],
+      "visible_bounds": [
+        43,
+        5,
+        177,
+        201
+      ],
+      "position": [
+        37,
+        34
+      ],
+      "size": [
+        54,
+        78
+      ]
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "source_column": 0,
+      "source_box": [
+        0,
+        427,
+        223,
+        630
+      ],
+      "visible_bounds": [
+        45,
+        2,
+        197,
+        199
+      ],
+      "position": [
+        34,
+        33
+      ],
+      "size": [
+        61,
+        79
+      ]
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "source_column": 1,
+      "source_box": [
+        223,
+        427,
+        428,
+        630
+      ],
+      "visible_bounds": [
+        27,
+        6,
+        179,
+        199
+      ],
+      "position": [
+        34,
+        35
+      ],
+      "size": [
+        61,
+        77
+      ]
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "source_column": 2,
+      "source_box": [
+        428,
+        427,
+        633,
+        630
+      ],
+      "visible_bounds": [
+        19,
+        11,
+        199,
+        199
+      ],
+      "position": [
+        28,
+        37
+      ],
+      "size": [
+        72,
+        75
+      ]
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "source_column": 3,
+      "source_box": [
+        633,
+        427,
+        838,
+        630
+      ],
+      "visible_bounds": [
+        30,
+        11,
+        201,
+        199
+      ],
+      "position": [
+        30,
+        37
+      ],
+      "size": [
+        68,
+        75
+      ]
+    },
+    {
+      "row": 2,
+      "column": 4,
+      "source_column": 4,
+      "source_box": [
+        838,
+        427,
+        1043,
+        630
+      ],
+      "visible_bounds": [
+        41,
+        5,
+        191,
+        199
+      ],
+      "position": [
+        34,
+        34
+      ],
+      "size": [
+        60,
+        78
+      ]
+    },
+    {
+      "row": 2,
+      "column": 5,
+      "source_column": 5,
+      "source_box": [
+        1043,
+        427,
+        1254,
+        630
+      ],
+      "visible_bounds": [
+        40,
+        4,
+        177,
+        199
+      ],
+      "position": [
+        37,
+        34
+      ],
+      "size": [
+        55,
+        78
+      ]
+    },
+    {
+      "row": 3,
+      "column": 0,
+      "source_column": 0,
+      "source_box": [
+        0,
+        630,
+        223,
+        826
+      ],
+      "visible_bounds": [
+        50,
+        4,
+        171,
+        192
+      ],
+      "position": [
+        40,
+        37
+      ],
+      "size": [
+        48,
+        75
+      ]
+    },
+    {
+      "row": 3,
+      "column": 1,
+      "source_column": 1,
+      "source_box": [
+        223,
+        630,
+        428,
+        826
+      ],
+      "visible_bounds": [
+        31,
+        5,
+        150,
+        192
+      ],
+      "position": [
+        40,
+        37
+      ],
+      "size": [
+        48,
+        75
+      ]
+    },
+    {
+      "row": 3,
+      "column": 2,
+      "source_column": 2,
+      "source_box": [
+        428,
+        630,
+        633,
+        826
+      ],
+      "visible_bounds": [
+        29,
+        4,
+        149,
+        191
+      ],
+      "position": [
+        40,
+        37
+      ],
+      "size": [
+        48,
+        75
+      ]
+    },
+    {
+      "row": 3,
+      "column": 3,
+      "source_column": 3,
+      "source_box": [
+        633,
+        630,
+        838,
+        826
+      ],
+      "visible_bounds": [
+        30,
+        4,
+        151,
+        192
+      ],
+      "position": [
+        40,
+        37
+      ],
+      "size": [
+        48,
+        75
+      ]
+    },
+    {
+      "row": 3,
+      "column": 4,
+      "source_column": 4,
+      "source_box": [
+        838,
+        630,
+        1043,
+        826
+      ],
+      "visible_bounds": [
+        34,
+        4,
+        152,
+        192
+      ],
+      "position": [
+        41,
+        37
+      ],
+      "size": [
+        47,
+        75
+      ]
+    },
+    {
+      "row": 3,
+      "column": 5,
+      "source_column": 5,
+      "source_box": [
+        1043,
+        630,
+        1254,
+        826
+      ],
+      "visible_bounds": [
+        37,
+        4,
+        159,
+        192
+      ],
+      "position": [
+        40,
+        37
+      ],
+      "size": [
+        49,
+        75
+      ]
+    },
+    {
+      "row": 4,
+      "column": 0,
+      "source_column": 0,
+      "source_box": [
+        0,
+        826,
+        223,
+        1028
+      ],
+      "visible_bounds": [
+        32,
+        5,
+        171,
+        200
+      ],
+      "position": [
+        36,
+        34
+      ],
+      "size": [
+        56,
+        78
+      ]
+    },
+    {
+      "row": 4,
+      "column": 1,
+      "source_column": 1,
+      "source_box": [
+        223,
+        826,
+        428,
+        1028
+      ],
+      "visible_bounds": [
+        33,
+        7,
+        153,
+        200
+      ],
+      "position": [
+        40,
+        35
+      ],
+      "size": [
+        48,
+        77
+      ]
+    },
+    {
+      "row": 4,
+      "column": 2,
+      "source_column": 2,
+      "source_box": [
+        428,
+        826,
+        633,
+        1028
+      ],
+      "visible_bounds": [
+        21,
+        7,
+        151,
+        201
+      ],
+      "position": [
+        38,
+        34
+      ],
+      "size": [
+        52,
+        78
+      ]
+    },
+    {
+      "row": 4,
+      "column": 3,
+      "source_column": 3,
+      "source_box": [
+        633,
+        826,
+        838,
+        1028
+      ],
+      "visible_bounds": [
+        30,
+        9,
+        151,
+        200
+      ],
+      "position": [
+        40,
+        36
+      ],
+      "size": [
+        48,
+        76
+      ]
+    },
+    {
+      "row": 4,
+      "column": 4,
+      "source_column": 4,
+      "source_box": [
+        838,
+        826,
+        1043,
+        1028
+      ],
+      "visible_bounds": [
+        31,
+        8,
+        153,
+        200
+      ],
+      "position": [
+        40,
+        35
+      ],
+      "size": [
+        49,
+        77
+      ]
+    },
+    {
+      "row": 4,
+      "column": 5,
+      "source_column": 5,
+      "source_box": [
+        1043,
+        826,
+        1254,
+        1028
+      ],
+      "visible_bounds": [
+        30,
+        10,
+        157,
+        201
+      ],
+      "position": [
+        39,
+        36
+      ],
+      "size": [
+        51,
+        76
+      ]
+    },
+    {
+      "row": 5,
+      "column": 0,
+      "source_column": 0,
+      "source_box": [
+        0,
+        1028,
+        223,
+        1254
+      ],
+      "visible_bounds": [
+        28,
+        2,
+        175,
+        201
+      ],
+      "position": [
+        35,
+        32
+      ],
+      "size": [
+        59,
+        80
+      ]
+    },
+    {
+      "row": 5,
+      "column": 1,
+      "source_column": 0,
+      "source_box": [
+        0,
+        1028,
+        223,
+        1254
+      ],
+      "visible_bounds": [
+        28,
+        2,
+        175,
+        201
+      ],
+      "position": [
+        35,
+        32
+      ],
+      "size": [
+        59,
+        80
+      ]
+    },
+    {
+      "row": 5,
+      "column": 2,
+      "source_column": 2,
+      "source_box": [
+        428,
+        1028,
+        633,
+        1254
+      ],
+      "visible_bounds": [
+        14,
+        17,
+        199,
+        201
+      ],
+      "position": [
+        27,
+        38
+      ],
+      "size": [
+        74,
+        74
+      ]
+    },
+    {
+      "row": 5,
+      "column": 3,
+      "source_column": 3,
+      "source_box": [
+        633,
+        1028,
+        838,
+        1254
+      ],
+      "visible_bounds": [
+        22,
+        15,
+        192,
+        201
+      ],
+      "position": [
+        30,
+        38
+      ],
+      "size": [
+        68,
+        74
+      ]
+    },
+    {
+      "row": 5,
+      "column": 4,
+      "source_column": 4,
+      "source_box": [
+        838,
+        1028,
+        1043,
+        1254
+      ],
+      "visible_bounds": [
+        30,
+        9,
+        172,
+        202
+      ],
+      "position": [
+        36,
+        35
+      ],
+      "size": [
+        57,
+        77
+      ]
+    },
+    {
+      "row": 5,
+      "column": 5,
+      "source_column": 5,
+      "source_box": [
+        1043,
+        1028,
+        1254,
+        1254
+      ],
+      "visible_bounds": [
+        31,
+        8,
+        161,
+        202
+      ],
+      "position": [
+        38,
+        34
+      ],
+      "size": [
+        52,
+        78
+      ]
+    }
+  ],
+  "limitations": [
+    "Right windup holds guard instead of using the generated anatomy-swapped overhead pose.",
+    "Draft pose timing and grip/occlusion need user review; not a complete gameplay animation set."
+  ],
+  "source_sha256": "0da600106e29bdda5b977bf6c374e8f36a97b0e7e22135681651611aa5dccb0b"
+}
