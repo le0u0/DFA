@@ -1,0 +1,10 @@
+{
+  "name": "dfa-browser-preview",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Convenience commands for the Docker-hosted DFA browser preview",
+  "scripts": {
+    "start": "docker compose up --build",
+    "stop": "docker compose down"
+  }
+}

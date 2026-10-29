@@ -8,10 +8,12 @@ In your DFA checkout:
 git fetch origin
 git switch dfo-character-animations
 git pull --ff-only
-docker compose up --build
+npm start
 ```
 
-Wait for the build and server startup, then open **http://localhost:8080** and choose **Slayer animation lab**. Click inside the game before using the keyboard. The first build downloads the engine and web template; subsequent builds reuse the cached tools. After pulling new art/code, run `docker compose up --build` again.
+After this initial update, launch with just **`npm start`** (equivalently `npm run start`). No `npm install` is required: the package contains no dependencies, only Docker shortcuts. Node/npm must be installed to use the shortcut; the direct command `docker compose up --build` remains available with Docker Desktop alone. Startup does not pull Git changes automatically. Run `git pull --ff-only` when you want updates; it stops if your local and remote histories have diverged instead of creating a merge commit.
+
+Wait for the build and server startup, then open **http://localhost:8080** and choose **Slayer animation lab**. Click inside the game before using the keyboard. The first build downloads the engine and web template; subsequent builds reuse the cached tools. After pulling new art/code, run `npm start` again.
 
 - **1 / 2 / 3:** idle / walk / attack
 - **F:** switch facing
@@ -25,7 +27,7 @@ Choose **0.25×** and **Show grip / feet** to inspect attachment and foot regist
 Stop with **Ctrl+C**, then remove the stopped service with:
 
 ```sh
-docker compose down
+npm run stop
 ```
 
 If port 8080 is already in use, change the host side in `compose.yaml` (for example `127.0.0.1:8081:8080`) and open the matching URL. If the browser's Quit button stops the game, reload the page. This setup serves only on your own computer's loopback interface; no public hosting is configured.
