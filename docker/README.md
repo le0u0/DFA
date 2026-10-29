@@ -30,6 +30,12 @@ docker compose down
 
 If port 8080 is already in use, change the host side in `compose.yaml` (for example `127.0.0.1:8081:8080`) and open the matching URL. If the browser's Quit button stops the game, reload the page. This setup serves only on your own computer's loopback interface; no public hosting is configured.
 
+## Docker Hub proxy or DNS errors
+
+If a build reports `auth.docker.io`, `Proxy Error`, or `DNS Failed`, Docker Desktop cannot reach the image registry. In Docker Desktop, open **Settings → Resources → Proxies** and check the configured proxy. If your network does not require a proxy, disable a stale manual proxy; otherwise use the proxy settings supplied for your network. Apply the change and restart Docker Desktop, then rerun `docker compose up --build`.
+
+The Dockerfile uses Docker Desktop’s bundled BuildKit frontend, avoiding a separate `docker/dockerfile` image download. The Python base image still requires registry access on the first build. Signing in to Docker does not repair a proxy DNS failure.
+
 ## Build and validation details
 
 The multi-stage Dockerfile downloads Godot **4.6.3**, checks the executable's SHA-512 against the official release checksum list, imports the project, and exports the single-threaded Web target. The downloader reads only the needed member of the large export-template archive using validated HTTP byte ranges. It refuses servers that ignore ranges rather than downloading the entire export kit. Both `amd64` and `arm64` select the corresponding official Linux executable; no forced Intel emulation is configured for Apple Silicon.

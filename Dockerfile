@@ -1,4 +1,3 @@
-# syntax=docker/dockerfile:1
 FROM python:3.13-slim-bookworm AS export
 ARG GODOT_VERSION=4.6.3
 ARG TARGETARCH
