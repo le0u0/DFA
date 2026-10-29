@@ -97,7 +97,24 @@ def extract(archive, output):
             raise ValueError('Script.pvf was not found inside DFO.zip')
         print('Reading the PVF directory in place; the 44 GB game will not be extracted.', flush=True)
         with outer.open(info) as stream:
-            pvf = PVF(stream, info.file_size)
+            probe = read_exact(stream, 4)
+            stream.seek(0)
+            if 1 <= struct.unpack('<I', probe)[0] <= 128:
+                pvf = PVF(stream, info.file_size)
+            else:
+                from pvf_paged import PagedPVF, client_material
+                parent = info.filename.rsplit('/', 1)[0] if '/' in info.filename else ''
+                siblings = {i.filename.lower().rsplit('/', 1)[-1]: i for i in outer.infolist()
+                            if (i.filename.rsplit('/', 1)[0] if '/' in i.filename else '') == parent}
+                executable = siblings.get('dfo.exe') or siblings.get('dnf.exe')
+                sidecar = siblings.get('sk.dat')
+                if executable is None or sidecar is None or sidecar.file_size > 65536:
+                    raise ValueError('Paged PVF requires its matching sk.dat and DFO.exe in the same archive folder')
+                print('Reading matching client metadata from DFO.exe inside the ZIP; the executable is not run or exported.', flush=True)
+                with outer.open(executable) as client:
+                    keys, metadata = client_material(client)
+                print('Client scan complete. Validating matching archive metadata.', flush=True)
+                pvf = PagedPVF(stream, info.file_size, outer.read(sidecar), keys, metadata)
             candidates = [e for e in pvf.entries if is_action(e)]
             # Reserve the small core actions across all five classes before extras.
             def priority(entry):
@@ -119,14 +136,27 @@ def extract(archive, output):
                 error.action_paths = [e['path'] for e in pvf.entries if e['path'].endswith(('.ani', '.chr'))][:5000]
                 raise error
             index = [dict(path=e['path'], bytes=e['size']) for e in pvf.entries if e['path'].startswith(tuple(f'character/{c}/' for c in CLASSES)) and e['path'].endswith(('.ani', '.chr'))]
+            print(f'Exporting {len(selected)} selected action/reference files.', flush=True)
             with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as dest:
                 dest.writestr('reference-index.json', json.dumps(dict(header=pvf.header, selected=[e['path'] for e in selected], available=index), indent=2))
-                for entry in sorted(selected, key=lambda e: e['offset']):
+                for entry in sorted(selected, key=lambda e: (e.get('group', 0), e['offset'])):
                     dest.writestr(entry['path'], pvf.read(entry))
+                if hasattr(pvf, 'support_files'):
+                    for name, data in pvf.support_files():
+                        dest.writestr(name, data, compress_type=zipfile.ZIP_STORED)
     if Path(output).stat().st_size >= 32 * 1024 * 1024:
-        raise ValueError('Reference package exceeds the transfer limit')
+        parts = []
+        with Path(output).open('rb') as source:
+            while data := source.read(24 * 1024 * 1024):
+                part = Path(str(output) + f'.part{len(parts) + 1:02}')
+                part.write_bytes(data)
+                parts.append(part.name)
+        Path(output).unlink()
+        print('Reference is split into uploadable parts: ' + ', '.join(parts), flush=True)
+        print('Upload all of these parts together in our chat.', flush=True)
+        return
     print(f'Created {output} ({Path(output).stat().st_size / 1024 / 1024:.1f} MiB)', flush=True)
-    print('Upload this reference ZIP in our chat. No need to upload the whole PVF.', flush=True)
+    print('Upload this reference ZIP in our chat. No need to upload the whole PVF or executable.', flush=True)
 
 
 if __name__ == '__main__':
@@ -134,6 +164,8 @@ if __name__ == '__main__':
     parser.add_argument('--archive', type=Path, default=Path.home() / 'Documents/DFO.zip')
     parser.add_argument('--output', type=Path, default=Path.home() / 'Documents/DFO-action-reference.zip')
     args = parser.parse_args()
+    if args.output.parent == Path('/output'):
+        print('Output folder on your Mac: Documents/DFO-action-reference', flush=True)
     try:
         extract(args.archive, args.output)
     except Exception as error:

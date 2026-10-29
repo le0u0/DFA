@@ -33,6 +33,18 @@ npm run stop
 
 If port 8080 is already in use, change the host side in `compose.yaml` (for example `127.0.0.1:8081:8080`) and open the matching URL. If the browser's Quit button stops the game, reload the page. This setup serves only on your own computer's loopback interface; no public hosting is configured.
 
+## Extract original action references
+
+With the original `~/Documents/DFO.zip` present, run:
+
+```sh
+npm run extract:actions
+```
+
+This optional Docker helper reads the archive and matching `sk.dat` / `DFO.exe` client metadata without running or exporting the executable. It writes a small reference package to **Documents/DFO-action-reference/** on your Mac. Upload its reference ZIP (or all numbered parts) in our chat. On a validation failure, upload its diagnostic ZIP instead. Existing game data is mounted read-only, with only the dedicated output folder writable. No whole-game unpacking or additional Mac Python packages are needed.
+
+The helper is an opt-in Compose profile; normal `npm start` still launches only the game preview. The original PVF variant is checked by its header/layout, string-pool decompression, group boundaries and decompressed sizes. This protects the reference work from silently using invalid frame data; it is not a claim that original motion has already been recreated.
+
 ## Docker Hub proxy or DNS errors
 
 If a build reports `auth.docker.io`, `Proxy Error`, or `DNS Failed`, Docker Desktop cannot reach the image registry. In Docker Desktop, open **Settings → Resources → Proxies** and check the configured proxy. If your network does not require a proxy, disable a stale manual proxy; otherwise use the proxy settings supplied for your network. Apply the change and restart Docker Desktop, then rerun `docker compose up --build`.

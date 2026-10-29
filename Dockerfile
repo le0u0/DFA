@@ -1,3 +1,15 @@
+FROM python:3.13-slim-bookworm AS action-reference
+WORKDIR /helper
+RUN --mount=type=secret,id=proxy_ca \
+    if [ -f /run/secrets/proxy_ca ]; then \
+      PIP_CERT=/run/secrets/proxy_ca pip install --no-cache-dir cryptography==46.0.3; \
+    else \
+      pip install --no-cache-dir cryptography==46.0.3; \
+    fi
+COPY tools/extract-dfo-action-reference.py tools/pvf_paged.py ./
+ENTRYPOINT ["python", "/helper/extract-dfo-action-reference.py"]
+CMD ["--archive", "/input/DFO.zip", "--output", "/output/DFO-action-reference.zip"]
+
 FROM python:3.13-slim-bookworm AS export
 ARG GODOT_VERSION=4.6.3
 ARG TARGETARCH

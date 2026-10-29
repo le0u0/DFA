@@ -14,15 +14,17 @@ The next input is the original basic `.ani` action definitions and `.chr` links 
 
 ## Extract the missing reference on your Mac
 
-With `~/Documents/DFO.zip` still present, run in this repository:
+With `~/Documents/DFO.zip` still present and Docker Desktop running, run in this repository (a separate terminal is fine if the game is running):
 
 ```sh
-python3 tools/extract-dfo-action-reference.py
+npm run extract:actions
 ```
 
-Upload **Documents/DFO-action-reference.zip** in our chat. This standard-library-only tool reads the PVF index and selected data directly inside the ZIP; it does not unpack the 44 GB game or write the entire 667 MB PVF. The reference output is kept below the per-file upload limit. If this client uses an unsupported PVF variant, it creates `DFO-action-diagnostic.zip` instead; upload that diagnostic.
+Upload **Documents/DFO-action-reference/DFO-action-reference.zip** in our chat. If it produces `.part01`, `.part02`, etc., upload all those parts. The helper reads the PVF and its matching `sk.dat` / `DFO.exe` directly inside the ZIP; it does not unpack the 44 GB game, write out the full PVF/executable, run the executable or export keys. Its Docker image installs its own parser dependency, so no Python-package setup is needed on the Mac.
 
-The container reader is checked against an independently assembled encrypted PVF fixture. It has not yet been tested against this user's actual Script.pvf, which is not present in the cloud workspace.
+The original direct Python command remains available for older PVFs. The modern paged format requires `cryptography`; the Docker command supplies it automatically. If this client still cannot be validated, upload the diagnostic ZIP from the same output folder. The helper will not export guessed action data when validation fails.
+
+The reader has tests for classic and paged encrypted fixtures, incorrect metadata, and reads crossing encrypted page boundaries. The user's header sample and `sk.dat` were inspected; available reference clients did not unlock them, so the helper now reads matching metadata from that user's actual executable locally. Successful extraction against the real full archive still needs to be confirmed by the user-side run.
 
 ## Test gameplay on your Mac
 

@@ -3,3 +3,16 @@ services:
     build: .
     ports:
       - "127.0.0.1:8080:8080"
+  actions:
+    profiles: ["tools"]
+    build:
+      context: .
+      target: action-reference
+    volumes:
+      - type: bind
+        source: ${HOME}/Documents/DFO.zip
+        target: /input/DFO.zip
+        read_only: true
+        bind:
+          create_host_path: false
+      - ${HOME}/Documents/DFO-action-reference:/output
