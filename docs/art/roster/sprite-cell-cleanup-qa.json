@@ -1,0 +1,42 @@
+{
+  "slayer": {
+    "removed_atlas_pixels": 76,
+    "other_pixels_unchanged": true,
+    "size": [
+      512,
+      768
+    ]
+  },
+  "gunner": {
+    "removed_atlas_pixels": 586,
+    "other_pixels_unchanged": true,
+    "size": [
+      512,
+      768
+    ]
+  },
+  "fighter": {
+    "removed_atlas_pixels": 1025,
+    "other_pixels_unchanged": true,
+    "size": [
+      512,
+      768
+    ]
+  },
+  "mage": {
+    "removed_atlas_pixels": 363,
+    "other_pixels_unchanged": true,
+    "size": [
+      512,
+      768
+    ]
+  },
+  "priest": {
+    "removed_atlas_pixels": 549,
+    "other_pixels_unchanged": true,
+    "size": [
+      512,
+      768
+    ]
+  }
+}

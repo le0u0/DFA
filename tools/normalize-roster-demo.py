@@ -1,6 +1,12 @@
 """Normalize generated roster strips with one scale and baseline per sheet."""
 from pathlib import Path
 from PIL import Image
+import argparse
+from sprite_cells import isolate_cell
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--bodies-only", action="store_true", help="Preserve existing equipment textures")
+args = parser.parse_args()
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "docs/art/roster/demo-source"
@@ -9,15 +15,22 @@ for name in ("gunner", "fighter", "mage", "priest"):
     assert sheet.width % 4 == 0 and sheet.height % 6 == 0, sheet.size
     width, height = sheet.width // 4, sheet.height // 6
     atlas = Image.new("RGBA", (512, 768))
+    removed = 0
     for row in range(6):
         for column in range(4):
             cell = sheet.crop((column * width, row * height, (column + 1) * width, (row + 1) * height))
+            cell, debris = isolate_cell(cell)
+            removed += debris
             # Fixed transform across every frame, matching the Slayer trial scale.
             cell = cell.resize((82, 82), Image.Resampling.NEAREST)
             atlas.alpha_composite(cell, (column * 128 + 23, row * 128 + 33))
     destination = ROOT / "assets/characters" / name
     destination.mkdir(parents=True, exist_ok=True)
     atlas.save(destination / "demo-atlas.png")
+    print(f"{name}: removed {removed} neighboring-cell alpha pixels")
+
+if args.bodies_only:
+    raise SystemExit(0)
 
 equipment = Image.open(SOURCE / "equipment.png").convert("RGBA")
 width, height = equipment.width // 4, equipment.height // 2

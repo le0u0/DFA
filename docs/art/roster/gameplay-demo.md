@@ -20,6 +20,16 @@ Built-in `image_gen.imagegen` generated four body sheets and one eight-item equi
 
 [Atlas QA](demo-source/atlas-qa.json) verifies 512×768 transparent PNGs. [Equipment QA](demo-source/equipment-qa.json) verifies 48×96 textures; [cross QA](demo-source/cross-qa.json) verifies 64×96 cross textures.
 
+## Sprite-cell cleanup
+
+The older grid export included disconnected shoe/hair fragments from neighboring cells, visible as black strokes above some characters. Both normalization scripts now isolate the character from edge fragments before resizing, while retaining the main figure even when an attack hand touches a cell edge. Faint alpha bridges are separated so they cannot attach fragments to the next character's hair.
+
+![Fighter attack before and after cleanup](sprite-cell-cleanup.png)
+
+All five legacy atlases were regenerated. [Pixel-difference QA](sprite-cell-cleanup-qa.json) confirms that only stray pixels became transparent; all remaining pixels, cell sizes, scale and registration are identical. Equipment textures were preserved with the `--bodies-only` option. Five Python regression checks include the reported Fighter pose and faint-alpha/raised-hand cases. Run them with `python3 -m unittest discover -s tests/python -v` (requires Pillow).
+
+The newer six-frame Slayer proof is a separate **Slayer animation lab** menu entry. Choosing a class through Start still uses the older four-frame gameplay renderer; changing the startup command to `npm start` does not change character art.
+
 ## Verification
 
 - Native gameplay: 22 checks.
