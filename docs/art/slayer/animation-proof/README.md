@@ -12,7 +12,7 @@ In your existing DFA checkout:
 
 ```sh
 git fetch origin
-git switch codex/dfo-character-animations
+git switch dfo-character-animations
 ```
 
 Open `project.godot` in Godot, press **F5**, then choose **Slayer animation lab**. The previous Slayer art demo still enters the unchanged combat arena.
