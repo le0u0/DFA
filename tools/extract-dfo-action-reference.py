@@ -114,7 +114,12 @@ def extract(archive, output):
                 with outer.open(executable) as client:
                     keys, metadata = client_material(client)
                 print('Client scan complete. Validating matching archive metadata.', flush=True)
-                pvf = PagedPVF(stream, info.file_size, outer.read(sidecar), keys, metadata)
+                try:
+                    pvf = PagedPVF(stream, info.file_size, outer.read(sidecar), keys, metadata)
+                except Exception as error:
+                    error.input_members = [dict(path=item.filename, bytes=item.file_size, crc32=f'{item.CRC:08x}')
+                                           for item in (info, executable, sidecar)]
+                    raise
             candidates = [e for e in pvf.entries if is_action(e)]
             # Reserve the small core actions across all five classes before extras.
             def priority(entry):
@@ -166,12 +171,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.output.parent == Path('/output'):
         print('Output folder on your Mac: Documents/DFO-action-reference', flush=True)
+    print('Action reference helper: diagnostic version 2', flush=True)
     try:
         extract(args.archive, args.output)
     except Exception as error:
         report = args.output.with_name('DFO-action-diagnostic.zip')
         with zipfile.ZipFile(report, 'w', zipfile.ZIP_DEFLATED) as dest:
-            dest.writestr('diagnostic.json', json.dumps(dict(error=str(error),available_action_paths=getattr(error, 'action_paths', None),note='No original game files were modified. PVF variant needs inspection.'), indent=2))
+            dest.writestr('diagnostic.json', json.dumps(dict(error=str(error),available_action_paths=getattr(error, 'action_paths', None),validation=getattr(error, 'validation', None), input_members=getattr(error, 'input_members', None), diagnostic_version=2, note='No original game files were modified. PVF variant needs inspection.'), indent=2))
             try:
                 with zipfile.ZipFile(args.archive) as outer:
                     member = next(i for i in outer.infolist() if i.filename.lower().endswith('/script.pvf') or i.filename.lower() == 'script.pvf')

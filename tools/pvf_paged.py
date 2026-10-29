@@ -81,26 +81,51 @@ def header_fields(plain, size):
 def unlock(header, size, sealed, keys, metadata):
     from cryptography.hazmat.primitives.asymmetric import padding
     required = (size + PAGE - 1) // PAGE * 32
+    checks = dict(archive_bytes=size, sealed_bytes=len(sealed), required_table_bytes=required, rsa=[])
     for key in keys:
+        check = dict(bits=key.key_size, decrypted_blocks=0)
+        checks["rsa"].append(check)
         block = key.key_size // 8
         if len(sealed) % block:
+            check["stage"] = "sidecar_not_block_aligned"
             continue
         try:
-            wrapped = b''.join(key.decrypt(sealed[i:i + block], padding.PKCS1v15()) for i in range(0, len(sealed), block))
+            parts = []
+            for i in range(0, len(sealed), block):
+                part = key.decrypt(sealed[i:i + block], padding.PKCS1v15())
+                # Some OpenSSL versions implicitly reject invalid padding by
+                # returning random bytes. Record progress, never those bytes.
+                parts.append(part)
+                check['decrypted_blocks'] += 1
+            wrapped = b''.join(parts)
         except ValueError:
+            check["stage"] = "rsa_unseal_failed"
             continue
+        check["unsealed_bytes"] = len(wrapped)
         if len(wrapped) % 32 or len(wrapped) < required:
+            check["stage"] = "table_capacity_or_alignment_failed"
             continue
         aligned = len(wrapped) // 256 * 256
         if not aligned:
             continue
-        for candidate in metadata:
+        check["stage"] = "header_validation_failed"
+        check["header_checks"] = []
+        for candidate in sorted(metadata):
             table = aes_decode(wrapped[:aligned], candidate) + wrapped[aligned:]
             plain = section(aes_decode(header, table[:32]), 'iNfO')
             fields = header_fields(plain, size)
+            result = dict(signature_matches=plain[:4] == b'nkpi')
+            if result['signature_matches']:
+                # Only recognized archive metadata is safe/useful to export.
+                words = struct.unpack('<12I', plain)
+                result['header_words'] = list(words)
+                result['declared_bytes'] = 48 + words[6] * 24 + words[10] + words[11] + words[9] * 8 + words[8]
+            check['header_checks'].append(result)
             if fields:
                 return table, fields
-    raise ValueError(f'No matching client material validated the PVF header ({len(keys)} RSA candidates, {len(metadata)} metadata candidates). No action files were exported.')
+    error = ValueError(f'No matching client material validated the PVF header ({len(keys)} RSA candidates, {len(metadata)} metadata candidates). No action files were exported.')
+    error.validation = checks
+    raise error
 
 
 def inflate(data, expected):

@@ -67,3 +67,9 @@ docker run --rm -p 127.0.0.1:8080:8080 dfa-animation-web
 ```
 
 Normal Docker Desktop builds do not need this secret. Certificate verification remains enabled.
+
+If extraction reports that no client material validated the PVF header, upload the new
+`DFO-action-diagnostic.zip` from the output folder. Diagnostic version 2 records
+which validation stage failed and the input ZIP members’ sizes/checksums; it does
+not export executable content or keys. This failure still needs investigation:
+passing fixture tests does not establish support for your particular game archive.

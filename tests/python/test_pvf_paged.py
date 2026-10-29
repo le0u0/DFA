@@ -2,6 +2,7 @@
 import hashlib
 import importlib.util
 import io
+import json
 from pathlib import Path
 import struct
 import sys
@@ -68,6 +69,31 @@ class PagedTests(unittest.TestCase):
         keys, _ = reader.client_material(io.BytesIO(exe))
         with self.assertRaisesRegex(ValueError, 'No matching client material'):
             reader.PagedPVF(io.BytesIO(archive), len(archive), sealed, keys, {bytes(32)})
+
+    def test_failure_reports_stage_without_exporting_key_material(self):
+        archive, sealed, exe, _, _, table = fixture()
+        keys, metadata = reader.client_material(io.BytesIO(exe))
+        with self.assertRaises(ValueError) as failure:
+            reader.unlock(archive[:48], len(archive), sealed, keys, {bytes(32)})
+        report = failure.exception.validation
+        check = report['rsa'][0]
+        self.assertEqual(check['stage'], 'header_validation_failed')
+        self.assertEqual(check['unsealed_bytes'], len(table))
+        self.assertEqual(check['decrypted_blocks'], len(sealed) // 128)
+        self.assertEqual(check['header_checks'], [dict(signature_matches=False)])
+        encoded = json.dumps(report)
+        self.assertNotIn(table.hex(), encoded)
+        self.assertNotIn(next(iter(metadata)).hex(), encoded)
+        self.assertNotIn('PRIVATE KEY', encoded)
+
+    def test_failure_distinguishes_sidecar_block_size_from_header_failure(self):
+        archive, sealed, exe, _, _, _ = fixture()
+        keys, metadata = reader.client_material(io.BytesIO(exe))
+        with self.assertRaises(ValueError) as failure:
+            reader.unlock(archive[:48], len(archive), sealed[:-1], keys, metadata)
+        check = failure.exception.validation['rsa'][0]
+        self.assertEqual(check['stage'], 'sidecar_not_block_aligned')
+        self.assertEqual(check['decrypted_blocks'], 0)
 
     def test_reads_across_an_encrypted_page_boundary(self):
         _, _, _, _, _, keys = fixture()
