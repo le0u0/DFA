@@ -18,6 +18,10 @@ Classes share movement and health. Flame Burst and Smite strike around the playe
 
 All five classes now use chibi pixel body animation with separate equipment sprites. Choose **Start**, select a class and enter the arena; press **V** to switch between two equipment appearances. Idle, walk and attack strips have separate left/right frames. The goblin remains a geometric placeholder. Additional actions currently reuse these draft poses. See [roster art demo details](docs/art/roster/gameplay-demo.md).
 
+## Development focus
+
+Focus on **Slayer and Gunner** until the complete game is playable from start to finish. New Fighter, Mage and Priest work is deferred to reduce development time. See [development notes](docs/development-notes.md).
+
 ## Animation status
 
 All character testing uses **Start → character → dungeon**. Slayer has a separate eight-frame run and three basic combo stages redrawn from source references, alongside the earlier idle/walk and skill poses. The other classes retain four-frame prototype strips. **V** changes equipment appearance. Separate Slayer demo screens have been removed.
