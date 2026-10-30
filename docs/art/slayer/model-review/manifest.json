@@ -20,7 +20,7 @@
   ],
   "source_sha256": "dfa9e1dc53b7c777729a6446c0d8d092659f1b367121c724cd3af0f5971f7e17",
   "method": "High-resolution edit of approved reference; sword removed. Crop transparent margins and center on the reference-size canvas, preserving source pixels without resampling. No low-resolution game pixels enlarged.",
-  "gameplay_integrated": false,
+  "gameplay_integrated": true,
   "animation_accepted": false,
   "review_findings": [
     "Old GIF is620x288 and actor isabout80px, insufficient to judge reference-level detail",
@@ -39,7 +39,7 @@
     1143,
     1248
   ],
-  "motion_review_status": "blocked_on_static_model_review; no replacement action has passed review",
+  "motion_review_status": "continuous_motion_implemented; rendered_review_and_user_acceptance_separate",
   "motion_acceptance": {
     "complete_sequences": [
       "idle \u2192 walk \u2192 run \u2192 stop \u2192 idle",
@@ -69,5 +69,6 @@
       "actual moving gameplay as well as stationary pose review"
     ],
     "rule": "A failed boundary or distorted frame rejects the sequence. Automated checks do not establish visual acceptance."
-  }
+  },
+  "action_proofs": "actions/proof.json"
 }

@@ -25,5 +25,7 @@
     "Discrete shoulder/view switches without continuous turns",
     "Reach clamping lacks anatomical limits and motion curves",
     "Translation-fixed captures hide foot sliding"
-  ]
+  ],
+  "historical": true,
+  "scope": "Rejected frame-switched rig before continuous-motion replacement"
 }

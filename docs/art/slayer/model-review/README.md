@@ -1,74 +1,46 @@
-# Model review before game integration
+# Slayer model and action review
 
-Gameplay animation integration is paused. The current fixed-part rig is rejected.
-The model must look natural as a complete character before another implementation
-or animation claim is made.
+The rejected frame-switched rig has been replaced with native-detail parts and
+continuous, seconds-based motion. The full combo, running thrust and recoveries
+are implemented in the game renderer. Review the actual moving artwork below.
 
-## Review artifacts
+## Current action proofs — 1236 × 1273
 
-- [Weapon-free model candidate, 1236 × 1273 PNG](model-candidate-1236x1273.png)
-- [Original approved appearance reference](../chibi-pixel-reference-v6.png)
-- [Rejected combo: sampled GIF frames](rejected-combo-frames.png)
-- [Rejected run/thrust: sampled GIF frames](rejected-run-thrust-frames.png)
+| Action | Right | Left | Quarter speed |
+| --- | --- | --- | --- |
+| Complete three-hit combo | [GIF](actions/combo-right.gif) | [GIF](actions/combo-left.gif) | [GIF](actions/combo-right-slow.gif) |
+| Idle/run/thrust/recovery | [GIF](actions/run-thrust-right.gif) | [GIF](actions/run-thrust-left.gif) | [GIF](actions/run-thrust-right-slow.gif) |
 
-The sampled review boards enlarge old pixels only to expose the faults; they are
-not native-resolution artwork. The old GIF is 620 × 288 with an actor about 80 pixels
-tall. It does not represent the detail or appearance of the approved 1236 × 1273 image.
+Every proof uses the same body dimensions and one fixed scale/floor anchor.
+Textures are rendered from the detailed atlas, rather than magnifying low-resolution
+screenshots. Canvas dimensions match the approved appearance reference. Space is
+reserved for the complete weapon arc; individual poses are never fitted to bounds.
+Capture metadata is in [proof.json](actions/proof.json).
 
-The candidate is a high-resolution edit of the approved appearance: remove the
-sword, retain the same character, compact anatomy, costume and asymmetric arms.
-Its generated source is 1254 × 1254. Only transparent margins are cropped; the
-character pixels are centered at their original scale on a transparent 1236 × 1273
-canvas. No rejected 80px game image is upscaled to make it.
-The source and exact normalization are recorded in `manifest.json`.
+The source attack durations and strike events are preserved. The custom poses use
+a consistent three-quarter view, connected shoulders, weight shifts and a forward
+thrust with recovery. Walk/run foot support follows travel; action changes blend
+parameters before IK, retaining limb lengths. See [implementation](../model/README.md).
 
-This is a **static review candidate**, not an accepted model or completed animation.
-It is not connected to Start. The earlier 80px rig measurements are not the authoring
-standard and do not override the approved image. Full-body anatomy, limb thickness,
-face, costume and silhouette must be checked together at the reference's resolution.
+## Appearance reference and rejected motion
 
-## Findings from the existing GIF
+- [Approved appearance reference](../chibi-pixel-reference-v6.png)
+- [Weapon-free model reference, 1236 × 1273](model-candidate-1236x1273.png)
+- [Rejected combo frames](rejected-combo-frames.png)
+- [Rejected run/thrust frames](rejected-run-thrust-frames.png)
 
-The torso changes between front/back views without a convincing turn. Arms look
-attached rather than driven by shoulders and torso. Leg motion does not establish
-believable foot contact or weight transfer. Those are visual failures even when
-bone-length tests pass. The low-resolution cutout rig also loses the reference's
-detail and reads as a different rendition of the character.
-
-## Resolution and acceptance rule
-
-Use **1236 ×1273** as the standalone model-review and action-frame canvas, matching
-the approved appearance image. Keep the body's scale and anatomy consistent on that
-canvas; do not resize individual poses to fill their bounds. Game/display scaling
-is deferred until the model and complete motion proofs are accepted.
-
-Review the complete static model first. Action proofs must then show full connected
-movement at normal speed and slow motion, with coherent shoulders, elbows, hips,
-knees, foot contact and weight transfer. They must retain the approved model's
-proportions and native detail. A static candidate does not establish motion quality.
-No new runtime code or runtime assets were changed in this review.
+The old 620 × 288 GIF used an approximately 80px actor. Its torso switches,
+disconnected joints and gait faults are rejected. Those captures remain historical.
+The new proofs replace them for current review.
 
 ## Smoothness and continuity gate
 
-No replacement animation has passed this gate yet. Review the complete three-hit
-combo and running thrust, including anticipation, contact, follow-through and
-recovery to idle. Watch at authored speed, quarter speed and frame by frame in
-both directions. The head and body must retain their proportions; shoulders,
-elbows, wrists, hips and knees must follow continuous paths. Check planted feet,
-push-off, weight transfer, weapon grip and depth order. Reject visible pops,
-unintended sliding, detached joints, sudden view swaps or missing recovery poses.
+Review the entire combo and thrust at normal speed, quarter speed and frame by
+frame in both directions. Check stable anatomy, continuous shoulder/elbow/wrist
+paths, natural knees, foot support, weapon grip and complete recovery. A failed
+boundary or distorted frame rejects the sequence. Passing numeric checks does
+not substitute for visual judgment or user acceptance.
 
-Keep every action frame on the same 1236 × 1273 canvas. Establish one body scale
-and floor anchor for the complete action set, leaving space for the sword and
-full limb arcs. Never fit each pose independently to its bounds. Motion proofs
-must show timing faithfully; a slow preview supplements normal-speed playback.
-
-After visual acceptance, verify tap/hold/buffered input, repeated combos, running
-thrusts, direction changes and interruptions in moving gameplay. A smooth isolated
-loop does not establish that transitions work. Technical checks supplement visual
-review; they cannot certify that the character looks natural.
-
-All 87 frames of the rejected combo were also inspected on contact sheets:
-[1–24](combo-all-frames-1.png), [25–48](combo-all-frames-2.png),
-[49–72](combo-all-frames-3.png), [73–87](combo-all-frames-4.png).
-These sheets document the rejected motion; they are not replacement action art.
+After rendering, exercise tap/hold/buffered attacks, repeated combos and thrusts,
+direction changes, interruption, equipment changes and pause in moving gameplay.
+A stationary pose proof alone cannot establish that those transitions work.

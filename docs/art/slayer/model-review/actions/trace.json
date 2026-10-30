@@ -1,0 +1,3530 @@
+[
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.0
+		],
+		"index": 0,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.0
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9782104492188
+		],
+		"index": 1,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.0333333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9565887451172
+		],
+		"index": 2,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.0666666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9352951049805
+		],
+		"index": 3,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.1
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9144954681396
+		],
+		"index": 4,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.133333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8943462371826
+		],
+		"index": 5,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.166666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.875
+		],
+		"index": 6,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.2
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8566055297852
+		],
+		"index": 7,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.233333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8393039703369
+		],
+		"index": 8,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.266666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8809661865234
+		],
+		"index": 9,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 0.3
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			22.1152267456055,
+			-43.2905654907227
+		],
+		"index": 10,
+		"sequence": "combo",
+		"sword": -0.0864633994263624,
+		"time": 0.333333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			12.4515552520752,
+			-57.7654037475586
+		],
+		"index": 11,
+		"sequence": "combo",
+		"sword": -0.698875420875421,
+		"time": 0.366666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			4.77777767181396,
+			-60.0247840881348
+		],
+		"index": 12,
+		"sequence": "combo",
+		"sword": -0.727104377104376,
+		"time": 0.4
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			22.4732513427734,
+			-48.9843482971191
+		],
+		"index": 13,
+		"sequence": "combo",
+		"sword": 0.61470881656067,
+		"time": 0.433333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			26.2816772460938,
+			-40.4477844238281
+		],
+		"index": 14,
+		"sequence": "combo",
+		"sword": 1.45173711039633,
+		"time": 0.466666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			22.021053314209,
+			-33.4436073303223
+		],
+		"index": 15,
+		"sequence": "combo",
+		"sword": 1.99528948704926,
+		"time": 0.5
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			17.2972717285156,
+			-28.7117786407471
+		],
+		"index": 16,
+		"sequence": "combo",
+		"sword": 2.34302898632508,
+		"time": 0.533333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			15.3105726242065,
+			-28.0658683776855
+		],
+		"index": 17,
+		"sequence": "combo",
+		"sword": 2.40910401581933,
+		"time": 0.566666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			13.9702005386353,
+			-28.5539360046387
+		],
+		"index": 18,
+		"sequence": "combo",
+		"sword": 2.42606153395117,
+		"time": 0.6
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			12.6958723068237,
+			-29.4307308197021
+		],
+		"index": 19,
+		"sequence": "combo",
+		"sword": 2.44133239710711,
+		"time": 0.633333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			11.5052633285522,
+			-30.5925922393799
+		],
+		"index": 20,
+		"sequence": "combo",
+		"sword": 2.45489344092696,
+		"time": 0.666666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			10.4160499572754,
+			-31.9358596801758
+		],
+		"index": 21,
+		"sequence": "combo",
+		"sword": 2.46672150105054,
+		"time": 0.7
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			9.44591045379639,
+			-33.3568725585938
+		],
+		"index": 22,
+		"sequence": "combo",
+		"sword": 2.47679341311766,
+		"time": 0.733333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			8.61252117156982,
+			-34.7519721984863
+		],
+		"index": 23,
+		"sequence": "combo",
+		"sword": 2.48508601276815,
+		"time": 0.766666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			7.93355846405029,
+			-36.0174942016602
+		],
+		"index": 24,
+		"sequence": "combo",
+		"sword": 2.49157613564181,
+		"time": 0.8
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			7.4266996383667,
+			-37.0497779846191
+		],
+		"index": 25,
+		"sequence": "combo",
+		"sword": 2.49624061737846,
+		"time": 0.833333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "right",
+		"hand": [
+			7.10962104797363,
+			-37.7451667785645
+		],
+		"index": 26,
+		"sequence": "combo",
+		"sword": 2.49905629361792,
+		"time": 0.866666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			7.0,
+			-38.0
+		],
+		"index": 27,
+		"sequence": "combo",
+		"sword": 2.5,
+		"time": 0.9
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			9.63200283050537,
+			-32.7463607788086
+		],
+		"index": 28,
+		"sequence": "combo",
+		"sword": 2.48117597814956,
+		"time": 0.933333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			16.5542011260986,
+			-31.5317897796631
+		],
+		"index": 29,
+		"sequence": "combo",
+		"sword": 2.27827013552333,
+		"time": 0.966666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			28.0,
+			-42.0
+		],
+		"index": 30,
+		"sequence": "combo",
+		"sword": 1.2,
+		"time": 1.0
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			22.9439296722412,
+			-49.5715370178223
+		],
+		"index": 31,
+		"sequence": "combo",
+		"sword": 0.430796815373753,
+		"time": 1.03333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			12.8957901000977,
+			-56.6464576721191
+		],
+		"index": 32,
+		"sequence": "combo",
+		"sword": -0.282669705481689,
+		"time": 1.06666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			5.53568744659424,
+			-60.7307434082031
+		],
+		"index": 33,
+		"sequence": "combo",
+		"sword": -0.692999215800497,
+		"time": 1.1
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			5.04069185256958,
+			-60.9023399353027
+		],
+		"index": 34,
+		"sequence": "combo",
+		"sword": -0.718209557698194,
+		"time": 1.13333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			5.22743368148804,
+			-60.454158782959
+		],
+		"index": 35,
+		"sequence": "combo",
+		"sword": -0.709992921640649,
+		"time": 1.16666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			5.54200315475464,
+			-59.6991920471191
+		],
+		"index": 36,
+		"sequence": "combo",
+		"sword": -0.696151859504132,
+		"time": 1.2
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			5.95831346511841,
+			-58.7000465393066
+		],
+		"index": 37,
+		"sequence": "combo",
+		"sword": -0.677834213345577,
+		"time": 1.23333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			6.45027685165405,
+			-57.5193367004395
+		],
+		"index": 38,
+		"sequence": "combo",
+		"sword": -0.656187825221916,
+		"time": 1.26666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			6.99180603027344,
+			-56.2196655273438
+		],
+		"index": 39,
+		"sequence": "combo",
+		"sword": -0.632360537190083,
+		"time": 1.3
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			7.55681371688843,
+			-54.8636474609375
+		],
+		"index": 40,
+		"sequence": "combo",
+		"sword": -0.607500191307009,
+		"time": 1.33333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			8.11921310424805,
+			-53.5138893127441
+		],
+		"index": 41,
+		"sequence": "combo",
+		"sword": -0.58275462962963,
+		"time": 1.36666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			8.65291595458984,
+			-52.2330017089844
+		],
+		"index": 42,
+		"sequence": "combo",
+		"sword": -0.559271694214876,
+		"time": 1.4
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			9.1318359375,
+			-51.0835952758789
+		],
+		"index": 43,
+		"sequence": "combo",
+		"sword": -0.538199227119682,
+		"time": 1.43333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			9.52988433837891,
+			-50.1282768249512
+		],
+		"index": 44,
+		"sequence": "combo",
+		"sword": -0.52068507040098,
+		"time": 1.46666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			9.8209753036499,
+			-49.4296569824219
+		],
+		"index": 45,
+		"sequence": "combo",
+		"sword": -0.507877066115702,
+		"time": 1.5
+	},
+	{
+		"clip": "attack2",
+		"facing": "right",
+		"hand": [
+			9.9790210723877,
+			-49.050350189209
+		],
+		"index": 46,
+		"sequence": "combo",
+		"sword": -0.500923056320784,
+		"time": 1.53333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			8.49536991119385,
+			-53.5138893127441
+		],
+		"index": 47,
+		"sequence": "combo",
+		"sword": -0.612847222222222,
+		"time": 1.56666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			7.62962961196899,
+			-59.9117660522461
+		],
+		"index": 48,
+		"sequence": "combo",
+		"sword": -0.67456324248777,
+		"time": 1.6
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			23.8504810333252,
+			-47.9291954040527
+		],
+		"index": 49,
+		"sequence": "combo",
+		"sword": 0.680614436938682,
+		"time": 1.63333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			27.3173446655273,
+			-40.0314025878906
+		],
+		"index": 50,
+		"sequence": "combo",
+		"sword": 1.4703549220954,
+		"time": 1.66666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			23.1099529266357,
+			-34.3551864624023
+		],
+		"index": 51,
+		"sequence": "combo",
+		"sword": 1.96721916491964,
+		"time": 1.7
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			17.8994770050049,
+			-29.9725475311279
+		],
+		"index": 52,
+		"sequence": "combo",
+		"sword": 2.33727814335999,
+		"time": 1.73333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			15.0295352935791,
+			-28.0181922912598
+		],
+		"index": 53,
+		"sequence": "combo",
+		"sword": 2.49851850234231,
+		"time": 1.76666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			15.2301769256592,
+			-28.2058181762695
+		],
+		"index": 54,
+		"sequence": "combo",
+		"sword": 2.34036690610616,
+		"time": 1.8
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			15.8421287536621,
+			-28.76975440979
+		],
+		"index": 55,
+		"sequence": "combo",
+		"sword": 1.9149387378981,
+		"time": 1.83333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			16.5338535308838,
+			-29.4495506286621
+		],
+		"index": 56,
+		"sequence": "combo",
+		"sword": 1.43146097835153,
+		"time": 1.86666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			17.0,
+			-30.0
+		],
+		"index": 57,
+		"sequence": "combo",
+		"sword": 1.1,
+		"time": 1.9
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			17.2487773895264,
+			-30.428731918335
+		],
+		"index": 58,
+		"sequence": "combo",
+		"sword": 0.915673289183223,
+		"time": 1.93333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			17.4828796386719,
+			-30.8776664733887
+		],
+		"index": 59,
+		"sequence": "combo",
+		"sword": 0.740728476821193,
+		"time": 1.96666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			17.6886787414551,
+			-31.3030300140381
+		],
+		"index": 60,
+		"sequence": "combo",
+		"sword": 0.585927152317881,
+		"time": 2.0
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			17.8525505065918,
+			-31.6610546112061
+		],
+		"index": 61,
+		"sequence": "combo",
+		"sword": 0.462030905077263,
+		"time": 2.03333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "right",
+		"hand": [
+			17.9608669281006,
+			-31.9079685211182
+		],
+		"index": 62,
+		"sequence": "combo",
+		"sword": 0.379801324503311,
+		"time": 2.06666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			17.9710121154785,
+			-31.9776592254639
+		],
+		"index": 63,
+		"sequence": "combo",
+		"sword": 0.372075055187638,
+		"time": 2.1
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			17.9898548126221,
+			-32.0951766967773
+		],
+		"index": 64,
+		"sequence": "combo",
+		"sword": 0.357726269315673,
+		"time": 2.13333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.1433944702148
+		],
+		"index": 65,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.16666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.125
+		],
+		"index": 66,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.2
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.105655670166
+		],
+		"index": 67,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.23333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.085506439209
+		],
+		"index": 68,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.26666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.0647048950195
+		],
+		"index": 69,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.3
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.0434112548828
+		],
+		"index": 70,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.33333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.0217895507812
+		],
+		"index": 71,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.36666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.0
+		],
+		"index": 72,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.4
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9782104492188
+		],
+		"index": 73,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.43333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9565887451172
+		],
+		"index": 74,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.46666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9352951049805
+		],
+		"index": 75,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.5
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9144954681396
+		],
+		"index": 76,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.53333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8943462371826
+		],
+		"index": 77,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.56666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.875
+		],
+		"index": 78,
+		"sequence": "combo",
+		"sword": 0.35,
+		"time": 2.6
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.0
+		],
+		"index": 0,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.0
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9782104492188
+		],
+		"index": 1,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.0333333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9565887451172
+		],
+		"index": 2,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.0666666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9352951049805
+		],
+		"index": 3,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.1
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.9144954681396
+		],
+		"index": 4,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.133333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8943462371826
+		],
+		"index": 5,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.166666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.875
+		],
+		"index": 6,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.2
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8566055297852
+		],
+		"index": 7,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.233333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-31.8393039703369
+		],
+		"index": 8,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 0.266666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			17.2222213745117,
+			-33.1772613525391
+		],
+		"index": 9,
+		"sequence": "run-thrust",
+		"sword": 0.383703703703704,
+		"time": 0.3
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			17.8223419189453,
+			-35.6620407104492
+		],
+		"index": 10,
+		"sequence": "run-thrust",
+		"sword": 0.487187598999547,
+		"time": 0.333333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			18.9954490661621,
+			-37.0
+		],
+		"index": 11,
+		"sequence": "run-thrust",
+		"sword": 0.559908984039789,
+		"time": 0.366666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			18.0234146118164,
+			-37.0
+		],
+		"index": 12,
+		"sequence": "run-thrust",
+		"sword": 0.540468277533411,
+		"time": 0.4
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			15.3810663223267,
+			-37.0
+		],
+		"index": 13,
+		"sequence": "run-thrust",
+		"sword": 0.48762133106389,
+		"time": 0.433333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			12.7847995758057,
+			-36.8243103027344
+		],
+		"index": 14,
+		"sequence": "run-thrust",
+		"sword": 0.430563912182314,
+		"time": 0.466666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			11.0198068618774,
+			-36.411994934082
+		],
+		"index": 15,
+		"sequence": "run-thrust",
+		"sword": 0.400817901527377,
+		"time": 0.5
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			12.0617790222168,
+			-36.4012603759766
+		],
+		"index": 16,
+		"sequence": "run-thrust",
+		"sword": 0.41481674834585,
+		"time": 0.533333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			14.2413330078125,
+			-37.0
+		],
+		"index": 17,
+		"sequence": "run-thrust",
+		"sword": 0.464826664689718,
+		"time": 0.566666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			17.160961151123,
+			-37.0
+		],
+		"index": 18,
+		"sequence": "run-thrust",
+		"sword": 0.523219225638212,
+		"time": 0.6
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			18.8867473602295,
+			-37.0
+		],
+		"index": 19,
+		"sequence": "run-thrust",
+		"sword": 0.55773493939367,
+		"time": 0.633333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			18.4652652740479,
+			-37.0
+		],
+		"index": 20,
+		"sequence": "run-thrust",
+		"sword": 0.549305291633406,
+		"time": 0.666666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			16.1293659210205,
+			-37.0
+		],
+		"index": 21,
+		"sequence": "run-thrust",
+		"sword": 0.50258731654743,
+		"time": 0.7
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			13.1695384979248,
+			-37.0
+		],
+		"index": 22,
+		"sequence": "run-thrust",
+		"sword": 0.44339077670839,
+		"time": 0.733333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			11.2806692123413,
+			-36.3495903015137
+		],
+		"index": 23,
+		"sequence": "run-thrust",
+		"sword": 0.404419329232334,
+		"time": 0.766666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			11.4938745498657,
+			-36.3288955688477
+		],
+		"index": 24,
+		"sequence": "run-thrust",
+		"sword": 0.407203098329877,
+		"time": 0.8
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			13.5102081298828,
+			-37.0
+		],
+		"index": 25,
+		"sequence": "run-thrust",
+		"sword": 0.450204165901347,
+		"time": 0.833333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			16.4833106994629,
+			-37.0
+		],
+		"index": 26,
+		"sequence": "run-thrust",
+		"sword": 0.509666208126041,
+		"time": 0.866666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			18.6369438171387,
+			-37.0
+		],
+		"index": 27,
+		"sequence": "run-thrust",
+		"sword": 0.552738888723766,
+		"time": 0.9
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			18.7813167572021,
+			-37.0
+		],
+		"index": 28,
+		"sequence": "run-thrust",
+		"sword": 0.555626320617888,
+		"time": 0.933333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			16.8366661071777,
+			-37.0
+		],
+		"index": 29,
+		"sequence": "run-thrust",
+		"sword": 0.516733316270961,
+		"time": 0.966666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			13.8773336410522,
+			-37.0
+		],
+		"index": 30,
+		"sequence": "run-thrust",
+		"sword": 0.457546663286337,
+		"time": 1.0
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			11.768196105957,
+			-36.3404312133789
+		],
+		"index": 31,
+		"sequence": "run-thrust",
+		"sword": 0.410764556699044,
+		"time": 1.03333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			11.1195001602173,
+			-36.3830986022949
+		],
+		"index": 32,
+		"sequence": "run-thrust",
+		"sword": 0.402232189102388,
+		"time": 1.06666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			12.9090900421143,
+			-36.9602165222168
+		],
+		"index": 33,
+		"sequence": "run-thrust",
+		"sword": 0.436663343177381,
+		"time": 1.1
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			15.7518110275269,
+			-37.0
+		],
+		"index": 34,
+		"sequence": "run-thrust",
+		"sword": 0.495036220352009,
+		"time": 1.13333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "right",
+		"hand": [
+			18.2551097869873,
+			-37.0
+		],
+		"index": 35,
+		"sequence": "run-thrust",
+		"sword": 0.545102203305277,
+		"time": 1.16666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			18.1889705657959,
+			-35.7037048339844
+		],
+		"index": 36,
+		"sequence": "run-thrust",
+		"sword": 0.494520150596501,
+		"time": 1.2
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			17.874095916748,
+			-36.1769561767578
+		],
+		"index": 37,
+		"sequence": "run-thrust",
+		"sword": 0.582758143826599,
+		"time": 1.23333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			17.2592601776123,
+			-43.1111106872559
+		],
+		"index": 38,
+		"sequence": "run-thrust",
+		"sword": 1.07520877935145,
+		"time": 1.26666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			17.0,
+			-47.0
+		],
+		"index": 39,
+		"sequence": "run-thrust",
+		"sword": 1.4,
+		"time": 1.3
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			21.3619785308838,
+			-45.4953689575195
+		],
+		"index": 40,
+		"sequence": "run-thrust",
+		"sword": 1.50449431997571,
+		"time": 1.33333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			27.9375,
+			-43.2962951660156
+		],
+		"index": 41,
+		"sequence": "run-thrust",
+		"sword": 1.56471556924773,
+		"time": 1.36666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			29.3439998626709,
+			-43.0
+		],
+		"index": 42,
+		"sequence": "run-thrust",
+		"sword": 1.570796,
+		"time": 1.4
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			29.7677040100098,
+			-43.0
+		],
+		"index": 43,
+		"sequence": "run-thrust",
+		"sword": 1.570796,
+		"time": 1.43333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			29.980297088623,
+			-43.0
+		],
+		"index": 44,
+		"sequence": "run-thrust",
+		"sword": 1.570796,
+		"time": 1.46666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			29.487117767334,
+			-42.9785957336426
+		],
+		"index": 45,
+		"sequence": "run-thrust",
+		"sword": 1.56368379726989,
+		"time": 1.5
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			26.9314365386963,
+			-42.8544120788574
+		],
+		"index": 46,
+		"sequence": "run-thrust",
+		"sword": 1.52441051573161,
+		"time": 1.53333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			23.4249458312988,
+			-42.6330070495605
+		],
+		"index": 47,
+		"sequence": "run-thrust",
+		"sword": 1.45937402358418,
+		"time": 1.56666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			20.3237438201904,
+			-42.3298835754395
+		],
+		"index": 48,
+		"sequence": "run-thrust",
+		"sword": 1.37839505424212,
+		"time": 1.6
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			18.9690017700195,
+			-41.9538383483887
+		],
+		"index": 49,
+		"sequence": "run-thrust",
+		"sword": 1.29078452292087,
+		"time": 1.63333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			18.6825542449951,
+			-40.827205657959
+		],
+		"index": 50,
+		"sequence": "run-thrust",
+		"sword": 1.15193643473357,
+		"time": 1.66666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			18.4413776397705,
+			-38.8345603942871
+		],
+		"index": 51,
+		"sequence": "run-thrust",
+		"sword": 0.954961489978603,
+		"time": 1.7
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			18.2490196228027,
+			-36.4660949707031
+		],
+		"index": 52,
+		"sequence": "run-thrust",
+		"sword": 0.738102666016472,
+		"time": 1.73333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			18.1090259552002,
+			-34.2120094299316
+		],
+		"index": 53,
+		"sequence": "run-thrust",
+		"sword": 0.539602940207673,
+		"time": 1.76666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "right",
+		"hand": [
+			18.0249423980713,
+			-32.5625
+		],
+		"index": 54,
+		"sequence": "run-thrust",
+		"sword": 0.397705289912701,
+		"time": 1.8
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0184764862061,
+			-32.4812355041504
+		],
+		"index": 55,
+		"sequence": "run-thrust",
+		"sword": 0.385337251787186,
+		"time": 1.83333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0064659118652,
+			-32.3282051086426
+		],
+		"index": 56,
+		"sequence": "run-thrust",
+		"sword": 0.362368038125515,
+		"time": 1.86666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.2414817810059
+		],
+		"index": 57,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 1.9
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.2349243164062
+		],
+		"index": 58,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 1.93333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.2265777587891
+		],
+		"index": 59,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 1.96666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.2165069580078
+		],
+		"index": 60,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.0
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.2047882080078
+		],
+		"index": 61,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.03333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.1915092468262
+		],
+		"index": 62,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.06666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.1767768859863
+		],
+		"index": 63,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.1
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.1606979370117
+		],
+		"index": 64,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.13333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.1433944702148
+		],
+		"index": 65,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.16666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.125
+		],
+		"index": 66,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.2
+	},
+	{
+		"clip": "idle",
+		"facing": "right",
+		"hand": [
+			18.0,
+			-32.105655670166
+		],
+		"index": 67,
+		"sequence": "run-thrust",
+		"sword": 0.35,
+		"time": 2.23333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.0
+		],
+		"index": 0,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.0
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9782104492188
+		],
+		"index": 1,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.0333333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9565887451172
+		],
+		"index": 2,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.0666666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9352951049805
+		],
+		"index": 3,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.1
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9144954681396
+		],
+		"index": 4,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.133333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8943462371826
+		],
+		"index": 5,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.166666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.875
+		],
+		"index": 6,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.2
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8566055297852
+		],
+		"index": 7,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.233333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8393039703369
+		],
+		"index": 8,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.266666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8809661865234
+		],
+		"index": 9,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 0.3
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-22.1152267456055,
+			-43.2905654907227
+		],
+		"index": 10,
+		"sequence": "combo",
+		"sword": 0.0864633994263624,
+		"time": 0.333333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-12.4515552520752,
+			-57.7654037475586
+		],
+		"index": 11,
+		"sequence": "combo",
+		"sword": 0.698875420875421,
+		"time": 0.366666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-4.77777767181396,
+			-60.0247840881348
+		],
+		"index": 12,
+		"sequence": "combo",
+		"sword": 0.727104377104376,
+		"time": 0.4
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-22.4732513427734,
+			-48.9843482971191
+		],
+		"index": 13,
+		"sequence": "combo",
+		"sword": -0.61470881656067,
+		"time": 0.433333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-26.2816772460938,
+			-40.4477844238281
+		],
+		"index": 14,
+		"sequence": "combo",
+		"sword": -1.45173711039633,
+		"time": 0.466666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-22.021053314209,
+			-33.4436073303223
+		],
+		"index": 15,
+		"sequence": "combo",
+		"sword": -1.99528948704926,
+		"time": 0.5
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-17.2972717285156,
+			-28.7117786407471
+		],
+		"index": 16,
+		"sequence": "combo",
+		"sword": -2.34302898632508,
+		"time": 0.533333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-15.3105726242065,
+			-28.0658683776855
+		],
+		"index": 17,
+		"sequence": "combo",
+		"sword": -2.40910401581933,
+		"time": 0.566666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-13.9702005386353,
+			-28.5539360046387
+		],
+		"index": 18,
+		"sequence": "combo",
+		"sword": -2.42606153395117,
+		"time": 0.6
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-12.6958723068237,
+			-29.4307308197021
+		],
+		"index": 19,
+		"sequence": "combo",
+		"sword": -2.44133239710711,
+		"time": 0.633333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-11.5052633285522,
+			-30.5925922393799
+		],
+		"index": 20,
+		"sequence": "combo",
+		"sword": -2.45489344092696,
+		"time": 0.666666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-10.4160499572754,
+			-31.9358596801758
+		],
+		"index": 21,
+		"sequence": "combo",
+		"sword": -2.46672150105054,
+		"time": 0.7
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-9.44591045379639,
+			-33.3568725585938
+		],
+		"index": 22,
+		"sequence": "combo",
+		"sword": -2.47679341311766,
+		"time": 0.733333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-8.61252117156982,
+			-34.7519721984863
+		],
+		"index": 23,
+		"sequence": "combo",
+		"sword": -2.48508601276815,
+		"time": 0.766666666666667
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-7.93355846405029,
+			-36.0174942016602
+		],
+		"index": 24,
+		"sequence": "combo",
+		"sword": -2.49157613564181,
+		"time": 0.8
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-7.4266996383667,
+			-37.0497779846191
+		],
+		"index": 25,
+		"sequence": "combo",
+		"sword": -2.49624061737846,
+		"time": 0.833333333333333
+	},
+	{
+		"clip": "attack1",
+		"facing": "left",
+		"hand": [
+			-7.10962104797363,
+			-37.7451667785645
+		],
+		"index": 26,
+		"sequence": "combo",
+		"sword": -2.49905629361792,
+		"time": 0.866666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-7.0,
+			-38.0
+		],
+		"index": 27,
+		"sequence": "combo",
+		"sword": -2.5,
+		"time": 0.9
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-9.63200283050537,
+			-32.7463607788086
+		],
+		"index": 28,
+		"sequence": "combo",
+		"sword": -2.48117597814956,
+		"time": 0.933333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-16.5542011260986,
+			-31.5317897796631
+		],
+		"index": 29,
+		"sequence": "combo",
+		"sword": -2.27827013552333,
+		"time": 0.966666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-28.0,
+			-42.0
+		],
+		"index": 30,
+		"sequence": "combo",
+		"sword": -1.2,
+		"time": 1.0
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-22.9439296722412,
+			-49.5715370178223
+		],
+		"index": 31,
+		"sequence": "combo",
+		"sword": -0.430796815373753,
+		"time": 1.03333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-12.8957901000977,
+			-56.6464576721191
+		],
+		"index": 32,
+		"sequence": "combo",
+		"sword": 0.282669705481689,
+		"time": 1.06666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-5.53568744659424,
+			-60.7307434082031
+		],
+		"index": 33,
+		"sequence": "combo",
+		"sword": 0.692999215800497,
+		"time": 1.1
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-5.04069185256958,
+			-60.9023399353027
+		],
+		"index": 34,
+		"sequence": "combo",
+		"sword": 0.718209557698194,
+		"time": 1.13333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-5.22743368148804,
+			-60.454158782959
+		],
+		"index": 35,
+		"sequence": "combo",
+		"sword": 0.709992921640649,
+		"time": 1.16666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-5.54200315475464,
+			-59.6991920471191
+		],
+		"index": 36,
+		"sequence": "combo",
+		"sword": 0.696151859504132,
+		"time": 1.2
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-5.95831346511841,
+			-58.7000465393066
+		],
+		"index": 37,
+		"sequence": "combo",
+		"sword": 0.677834213345577,
+		"time": 1.23333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-6.45027685165405,
+			-57.5193367004395
+		],
+		"index": 38,
+		"sequence": "combo",
+		"sword": 0.656187825221916,
+		"time": 1.26666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-6.99180603027344,
+			-56.2196655273438
+		],
+		"index": 39,
+		"sequence": "combo",
+		"sword": 0.632360537190083,
+		"time": 1.3
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-7.55681371688843,
+			-54.8636474609375
+		],
+		"index": 40,
+		"sequence": "combo",
+		"sword": 0.607500191307009,
+		"time": 1.33333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-8.11921310424805,
+			-53.5138893127441
+		],
+		"index": 41,
+		"sequence": "combo",
+		"sword": 0.58275462962963,
+		"time": 1.36666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-8.65291595458984,
+			-52.2330017089844
+		],
+		"index": 42,
+		"sequence": "combo",
+		"sword": 0.559271694214876,
+		"time": 1.4
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-9.1318359375,
+			-51.0835952758789
+		],
+		"index": 43,
+		"sequence": "combo",
+		"sword": 0.538199227119682,
+		"time": 1.43333333333333
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-9.52988433837891,
+			-50.1282768249512
+		],
+		"index": 44,
+		"sequence": "combo",
+		"sword": 0.52068507040098,
+		"time": 1.46666666666667
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-9.8209753036499,
+			-49.4296569824219
+		],
+		"index": 45,
+		"sequence": "combo",
+		"sword": 0.507877066115702,
+		"time": 1.5
+	},
+	{
+		"clip": "attack2",
+		"facing": "left",
+		"hand": [
+			-9.9790210723877,
+			-49.050350189209
+		],
+		"index": 46,
+		"sequence": "combo",
+		"sword": 0.500923056320784,
+		"time": 1.53333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-8.49536991119385,
+			-53.5138893127441
+		],
+		"index": 47,
+		"sequence": "combo",
+		"sword": 0.612847222222222,
+		"time": 1.56666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-7.62962961196899,
+			-59.9117660522461
+		],
+		"index": 48,
+		"sequence": "combo",
+		"sword": 0.67456324248777,
+		"time": 1.6
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-23.8504810333252,
+			-47.9291954040527
+		],
+		"index": 49,
+		"sequence": "combo",
+		"sword": -0.680614436938682,
+		"time": 1.63333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-27.3173446655273,
+			-40.0314025878906
+		],
+		"index": 50,
+		"sequence": "combo",
+		"sword": -1.4703549220954,
+		"time": 1.66666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-23.1099529266357,
+			-34.3551864624023
+		],
+		"index": 51,
+		"sequence": "combo",
+		"sword": -1.96721916491964,
+		"time": 1.7
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-17.8994770050049,
+			-29.9725475311279
+		],
+		"index": 52,
+		"sequence": "combo",
+		"sword": -2.33727814335999,
+		"time": 1.73333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-15.0295352935791,
+			-28.0181922912598
+		],
+		"index": 53,
+		"sequence": "combo",
+		"sword": -2.49851850234231,
+		"time": 1.76666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-15.2301769256592,
+			-28.2058181762695
+		],
+		"index": 54,
+		"sequence": "combo",
+		"sword": -2.34036690610616,
+		"time": 1.8
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-15.8421287536621,
+			-28.76975440979
+		],
+		"index": 55,
+		"sequence": "combo",
+		"sword": -1.9149387378981,
+		"time": 1.83333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-16.5338535308838,
+			-29.4495506286621
+		],
+		"index": 56,
+		"sequence": "combo",
+		"sword": -1.43146097835153,
+		"time": 1.86666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-17.0,
+			-30.0
+		],
+		"index": 57,
+		"sequence": "combo",
+		"sword": -1.1,
+		"time": 1.9
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-17.2487773895264,
+			-30.428731918335
+		],
+		"index": 58,
+		"sequence": "combo",
+		"sword": -0.915673289183223,
+		"time": 1.93333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-17.4828796386719,
+			-30.8776664733887
+		],
+		"index": 59,
+		"sequence": "combo",
+		"sword": -0.740728476821193,
+		"time": 1.96666666666667
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-17.6886787414551,
+			-31.3030300140381
+		],
+		"index": 60,
+		"sequence": "combo",
+		"sword": -0.585927152317881,
+		"time": 2.0
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-17.8525505065918,
+			-31.6610546112061
+		],
+		"index": 61,
+		"sequence": "combo",
+		"sword": -0.462030905077263,
+		"time": 2.03333333333333
+	},
+	{
+		"clip": "attack3",
+		"facing": "left",
+		"hand": [
+			-17.9608669281006,
+			-31.9079685211182
+		],
+		"index": 62,
+		"sequence": "combo",
+		"sword": -0.379801324503311,
+		"time": 2.06666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-17.9710121154785,
+			-31.9776592254639
+		],
+		"index": 63,
+		"sequence": "combo",
+		"sword": -0.372075055187638,
+		"time": 2.1
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-17.9898548126221,
+			-32.0951766967773
+		],
+		"index": 64,
+		"sequence": "combo",
+		"sword": -0.357726269315673,
+		"time": 2.13333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.1433944702148
+		],
+		"index": 65,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.16666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.125
+		],
+		"index": 66,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.2
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.105655670166
+		],
+		"index": 67,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.23333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.085506439209
+		],
+		"index": 68,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.26666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.0647048950195
+		],
+		"index": 69,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.3
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.0434112548828
+		],
+		"index": 70,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.33333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.0217895507812
+		],
+		"index": 71,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.36666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.0
+		],
+		"index": 72,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.4
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9782104492188
+		],
+		"index": 73,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.43333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9565887451172
+		],
+		"index": 74,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.46666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9352951049805
+		],
+		"index": 75,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.5
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9144954681396
+		],
+		"index": 76,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.53333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8943462371826
+		],
+		"index": 77,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.56666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.875
+		],
+		"index": 78,
+		"sequence": "combo",
+		"sword": -0.35,
+		"time": 2.6
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.0
+		],
+		"index": 0,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.0
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9782104492188
+		],
+		"index": 1,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.0333333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9565887451172
+		],
+		"index": 2,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.0666666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9352951049805
+		],
+		"index": 3,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.1
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.9144954681396
+		],
+		"index": 4,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.133333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8943462371826
+		],
+		"index": 5,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.166666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.875
+		],
+		"index": 6,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.2
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8566055297852
+		],
+		"index": 7,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.233333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-31.8393039703369
+		],
+		"index": 8,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 0.266666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-17.2222213745117,
+			-33.1772613525391
+		],
+		"index": 9,
+		"sequence": "run-thrust",
+		"sword": -0.383703703703704,
+		"time": 0.3
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-17.8223419189453,
+			-35.6620407104492
+		],
+		"index": 10,
+		"sequence": "run-thrust",
+		"sword": -0.487187598999547,
+		"time": 0.333333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-18.9954490661621,
+			-37.0
+		],
+		"index": 11,
+		"sequence": "run-thrust",
+		"sword": -0.559908984039789,
+		"time": 0.366666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-18.0234146118164,
+			-37.0
+		],
+		"index": 12,
+		"sequence": "run-thrust",
+		"sword": -0.540468277533411,
+		"time": 0.4
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-15.3810663223267,
+			-37.0
+		],
+		"index": 13,
+		"sequence": "run-thrust",
+		"sword": -0.48762133106389,
+		"time": 0.433333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-12.7847995758057,
+			-36.8243103027344
+		],
+		"index": 14,
+		"sequence": "run-thrust",
+		"sword": -0.430563912182314,
+		"time": 0.466666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-11.0198068618774,
+			-36.411994934082
+		],
+		"index": 15,
+		"sequence": "run-thrust",
+		"sword": -0.400817901527377,
+		"time": 0.5
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-12.0617790222168,
+			-36.4012603759766
+		],
+		"index": 16,
+		"sequence": "run-thrust",
+		"sword": -0.41481674834585,
+		"time": 0.533333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-14.2413330078125,
+			-37.0
+		],
+		"index": 17,
+		"sequence": "run-thrust",
+		"sword": -0.464826664689718,
+		"time": 0.566666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-17.160961151123,
+			-37.0
+		],
+		"index": 18,
+		"sequence": "run-thrust",
+		"sword": -0.523219225638212,
+		"time": 0.6
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-18.8867473602295,
+			-37.0
+		],
+		"index": 19,
+		"sequence": "run-thrust",
+		"sword": -0.55773493939367,
+		"time": 0.633333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-18.4652652740479,
+			-37.0
+		],
+		"index": 20,
+		"sequence": "run-thrust",
+		"sword": -0.549305291633406,
+		"time": 0.666666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-16.1293659210205,
+			-37.0
+		],
+		"index": 21,
+		"sequence": "run-thrust",
+		"sword": -0.50258731654743,
+		"time": 0.7
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-13.1695384979248,
+			-37.0
+		],
+		"index": 22,
+		"sequence": "run-thrust",
+		"sword": -0.44339077670839,
+		"time": 0.733333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-11.2806692123413,
+			-36.3495903015137
+		],
+		"index": 23,
+		"sequence": "run-thrust",
+		"sword": -0.404419329232334,
+		"time": 0.766666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-11.4938745498657,
+			-36.3288955688477
+		],
+		"index": 24,
+		"sequence": "run-thrust",
+		"sword": -0.407203098329877,
+		"time": 0.8
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-13.5102081298828,
+			-37.0
+		],
+		"index": 25,
+		"sequence": "run-thrust",
+		"sword": -0.450204165901347,
+		"time": 0.833333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-16.4833106994629,
+			-37.0
+		],
+		"index": 26,
+		"sequence": "run-thrust",
+		"sword": -0.509666208126041,
+		"time": 0.866666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-18.6369438171387,
+			-37.0
+		],
+		"index": 27,
+		"sequence": "run-thrust",
+		"sword": -0.552738888723766,
+		"time": 0.9
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-18.7813167572021,
+			-37.0
+		],
+		"index": 28,
+		"sequence": "run-thrust",
+		"sword": -0.555626320617888,
+		"time": 0.933333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-16.8366661071777,
+			-37.0
+		],
+		"index": 29,
+		"sequence": "run-thrust",
+		"sword": -0.516733316270961,
+		"time": 0.966666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-13.8773336410522,
+			-37.0
+		],
+		"index": 30,
+		"sequence": "run-thrust",
+		"sword": -0.457546663286337,
+		"time": 1.0
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-11.768196105957,
+			-36.3404312133789
+		],
+		"index": 31,
+		"sequence": "run-thrust",
+		"sword": -0.410764556699044,
+		"time": 1.03333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-11.1195001602173,
+			-36.3830986022949
+		],
+		"index": 32,
+		"sequence": "run-thrust",
+		"sword": -0.402232189102388,
+		"time": 1.06666666666667
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-12.9090900421143,
+			-36.9602165222168
+		],
+		"index": 33,
+		"sequence": "run-thrust",
+		"sword": -0.436663343177381,
+		"time": 1.1
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-15.7518110275269,
+			-37.0
+		],
+		"index": 34,
+		"sequence": "run-thrust",
+		"sword": -0.495036220352009,
+		"time": 1.13333333333333
+	},
+	{
+		"clip": "run",
+		"facing": "left",
+		"hand": [
+			-18.2551097869873,
+			-37.0
+		],
+		"index": 35,
+		"sequence": "run-thrust",
+		"sword": -0.545102203305277,
+		"time": 1.16666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-18.1889705657959,
+			-35.7037048339844
+		],
+		"index": 36,
+		"sequence": "run-thrust",
+		"sword": -0.494520150596501,
+		"time": 1.2
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-17.874095916748,
+			-36.1769561767578
+		],
+		"index": 37,
+		"sequence": "run-thrust",
+		"sword": -0.582758143826599,
+		"time": 1.23333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-17.2592601776123,
+			-43.1111106872559
+		],
+		"index": 38,
+		"sequence": "run-thrust",
+		"sword": -1.07520877935145,
+		"time": 1.26666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-17.0,
+			-47.0
+		],
+		"index": 39,
+		"sequence": "run-thrust",
+		"sword": -1.4,
+		"time": 1.3
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-21.3619785308838,
+			-45.4953689575195
+		],
+		"index": 40,
+		"sequence": "run-thrust",
+		"sword": -1.50449431997571,
+		"time": 1.33333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-27.9375,
+			-43.2962951660156
+		],
+		"index": 41,
+		"sequence": "run-thrust",
+		"sword": -1.56471556924773,
+		"time": 1.36666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-29.3439998626709,
+			-43.0
+		],
+		"index": 42,
+		"sequence": "run-thrust",
+		"sword": -1.570796,
+		"time": 1.4
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-29.7677040100098,
+			-43.0
+		],
+		"index": 43,
+		"sequence": "run-thrust",
+		"sword": -1.570796,
+		"time": 1.43333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-29.980297088623,
+			-43.0
+		],
+		"index": 44,
+		"sequence": "run-thrust",
+		"sword": -1.570796,
+		"time": 1.46666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-29.487117767334,
+			-42.9785957336426
+		],
+		"index": 45,
+		"sequence": "run-thrust",
+		"sword": -1.56368379726989,
+		"time": 1.5
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-26.9314365386963,
+			-42.8544120788574
+		],
+		"index": 46,
+		"sequence": "run-thrust",
+		"sword": -1.52441051573161,
+		"time": 1.53333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-23.4249458312988,
+			-42.6330070495605
+		],
+		"index": 47,
+		"sequence": "run-thrust",
+		"sword": -1.45937402358418,
+		"time": 1.56666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-20.3237438201904,
+			-42.3298835754395
+		],
+		"index": 48,
+		"sequence": "run-thrust",
+		"sword": -1.37839505424212,
+		"time": 1.6
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-18.9690017700195,
+			-41.9538383483887
+		],
+		"index": 49,
+		"sequence": "run-thrust",
+		"sword": -1.29078452292087,
+		"time": 1.63333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-18.6825542449951,
+			-40.827205657959
+		],
+		"index": 50,
+		"sequence": "run-thrust",
+		"sword": -1.15193643473357,
+		"time": 1.66666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-18.4413776397705,
+			-38.8345603942871
+		],
+		"index": 51,
+		"sequence": "run-thrust",
+		"sword": -0.954961489978603,
+		"time": 1.7
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-18.2490196228027,
+			-36.4660949707031
+		],
+		"index": 52,
+		"sequence": "run-thrust",
+		"sword": -0.738102666016472,
+		"time": 1.73333333333333
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-18.1090259552002,
+			-34.2120094299316
+		],
+		"index": 53,
+		"sequence": "run-thrust",
+		"sword": -0.539602940207673,
+		"time": 1.76666666666667
+	},
+	{
+		"clip": "dashattack",
+		"facing": "left",
+		"hand": [
+			-18.0249423980713,
+			-32.5625
+		],
+		"index": 54,
+		"sequence": "run-thrust",
+		"sword": -0.397705289912701,
+		"time": 1.8
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0184764862061,
+			-32.4812355041504
+		],
+		"index": 55,
+		"sequence": "run-thrust",
+		"sword": -0.385337251787186,
+		"time": 1.83333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0064659118652,
+			-32.3282051086426
+		],
+		"index": 56,
+		"sequence": "run-thrust",
+		"sword": -0.362368038125515,
+		"time": 1.86666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.2414817810059
+		],
+		"index": 57,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 1.9
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.2349243164062
+		],
+		"index": 58,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 1.93333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.2265777587891
+		],
+		"index": 59,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 1.96666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.2165069580078
+		],
+		"index": 60,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.0
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.2047882080078
+		],
+		"index": 61,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.03333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.1915092468262
+		],
+		"index": 62,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.06666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.1767768859863
+		],
+		"index": 63,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.1
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.1606979370117
+		],
+		"index": 64,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.13333333333333
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.1433944702148
+		],
+		"index": 65,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.16666666666667
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.125
+		],
+		"index": 66,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.2
+	},
+	{
+		"clip": "idle",
+		"facing": "left",
+		"hand": [
+			-18.0,
+			-32.105655670166
+		],
+		"index": 67,
+		"sequence": "run-thrust",
+		"sword": -0.35,
+		"time": 2.23333333333333
+	}
+]

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "reference": "docs/art/slayer/chibi-pixel-reference-v6.png",
   "standing_height": 80,
   "head": [
@@ -12,13 +12,13 @@
   "chest_width": 24,
   "waist_width": 18,
   "hip_span": 16,
-  "thigh_length": 13,
-  "shin_length": 9,
-  "thigh_width": 14,
-  "shin_width": 11,
+  "thigh_length": 16,
+  "shin_length": 6,
+  "thigh_width": 16,
+  "shin_width": 13,
   "boot": [
-    16,
-    7
+    18,
+    12
   ],
   "normal_arm": [
     11,
@@ -39,10 +39,10 @@
   "parts": {
     "head_right": {
       "rect": [
-        16,
-        19,
-        96,
-        90
+        180,
+        172,
+        279,
+        296
       ],
       "size": [
         32,
@@ -51,22 +51,10 @@
     },
     "head_left": {
       "rect": [
-        144,
-        19,
-        96,
-        90
-      ],
-      "size": [
-        32,
-        30
-      ]
-    },
-    "head_back": {
-      "rect": [
-        272,
-        19,
-        96,
-        90
+        817,
+        171,
+        286,
+        297
       ],
       "size": [
         32,
@@ -75,22 +63,10 @@
     },
     "torso_front": {
       "rect": [
-        388,
-        31,
-        120,
-        66
-      ],
-      "size": [
-        40,
-        22
-      ]
-    },
-    "torso_back": {
-      "rect": [
-        516,
-        31,
-        120,
-        66
+        1445,
+        194,
+        309,
+        251
       ],
       "size": [
         40,
@@ -99,10 +75,10 @@
     },
     "hips": {
       "rect": [
-        656,
-        46,
-        96,
-        36
+        2096,
+        252,
+        288,
+        136
       ],
       "size": [
         32,
@@ -111,82 +87,114 @@
     },
     "thigh": {
       "rect": [
-        43,
-        166,
-        42,
-        51
+        163,
+        735,
+        313,
+        449
       ],
       "size": [
-        14,
-        17
+        16,
+        20
+      ],
+      "root": [
+        8.0,
+        1.6
+      ],
+      "tip": [
+        8.0,
+        17.6
       ]
     },
     "shin": {
       "rect": [
-        175,
-        172,
-        33,
-        39
+        825,
+        770,
+        269,
+        380
       ],
       "size": [
-        11,
-        13
+        13,
+        8
+      ],
+      "root": [
+        6.5,
+        0.8
+      ],
+      "tip": [
+        6.5,
+        7.2
       ]
     },
     "boot_right": {
       "rect": [
-        296,
-        181,
-        48,
-        21
+        1435,
+        820,
+        330,
+        280
       ],
       "size": [
-        16,
-        7
+        18,
+        12
       ]
     },
     "boot_left": {
       "rect": [
-        424,
-        181,
-        48,
-        21
+        2080,
+        819,
+        320,
+        281
       ],
       "size": [
-        16,
-        7
+        18,
+        12
       ]
     },
     "upper_arm": {
       "rect": [
-        564,
-        169,
-        24,
-        45
+        267,
+        1525,
+        106,
+        150
       ],
       "size": [
-        8,
-        15
+        11.851160280748886,
+        16.77050983124842
+      ],
+      "root": [
+        8.72066511224918,
+        3.689512162874653
+      ],
+      "tip": [
+        3.8013155617496426,
+        13.528211263873727
       ]
     },
     "forearm": {
       "rect": [
-        693,
-        172,
-        21,
-        39
+        889,
+        1534,
+        142,
+        131
       ],
       "size": [
-        7,
-        13
+        11.642260977314518,
+        10.74039569033945
+      ],
+      "root": [
+        8.690701856305203,
+        0.9838530403364382
+      ],
+      "tip": [
+        4.181375421429863,
+        8.772689609666573
       ]
     },
     "fist": {
       "rect": [
-        53,
-        309,
-        21,
-        21
+        1529,
+        1538,
+        142,
+        124
       ],
       "size": [
         7,
@@ -195,65 +203,83 @@
     },
     "cursed_upper": {
       "rect": [
-        177,
-        296,
-        30,
-        48
+        2181,
+        1541,
+        117,
+        118
       ],
       "size": [
-        10,
-        16
+        12.750471185956913,
+        12.859449572161672
+      ],
+      "root": [
+        3.705265130961838,
+        1.634675793071399
+      ],
+      "tip": [
+        10.461925075656954,
+        11.551708937704554
       ]
     },
     "cursed_forearm": {
       "rect": [
-        306,
-        299,
-        27,
-        42
+        239,
+        2138,
+        161,
+        204
       ],
       "size": [
-        9,
-        14
+        8.758022894659327,
+        11.097122177083866
+      ],
+      "root": [
+        1.6863273896549014,
+        0.8703625236928523
+      ],
+      "tip": [
+        6.310128296773179,
+        9.737180733813785
       ]
     },
     "claw": {
       "rect": [
-        434,
-        305,
-        27,
-        30
+        877,
+        2121,
+        166,
+        237
       ],
       "size": [
         9,
         10
       ]
     },
-    "hips_back": {
+    "sword_steel": {
       "rect": [
-        528,
-        302,
-        96,
-        36
+        1564,
+        2092,
+        71,
+        296
       ],
       "size": [
-        32,
-        12
+        8,
+        64
       ]
     },
-    "torso_side": {
+    "sword_cyan": {
       "rect": [
-        650,
-        287,
-        108,
-        66
+        2204,
+        2092,
+        72,
+        296
       ],
       "size": [
-        36,
-        22
+        8,
+        64
       ]
     }
   },
-  "source_sha256": "edf1d9afdabd6fddd1823a7da62381674547c9540e1a74e58bc107643d01c6aa",
-  "rule": "Bone lengths, body-part dimensions and head size are constant. Pose changes use rotations and joint locations; no per-pose scaling or stretching."
+  "source_sha256": "3cb84b1a0806089259370546465240941416d9d3f1f1678ff1e199a3b84666fe",
+  "rule": "Bone lengths, body-part dimensions and head size are constant. Pose changes use rotations and joint locations; no per-pose scaling or stretching.",
+  "texture_policy": "Native part pixels retained; logical anatomy calibrated once, never per pose.",
+  "motion": "motion.json"
 }

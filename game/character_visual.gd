@@ -41,6 +41,7 @@ func _ready() -> void:
 		slayer_visual = SlayerVisual.new()
 		slayer_visual.name = "SlayerBody"
 		slayer_visual.repeat_attack = false
+		slayer_visual.scale = Vector2(1.5,1.5)
 		add_child(slayer_visual)
 
 func _physics_process(delta: float) -> void:
@@ -88,7 +89,7 @@ func _update_slayer(delta: float) -> void:
 		slayer_motion = action
 		slayer_direction = direction
 	else:
-		slayer_time += delta
+		slayer_time += delta * (actor.velocity.length() / (385.0 if actor.running else 255.0) if action in ["walk","run"] else 1.0)
 	slayer_visual.action = action
 	slayer_visual.facing = direction
 	if actor.health <= 0:
@@ -102,7 +103,12 @@ func _update_slayer(delta: float) -> void:
 		frame = slayer_visual.frame_at_time(slayer_time, true)
 	row = slayer_visual.clip()["row"]
 	slayer_visual.weapon_index = weapon_index
-	slayer_visual.seek(frame)
+	# Keep discrete source records for debugging; render with the continuous clock.
+	slayer_visual.frame = frame
+	var motion_time := slayer_time
+	if actor.attack_kind != &"":
+		motion_time = slayer_visual.source_attack_time(actor.attack_elapsed,actor.attack_duration,actor.strike_time)
+	slayer_visual.set_motion(action,direction,motion_time,delta)
 
 func cycle_weapon() -> void:
 	weapon_index = (weapon_index + 1) % equipment.size()

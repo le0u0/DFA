@@ -1,0 +1,50 @@
+{
+  "combo-left.gif": {
+    "resolution": [
+      1236,
+      1273
+    ],
+    "samples": 79,
+    "duration_ms": 2630,
+    "renderer": "game/slayer_model.gd",
+    "clock": "30 Hz capture of continuous seconds-based motion",
+    "fixed_model_scale": 9.5,
+    "source": "Native-detail texture atlas; not enlarged gameplay screenshots"
+  },
+  "combo-right.gif": {
+    "resolution": [
+      1236,
+      1273
+    ],
+    "samples": 79,
+    "duration_ms": 2630,
+    "renderer": "game/slayer_model.gd",
+    "clock": "30 Hz capture of continuous seconds-based motion",
+    "fixed_model_scale": 9.5,
+    "source": "Native-detail texture atlas; not enlarged gameplay screenshots"
+  },
+  "run-thrust-left.gif": {
+    "resolution": [
+      1236,
+      1273
+    ],
+    "samples": 68,
+    "duration_ms": 2260,
+    "renderer": "game/slayer_model.gd",
+    "clock": "30 Hz capture of continuous seconds-based motion",
+    "fixed_model_scale": 9.5,
+    "source": "Native-detail texture atlas; not enlarged gameplay screenshots"
+  },
+  "run-thrust-right.gif": {
+    "resolution": [
+      1236,
+      1273
+    ],
+    "samples": 68,
+    "duration_ms": 2260,
+    "renderer": "game/slayer_model.gd",
+    "clock": "30 Hz capture of continuous seconds-based motion",
+    "fixed_model_scale": 9.5,
+    "source": "Native-detail texture atlas; not enlarged gameplay screenshots"
+  }
+}

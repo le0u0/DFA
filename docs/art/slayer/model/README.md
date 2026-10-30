@@ -1,96 +1,53 @@
-# Slayer's fixed character model
+# Slayer continuous character model
 
-**Visual status: rejected / unfinished.** The user rejected this rig's human motion.
-Its passing geometry checks establish fixed lengths only. They do not establish
-acceptable animation or completion. See the blocking review in the development notes.
+The current renderer uses a native-detail texture atlas and continuous motion
+curves. The previous frame-switched rig and its `*-fixed-model.gif` captures are
+rejected historical artifacts; their tests did not establish acceptable motion.
 
-The earlier independent whole-body sheets changed anatomy between actions. Hair
-width and silhouette height did not detect long thighs, thin calves or a narrow
-torso. Those checks were insufficient and the earlier claim of consistent body
-proportions was premature.
+[Full combo](../model-review/actions/combo-right.gif) ·
+[Running thrust](../model-review/actions/run-thrust-right.gif) ·
+[Quarter-speed combo](../model-review/actions/combo-right-slow.gif)
 
-Slayer now uses **one model made from fixed body parts and fixed-length joints**
-for idle, walking, running, all three basic attacks, running thrust, aerial attacks
-and skill placeholders. Actions pose that same body. They cannot enlarge the head,
-lengthen the legs, or narrow the limbs to fit a sprite cell.
+## Current implementation
 
-[Proportion guide](proportion-guide.png) · [Recorded dimensions](proportions.json)
+- `assets/characters/slayer/model/model.json` records fixed anatomy and texture
+  joint anchors. The head stays 32 × 30 logical units; the torso stays 22 units;
+  thighs are 16 units and shins 6. No pose independently resizes a body part.
+- `motion.json` authors the three attacks and running thrust in seconds. Monotone
+  cubic curves connect the grip, sword angle, pelvis, lean and support-arm poses.
+  Adjacent combo stages share their entire boundary pose. The finisher and thrust
+  have authored recovery to guard. Strike times remain 150/100/100/180 ms.
+- Shoulder identity and the three-quarter torso stay consistent throughout the
+  action. The old instantaneous front/back texture switches are removed.
+- State changes blend pose parameters over 100 ms before solving fixed-length
+  joints. Continuous playback no longer holds a discrete pose until the next ANI
+  record. Source records are retained for timing/debugging.
+- Locomotion has a linear support-foot path, a lifted return path and a gait clock
+  that follows actual travel. At runtime the model has one uniform 1.5 scale.
+- Native texture pixels are retained in the 2560 × 2560 atlas. The approved model's
+  arm pixels are extracted and registered to their real joint anchors. New baggy
+  trouser/boot assets avoid the previous long thin calves and duplicated cuffs.
 
-[Full combo GIF](combo-right-fixed-model.gif) · [Run/thrust/idle GIF](run-thrust-right-fixed-model.gif)
+Full-resolution proofs render this same code onto a **1236 × 1273** canvas, with
+one fixed scale and floor anchor throughout each sequence. They are not enlarged
+80px gameplay captures. Both facings and quarter-speed right-facing proofs are in
+`../model-review/actions/`. The proofs hold world translation fixed for anatomy
+review; browser input tests exercise actual moving gameplay separately.
 
-## Rejected rig dimensions (historical, not accepted authoring proportions)
-
-These are explicit pixel-art authoring targets adapted from the approved
-[chibi v6 design](../chibi-pixel-reference-v6.png), rounded for an 80px neutral
-standing model. They are not inferred measurements of the discarded animation
-sheets. The rejected runtime prototype currently reads
-`assets/characters/slayer/model/model.json`.
-
-| Region | Target | Neutral height share |
-| --- | ---: | ---: |
-| Crown through chin | 30px high, 32px wide | 37.5% |
-| Chin through hips, including neck/pelvis | 22px | 27.5% |
-| Hips through soles, including boots | 28px | 35% |
-
-| Structural measurement | Fixed size |
-| --- | ---: |
-| Shoulder joint span / chest / waist | 24px / 24px / 18px |
-| Hip joint span | 16px |
-| Thigh length / trouser thickness | 13px / 14px |
-| Shin length / thickness | 9px / 11px |
-| Boot | 16px wide × 7px high, overlapping the ankle |
-| Normal upper arm / forearm | 11px / 9px long; 8px / 7px thick |
-| Cursed upper arm / forearm | 12px / 10px long; 10px / 9px thick |
-
-Feathers, baggy clothing and the chain extend outside structural joint widths.
-Lunges and crouches reduce projected height by bending joints. They do not change
-bone lengths, part sizes or body proportions. Front/back heads share the same
-32×30 dimensions; both boot facings and torso views share fixed dimensions too.
-
-## Renderer change
-
-`game/slayer_model.gd` solves two-segment arms and legs with constant lengths. An
-unreachable hand/foot target is clamped to the model's reach rather than stretching
-a limb. Fixed-width envelopes under the painted parts preserve thick trouser legs
-and prevent a narrow texture region from making a limb look thin during rotation.
-The head and body parts are never resized per action or frame. Front/back clothing
-and independently drawn head facings retain the character design and arm identities.
-
-This replaces the independent whole-body strips in Slayer's renderer. Those PNGs
-remain historical pose/timing references; they no longer draw Slayer's anatomy.
-Raw ANI record order and timing, separate swords, the connected combo entry poses,
-combat values and collision/movement rules are retained. The animation style is now
-a posed cutout model rather than a sequence of independently drawn whole bodies.
-Pose choreography, painted joint overlap and equipment occlusion remain subject to
-art review; fixed anatomy does not establish exact original-game motion fidelity.
-
-## Review and test
-
-Use `npm start`, then **Start → Slayer → Training · Immortal goblin**. Hold X for the
-full combo, then double-tap a direction and press X while running. Check both
-facings, jumping, skill and V equipment swaps. Esc pauses.
-
-The GIFs in this directory record full held-input sequences through Start. The
-original panel is a replay of decoded source ANI files, not original-client footage.
-World translation is fixed for pose comparison. The older whole-body version is
-preserved as `*-before-model.gif`.
-
-## Rebuild and verify
-
-`source/parts.png` is the unmodified image-generation output created from the
-approved character reference as eighteen separate painted parts. The prompt asked
-for orthographic head views, wide vest/pelvis, short thick trouser segments, both
-boots, and separate normal/cursed arm segments. Parts are calibrated **once** into
-this model, not independently at each pose. A chain is drawn separately so it does
-not distort the forearm's structural width.
+## Rebuild and test
 
 ```sh
 python3 tools/build-slayer-model.py
 ```
 
-The authoring tool requires Pillow. Runtime startup needs no authoring dependencies.
-Native model checks visit every action/frame and verify actual thigh, shin, upper
-arm, forearm and torso lengths, plus whole-pose continuity between combo stages.
-They supplement the gameplay tests and rendered sequence review. The source model
-is Slayer-specific; Gunner needs its own fixed model, and the other three classes
-remain deferred under the development scope.
+The authoring tool requires Pillow; game startup needs no authoring dependencies.
+`source/parts.png`, `proportions.json` and `proportion-guide.png` describe the
+rejected version and remain historical. Current anatomy is in runtime `model.json`.
+
+Use **Start → Slayer → Training**, hold **X** for the combo, then double-tap a
+direction and press **X** while running. Test both directions; **V** swaps swords,
+**Z** uses the skill, **C** jumps and **Esc** pauses.
+
+Geometry/continuity checks supplement rendered review. They do not establish
+user acceptance or exact original-client motion fidelity. Gunner remains in scope;
+Fighter, Mage and Priest work stays deferred.

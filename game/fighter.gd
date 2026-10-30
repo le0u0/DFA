@@ -216,7 +216,7 @@ func clear_buffer() -> void:
 func _draw() -> void:
 	draw_ellipse_shadow()
 	if is_instance_valid(art):
-		draw_string(ThemeDB.fallback_font, Vector2(-30, -jump_height - 88), character.display_name.to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
+		draw_string(ThemeDB.fallback_font, Vector2(-30, -jump_height - (132 if character.weapon == "sword" else 88)), character.display_name.to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, 15, Color.WHITE)
 		return
 	if not is_player and attack_kind != &"" and not strike_fired:
 		var reach := enemy_reach()

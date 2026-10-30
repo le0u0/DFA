@@ -1,0 +1,78 @@
+{
+  "implementation": "continuous_motion_v2",
+  "native_model": {
+    "passed": 1192,
+    "failed": 0
+  },
+  "continuity": {
+    "passed": 19058,
+    "failed": 0,
+    "checks": "240Hz pose samples, entire combo boundaries, recovery, support-foot planting, interruption anatomy, source-record loop crossings"
+  },
+  "gameplay": {
+    "passed": 22,
+    "failed": 0
+  },
+  "art_integration": {
+    "passed": 68,
+    "failed": 0
+  },
+  "docker_web": "export and browser checks passed; Start \u2192 Slayer, thrust left/right, held-X combo, equipment, pause, no script errors",
+  "rendered_proofs": {
+    "combo-left.gif": {
+      "canvas": [
+        1236,
+        1273
+      ],
+      "duration_ms": 2630,
+      "sha256": "cb052394061951fbfd15cc898d9a7f4555b314be8dc590c0992965db9861e3ce"
+    },
+    "combo-right-slow.gif": {
+      "canvas": [
+        1236,
+        1273
+      ],
+      "duration_ms": 10520,
+      "sha256": "cca12ee6137deeee4309c0e40771ed6b9ce8a347aa7f762f57d8db7bf0c064e1"
+    },
+    "combo-right.gif": {
+      "canvas": [
+        1236,
+        1273
+      ],
+      "duration_ms": 2630,
+      "sha256": "8abdb506190eacdc2ef79e1247623a9519c65783dcc5026d5588a3859d2a18ba"
+    },
+    "run-thrust-left.gif": {
+      "canvas": [
+        1236,
+        1273
+      ],
+      "duration_ms": 2260,
+      "sha256": "b77b0276997b2ed741a17048a42c51d31b1122b737a0e546bdbcd4d23137b8b2"
+    },
+    "run-thrust-right-slow.gif": {
+      "canvas": [
+        1236,
+        1273
+      ],
+      "duration_ms": 9040,
+      "sha256": "9d6376a6f4643bb3d5a4b19750ce6f11db7666e22fa523dd9071fda20935f0bd"
+    },
+    "run-thrust-right.gif": {
+      "canvas": [
+        1236,
+        1273
+      ],
+      "duration_ms": 2260,
+      "sha256": "0a5ea81b59f5896d93fee0fc24738f78a27dada903929bd8c83c5a49190aeeed"
+    }
+  },
+  "proof_edge_check": "All source PNG side borders clear of actor/weapon pixels; full weapon arcs stay on canvas",
+  "visual_review": "Ordered rendered frame sheets inspected in both facings; previous torso swaps and inconsistent anatomy replaced. User acceptance remains separate.",
+  "user_accepted": false,
+  "gif_accent_check": {
+    "green_accent_pixels_retained": 0.9970588235294118,
+    "minimum": 0.95
+  }
+}

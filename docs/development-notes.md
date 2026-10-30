@@ -26,13 +26,13 @@ The [earlier 80px rig dimensions](art/slayer/model/README.md) and its
 proportions. Use the approved high-resolution appearance as the authoring reference
 and follow the model-first review below. Gunner will need its own model review.
 
-## Blocking animation review — current fixed-model rig rejected
+## Historical blocking review — previous frame-switched rig rejected
 
-The user rejected the current Slayer rig as unnatural and unfinished. Do not report
+The user rejected the previous Slayer rig as unnatural and unfinished. Do not report
 it as accepted or completed based on geometry, screenshot or smoke-test results.
 The previous visual review was inadequate.
 
-Concrete problems in `game/slayer_model.gd`:
+Problems found in the previous `game/slayer_model.gd`, before the continuous-motion replacement:
 
 - Walking/running use a frame-driven sine cycle independent of actor travel speed.
   There is no planted-foot constraint or ground-speed matching, so the player can
@@ -52,8 +52,8 @@ was used. No additional gameplay or art replacement was made during this review.
 
 ## Model-first authoring and resolution — user direction
 
-Pause further gameplay animation integration until the complete model looks
-natural and the full action proofs pass visual review. Use the approved Slayer
+Review the complete model and full action proofs before expanding gameplay
+animation scope. The user subsequently explicitly requested an implemented fix. Use the approved Slayer
 appearance image as the visual source, not the rejected 80px cutout rig. Its exact
 canvas is **1236 × 1273**. Standalone model and action review frames must use that
 resolution and preserve native detail; enlarging low-resolution gameplay captures
@@ -70,4 +70,18 @@ review in both directions before integration. Preserve anatomy, joint continuity
 foot contact, weight transfer and weapon grip. Review repeated and interrupted
 inputs in moving gameplay after visual acceptance. See the
 [concrete acceptance gate](art/slayer/model-review/README.md#smoothness-and-continuity-gate).
-No replacement action is currently approved; a static candidate is not motion proof.
+User acceptance remains separate from implementation and technical checks. The
+[new moving action proofs](art/slayer/model-review/README.md) replace the rejected
+rig captures. A static candidate alone is not motion proof.
+
+## Implemented continuous-motion fix
+
+Slayer now renders detailed parts with anatomical joint anchors, a constant torso
+view and continuous timed curves. The combo shares whole-body stage boundaries;
+the finisher and running thrust recover to guard. Other state changes blend
+parameters before IK. Locomotion support follows actor travel. New 1236 × 1273
+normal/quarter-speed proofs cover both facings, using the same renderer as Start.
+The 80px frame-switched rig captures and measurement diagram remain historical.
+
+Keep active work limited to Slayer and Gunner. Continue visual review of complete
+actions; numerical continuity checks are regression coverage, not art acceptance.
