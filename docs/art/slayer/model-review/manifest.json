@@ -1,0 +1,73 @@
+{
+  "status": "model_review_candidate_not_accepted",
+  "reference": "docs/art/slayer/chibi-pixel-reference-v6.png",
+  "review_canvas": [
+    1236,
+    1273
+  ],
+  "source_size": [
+    1254,
+    1254
+  ],
+  "uniform_source_scale": 1,
+  "placed_size": [
+    845,
+    1247
+  ],
+  "position": [
+    195,
+    13
+  ],
+  "source_sha256": "dfa9e1dc53b7c777729a6446c0d8d092659f1b367121c724cd3af0f5971f7e17",
+  "method": "High-resolution edit of approved reference; sword removed. Crop transparent margins and center on the reference-size canvas, preserving source pixels without resampling. No low-resolution game pixels enlarged.",
+  "gameplay_integrated": false,
+  "animation_accepted": false,
+  "review_findings": [
+    "Old GIF is620x288 and actor isabout80px, insufficient to judge reference-level detail",
+    "Torso/front/back switches happen abruptly",
+    "Arms and legs read as separately assembled pieces",
+    "Leg cycle does not communicate believable weight transfer"
+  ],
+  "workflow": [
+    "Review complete static model at1236x1273",
+    "Keep body anatomy, costume and proportions identical across full-resolution pose/action proofs",
+    "Review entire actions at normal speed and slow motion before gameplay integration"
+  ],
+  "source_crop": [
+    298,
+    1,
+    1143,
+    1248
+  ],
+  "motion_review_status": "blocked_on_static_model_review; no replacement action has passed review",
+  "motion_acceptance": {
+    "complete_sequences": [
+      "idle \u2192 walk \u2192 run \u2192 stop \u2192 idle",
+      "idle \u2192 attack1 \u2192 attack2 \u2192 attack3 \u2192 recovery \u2192 idle",
+      "run \u2192 running thrust \u2192 recovery \u2192 idle"
+    ],
+    "directions": [
+      "left",
+      "right"
+    ],
+    "playback": [
+      "normal speed with authored timing",
+      "quarter speed",
+      "every frame and all stage boundaries"
+    ],
+    "visual_checks": [
+      "stable head, torso and limb proportions without per-pose scaling",
+      "continuous shoulder, elbow, wrist, hip and knee paths; no one-frame view swaps",
+      "planted feet during support, intentional push-off and landing, no unintended sliding",
+      "continuous weapon grip and arc; correct limb and weapon depth order",
+      "complete anticipation, contact, follow-through and recovery"
+    ],
+    "integration_checks_after_visual_acceptance": [
+      "tap, hold and buffered attack input",
+      "repeated combos and repeated running thrusts",
+      "direction changes, interruption and return to idle",
+      "actual moving gameplay as well as stationary pose review"
+    ],
+    "rule": "A failed boundary or distorted frame rejects the sequence. Automated checks do not establish visual acceptance."
+  }
+}

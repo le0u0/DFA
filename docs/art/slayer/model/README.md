@@ -18,12 +18,12 @@ lengthen the legs, or narrow the limbs to fit a sprite cell.
 
 [Full combo GIF](combo-right-fixed-model.gif) · [Run/thrust/idle GIF](run-thrust-right-fixed-model.gif)
 
-## Canonical proportions
+## Rejected rig dimensions (historical, not accepted authoring proportions)
 
 These are explicit pixel-art authoring targets adapted from the approved
 [chibi v6 design](../chibi-pixel-reference-v6.png), rounded for an 80px neutral
 standing model. They are not inferred measurements of the discarded animation
-sheets. The source of truth shipped by the game is
+sheets. The rejected runtime prototype currently reads
 `assets/characters/slayer/model/model.json`.
 
 | Region | Target | Neutral height share |

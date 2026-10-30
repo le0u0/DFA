@@ -21,12 +21,10 @@ when switching animations. Crouching changes joint angles, not character scale.
 Compare complete held-input combos and idle/run/running-attack/idle transitions,
 including stage boundaries, rather than accepting isolated pose strips.
 
-Slayer’s canonical model is recorded in [the proportion guide](art/slayer/model/README.md)
-and shipped as `assets/characters/slayer/model/model.json`: an 80px neutral body
-with a 30px head, 22px chin-to-hips region and 28px hips-to-soles region. Thighs
-are 13px long and 14px thick; shins are 9px long and 11px thick. Animation must
-pose this same model; independent whole-body drawings and hair-width checks do
-not establish anatomical consistency. Gunner will have its own canonical model.
+The [earlier 80px rig dimensions](art/slayer/model/README.md) and its
+`model.json` describe a rejected runtime prototype, not accepted character
+proportions. Use the approved high-resolution appearance as the authoring reference
+and follow the model-first review below. Gunner will need its own model review.
 
 ## Blocking animation review — current fixed-model rig rejected
 
@@ -51,3 +49,25 @@ Concrete problems in `game/slayer_model.gd`:
 A game-development skill was requested, but none was found in the connected cloud
 list, executor list or local skill directories in this session. Do not claim it
 was used. No additional gameplay or art replacement was made during this review.
+
+## Model-first authoring and resolution — user direction
+
+Pause further gameplay animation integration until the complete model looks
+natural and the full action proofs pass visual review. Use the approved Slayer
+appearance image as the visual source, not the rejected 80px cutout rig. Its exact
+canvas is **1236 × 1273**. Standalone model and action review frames must use that
+resolution and preserve native detail; enlarging low-resolution gameplay captures
+does not satisfy the requirement. Keep body scale/anatomy consistent across frames.
+Game display scaling is deferred.
+
+The [weapon-free high-resolution model candidate](art/slayer/model-review/README.md)
+is for review only, not accepted or integrated. Static model review comes before
+full connected motion review, which comes before gameplay integration.
+
+Smoothness is a blocking requirement. The complete combo, running thrust and their
+entry/recovery transitions must pass normal-speed, slow-motion and frame-by-frame
+review in both directions before integration. Preserve anatomy, joint continuity,
+foot contact, weight transfer and weapon grip. Review repeated and interrupted
+inputs in moving gameplay after visual acceptance. See the
+[concrete acceptance gate](art/slayer/model-review/README.md#smoothness-and-continuity-gate).
+No replacement action is currently approved; a static candidate is not motion proof.
