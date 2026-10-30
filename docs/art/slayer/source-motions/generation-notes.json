@@ -2,14 +2,20 @@
   "tool": "image_gen",
   "inputs": [
     "docs/art/slayer/chibi-pixel-reference-v6.png",
-    "docs/art/roster/dfo-actions/slayer-poses.png"
+    "docs/art/roster/dfo-actions/slayer-poses.png",
+    "docs/art/slayer/motion-review/attack1-original-poses.png",
+    "docs/art/slayer/motion-review/attack2-original-poses.png",
+    "docs/art/slayer/motion-review/dashattack-original-poses.png"
   ],
   "prompt_summaries": {
     "run.png": "Two rows of eight forward-leaning run phases; left then right; chibi v6 costume, asymmetric arms, empty hands, transparent gutters.",
     "attacks-corrected.png": "Seven columns, six rows: three basic attack stages left then right; correction requested consistent facing in the top half. Only rows 0, 1, 3 accepted.",
     "uppercut-left.png": "Seven left-facing crouch-to-rising uppercut phases; beige right working hand raises, magenta left arm stays down.",
     "uppercut-right.png": "Seven independently generated right-facing crouch-to-rising uppercut phases; same anatomical color assignments.",
-    "reverse-right.png": "Seven right-facing reverse horizontal-cut phases, empty normal right sword hand; clear windup, strike and recovery."
+    "reverse-right.png": "Seven right-facing reverse horizontal-cut phases, empty normal right sword hand; clear windup, strike and recovery.",
+    "slash-reviewed.png": "Equipped-source first slash: guard, cut, then low rear-hand follow-through; seven poses in each independently generated facing.",
+    "reverse-reviewed.png": "Equipped-source reverse slash: recovery, forward arc, front-facing torso turn, working arm trailing behind; seven poses per facing.",
+    "dashattack.png": "Equipped-source running thrust: guard near shoulder, forward step, horizontal extension and recovery; seven poses per facing."
   },
   "rejected": "Mixed-facing uppercut rows and touching lower-row figures from the corrected large sheet are not used.",
   "transparent_background": true

@@ -3,7 +3,7 @@
 These are authoring dependencies only; Docker/game startup uses the committed atlas.
 """
 from pathlib import Path
-import hashlib,json
+import hashlib,json,math
 from PIL import Image,ImageDraw
 import numpy as np
 from scipy.ndimage import label,find_objects,binary_dilation
@@ -12,12 +12,13 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/art/slayer/source-motions/source'
 OUT=ROOT/'assets/characters/slayer/animation-proof'
 REFERENCE=json.loads((ROOT/'docs/art/roster/dfo-actions/slayer.json').read_text())
+REFERENCE['clips']['dashattack']=json.loads((ROOT/'docs/art/slayer/motion-review/dashattack-source.json').read_text())
 # Start from the preserved original proof, not the last generated output.
 import runpy
 runpy.run_path(str(ROOT/'tools/normalize-slayer-animation-proof.py'))
 old=Image.open(OUT/'body-atlas.png').convert('RGBA')
 data=json.loads((OUT/'animations.json').read_text())
-atlas=Image.new('RGBA',(1024,1792));atlas.alpha_composite(old)
+atlas=Image.new('RGBA',(1024,2048));atlas.alpha_composite(old)
 registration=[]
 
 def figures(name):
@@ -41,7 +42,11 @@ def install(action,facing,row,items,scale,hands,angles):
  normalized=[]
  for column,((box,image),hand) in enumerate(zip(items,hands)):
   w,h=round(image.width*scale),round(image.height*scale)
-  x=64-w//2;y=112+round((box[1]-baseline)*scale)
+  foot_center=image.width/2
+  if action!='run':
+   band=image.getchannel('A').crop((0,round(image.height*.85),image.width,image.height)).getbbox()
+   if band:foot_center=(band[0]+band[2])/2
+  x=64-round(foot_center*scale);y=112+round((box[1]-baseline)*scale)
   assert 0<=x and 0<=y and x+w<=128 and y+h<=128,(action,box,x,y,w,h)
   atlas.alpha_composite(image.resize((w,h),Image.Resampling.NEAREST),(column*128+x,row*128+y))
   point=[round(x+(hand[0]-box[0])*scale),round(y+(hand[1]-box[1])*scale)]
@@ -77,25 +82,50 @@ for facing,row,lo,hi in [('left',6,0,375),('right',7,375,724)]:
  # Fists stay forward in this run design. Source hand positions are authored.
  hands=([(70,225),(335,225),(605,222),(889,225),(1182,225),(1435,225),(1740,225),(1985,225)] if facing=='left' else [(205,545),(470,545),(750,545),(1045,545),(1295,545),(1560,545),(1840,545),(2120,545)])
  install('run',facing,row,items,.26,hands,[-2.35 if facing=='left' else 2.35]*8)
-attacks=figures('attacks-corrected.png')
-configs=[('attack1','left',8,0,230,[(74,95),(270,107),(436,68),(620,111),(837,124),(1020,108),(1220,101)],[-2.35,-2.1,-.5,-1.5,-2.4,-2.4,-2.4]),('attack2','left',9,230,430,[(51,321),(236,324),(451,321),(618,290),(812,310),(1014,330),(1210,335)],[-2.4,-2.1,-.6,-1.5,-1.5,-1.5,-1.5]),('attack1','right',11,635,830,[(141,707),(338,708),(508,670),(737,711),(898,677),(1090,717),(1304,705)],[2.35,2.1,.5,1.5,2.4,2.4,2.4])]
-for action,facing,row,lo,hi,hands,angles in configs:
- items=sorted([v for v in attacks if lo<=v[0][1]<hi],key=lambda v:v[0][0]);assert len(items)==7
- install(action,facing,row,items,.36,hands,angles)
 for name,action,facing,row,scale,hands,angles in [
  ('uppercut-left.png','attack3','left',10,.16,[(140,625),(422,450),(674,355),(1024,185),(1290,105),(1680,168),(1955,119)],[-2.4,-1.6,-.6,0,0,0,0]),
  ('uppercut-right.png','attack3','right',13,.16,[(245,648),(640,440),(950,296),(1235,188),(1505,110),(1795,150),(2110,170)],[2.4,1.6,.6,0,0,0,0]),
- ('reverse-right.png','attack2','right',12,.17,[(337,555),(590,390),(850,380),(1185,380),(1490,380),(1830,380),(2110,380)],[2.4,2.1,.6,1.5,1.5,1.5,1.5])]:
+]:
  items=sorted(figures(name),key=lambda v:v[0][0]);assert len(items)==7
  install(action,facing,row,items,scale,hands,angles)
 
-data.update(version=2,columns=8,rows=14,source_motion_registration=registration)
-data['limitations']=['Source-guided chibi poses are an authored approximation, not pixel-for-pixel original choreography.','Raw basic attack delays are mapped around the existing gameplay strike time; combat tuning is unchanged.','Idle/walk and air/dash/heavy attacks retain the previous draft art.','Generated grip locations and per-pose arm occlusion require further art review.']
+for name,action,right_row,left_row,scale in [('slash-reviewed.png','attack1',11,8,.24),('reverse-reviewed.png','attack2',12,9,.26)]:
+ poses=figures(name)
+ for facing,row,lo,hi in [('right',right_row,0,360),('left',left_row,360,724)]:
+  items=sorted([v for v in poses if lo<=v[0][1]<hi],key=lambda v:v[0][0]);assert len(items)==7
+  # Reject image-edge fragments rather than ship clipped final recovery hands.
+  if (action=='attack1' and facing=='right') or (action=='attack2' and facing=='left'):items[6]=items[5]
+  hands=[]
+  for col,(b,im) in enumerate(items):
+   width,height=im.size
+   if action=='attack1':
+    hx=(60 if facing=='right' else width-55) if col<3 else ((width-20 if facing=='right' else 20) if col==3 else (25 if facing=='right' else width-20))
+    hy=55 if col<3 else height-55 if col==3 else height*.62
+   else:
+    hx=(width*.52 if facing=='right' else width*.45) if col==0 else (width-18 if facing=='right' else 18) if col==1 else (25 if facing=='right' else width-25)
+    hy=height*.60 if col==0 else height*.37
+   hands.append((b[0]+hx,b[1]+hy))
+  angles=([math.pi,-2.4,-2.2,math.pi/2,-math.pi/2,-math.pi/2,-math.pi/2] if action=='attack1' else [-math.pi/2,math.pi/2,-math.pi/2,-math.pi/2,-math.pi/2,-math.pi/2,-math.pi/2])
+  if facing=='left':angles=[-a for a in angles]
+  install(action,facing,row,items,scale,hands,angles)
+
+thrust=figures('dashattack.png')
+for facing,row,lo,hi in [('right',14,0,375),('left',15,375,727)]:
+ items=sorted([v for v in thrust if lo<=v[0][1]<hi],key=lambda v:v[0][0]);assert len(items)==7
+ # The final right-facing fist touches the source image edge: reject that
+ # cell and hold the preceding extended thrust instead of shipping clipping.
+ if facing=='right':items[6]=items[5]
+ hands=([(90,150),(400,158),(700,183),(1200,190),(1540,192),(1860,194),(1860,194)] if facing=='right' else [(195,480),(510,485),(780,520),(920,530),(1250,535),(1585,535),(1920,535)])
+ sign=1 if facing=='right' else -1
+ install('dashattack',facing,row,items,.26,hands,[sign*a for a in [2.1,2.0,1.8,1.5,1.5,1.5,1.5]])
+
+data.update(version=3,columns=8,rows=16,source_motion_registration=registration)
+data['limitations']=['Source-guided chibi poses are an authored approximation, not pixel-for-pixel original choreography.','Slayer basic and running attacks use raw ANI duration and first attack-box timing; this slows the prototype attack cadence.','Idle/walk and air/heavy attacks retain the previous draft art; the final right thrust, right first-slash and left reverse-slash poses hold the preceding pose because their generated source cells touched an image edge.','Generated grip locations and per-pose arm occlusion require further art review.']
 (OUT/'animations.json').write_text(json.dumps(data,indent=2)+'\n');atlas.save(OUT/'body-atlas.png')
 manifest=dict(sources={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in SOURCE.glob('*.png')},reference='docs/art/roster/dfo-actions/slayer.json',registration=registration,limitations=data['limitations'])
 (ROOT/'docs/art/slayer/source-motions/manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-preview=Image.new('RGB',(8*128,8*148),'#293e35');draw=ImageDraw.Draw(preview)
-for row,(action,facing) in enumerate((a,f) for f in ['left','right'] for a in ['run','attack1','attack2','attack3']):
+preview=Image.new('RGB',(8*128,10*148),'#293e35');draw=ImageDraw.Draw(preview)
+for row,(action,facing) in enumerate((a,f) for f in ['left','right'] for a in ['run','attack1','attack2','attack3','dashattack']):
  clip=data['clips'][action+'_'+facing]
  for col in range(8 if action=='run' else 7):
   cell=atlas.crop((col*128,clip['row']*128,(col+1)*128,(clip['row']+1)*128))
@@ -104,4 +134,4 @@ for row,(action,facing) in enumerate((a,f) for f in ['left','right'] for a in ['
   draw.ellipse((col*128+h[0]-2,row*148+h[1]-2,col*128+h[0]+2,row*148+h[1]+2),fill='yellow')
   draw.text((col*128+3,row*148+128),f'{action} {facing} {col}',fill='white')
 preview.save(ROOT/'docs/art/slayer/source-motions/grip-review.png')
-print('Packaged 58 new independently authored facing cells, 8 source-guided clips.')
+print('Packaged 72 added facing cells, 10 source-guided clips, including running thrust.')

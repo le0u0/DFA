@@ -1,8 +1,8 @@
-# Slayer run and basic combo redraw
+# Slayer run, basic combo and running thrust
 
 Start now selects a separate eight-frame run and three different basic attack
 stages for Slayer, in both independently generated facing directions. These add
-58 body poses while keeping swords separate. The source-guided redraw adapts the
+72 body cells while keeping swords separate. The source-guided redraw adapts the
 approved [chibi v6 design](../chibi-pixel-reference-v6.png); it is an approximation
 of the recovered choreography, not a claim of exact pose or pixel fidelity.
 
@@ -11,17 +11,18 @@ attacks have 10, 11 and 9 records, respectively, each mapping to seven drawn pos
 Repeated source indices remain repeated, and original raw delays are preserved
 in `animations.json`. References are in [the decoded action data](../../roster/dfo-actions/slayer.json).
 
-Basic attacks map the source anticipation and recovery timing independently around
-the actor's existing strike time. The first source attack-box frame starts at that
-damage boundary. Attack duration, damage, reach, movement, collisions and the
-three-stage gameplay combo remain unchanged. This timing adaptation deliberately
-differs from playing raw ANI delays at one unscaled rate; engine speed scaling
-and transitions have not been recovered.
+The [animated review and corrections](../motion-review/README.md) supersede the
+initial timing/pose assessment. Slayer now uses the raw source basic durations of
+600/650/550ms and first attack-box times of 150/100/100ms, rather than compressing
+all stages into 280ms. Running plus X selects its own ten-record, 630ms thrust with
+a 180ms strike. This changes the prototype attack cadence; it does not recover the
+original engine's speed scaling or cancellation rules.
 
-Idle, walking, running attacks, aerial attacks and class skills still use the
-previous poses. Other four characters still use their prototype strips. Further
-pose refinement, consistent head scale, grip/occlusion polish and a complete
-source-faithful animation set remain outstanding.
+The first and reverse slash sheets have been redrawn against equipped source poses.
+Attack feet registration and guard/thrust blade occlusion were also corrected.
+Aerial attacks, class skills, idle and walking retain earlier art. The other active
+character is Gunner; Fighter/Mage/Priest development is deferred. Further pose,
+grip/occlusion and transition refinement remain outstanding.
 
 ## Test on a Mac
 
@@ -37,8 +38,8 @@ select **Training · Immortal goblin** in the dungeon dropdown, then enter.
 - Hold a direction to walk. Release and quickly double-tap left or right to run.
   Running should lean forward with a separate stride, rather than speed up walking.
 - Release movement, then hold **X** to repeat the three-stage basic combo. Check both
-  directions; the final stage rises upward. Attacking while running/aerial still uses
-  the earlier fallback poses.
+  directions; the final stage rises upward. Press X while running to test the separate forward thrust; aerial attacks still
+  use the earlier fallback poses.
 - Press **V** to swap the separate sword, and **Esc** to pause/resume.
 
 ## Sources and packaging
@@ -46,8 +47,10 @@ select **Training · Immortal goblin** in the dungeon dropdown, then enter.
 `source/` contains the unmodified image-generation outputs used for packaging.
 `generation-notes.json` records input references and prompt summaries. The corrected
 large attack sheet contributes only rows 0, 1 and 3; mixed-facing uppercuts and
-bottom-row figures touching neighboring cells were rejected. Separate left/right
-uppercut sheets and the right reverse-cut sheet replace those rejected rows.
+bottom-row figures touching neighboring cells were rejected. Separate left/right uppercut sheets replaced those rejected rows. The equipped-reference
+review then superseded both first/reverse-slash sheets with `slash-reviewed.png` and
+`reverse-reviewed.png`, and added `dashattack.png`. See the review for rejected final
+recovery cells and held follow-through substitutions.
 
 Rebuild the atlas with Python/Pillow/numpy/scipy:
 

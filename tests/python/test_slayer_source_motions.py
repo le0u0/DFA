@@ -12,6 +12,7 @@ class SlayerMotionAssets(unittest.TestCase):
     def setUpClass(cls):
         cls.data = json.loads((ROOT / 'assets/characters/slayer/animation-proof/animations.json').read_text())
         cls.source = json.loads((ROOT / 'docs/art/roster/dfo-actions/slayer.json').read_text())
+        cls.source['clips']['dashattack'] = json.loads((ROOT / 'docs/art/slayer/motion-review/dashattack-source.json').read_text())
         cls.atlas = Image.open(ROOT / 'assets/characters/slayer/animation-proof/body-atlas.png').convert('RGBA')
 
     def cell(self, clip, column):
@@ -19,7 +20,7 @@ class SlayerMotionAssets(unittest.TestCase):
 
     def test_source_timeline_keeps_repeated_poses_and_original_raw_delays(self):
         for facing in ('left', 'right'):
-            for action in ('run', 'attack1', 'attack2', 'attack3'):
+            for action in ('run', 'attack1', 'attack2', 'attack3', 'dashattack'):
                 clip = self.data['clips'][action + '_' + facing]
                 reference = self.source['clips'][action]
                 indices = [f['image_index'] for f in reference['frames']]
@@ -30,7 +31,7 @@ class SlayerMotionAssets(unittest.TestCase):
                 self.assertEqual(clip['impact_frame'], reference['attack_box_frames'][0] if reference['attack_box_frames'] else -1)
 
     def test_all_new_cells_fit_and_each_equipment_grip_touches_body(self):
-        self.assertEqual(self.atlas.size, (1024, 1792))
+        self.assertEqual(self.atlas.size, (1024, 2048))
         for clip in self.data['clips'].values():
             if not clip.get('source'):
                 continue
@@ -45,7 +46,7 @@ class SlayerMotionAssets(unittest.TestCase):
         clips = self.data['clips']
         self.assertNotEqual(clips['run_left']['row'], clips['walk_left']['row'])
         self.assertEqual(len(set(clips['run_left']['cells'])), 8)
-        for action in ('run', 'attack1', 'attack2', 'attack3'):
+        for action in ('run', 'attack1', 'attack2', 'attack3', 'dashattack'):
             left, right = clips[action + '_left'], clips[action + '_right']
             self.assertNotEqual(self.cell(left, 0).tobytes(), ImageOps.mirror(self.cell(right, 0)).tobytes())
 

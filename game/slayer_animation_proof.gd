@@ -107,6 +107,14 @@ func _draw() -> void:
 	var row: int = clip()["row"]
 	var column: int = clip()["cells"][frame] if clip().has("cells") else frame
 	draw_texture_rect_region(ATLAS, Rect2(-64, -112, 128, 128), Rect2(column * 128, row * 128, 128, 128))
+	# Guard/thrust windups carry the blade in front of the body. Drawing the
+	# entire weapon behind the body made it disappear, then pop out at impact.
+	# Only redraw the blade; keep the hilt under the body fingers.
+	var front_blade := (action == "attack1" and frame < int(clip()["impact_frame"])) or (action == "dashattack" and frame <= 2)
+	if front_blade and weapon_index < SWORDS.size():
+		draw_set_transform(hand, sword_angle())
+		draw_texture_rect_region(SWORDS[weapon_index], Rect2(-12, -48, 24, 64.0 * 2.0 / 3.0), Rect2(0, 0, 48, 64))
+		draw_set_transform(Vector2.ZERO)
 	if show_anchors:
 		draw_line(Vector2(-5, 0), Vector2(5, 0), Color.CYAN)
 		draw_line(Vector2(0, -5), Vector2(0, 5), Color.CYAN)

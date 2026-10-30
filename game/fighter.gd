@@ -96,7 +96,10 @@ func _physics_process(delta: float) -> void:
 			var launch := character.launch if attack_kind == &"heavy" else 130.0 if combo == 3 else 0.0
 			strike.emit(self, damage, reach, launch)
 		if attack_kind == &"dash":
-			velocity.x = facing * 340.0
+			# Keep the existing lunge distance when a character has a longer
+			# authored recovery; recovery should not extend forward travel.
+			var recovering := is_player and character.running_attack_duration > 0 and attack_elapsed >= character.attack_duration
+			velocity.x = 0.0 if recovering else facing * 340.0
 		if attack_elapsed >= attack_duration:
 			attack_kind = &""
 	velocity += knockback
@@ -143,9 +146,10 @@ func _player_input() -> void:
 		elif attack_buffer > 0 or Input.is_action_pressed(&"attack"):
 			attack_buffer = 0
 			combo = combo % 3 + 1 if combo_timeout > 0 else 1
-			combo_timeout = 0.65
 			var kind: StringName = &"air" if jump_height > 0 else &"dash" if dash_remaining > 0 or running else &"basic"
-			begin_attack(kind, character.attack_duration, character.attack_duration / 3.0)
+			var timing: Vector2 = character.attack_timing(kind, combo)
+			combo_timeout = maxf(0.65, timing.x + 0.25)
+			begin_attack(kind, timing.x, timing.y)
 
 func enemy_reach() -> float:
 	var reach := float(enemy_data.get("reach", 105.0))

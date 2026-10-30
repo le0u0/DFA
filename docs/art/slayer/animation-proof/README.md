@@ -2,7 +2,7 @@
 
 Test through **Start → Slayer → Enter dungeon**, the same flow as every other character. The separate Slayer art demo and animation lab have been removed, along with the main menu's Offline subtitle.
 
-Slayer's atlas now combines the preserved six-frame idle/walk/fallback poses with a [separate run and three source-guided basic combo stages](../source-motions/README.md), independently authored facings and separate sword equipment. Normal movement, damage, hit windows, collision and equipment stats remain controlled by the existing game code.
+Slayer's atlas now combines the preserved six-frame idle/walk/fallback poses with a [separate run and three source-guided basic combo stages](../source-motions/README.md), independently authored facings and separate sword equipment. Movement, collision and equipment stats remain controlled by the game code. The [motion review](../motion-review/README.md) now aligns Slayer basic/running attack durations and strike times with the raw source ANI sequences.
 
 ## Why these actions do not yet match DFO
 
@@ -16,8 +16,8 @@ attack boxes are preserved.
 Slayer's run and three basic attacks now use redrawn source-guided poses. Those
 poses are an authored approximation; idle/walk, skills and aerial/running attacks
 still use earlier art. The other four classes retain their older four-frame sheets.
-Basic attack timing preserves source ordering and relative delays around the
-existing combat strike boundary. Original raw ANI delays alone do not establish
+Slayer basic and running attack durations and first strike times now follow the
+raw source sequences; the earlier compressed timing was replaced after GIF review. Original raw ANI delays alone do not establish
 engine transitions or speed scaling. See the linked motion update for test steps.
 
 ## Reproduce reference extraction on your Mac

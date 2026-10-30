@@ -1,10 +1,13 @@
 {
   "sources": {
     "run.png": "071687a94f8697b1debaec7c9440fe9aa03aeeaae7462aa1b4d02374be1d29ce",
+    "dashattack.png": "9e7051c96e5b75d8d9af6159751b4eac8654f196ce5e1c8bedc676a9ccb534d5",
     "uppercut-left.png": "d6b2f02bdb7f9e8cee316421b33e938d3048a74a41408c30f1e14ade59c1c2c7",
+    "slash-reviewed.png": "d4b22fe8eb0ba26449e2cfabe4817107167066eb427e6c0c1d8c7d16c8cc9830",
     "attacks-corrected.png": "3529d2ada56c3f5f78553cdac889c60e3ba925ee70a45e55781c7e8c918d35bc",
     "uppercut-right.png": "98d20568437d18613d6628d028394f1d6e1507769c37ad871de615ad53ce03fc",
-    "reverse-right.png": "cfda344393f88fd46ed837df52d475dc7ae62ae8aa2559649857d4fd5de8980c"
+    "reverse-right.png": "cfda344393f88fd46ed837df52d475dc7ae62ae8aa2559649857d4fd5de8980c",
+    "reverse-reviewed.png": "46a713ff914702db0a1648151668b98d033d128b5b2596e7956f600fb280a360"
   },
   "reference": "docs/art/roster/dfo-actions/slayer.json",
   "registration": [
@@ -20,7 +23,7 @@
       ],
       "scale": 0.26,
       "position": [
-        39,
+        38,
         38
       ],
       "size": [
@@ -40,7 +43,7 @@
       ],
       "scale": 0.26,
       "position": [
-        36,
+        35,
         37
       ],
       "size": [
@@ -100,7 +103,7 @@
       ],
       "scale": 0.26,
       "position": [
-        43,
+        42,
         35
       ],
       "size": [
@@ -120,7 +123,7 @@
       ],
       "scale": 0.26,
       "position": [
-        38,
+        37,
         38
       ],
       "size": [
@@ -240,7 +243,7 @@
       ],
       "scale": 0.26,
       "position": [
-        37,
+        36,
         38
       ],
       "size": [
@@ -260,7 +263,7 @@
       ],
       "scale": 0.26,
       "position": [
-        42,
+        41,
         35
       ],
       "size": [
@@ -280,7 +283,7 @@
       ],
       "scale": 0.26,
       "position": [
-        37,
+        36,
         38
       ],
       "size": [
@@ -329,426 +332,6 @@
       ]
     },
     {
-      "action": "attack1",
-      "facing": "left",
-      "column": 0,
-      "box": [
-        15,
-        24,
-        196,
-        220
-      ],
-      "scale": 0.36,
-      "position": [
-        32,
-        41
-      ],
-      "size": [
-        65,
-        71
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "left",
-      "column": 1,
-      "box": [
-        223,
-        25,
-        393,
-        220
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        42
-      ],
-      "size": [
-        61,
-        70
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "left",
-      "column": 2,
-      "box": [
-        411,
-        26,
-        575,
-        220
-      ],
-      "scale": 0.36,
-      "position": [
-        35,
-        42
-      ],
-      "size": [
-        59,
-        70
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "left",
-      "column": 3,
-      "box": [
-        597,
-        27,
-        774,
-        220
-      ],
-      "scale": 0.36,
-      "position": [
-        32,
-        43
-      ],
-      "size": [
-        64,
-        69
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "left",
-      "column": 4,
-      "box": [
-        803,
-        25,
-        965,
-        220
-      ],
-      "scale": 0.36,
-      "position": [
-        35,
-        42
-      ],
-      "size": [
-        58,
-        70
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "left",
-      "column": 5,
-      "box": [
-        994,
-        26,
-        1164,
-        220
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        42
-      ],
-      "size": [
-        61,
-        70
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "left",
-      "column": 6,
-      "box": [
-        1189,
-        27,
-        1350,
-        220
-      ],
-      "scale": 0.36,
-      "position": [
-        35,
-        43
-      ],
-      "size": [
-        58,
-        69
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "left",
-      "column": 0,
-      "box": [
-        17,
-        241,
-        191,
-        426
-      ],
-      "scale": 0.36,
-      "position": [
-        33,
-        45
-      ],
-      "size": [
-        63,
-        67
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "left",
-      "column": 1,
-      "box": [
-        215,
-        241,
-        390,
-        426
-      ],
-      "scale": 0.36,
-      "position": [
-        33,
-        45
-      ],
-      "size": [
-        63,
-        67
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "left",
-      "column": 2,
-      "box": [
-        411,
-        242,
-        581,
-        427
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        45
-      ],
-      "size": [
-        61,
-        67
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "left",
-      "column": 3,
-      "box": [
-        590,
-        243,
-        778,
-        427
-      ],
-      "scale": 0.36,
-      "position": [
-        30,
-        46
-      ],
-      "size": [
-        68,
-        66
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "left",
-      "column": 4,
-      "box": [
-        789,
-        243,
-        976,
-        427
-      ],
-      "scale": 0.36,
-      "position": [
-        31,
-        46
-      ],
-      "size": [
-        67,
-        66
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "left",
-      "column": 5,
-      "box": [
-        992,
-        243,
-        1162,
-        427
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        46
-      ],
-      "size": [
-        61,
-        66
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "left",
-      "column": 6,
-      "box": [
-        1184,
-        242,
-        1347,
-        427
-      ],
-      "scale": 0.36,
-      "position": [
-        35,
-        45
-      ],
-      "size": [
-        59,
-        67
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "right",
-      "column": 0,
-      "box": [
-        21,
-        644,
-        187,
-        826
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        46
-      ],
-      "size": [
-        60,
-        66
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "right",
-      "column": 1,
-      "box": [
-        203,
-        644,
-        372,
-        826
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        46
-      ],
-      "size": [
-        61,
-        66
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "right",
-      "column": 2,
-      "box": [
-        398,
-        645,
-        566,
-        826
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        46
-      ],
-      "size": [
-        60,
-        65
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "right",
-      "column": 3,
-      "box": [
-        588,
-        647,
-        770,
-        826
-      ],
-      "scale": 0.36,
-      "position": [
-        31,
-        47
-      ],
-      "size": [
-        66,
-        64
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "right",
-      "column": 4,
-      "box": [
-        792,
-        640,
-        956,
-        826
-      ],
-      "scale": 0.36,
-      "position": [
-        35,
-        45
-      ],
-      "size": [
-        59,
-        67
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "right",
-      "column": 5,
-      "box": [
-        977,
-        649,
-        1147,
-        826
-      ],
-      "scale": 0.36,
-      "position": [
-        34,
-        48
-      ],
-      "size": [
-        61,
-        64
-      ]
-    },
-    {
-      "action": "attack1",
-      "facing": "right",
-      "column": 6,
-      "box": [
-        1166,
-        651,
-        1342,
-        827
-      ],
-      "scale": 0.36,
-      "position": [
-        33,
-        49
-      ],
-      "size": [
-        63,
-        63
-      ]
-    },
-    {
       "action": "attack3",
       "facing": "left",
       "column": 0,
@@ -760,7 +343,7 @@
       ],
       "scale": 0.16,
       "position": [
-        37,
+        38,
         45
       ],
       "size": [
@@ -780,7 +363,7 @@
       ],
       "scale": 0.16,
       "position": [
-        40,
+        42,
         39
       ],
       "size": [
@@ -800,7 +383,7 @@
       ],
       "scale": 0.16,
       "position": [
-        38,
+        37,
         34
       ],
       "size": [
@@ -820,7 +403,7 @@
       ],
       "scale": 0.16,
       "position": [
-        39,
+        40,
         24
       ],
       "size": [
@@ -840,7 +423,7 @@
       ],
       "scale": 0.16,
       "position": [
-        40,
+        42,
         12
       ],
       "size": [
@@ -860,7 +443,7 @@
       ],
       "scale": 0.16,
       "position": [
-        40,
+        43,
         23
       ],
       "size": [
@@ -880,7 +463,7 @@
       ],
       "scale": 0.16,
       "position": [
-        42,
+        43,
         15
       ],
       "size": [
@@ -900,7 +483,7 @@
       ],
       "scale": 0.16,
       "position": [
-        34,
+        36,
         57
       ],
       "size": [
@@ -940,7 +523,7 @@
       ],
       "scale": 0.16,
       "position": [
-        41,
+        40,
         40
       ],
       "size": [
@@ -960,7 +543,7 @@
       ],
       "scale": 0.16,
       "position": [
-        42,
+        40,
         29
       ],
       "size": [
@@ -980,7 +563,7 @@
       ],
       "scale": 0.16,
       "position": [
-        43,
+        42,
         16
       ],
       "size": [
@@ -1000,7 +583,7 @@
       ],
       "scale": 0.16,
       "position": [
-        43,
+        42,
         23
       ],
       "size": [
@@ -1020,7 +603,7 @@
       ],
       "scale": 0.16,
       "position": [
-        45,
+        42,
         26
       ],
       "size": [
@@ -1029,119 +612,199 @@
       ]
     },
     {
-      "action": "attack2",
+      "action": "attack1",
       "facing": "right",
       "column": 0,
       "box": [
-        38,
-        273,
-        357,
-        647
+        23,
+        39,
+        238,
+        353
       ],
-      "scale": 0.17,
-      "position": [
-        37,
-        48
-      ],
-      "size": [
-        54,
-        64
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "right",
-      "column": 1,
-      "box": [
-        363,
-        224,
-        635,
-        647
-      ],
-      "scale": 0.17,
-      "position": [
-        41,
-        40
-      ],
-      "size": [
-        46,
-        72
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "right",
-      "column": 2,
-      "box": [
-        664,
-        210,
-        914,
-        647
-      ],
-      "scale": 0.17,
-      "position": [
-        43,
-        38
-      ],
-      "size": [
-        42,
-        74
-      ]
-    },
-    {
-      "action": "attack2",
-      "facing": "right",
-      "column": 3,
-      "box": [
-        908,
-        217,
-        1216,
-        647
-      ],
-      "scale": 0.17,
+      "scale": 0.24,
       "position": [
         38,
-        39
+        36
       ],
       "size": [
         52,
-        73
+        75
       ]
     },
     {
-      "action": "attack2",
+      "action": "attack1",
       "facing": "right",
-      "column": 4,
+      "column": 1,
       "box": [
-        1200,
-        208,
-        1527,
-        647
+        348,
+        43,
+        583,
+        353
       ],
-      "scale": 0.17,
+      "scale": 0.24,
       "position": [
         36,
         37
       ],
       "size": [
         56,
+        74
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 2,
+      "box": [
+        654,
+        50,
+        901,
+        353
+      ],
+      "scale": 0.24,
+      "position": [
+        35,
+        39
+      ],
+      "size": [
+        59,
+        73
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 3,
+      "box": [
+        963,
+        90,
+        1250,
+        353
+      ],
+      "scale": 0.24,
+      "position": [
+        35,
+        48
+      ],
+      "size": [
+        69,
+        63
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 4,
+      "box": [
+        1276,
+        100,
+        1539,
+        354
+      ],
+      "scale": 0.24,
+      "position": [
+        37,
+        51
+      ],
+      "size": [
+        63,
+        61
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 5,
+      "box": [
+        1590,
+        98,
+        1870,
+        355
+      ],
+      "scale": 0.24,
+      "position": [
+        36,
+        50
+      ],
+      "size": [
+        67,
+        62
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 6,
+      "box": [
+        1590,
+        98,
+        1870,
+        355
+      ],
+      "scale": 0.24,
+      "position": [
+        36,
+        50
+      ],
+      "size": [
+        67,
+        62
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 0,
+      "box": [
+        21,
+        381,
+        248,
+        695
+      ],
+      "scale": 0.24,
+      "position": [
+        35,
+        36
+      ],
+      "size": [
+        54,
         75
       ]
     },
     {
-      "action": "attack2",
-      "facing": "right",
-      "column": 5,
+      "action": "attack1",
+      "facing": "left",
+      "column": 1,
       "box": [
-        1511,
-        213,
-        1860,
-        647
+        344,
+        389,
+        574,
+        696
       ],
-      "scale": 0.17,
+      "scale": 0.24,
       "position": [
-        35,
+        36,
         38
+      ],
+      "size": [
+        55,
+        74
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 2,
+      "box": [
+        639,
+        387,
+        883,
+        696
+      ],
+      "scale": 0.24,
+      "position": [
+        33,
+        37
       ],
       "size": [
         59,
@@ -1149,30 +812,650 @@
       ]
     },
     {
+      "action": "attack1",
+      "facing": "left",
+      "column": 3,
+      "box": [
+        920,
+        415,
+        1222,
+        696
+      ],
+      "scale": 0.24,
+      "position": [
+        20,
+        44
+      ],
+      "size": [
+        72,
+        67
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 4,
+      "box": [
+        1280,
+        431,
+        1546,
+        696
+      ],
+      "scale": 0.24,
+      "position": [
+        28,
+        48
+      ],
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 5,
+      "box": [
+        1575,
+        427,
+        1841,
+        697
+      ],
+      "scale": 0.24,
+      "position": [
+        27,
+        47
+      ],
+      "size": [
+        64,
+        65
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 6,
+      "box": [
+        1888,
+        427,
+        2146,
+        698
+      ],
+      "scale": 0.24,
+      "position": [
+        28,
+        47
+      ],
+      "size": [
+        62,
+        65
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 0,
+      "box": [
+        38,
+        67,
+        261,
+        333
+      ],
+      "scale": 0.26,
+      "position": [
+        38,
+        41
+      ],
+      "size": [
+        58,
+        69
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 1,
+      "box": [
+        334,
+        78,
+        592,
+        337
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        44
+      ],
+      "size": [
+        67,
+        67
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 2,
+      "box": [
+        662,
+        61,
+        883,
+        340
+      ],
+      "scale": 0.26,
+      "position": [
+        36,
+        39
+      ],
+      "size": [
+        57,
+        73
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 3,
+      "box": [
+        927,
+        56,
+        1188,
+        339
+      ],
+      "scale": 0.26,
+      "position": [
+        23,
+        38
+      ],
+      "size": [
+        68,
+        74
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 4,
+      "box": [
+        1248,
+        58,
+        1500,
+        340
+      ],
+      "scale": 0.26,
+      "position": [
+        25,
+        38
+      ],
+      "size": [
+        66,
+        73
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 5,
+      "box": [
+        1559,
+        58,
+        1817,
+        340
+      ],
+      "scale": 0.26,
+      "position": [
+        23,
+        38
+      ],
+      "size": [
+        67,
+        73
+      ]
+    },
+    {
       "action": "attack2",
       "facing": "right",
       "column": 6,
       "box": [
-        1819,
-        212,
-        2143,
-        647
+        1884,
+        59,
+        2139,
+        341
       ],
-      "scale": 0.17,
+      "scale": 0.26,
+      "position": [
+        24,
+        39
+      ],
+      "size": [
+        66,
+        73
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 0,
+      "box": [
+        48,
+        401,
+        273,
+        670
+      ],
+      "scale": 0.26,
+      "position": [
+        32,
+        41
+      ],
+      "size": [
+        58,
+        70
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 1,
+      "box": [
+        338,
+        419,
+        607,
+        670
+      ],
+      "scale": 0.26,
+      "position": [
+        21,
+        46
+      ],
+      "size": [
+        70,
+        65
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 2,
+      "box": [
+        667,
+        396,
+        894,
+        672
+      ],
+      "scale": 0.26,
+      "position": [
+        35,
+        40
+      ],
+      "size": [
+        59,
+        72
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 3,
+      "box": [
+        970,
+        389,
+        1236,
+        671
+      ],
+      "scale": 0.26,
       "position": [
         37,
         38
       ],
       "size": [
-        55,
-        74
+        69,
+        73
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 4,
+      "box": [
+        1289,
+        390,
+        1558,
+        672
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        38
+      ],
+      "size": [
+        70,
+        73
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 5,
+      "box": [
+        1614,
+        391,
+        1881,
+        673
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        39
+      ],
+      "size": [
+        69,
+        73
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 6,
+      "box": [
+        1614,
+        391,
+        1881,
+        673
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        39
+      ],
+      "size": [
+        69,
+        73
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "right",
+      "column": 0,
+      "box": [
+        21,
+        63,
+        259,
+        341
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        40
+      ],
+      "size": [
+        62,
+        72
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "right",
+      "column": 1,
+      "box": [
+        322,
+        70,
+        561,
+        340
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        42
+      ],
+      "size": [
+        62,
+        70
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "right",
+      "column": 2,
+      "box": [
+        606,
+        79,
+        831,
+        340
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        44
+      ],
+      "size": [
+        58,
+        68
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "right",
+      "column": 3,
+      "box": [
+        906,
+        96,
+        1215,
+        341
+      ],
+      "scale": 0.26,
+      "position": [
+        35,
+        48
+      ],
+      "size": [
+        80,
+        64
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "right",
+      "column": 4,
+      "box": [
+        1242,
+        105,
+        1563,
+        341
+      ],
+      "scale": 0.26,
+      "position": [
+        33,
+        51
+      ],
+      "size": [
+        83,
+        61
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "right",
+      "column": 5,
+      "box": [
+        1569,
+        111,
+        1883,
+        341
+      ],
+      "scale": 0.26,
+      "position": [
+        34,
+        52
+      ],
+      "size": [
+        82,
+        60
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "right",
+      "column": 6,
+      "box": [
+        1569,
+        111,
+        1883,
+        341
+      ],
+      "scale": 0.26,
+      "position": [
+        34,
+        52
+      ],
+      "size": [
+        82,
+        60
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "left",
+      "column": 0,
+      "box": [
+        18,
+        404,
+        257,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        29,
+        40
+      ],
+      "size": [
+        62,
+        72
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "left",
+      "column": 1,
+      "box": [
+        328,
+        407,
+        568,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        29,
+        41
+      ],
+      "size": [
+        62,
+        71
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "left",
+      "column": 2,
+      "box": [
+        654,
+        422,
+        882,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        33,
+        45
+      ],
+      "size": [
+        59,
+        67
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "left",
+      "column": 3,
+      "box": [
+        900,
+        436,
+        1215,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        12,
+        48
+      ],
+      "size": [
+        82,
+        64
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "left",
+      "column": 4,
+      "box": [
+        1222,
+        446,
+        1538,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        12,
+        51
+      ],
+      "size": [
+        82,
+        61
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "left",
+      "column": 5,
+      "box": [
+        1557,
+        450,
+        1871,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        13,
+        52
+      ],
+      "size": [
+        82,
+        60
+      ]
+    },
+    {
+      "action": "dashattack",
+      "facing": "left",
+      "column": 6,
+      "box": [
+        1881,
+        443,
+        2154,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        19,
+        50
+      ],
+      "size": [
+        71,
+        62
       ]
     }
   ],
   "limitations": [
     "Source-guided chibi poses are an authored approximation, not pixel-for-pixel original choreography.",
-    "Raw basic attack delays are mapped around the existing gameplay strike time; combat tuning is unchanged.",
-    "Idle/walk and air/dash/heavy attacks retain the previous draft art.",
+    "Slayer basic and running attacks use raw ANI duration and first attack-box timing; this slows the prototype attack cadence.",
+    "Idle/walk and air/heavy attacks retain the previous draft art; the final right thrust, right first-slash and left reverse-slash poses hold the preceding pose because their generated source cells touched an image edge.",
     "Generated grip locations and per-pose arm occlusion require further art review."
   ]
 }

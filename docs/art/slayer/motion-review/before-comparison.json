@@ -1,0 +1,92 @@
+{
+  "run-right-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/dash.ani",
+    "source_duration_ms": 800,
+    "game_duration_ms": 800,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "attack1-right-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/attack1.ani",
+    "source_duration_ms": 600,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "attack2-right-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/attack2.ani",
+    "source_duration_ms": 650,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "attack3-right-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/attack3.ani",
+    "source_duration_ms": 550,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "dashattack-right-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/dashattack.ani",
+    "source_duration_ms": 630,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "run-left-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/dash.ani",
+    "source_duration_ms": 800,
+    "game_duration_ms": 800,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "attack1-left-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/attack1.ani",
+    "source_duration_ms": 600,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "attack2-left-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/attack2.ani",
+    "source_duration_ms": 650,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "attack3-left-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/attack3.ani",
+    "source_duration_ms": 550,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  },
+  "dashattack-left-before.gif": {
+    "sample_ms": 50,
+    "source": "character/swordman/animation/dashattack.ani",
+    "source_duration_ms": 630,
+    "game_duration_ms": 280,
+    "source_scale": 0.7,
+    "source_facing": "right",
+    "note": "DFA uses actual Start renderer with world translation fixed; original uses decoded images and raw ANI timing, final pose held. Original client not recorded."
+  }
+}

@@ -77,6 +77,8 @@ func _update_slayer(delta: float) -> void:
 	if actor.health > 0:
 		if actor.attack_kind == &"basic":
 			action = "attack%d" % clampi(actor.combo, 1, 3)
+		elif actor.attack_kind == &"dash":
+			action = "dashattack"
 		elif actor.attack_kind != &"":
 			action = "attack"
 		elif actor.velocity.length() > 1 and actor.stun <= 0:
@@ -91,7 +93,7 @@ func _update_slayer(delta: float) -> void:
 	slayer_visual.facing = direction
 	if actor.health <= 0:
 		frame = 5
-	elif action.begins_with("attack") and action != "attack":
+	elif (action.begins_with("attack") and action != "attack") or action == "dashattack":
 		frame = slayer_visual.frame_at_attack_time(actor.attack_elapsed, actor.attack_duration, actor.strike_time)
 	elif action == "attack":
 		var progress: float = clampf(actor.attack_elapsed / maxf(actor.attack_duration, 0.001), 0.0, 0.999)

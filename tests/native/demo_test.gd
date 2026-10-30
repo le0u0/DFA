@@ -68,6 +68,11 @@ func run() -> void:
 	check(arena.hits == hits_before, "attacks do not cross ground lanes")
 	for frame in range(20):
 		await physics_frame
+	# Jump is tested after the authored ground-attack recovery finishes.
+	for frame in range(60):
+		if arena.player.attack_kind == &"":
+			break
+		await physics_frame
 	Input.action_press("jump")
 	await physics_frame
 	await physics_frame

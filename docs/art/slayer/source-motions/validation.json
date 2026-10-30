@@ -5,7 +5,8 @@
     "roster": 69,
     "dungeons": 339,
     "art": 68,
-    "failed": 0
+    "failed": 0,
+    "slayer_motions": 21
   },
   "python": {
     "passed": 25,
@@ -20,11 +21,15 @@
       "Basic attacks through X input",
       "Separate sword swap through V",
       "Pause/resume through Escape",
-      "No browser script or console errors"
+      "No browser script or console errors",
+      "Running X input selects separate thrust in both directions",
+      "Held X reaches all three source-duration combo stages"
     ]
   },
   "limitations": [
-    "Source-guided pose redraw remains approximate",
-    "Other four classes and non-basic Slayer attacks retain earlier art"
+    "Chibi poses remain approximations of original mechanics",
+    "Original panel is decoded ANI replay, not original-client gameplay",
+    "Raw ANI durations change Slayer prototype attack cadence; engine scaling/cancels remain unknown",
+    "Three final recovery cells hold the preceding pose to avoid source-edge clipping"
   ]
 }
