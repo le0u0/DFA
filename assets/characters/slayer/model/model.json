@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "reference": "docs/art/slayer/chibi-pixel-reference-v6.png",
+  "standing_height": 80,
+  "head": [
+    32,
+    30
+  ],
+  "chin_to_hips": 22,
+  "hips_to_soles": 28,
+  "shoulder_span": 24,
+  "chest_width": 24,
+  "waist_width": 18,
+  "hip_span": 16,
+  "thigh_length": 13,
+  "shin_length": 9,
+  "thigh_width": 14,
+  "shin_width": 11,
+  "boot": [
+    16,
+    7
+  ],
+  "normal_arm": [
+    11,
+    9
+  ],
+  "cursed_arm": [
+    12,
+    10
+  ],
+  "normal_arm_width": [
+    8,
+    7
+  ],
+  "cursed_arm_width": [
+    10,
+    9
+  ],
+  "parts": {
+    "head_right": {
+      "rect": [
+        16,
+        19,
+        96,
+        90
+      ],
+      "size": [
+        32,
+        30
+      ]
+    },
+    "head_left": {
+      "rect": [
+        144,
+        19,
+        96,
+        90
+      ],
+      "size": [
+        32,
+        30
+      ]
+    },
+    "head_back": {
+      "rect": [
+        272,
+        19,
+        96,
+        90
+      ],
+      "size": [
+        32,
+        30
+      ]
+    },
+    "torso_front": {
+      "rect": [
+        388,
+        31,
+        120,
+        66
+      ],
+      "size": [
+        40,
+        22
+      ]
+    },
+    "torso_back": {
+      "rect": [
+        516,
+        31,
+        120,
+        66
+      ],
+      "size": [
+        40,
+        22
+      ]
+    },
+    "hips": {
+      "rect": [
+        656,
+        46,
+        96,
+        36
+      ],
+      "size": [
+        32,
+        12
+      ]
+    },
+    "thigh": {
+      "rect": [
+        43,
+        166,
+        42,
+        51
+      ],
+      "size": [
+        14,
+        17
+      ]
+    },
+    "shin": {
+      "rect": [
+        175,
+        172,
+        33,
+        39
+      ],
+      "size": [
+        11,
+        13
+      ]
+    },
+    "boot_right": {
+      "rect": [
+        296,
+        181,
+        48,
+        21
+      ],
+      "size": [
+        16,
+        7
+      ]
+    },
+    "boot_left": {
+      "rect": [
+        424,
+        181,
+        48,
+        21
+      ],
+      "size": [
+        16,
+        7
+      ]
+    },
+    "upper_arm": {
+      "rect": [
+        564,
+        169,
+        24,
+        45
+      ],
+      "size": [
+        8,
+        15
+      ]
+    },
+    "forearm": {
+      "rect": [
+        693,
+        172,
+        21,
+        39
+      ],
+      "size": [
+        7,
+        13
+      ]
+    },
+    "fist": {
+      "rect": [
+        53,
+        309,
+        21,
+        21
+      ],
+      "size": [
+        7,
+        7
+      ]
+    },
+    "cursed_upper": {
+      "rect": [
+        177,
+        296,
+        30,
+        48
+      ],
+      "size": [
+        10,
+        16
+      ]
+    },
+    "cursed_forearm": {
+      "rect": [
+        306,
+        299,
+        27,
+        42
+      ],
+      "size": [
+        9,
+        14
+      ]
+    },
+    "claw": {
+      "rect": [
+        434,
+        305,
+        27,
+        30
+      ],
+      "size": [
+        9,
+        10
+      ]
+    },
+    "hips_back": {
+      "rect": [
+        528,
+        302,
+        96,
+        36
+      ],
+      "size": [
+        32,
+        12
+      ]
+    },
+    "torso_side": {
+      "rect": [
+        650,
+        287,
+        108,
+        66
+      ],
+      "size": [
+        36,
+        22
+      ]
+    }
+  },
+  "source_sha256": "edf1d9afdabd6fddd1823a7da62381674547c9540e1a74e58bc107643d01c6aa",
+  "rule": "Bone lengths, body-part dimensions and head size are constant. Pose changes use rotations and joint locations; no per-pose scaling or stretching."
+}

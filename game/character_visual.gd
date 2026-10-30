@@ -5,7 +5,7 @@ const SlayerVisual := preload("res://game/slayer_animation_proof.gd")
 # Slayer clips select registered rows/cells from metadata, without body mirroring.
 # Other draft classes retain left/right idle/walk/attack rows with four columns.
 const BODIES := {
-	"sword": preload("res://assets/characters/slayer/animation-proof/body-atlas.png"),
+	"sword": preload("res://assets/characters/slayer/model/parts.png"),
 	"gun": preload("res://assets/characters/gunner/demo-atlas.png"),
 	"fists": preload("res://assets/characters/fighter/demo-atlas.png"),
 	"staff": preload("res://assets/characters/mage/demo-atlas.png"),

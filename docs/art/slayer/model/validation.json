@@ -1,0 +1,21 @@
+{
+  "native_model": {
+    "passed": 1192,
+    "failed": 0,
+    "scope": "All actual model joints across every clip/frame and whole-pose combo entry continuity"
+  },
+  "native_gameplay": {
+    "passed": 523,
+    "failed": 0
+  },
+  "python": {
+    "passed": 27,
+    "failed": 0
+  },
+  "renderer": "Same painted parts, fixed length and width envelopes; no per-pose body scaling",
+  "limitations": [
+    "Rigged cutout animation replaces independent whole-body strips",
+    "Original source panel is decoded ANI replay",
+    "Choreography, joint layering and equipment occlusion still need visual polish"
+  ]
+}

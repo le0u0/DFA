@@ -1,0 +1,84 @@
+{
+  "combo-right-fixed-model.gif": {
+    "input": "Held X across all three stages",
+    "sample_ms": 50,
+    "combo_started": 0.38333333333333375,
+    "seams": [
+      {
+        "boundary": "attack1 -> attack2",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          -15.8632717132568,
+          -29.1180858612061
+        ],
+        "next_hand": [
+          -15.8632717132568,
+          -29.1180858612061
+        ]
+      },
+      {
+        "boundary": "attack2 -> attack3",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          -31.9990005493164,
+          -46.0
+        ],
+        "next_hand": [
+          -31.9990005493164,
+          -46.0
+        ]
+      }
+    ],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  },
+  "run-thrust-right-fixed-model.gif": {
+    "input": "Idle, double-tap direction, X while running, idle",
+    "sample_ms": 50,
+    "combo_started": 1.0666666666666669,
+    "seams": [],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  },
+  "combo-left-fixed-model.gif": {
+    "input": "Held X across all three stages",
+    "sample_ms": 50,
+    "combo_started": 0.18333333333333332,
+    "seams": [
+      {
+        "boundary": "attack1 -> attack2",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          16.6902713775635,
+          -29.7163848876953
+        ],
+        "next_hand": [
+          16.6902713775635,
+          -29.7163848876953
+        ]
+      },
+      {
+        "boundary": "attack2 -> attack3",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          31.9990005493164,
+          -46.0
+        ],
+        "next_hand": [
+          31.9990005493164,
+          -46.0
+        ]
+      }
+    ],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  },
+  "run-thrust-left-fixed-model.gif": {
+    "input": "Idle, double-tap direction, X while running, idle",
+    "sample_ms": 50,
+    "combo_started": 0.9833333333333333,
+    "seams": [],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  }
+}

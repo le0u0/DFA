@@ -20,3 +20,10 @@ character as the fixed model: head size, torso and limb lengths must not change
 when switching animations. Crouching changes joint angles, not character scale.
 Compare complete held-input combos and idle/run/running-attack/idle transitions,
 including stage boundaries, rather than accepting isolated pose strips.
+
+Slayer’s canonical model is recorded in [the proportion guide](art/slayer/model/README.md)
+and shipped as `assets/characters/slayer/model/model.json`: an 80px neutral body
+with a 30px head, 22px chin-to-hips region and 28px hips-to-soles region. Thighs
+are 13px long and 14px thick; shins are 9px long and 11px thick. Animation must
+pose this same model; independent whole-body drawings and hair-width checks do
+not establish anatomical consistency. Gunner will have its own canonical model.

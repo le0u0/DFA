@@ -1,5 +1,8 @@
 # Slayer run, basic combo and running thrust
 
+Superseded for runtime anatomy by the [fixed character model](../model/README.md).
+The previous hair/silhouette checks did not verify torso or limb proportions.
+
 See the latest [full held-input combo and fixed-model review](../combo-review/README.md).
 Combo entry poses now connect exactly, queued Slayer stages avoid an idle flash, and
 the thrust/third-slash sheets have been redrawn against the neutral character model.

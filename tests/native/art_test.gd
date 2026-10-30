@@ -31,7 +31,7 @@ func run() -> void:
 	app.arena.goblin.ai_enabled = false
 	var visual: Node2D = player.art
 	check(visual != null, "Start installs Slayer renderer")
-	check(visual.body.get_size() == Vector2(1024, 2048), "Slayer atlas includes distinct run and three source-guided attacks")
+	check(visual.body.get_size() == Vector2(768, 384), "Slayer uses a fixed body-part atlas for every action")
 	check(visual.row == 3, "Right idle uses authored right-facing row")
 	player.facing = -1
 	await tick()
@@ -97,7 +97,7 @@ func run() -> void:
 		visual = player.art
 		var prefix := definition.display_name + ": "
 		check(visual != null and visual.weapon_kind == definition.weapon, prefix + "class renderer selected")
-		check(visual.body.get_size() == (Vector2(1024, 2048) if definition.weapon == "sword" else Vector2(512, 768)), prefix + "class atlas available")
+		check(visual.body.get_size() == (Vector2(768, 384) if definition.weapon == "sword" else Vector2(512, 768)), prefix + "class atlas available")
 		check(visual.equipment.size() == 2, prefix + "two independent equipment sprites")
 		player.facing = -1
 		Input.action_press("move_left")

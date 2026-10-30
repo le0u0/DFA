@@ -1,5 +1,8 @@
 # Continuous Slayer combo and character proportions
 
+Superseded for runtime anatomy by the [fixed character model](../model/README.md).
+The previous hair/silhouette checks did not verify torso or limb proportions.
+
 This review records **held X through the entire three-stage combo**, and separately
 **idle → double-tap run → running thrust → idle**. It supersedes review of the three
 slash strips in isolation.
