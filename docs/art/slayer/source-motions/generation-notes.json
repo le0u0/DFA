@@ -5,7 +5,10 @@
     "docs/art/roster/dfo-actions/slayer-poses.png",
     "docs/art/slayer/motion-review/attack1-original-poses.png",
     "docs/art/slayer/motion-review/attack2-original-poses.png",
-    "docs/art/slayer/motion-review/dashattack-original-poses.png"
+    "docs/art/slayer/motion-review/dashattack-original-poses.png",
+    "docs/art/slayer/combo-review/source/neutral-model.png",
+    "docs/art/slayer/combo-review/source/second-slash-end.png",
+    "docs/art/slayer/combo-review/source/third-slash-original.png"
   ],
   "prompt_summaries": {
     "run.png": "Two rows of eight forward-leaning run phases; left then right; chibi v6 costume, asymmetric arms, empty hands, transparent gutters.",
@@ -15,7 +18,9 @@
     "reverse-right.png": "Seven right-facing reverse horizontal-cut phases, empty normal right sword hand; clear windup, strike and recovery.",
     "slash-reviewed.png": "Equipped-source first slash: guard, cut, then low rear-hand follow-through; seven poses in each independently generated facing.",
     "reverse-reviewed.png": "Equipped-source reverse slash: recovery, forward arc, front-facing torso turn, working arm trailing behind; seven poses per facing.",
-    "dashattack.png": "Equipped-source running thrust: guard near shoulder, forward step, horizontal extension and recovery; seven poses per facing."
+    "dashattack.png": "Equipped-source running thrust: guard near shoulder, forward step, horizontal extension and recovery; seven poses per facing.",
+    "thrust-model-corrected.png": "Edit the thrust sheet against the actual neutral model: enlarge the undersized head, compact the stretched torso/legs, keep a constant model across all14poses; same seven thrust phases per facing.",
+    "third-slash-connected.png": "Continue directly from the second-slash final frontal pose and extended working right hand; crouch with that hand extended, sweep low across the hips, turn to back three-quarter and raise the same right hand. Fixed neutral-model proportions in both facings."
   },
   "rejected": "Mixed-facing uppercut rows and touching lower-row figures from the corrected large sheet are not used.",
   "transparent_background": true

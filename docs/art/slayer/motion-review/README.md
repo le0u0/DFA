@@ -1,5 +1,8 @@
 # Slayer motion comparison and running attack
 
+The [full held-input combo and model-proportion review](../combo-review/README.md)
+supersedes these isolated-stage captures and documents the subsequent corrections.
+
 The first runtime redraw was not validated adequately in motion. The comparisons
 below capture the **actual Start renderer** before and after this correction, beside
 an original **ANI replay from the supplied files**. The original client was not run.

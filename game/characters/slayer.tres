@@ -6,5 +6,6 @@
 script = ExtResource("1")
 combo_durations = PackedFloat32Array(0.6, 0.65, 0.55)
 combo_strike_times = PackedFloat32Array(0.15, 0.1, 0.1)
+chain_basic_attacks = true
 running_attack_duration = 0.63
 running_attack_strike_time = 0.18

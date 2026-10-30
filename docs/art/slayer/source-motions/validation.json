@@ -6,10 +6,10 @@
     "dungeons": 339,
     "art": 68,
     "failed": 0,
-    "slayer_motions": 21
+    "slayer_motions": 22
   },
   "python": {
-    "passed": 25,
+    "passed": 27,
     "failed": 0
   },
   "web": {
@@ -23,13 +23,16 @@
       "Pause/resume through Escape",
       "No browser script or console errors",
       "Running X input selects separate thrust in both directions",
-      "Held X reaches all three source-duration combo stages"
+      "Held X reaches all three source-duration combo stages",
+      "Held-input full combo has no idle flash between stages",
+      "Run/thrust/idle transitions checked against neutral model"
     ]
   },
   "limitations": [
-    "Chibi poses remain approximations of original mechanics",
-    "Original panel is decoded ANI replay, not original-client gameplay",
-    "Raw ANI durations change Slayer prototype attack cadence; engine scaling/cancels remain unknown",
-    "Three final recovery cells hold the preceding pose to avoid source-edge clipping"
+    "Source-guided poses remain approximations",
+    "Original panel is concatenated decoded ANI replay, not original-client gameplay",
+    "Combo entry artwork deliberately reuses preceding final pose",
+    "Three clipped final generated recovery cells hold preceding pose",
+    "Head landmarks detect gross scale changes; visual limb/proportion review remains necessary"
   ]
 }

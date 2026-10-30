@@ -26,7 +26,7 @@ Focus on **Slayer and Gunner** until the complete game is playable from start to
 
 All character testing uses **Start → character → dungeon**. Slayer has a separate eight-frame run, three basic combo stages and a running thrust redrawn from source references, alongside the earlier idle/walk and skill poses. The other classes retain four-frame prototype strips. **V** changes equipment appearance. Separate Slayer demo screens have been removed.
 
-Original DFO sprite images and [31 basic motion definitions](docs/art/roster/dfo-actions/README.md) have been imported as authoring references. See the [animated original/current comparison and running-attack correction](docs/art/slayer/motion-review/README.md). Slayer’s poses are source-guided approximations; a complete source-faithful animation set is still unfinished. See the [Slayer motion update and test steps](docs/art/slayer/source-motions/README.md). See [animation status and action-reference extraction](docs/art/slayer/animation-proof/README.md).
+Original DFO sprite images and [31 basic motion definitions](docs/art/roster/dfo-actions/README.md) have been imported as authoring references. See the [full-combo comparison and character-proportion correction](docs/art/slayer/combo-review/README.md). Slayer’s poses are source-guided approximations; a complete source-faithful animation set is still unfinished. See the [Slayer motion update and test steps](docs/art/slayer/source-motions/README.md). See [animation status and action-reference extraction](docs/art/slayer/animation-proof/README.md).
 
 ## First two dungeons
 

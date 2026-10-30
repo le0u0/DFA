@@ -1,5 +1,9 @@
 # Slayer run, basic combo and running thrust
 
+See the latest [full held-input combo and fixed-model review](../combo-review/README.md).
+Combo entry poses now connect exactly, queued Slayer stages avoid an idle flash, and
+the thrust/third-slash sheets have been redrawn against the neutral character model.
+
 Start now selects a separate eight-frame run and three different basic attack
 stages for Slayer, in both independently generated facing directions. These add
 72 body cells while keeping swords separate. The source-guided redraw adapts the

@@ -11,6 +11,7 @@ class_name DemoCharacter
 @export var attack_duration := 0.28
 @export var combo_durations := PackedFloat32Array()
 @export var combo_strike_times := PackedFloat32Array()
+@export var chain_basic_attacks := false
 @export var running_attack_duration := 0.0
 @export var running_attack_strike_time := 0.0
 @export var heavy_name := "Upward Slash"

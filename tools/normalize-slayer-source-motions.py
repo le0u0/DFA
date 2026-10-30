@@ -10,6 +10,7 @@ from scipy.ndimage import label,find_objects,binary_dilation
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/art/slayer/source-motions/source'
+CORRECTIONS=ROOT/'docs/art/slayer/combo-review/source'
 OUT=ROOT/'assets/characters/slayer/animation-proof'
 REFERENCE=json.loads((ROOT/'docs/art/roster/dfo-actions/slayer.json').read_text())
 REFERENCE['clips']['dashattack']=json.loads((ROOT/'docs/art/slayer/motion-review/dashattack-source.json').read_text())
@@ -22,7 +23,8 @@ atlas=Image.new('RGBA',(1024,2048));atlas.alpha_composite(old)
 registration=[]
 
 def figures(name):
- im=Image.open(SOURCE/name).convert('RGBA');a=np.array(im)
+ path=CORRECTIONS/name if (CORRECTIONS/name).exists() else SOURCE/name
+ im=Image.open(path).convert('RGBA');a=np.array(im)
  labels,_=label(a[:,:,3]>128,np.ones((3,3)))
  counts=np.bincount(labels.ravel());result=[]
  for i,box in enumerate(find_objects(labels),1):
@@ -82,13 +84,6 @@ for facing,row,lo,hi in [('left',6,0,375),('right',7,375,724)]:
  # Fists stay forward in this run design. Source hand positions are authored.
  hands=([(70,225),(335,225),(605,222),(889,225),(1182,225),(1435,225),(1740,225),(1985,225)] if facing=='left' else [(205,545),(470,545),(750,545),(1045,545),(1295,545),(1560,545),(1840,545),(2120,545)])
  install('run',facing,row,items,.26,hands,[-2.35 if facing=='left' else 2.35]*8)
-for name,action,facing,row,scale,hands,angles in [
- ('uppercut-left.png','attack3','left',10,.16,[(140,625),(422,450),(674,355),(1024,185),(1290,105),(1680,168),(1955,119)],[-2.4,-1.6,-.6,0,0,0,0]),
- ('uppercut-right.png','attack3','right',13,.16,[(245,648),(640,440),(950,296),(1235,188),(1505,110),(1795,150),(2110,170)],[2.4,1.6,.6,0,0,0,0]),
-]:
- items=sorted(figures(name),key=lambda v:v[0][0]);assert len(items)==7
- install(action,facing,row,items,scale,hands,angles)
-
 for name,action,right_row,left_row,scale in [('slash-reviewed.png','attack1',11,8,.24),('reverse-reviewed.png','attack2',12,9,.26)]:
  poses=figures(name)
  for facing,row,lo,hi in [('right',right_row,0,360),('left',left_row,360,724)]:
@@ -109,20 +104,41 @@ for name,action,right_row,left_row,scale in [('slash-reviewed.png','attack1',11,
   if facing=='left':angles=[-a for a in angles]
   install(action,facing,row,items,scale,hands,angles)
 
-thrust=figures('dashattack.png')
+third=figures('third-slash-connected.png')
+for facing,row,lo,hi in [('right',13,0,400),('left',10,400,793)]:
+ items=sorted([v for v in third if lo<=v[0][1]<hi],key=lambda v:v[0][0]);assert len(items)==7
+ if facing=='left':items[6]=items[5]
+ hands=([(35,223),(331,237),(825,298),(1090,120),(1355,90),(1645,89),(1935,90)] if facing=='right' else [(275,585),(581,595),(676,665),(938,520),(1225,475),(1515,472),(1515,472)])
+ angles=[-math.pi/2,-math.pi/2,2.0,.6,.5,.5,.5]
+ if facing=='left':angles=[-a for a in angles]
+ install('attack3',facing,row,items,.27,hands,angles)
+
+# Shared entry poses make the three attacks one connected action. This also
+# keeps the same anatomical working hand through torso rotation.
+for facing in ['left','right']:
+ for previous,following in [('attack1','attack2'),('attack2','attack3')]:
+  prior=data['clips'][previous+'_'+facing];clip=data['clips'][following+'_'+facing]
+  col=prior['cells'][-1]
+  pose=atlas.crop((col*128,prior['row']*128,(col+1)*128,(prior['row']+1)*128))
+  atlas.paste(pose,(0,clip['row']*128))
+  for index,cell in enumerate(clip['cells']):
+   if cell==0:
+    clip['hands'][index]=prior['hands'][-1][:]
+    clip['sword_angles'][index]=prior['sword_angles'][-1]
+  clip['entry_pose_from']=previous+'_'+facing
+
+thrust=figures('thrust-model-corrected.png')
 for facing,row,lo,hi in [('right',14,0,375),('left',15,375,727)]:
  items=sorted([v for v in thrust if lo<=v[0][1]<hi],key=lambda v:v[0][0]);assert len(items)==7
- # The final right-facing fist touches the source image edge: reject that
- # cell and hold the preceding extended thrust instead of shipping clipping.
- if facing=='right':items[6]=items[5]
- hands=([(90,150),(400,158),(700,183),(1200,190),(1540,192),(1860,194),(1860,194)] if facing=='right' else [(195,480),(510,485),(780,520),(920,530),(1250,535),(1585,535),(1920,535)])
+ # Corrected source keeps the complete mannequin and all seven thrust poses.
+ hands=([(76,173),(368,180),(683,203),(1174,205),(1542,203),(1850,205),(2140,205)] if facing=='right' else [(197,518),(510,526),(788,545),(915,553),(1224,553),(1563,553),(1885,553)])
  sign=1 if facing=='right' else -1
  install('dashattack',facing,row,items,.26,hands,[sign*a for a in [2.1,2.0,1.8,1.5,1.5,1.5,1.5]])
 
-data.update(version=3,columns=8,rows=16,source_motion_registration=registration)
-data['limitations']=['Source-guided chibi poses are an authored approximation, not pixel-for-pixel original choreography.','Slayer basic and running attacks use raw ANI duration and first attack-box timing; this slows the prototype attack cadence.','Idle/walk and air/heavy attacks retain the previous draft art; the final right thrust, right first-slash and left reverse-slash poses hold the preceding pose because their generated source cells touched an image edge.','Generated grip locations and per-pose arm occlusion require further art review.']
+data.update(version=4,columns=8,rows=16,source_motion_registration=registration)
+data['limitations']=['Source-guided chibi poses are an authored approximation, not pixel-for-pixel original choreography.','Slayer basic and running attacks use raw ANI duration and first attack-box timing; this slows the prototype attack cadence.','Idle/walk and air/heavy attacks retain the previous draft art; the final right first-slash, left reverse-slash and left third-slash recovery poses hold the preceding pose to avoid image-edge clipping. Combo entry art deliberately reuses the preceding final pose.','Generated grip locations and per-pose arm occlusion require further art review.']
 (OUT/'animations.json').write_text(json.dumps(data,indent=2)+'\n');atlas.save(OUT/'body-atlas.png')
-manifest=dict(sources={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in SOURCE.glob('*.png')},reference='docs/art/roster/dfo-actions/slayer.json',registration=registration,limitations=data['limitations'])
+manifest=dict(sources={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in list(SOURCE.glob('*.png'))+list(CORRECTIONS.glob('*.png'))},reference='docs/art/roster/dfo-actions/slayer.json',registration=registration,limitations=data['limitations'])
 (ROOT/'docs/art/slayer/source-motions/manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
 preview=Image.new('RGB',(8*128,10*148),'#293e35');draw=ImageDraw.Draw(preview)
 for row,(action,facing) in enumerate((a,f) for f in ['left','right'] for a in ['run','attack1','attack2','attack3','dashattack']):

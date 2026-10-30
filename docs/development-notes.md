@@ -12,3 +12,11 @@ from start to finish**. This scope reduction is intended to shorten development 
   existing implementations available; shared compatibility fixes may still apply.
 
 Do not expand the active character scope without a new direction from the user.
+
+## Animation acceptance
+
+Preserve the same character proportions across every action. Use the neutral
+character as the fixed model: head size, torso and limb lengths must not change
+when switching animations. Crouching changes joint angles, not character scale.
+Compare complete held-input combos and idle/run/running-attack/idle transitions,
+including stage boundaries, rather than accepting isolated pose strips.

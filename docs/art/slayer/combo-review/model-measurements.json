@@ -1,0 +1,125 @@
+{
+  "reference": {
+    "clip": "idle_right",
+    "cell": 0,
+    "hair_width": 30,
+    "visible_height": 75
+  },
+  "before": {
+    "right-0": {
+      "hair_width": 24,
+      "visible_height": 72
+    },
+    "right-1": {
+      "hair_width": 23,
+      "visible_height": 70
+    },
+    "right-2": {
+      "hair_width": 24,
+      "visible_height": 68
+    },
+    "right-3": {
+      "hair_width": 26,
+      "visible_height": 64
+    },
+    "right-4": {
+      "hair_width": 24,
+      "visible_height": 61
+    },
+    "right-5": {
+      "hair_width": 23,
+      "visible_height": 60
+    },
+    "right-6": {
+      "hair_width": 23,
+      "visible_height": 60
+    },
+    "left-0": {
+      "hair_width": 24,
+      "visible_height": 72
+    },
+    "left-1": {
+      "hair_width": 24,
+      "visible_height": 71
+    },
+    "left-2": {
+      "hair_width": 23,
+      "visible_height": 67
+    },
+    "left-3": {
+      "hair_width": 24,
+      "visible_height": 64
+    },
+    "left-4": {
+      "hair_width": 23,
+      "visible_height": 61
+    },
+    "left-5": {
+      "hair_width": 22,
+      "visible_height": 60
+    },
+    "left-6": {
+      "hair_width": 23,
+      "visible_height": 62
+    }
+  },
+  "after": {
+    "right-0": {
+      "hair_width": 31,
+      "visible_height": 73
+    },
+    "right-1": {
+      "hair_width": 31,
+      "visible_height": 72
+    },
+    "right-2": {
+      "hair_width": 29,
+      "visible_height": 69
+    },
+    "right-3": {
+      "hair_width": 31,
+      "visible_height": 67
+    },
+    "right-4": {
+      "hair_width": 28,
+      "visible_height": 67
+    },
+    "right-5": {
+      "hair_width": 30,
+      "visible_height": 67
+    },
+    "right-6": {
+      "hair_width": 30,
+      "visible_height": 66
+    },
+    "left-0": {
+      "hair_width": 30,
+      "visible_height": 71
+    },
+    "left-1": {
+      "hair_width": 31,
+      "visible_height": 71
+    },
+    "left-2": {
+      "hair_width": 31,
+      "visible_height": 68
+    },
+    "left-3": {
+      "hair_width": 30,
+      "visible_height": 67
+    },
+    "left-4": {
+      "hair_width": 31,
+      "visible_height": 67
+    },
+    "left-5": {
+      "hair_width": 30,
+      "visible_height": 67
+    },
+    "left-6": {
+      "hair_width": 30,
+      "visible_height": 67
+    }
+  },
+  "rule": "One uniform scale for every thrust pose; standing guard matches neutral model proportions. Do not equate crouched silhouette height with model size."
+}

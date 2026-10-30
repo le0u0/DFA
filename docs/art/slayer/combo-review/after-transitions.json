@@ -1,0 +1,84 @@
+{
+  "combo-right-after.gif": {
+    "input": "Held X across all three stages",
+    "sample_ms": 50,
+    "combo_started": 0.18333333333333332,
+    "seams": [
+      {
+        "boundary": "attack1 -> attack2",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          -18.0,
+          -26.0
+        ],
+        "next_hand": [
+          -18.0,
+          -26.0
+        ]
+      },
+      {
+        "boundary": "attack2 -> attack3",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          -35.0,
+          -46.0
+        ],
+        "next_hand": [
+          -35.0,
+          -46.0
+        ]
+      }
+    ],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  },
+  "run-thrust-right-after.gif": {
+    "input": "Idle, double-tap direction, X while running, idle",
+    "sample_ms": 50,
+    "combo_started": 0.6333333333333333,
+    "seams": [],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  },
+  "combo-left-after.gif": {
+    "input": "Held X across all three stages",
+    "sample_ms": 50,
+    "combo_started": 0.1333333333333333,
+    "seams": [
+      {
+        "boundary": "attack1 -> attack2",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          18.0,
+          -28.0
+        ],
+        "next_hand": [
+          18.0,
+          -28.0
+        ]
+      },
+      {
+        "boundary": "attack2 -> attack3",
+        "hand_distance": 0.0,
+        "intervening_clips": [],
+        "prior_hand": [
+          36.0,
+          -46.0
+        ],
+        "next_hand": [
+          36.0,
+          -46.0
+        ]
+      }
+    ],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  },
+  "run-thrust-left-after.gif": {
+    "input": "Idle, double-tap direction, X while running, idle",
+    "sample_ms": 50,
+    "combo_started": 0.6500000000000002,
+    "seams": [],
+    "source": "Concatenated raw ANI clips; source engine transitions are not established. DFA uses actual held input; world translation fixed for pose review."
+  }
+}

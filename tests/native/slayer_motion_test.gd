@@ -2,6 +2,9 @@ extends SceneTree
 const Main := preload("res://scenes/main.tscn")
 var passed := 0
 var failed := 0
+var watch_combo: DemoFighter
+var watch_chain := false
+var idle_flash := false
 
 func check(value: bool, message: String) -> void:
 	if value:
@@ -13,6 +16,8 @@ func check(value: bool, message: String) -> void:
 func frames(count: int) -> void:
 	for index in range(count):
 		await physics_frame
+		if watch_chain and is_instance_valid(watch_combo) and watch_combo.attack_kind == &"":
+			idle_flash = true
 
 func _initialize() -> void:
 	call_deferred("run")
@@ -33,11 +38,15 @@ func run() -> void:
 	await frames(3)
 	check(player.combo == 1 and is_equal_approx(player.attack_duration, 0.6), "First attack retains its 600ms source sequence")
 	check(is_equal_approx(player.strike_time, 0.15), "First attack impact begins at source 150ms")
+	watch_combo = player
+	watch_chain = true
 	await frames(36)
 	check(player.combo == 2 and is_equal_approx(player.attack_duration, 0.65), "Held X advances to 650ms second stage")
 	check(is_equal_approx(player.strike_time, 0.1), "Second stage impact begins at source 100ms")
 	await frames(39)
 	check(player.combo == 3 and is_equal_approx(player.attack_duration, 0.55), "Combo timeout allows the 550ms third stage")
+	watch_chain = false
+	check(not idle_flash, "Held-input combo never flashes idle between stages")
 	await frames(25)
 	Input.action_release("attack")
 	await frames(15)
