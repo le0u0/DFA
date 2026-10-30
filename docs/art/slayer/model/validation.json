@@ -17,5 +17,13 @@
     "Rigged cutout animation replaces independent whole-body strips",
     "Original source panel is decoded ANI replay",
     "Choreography, joint layering and equipment occlusion still need visual polish"
+  ],
+  "visual_acceptance": "rejected_by_user_unfinished",
+  "geometry_tests_are_not_animation_acceptance": true,
+  "blocking_findings": [
+    "Gait is independent of travel speed and lacks foot planting",
+    "Discrete shoulder/view switches without continuous turns",
+    "Reach clamping lacks anatomical limits and motion curves",
+    "Translation-fixed captures hide foot sliding"
   ]
 }

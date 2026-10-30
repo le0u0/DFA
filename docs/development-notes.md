@@ -27,3 +27,27 @@ with a 30px head, 22px chin-to-hips region and 28px hips-to-soles region. Thighs
 are 13px long and 14px thick; shins are 9px long and 11px thick. Animation must
 pose this same model; independent whole-body drawings and hair-width checks do
 not establish anatomical consistency. Gunner will have its own canonical model.
+
+## Blocking animation review — current fixed-model rig rejected
+
+The user rejected the current Slayer rig as unnatural and unfinished. Do not report
+it as accepted or completed based on geometry, screenshot or smoke-test results.
+The previous visual review was inadequate.
+
+Concrete problems in `game/slayer_model.gd`:
+
+- Walking/running use a frame-driven sine cycle independent of actor travel speed.
+  There is no planted-foot constraint or ground-speed matching, so the player can
+  slide instead of transferring weight through steps.
+- Shoulder-side/view switches are discrete. The torso texture and shoulder base
+  can change between poses without a continuous turning motion.
+- Two-bone reach clamping preserves lengths but has no anatomical joint limits,
+  stable bend-pole trajectory or continuous pose curves. Fixed lengths alone can
+  still produce mechanical arm/knee motion.
+- Translation-fixed comparison captures hide actual foot sliding. Acceptance must
+  include real moving gameplay, full combos and locomotion transitions at normal
+  speed, then slow-motion review for weight transfer, foot contact and limb arcs.
+
+A game-development skill was requested, but none was found in the connected cloud
+list, executor list or local skill directories in this session. Do not claim it
+was used. No additional gameplay or art replacement was made during this review.

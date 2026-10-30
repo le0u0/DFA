@@ -1,5 +1,9 @@
 # Slayer's fixed character model
 
+**Visual status: rejected / unfinished.** The user rejected this rig's human motion.
+Its passing geometry checks establish fixed lengths only. They do not establish
+acceptable animation or completion. See the blocking review in the development notes.
+
 The earlier independent whole-body sheets changed anatomy between actions. Hair
 width and silhouette height did not detect long thighs, thin calves or a narrow
 torso. Those checks were insufficient and the earlier claim of consistent body
