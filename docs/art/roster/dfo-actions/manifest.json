@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "archive_sha256": "ac51e1fb928ff305787ed1e90b294915f1f4c1e05a0ef242c5e2b71bf31c3ae4",
+  "scope": "Five base jobs, chosen through their own .chr motion links",
+  "characters": {
+    "slayer": {
+      "idle": {
+        "frames": 6,
+        "raw_ms": 720,
+        "long_hold_frames": []
+      },
+      "walk": {
+        "frames": 8,
+        "raw_ms": 800,
+        "long_hold_frames": []
+      },
+      "run": {
+        "frames": 8,
+        "raw_ms": 800,
+        "long_hold_frames": []
+      },
+      "attack1": {
+        "frames": 10,
+        "raw_ms": 600,
+        "long_hold_frames": []
+      },
+      "attack2": {
+        "frames": 11,
+        "raw_ms": 650,
+        "long_hold_frames": []
+      },
+      "attack3": {
+        "frames": 9,
+        "raw_ms": 550,
+        "long_hold_frames": []
+      }
+    },
+    "fighter": {
+      "idle": {
+        "frames": 5,
+        "raw_ms": 600,
+        "long_hold_frames": []
+      },
+      "walk": {
+        "frames": 8,
+        "raw_ms": 800,
+        "long_hold_frames": []
+      },
+      "run": {
+        "frames": 8,
+        "raw_ms": 560,
+        "long_hold_frames": []
+      },
+      "attack1": {
+        "frames": 2,
+        "raw_ms": 400,
+        "long_hold_frames": []
+      },
+      "attack2": {
+        "frames": 4,
+        "raw_ms": 480,
+        "long_hold_frames": []
+      },
+      "attack3": {
+        "frames": 8,
+        "raw_ms": 700,
+        "long_hold_frames": []
+      },
+      "attack4": {
+        "frames": 7,
+        "raw_ms": 530,
+        "long_hold_frames": []
+      }
+    },
+    "gunner": {
+      "idle": {
+        "frames": 15,
+        "raw_ms": 3950,
+        "long_hold_frames": []
+      },
+      "walk": {
+        "frames": 8,
+        "raw_ms": 800,
+        "long_hold_frames": []
+      },
+      "run": {
+        "frames": 8,
+        "raw_ms": 640,
+        "long_hold_frames": []
+      },
+      "attack1": {
+        "frames": 3,
+        "raw_ms": 10200,
+        "long_hold_frames": [
+          2
+        ]
+      },
+      "attack2": {
+        "frames": 7,
+        "raw_ms": 10500,
+        "long_hold_frames": [
+          6
+        ]
+      }
+    },
+    "mage": {
+      "idle": {
+        "frames": 4,
+        "raw_ms": 1340,
+        "long_hold_frames": []
+      },
+      "walk": {
+        "frames": 10,
+        "raw_ms": 1000,
+        "long_hold_frames": []
+      },
+      "run": {
+        "frames": 4,
+        "raw_ms": 280,
+        "long_hold_frames": []
+      },
+      "attack1": {
+        "frames": 5,
+        "raw_ms": 720,
+        "long_hold_frames": []
+      },
+      "attack2": {
+        "frames": 5,
+        "raw_ms": 740,
+        "long_hold_frames": []
+      },
+      "attack3": {
+        "frames": 8,
+        "raw_ms": 800,
+        "long_hold_frames": []
+      }
+    },
+    "priest": {
+      "idle": {
+        "frames": 4,
+        "raw_ms": 720,
+        "long_hold_frames": []
+      },
+      "walk": {
+        "frames": 8,
+        "raw_ms": 800,
+        "long_hold_frames": []
+      },
+      "run": {
+        "frames": 6,
+        "raw_ms": 600,
+        "long_hold_frames": []
+      },
+      "attack1": {
+        "frames": 3,
+        "raw_ms": 410,
+        "long_hold_frames": []
+      },
+      "attack2": {
+        "frames": 5,
+        "raw_ms": 520,
+        "long_hold_frames": []
+      },
+      "attack3": {
+        "frames": 7,
+        "raw_ms": 810,
+        "long_hold_frames": []
+      },
+      "attack4": {
+        "frames": 8,
+        "raw_ms": 840,
+        "long_hold_frames": []
+      }
+    }
+  },
+  "lookup_warnings": {
+    "missing_references": 3,
+    "out_of_range_references": 0,
+    "samples": []
+  }
+}

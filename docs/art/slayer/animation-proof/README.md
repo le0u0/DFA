@@ -6,11 +6,19 @@ Slayer's latest recreated chibi idle/walk/attack sheet is now connected to gamep
 
 ## Why these actions do not yet match DFO
 
-The supplied NPKs yielded sprite images and numeric frame indices. They did not establish which frames form each run, combo stage, aerial/running attack or skill, nor the original delays and attack events. The earlier prototype used generic generated poses; running reused the walk strip at a higher rate. That is not a completed recreation of the original actions.
+The supplied NPKs yielded sprite images and numeric frame indices. The user's
+subsequent action-reference upload has now been imported: [31 verified basic clip
+definitions and pose references](../../roster/dfo-actions/README.md) cover all five
+base characters. Slayer has a distinct eight-frame run and three attack stages with
+10, 11 and 9 source frame records. Original frame order, raw delays, positions and
+attack boxes are preserved.
 
-Connecting the latest Slayer sheet through Start does not resolve that missing mapping. Its attacks remain provisional, the right windup holds guard, and running still reuses walk art. The other four classes retain their older four-frame source sheets. These are explicit remaining tasks, not verified source-faithful animations.
-
-The next input is the original basic `.ani` action definitions and `.chr` links from `Script.pvf`, followed by a frame-by-frame retargeting pass into our approved chibi designs. Preserve original action variants, pose order and durations; keep body/equipment separate. If source timing differs from current combat tuning, assess the impact boundary explicitly rather than silently changing gameplay to fit generated art.
+Connecting the current Slayer sheet through Start does not retarget those original
+poses. Its attacks remain provisional, the right windup holds guard, and running
+still reuses walk art. The other four classes retain their older four-frame sheets.
+The remaining work is to redraw those motions into the approved chibi designs,
+keeping equipment separate, then verify the combat impact boundary. Original raw
+ANI delays alone do not establish engine transitions or speed scaling.
 
 ## Extract the missing reference on your Mac
 
@@ -24,7 +32,7 @@ Upload **Documents/DFO-action-reference/DFO-action-reference.zip** in our chat. 
 
 The original direct Python command remains available for older PVFs. The modern paged format requires `cryptography`; the Docker command supplies it automatically. If this client still cannot be validated, upload the diagnostic ZIP from the same output folder. The helper will not export guessed action data when validation fails.
 
-The reader has tests for classic and paged encrypted fixtures, incorrect metadata, and reads crossing encrypted page boundaries. The user's header sample and `sk.dat` were inspected; available reference clients did not unlock them, so the helper now reads matching metadata from that user's actual executable locally. Successful extraction against the real full archive still needs to be confirmed by the user-side run.
+The reader has tests for classic and paged encrypted fixtures, incorrect metadata, and reads crossing encrypted page boundaries. The user's header sample and `sk.dat` were inspected; available reference clients did not unlock them, so the helper now reads matching metadata from that user's actual executable locally. The subsequent real-archive extraction succeeded; the joined upload passed ZIP CRC checks and the core motions were imported. No repeat extraction is needed for those motions.
 
 ## Test gameplay on your Mac
 

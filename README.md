@@ -22,7 +22,7 @@ All five classes now use chibi pixel body animation with separate equipment spri
 
 All character testing uses **Start → character → dungeon**. Slayer now uses the latest six-frame chibi idle/walk/attack artwork in normal gameplay; the other classes retain four-frame prototype strips. **V** changes equipment appearance. Separate Slayer demo screens have been removed.
 
-Original DFO sprite images have been extracted, but their action sequences and timings have not yet been imported. Current run and attack animations are provisional and do not faithfully reproduce the original game. See [animation status and action-reference extraction](docs/art/slayer/animation-proof/README.md).
+Original DFO sprite images and [31 basic motion definitions](docs/art/roster/dfo-actions/README.md) have been imported as authoring references. Current run and attack animations are provisional and do not faithfully reproduce the original game. See [animation status and action-reference extraction](docs/art/slayer/animation-proof/README.md).
 
 ## First two dungeons
 
@@ -109,6 +109,6 @@ The macOS preset produces a universal Intel/Apple Silicon app with a local ad-ho
 
 ## Credits
 
-Character bodies and equipment sprites were generated with image generation using the selected character concepts, then normalized for the demo. The arena, goblin and current effects use Godot primitives. Generated-art source notes are in `docs/art/`. No original DFO artwork or audio is bundled. DFA is not affiliated with or endorsed by Neople or Nexon.
+Character bodies and equipment sprites were generated with image generation using the selected character concepts, then normalized for the demo. The arena, goblin and current effects use Godot primitives. Generated-art source notes are in `docs/art/`. Runtime sprites use generated art. Original DFO pose references supplied by the user are stored separately under `docs/art/roster/dfo-actions/`; they are not used by the game. DFA is not affiliated with or endorsed by Neople or Nexon.
 
 Godot Engine uses the [MIT license](https://godotengine.org/license/). Packaged builds must include the applicable engine and third-party notices; `tools/write-licenses.gd` generates these for the macOS package.

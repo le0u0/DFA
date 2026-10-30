@@ -1,0 +1,3267 @@
+{
+  "character": "slayer",
+  "source_character": "character/swordman/swordman.chr",
+  "source_sha256": "7af10246375edd5f69b9c9401aec508327046028141c2838d2611fb7abff4d07",
+  "clips": {
+    "idle": {
+      "header": [
+        {
+          "tag": "[LOOP]",
+          "values": [
+            1
+          ]
+        },
+        {
+          "tag": "[FRAME MAX]",
+          "values": [
+            6
+          ]
+        },
+        {
+          "tag": "[IMAGE PATH]",
+          "values": [
+            "Character/Swordman/Equipment/Avatar/skin/sm_body%04d.img"
+          ]
+        },
+        {
+          "tag": "[/IMAGE PATH]",
+          "values": []
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                39
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                120
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                47,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 39,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 120,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              47,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 1,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                40
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                120
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                47,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 40,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 120,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              47,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 2,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                41
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                120
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                47,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 41,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 120,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              47,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 3,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                42
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                120
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                47,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 42,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 120,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              47,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 4,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                43
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                120
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                47,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 43,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 120,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              47,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 5,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                44
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                120
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                47,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 44,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 120,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              47,
+              10,
+              93
+            ]
+          ]
+        }
+      ],
+      "total_raw_delay_ms": 720,
+      "attack_box_frames": [],
+      "long_hold_frames": [],
+      "source": "character/swordman/animation/stay.ani",
+      "source_sha256": "53e440b4ebe98202af9632b3465d366ef33bcd46a38c3c093d9272b0b14d4e8c"
+    },
+    "walk": {
+      "header": [
+        {
+          "tag": "[LOOP]",
+          "values": [
+            1
+          ]
+        },
+        {
+          "tag": "[FRAME MAX]",
+          "values": [
+            8
+          ]
+        },
+        {
+          "tag": "[IMAGE PATH]",
+          "values": [
+            "Character/Swordman/Equipment/Avatar/skin/sm_body%04d.img"
+          ]
+        },
+        {
+          "tag": "[/IMAGE PATH]",
+          "values": []
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                98
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                26,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 98,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              26,
+              10,
+              109
+            ]
+          ]
+        },
+        {
+          "frame": 1,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                99
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -11,
+                -5,
+                0,
+                26,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 99,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -11,
+              -5,
+              0,
+              26,
+              10,
+              109
+            ]
+          ]
+        },
+        {
+          "frame": 2,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                100
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                30,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 100,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              30,
+              10,
+              109
+            ]
+          ]
+        },
+        {
+          "frame": 3,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                101
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                26,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 101,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              26,
+              10,
+              109
+            ]
+          ]
+        },
+        {
+          "frame": 4,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                102
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -11,
+                -5,
+                0,
+                23,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 102,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -11,
+              -5,
+              0,
+              23,
+              10,
+              109
+            ]
+          ]
+        },
+        {
+          "frame": 5,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                103
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -10,
+                -5,
+                0,
+                25,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 103,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -10,
+              -5,
+              0,
+              25,
+              10,
+              109
+            ]
+          ]
+        },
+        {
+          "frame": 6,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                104
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -12,
+                -5,
+                0,
+                29,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 104,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -12,
+              -5,
+              0,
+              29,
+              10,
+              109
+            ]
+          ]
+        },
+        {
+          "frame": 7,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                105
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -235,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -12,
+                -5,
+                0,
+                29,
+                10,
+                109
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 105,
+          "image_pos": [
+            -235,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -12,
+              -5,
+              0,
+              29,
+              10,
+              109
+            ]
+          ]
+        }
+      ],
+      "total_raw_delay_ms": 800,
+      "attack_box_frames": [],
+      "long_hold_frames": [],
+      "source": "character/swordman/animation/move.ani",
+      "source_sha256": "8f18d39d7297e1a36b785472e8afa7181d07529dfca7230d7500677039660904"
+    },
+    "run": {
+      "header": [
+        {
+          "tag": "[LOOP]",
+          "values": [
+            1
+          ]
+        },
+        {
+          "tag": "[FRAME MAX]",
+          "values": [
+            8
+          ]
+        },
+        {
+          "tag": "[IMAGE PATH]",
+          "values": [
+            "Character/Swordman/Equipment/Avatar/skin/sm_body%04d.img"
+          ]
+        },
+        {
+          "tag": "[/IMAGE PATH]",
+          "values": []
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                51
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -2,
+                -5,
+                0,
+                29,
+                10,
+                95
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 51,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -2,
+              -5,
+              0,
+              29,
+              10,
+              95
+            ]
+          ]
+        },
+        {
+          "frame": 1,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                52
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -14,
+                -5,
+                0,
+                50,
+                10,
+                97
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 52,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -14,
+              -5,
+              0,
+              50,
+              10,
+              97
+            ]
+          ]
+        },
+        {
+          "frame": 2,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                53
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -18,
+                -5,
+                0,
+                48,
+                10,
+                97
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 53,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -18,
+              -5,
+              0,
+              48,
+              10,
+              97
+            ]
+          ]
+        },
+        {
+          "frame": 3,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                54
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -7,
+                -5,
+                0,
+                33,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 54,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -7,
+              -5,
+              0,
+              33,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 4,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                55
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -1,
+                -5,
+                0,
+                32,
+                10,
+                95
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 55,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -1,
+              -5,
+              0,
+              32,
+              10,
+              95
+            ]
+          ]
+        },
+        {
+          "frame": 5,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                56
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -13,
+                -5,
+                0,
+                42,
+                10,
+                97
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 56,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -13,
+              -5,
+              0,
+              42,
+              10,
+              97
+            ]
+          ]
+        },
+        {
+          "frame": 6,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                57
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -15,
+                -5,
+                0,
+                44,
+                10,
+                97
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 57,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -15,
+              -5,
+              0,
+              44,
+              10,
+              97
+            ]
+          ]
+        },
+        {
+          "frame": 7,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                58
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                100
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -5,
+                -5,
+                0,
+                32,
+                10,
+                95
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 58,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 100,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -5,
+              -5,
+              0,
+              32,
+              10,
+              95
+            ]
+          ]
+        }
+      ],
+      "total_raw_delay_ms": 800,
+      "attack_box_frames": [],
+      "long_hold_frames": [],
+      "source": "character/swordman/animation/dash.ani",
+      "source_sha256": "7c674c970d536064cfe5eb2d84fdeae55cb531f1d364dd916b79a1f354b89002"
+    },
+    "attack1": {
+      "header": [
+        {
+          "tag": "[FRAME MAX]",
+          "values": [
+            10
+          ]
+        },
+        {
+          "tag": "[IMAGE PATH]",
+          "values": [
+            "Character/Swordman/Equipment/Avatar/skin/sm_body%04d.img"
+          ]
+        },
+        {
+          "tag": "[/IMAGE PATH]",
+          "values": []
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                0
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -23,
+                -5,
+                -3,
+                43,
+                10,
+                111
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 0,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -23,
+              -5,
+              -3,
+              43,
+              10,
+              111
+            ]
+          ]
+        },
+        {
+          "frame": 1,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                1
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -21,
+                -5,
+                -3,
+                42,
+                10,
+                110
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 1,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -21,
+              -5,
+              -3,
+              42,
+              10,
+              110
+            ]
+          ]
+        },
+        {
+          "frame": 2,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                2
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -10,
+                -5,
+                -3,
+                38,
+                10,
+                111
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 2,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -10,
+              -5,
+              -3,
+              38,
+              10,
+              111
+            ]
+          ]
+        },
+        {
+          "frame": 3,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                3
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -4,
+                -5,
+                -2,
+                46,
+                10,
+                100
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                49,
+                -10,
+                47,
+                92,
+                29,
+                53
+              ]
+            },
+            {
+              "tag": "[SET FLAG]",
+              "values": [
+                1
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 3,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [
+            [
+              49,
+              -10,
+              47,
+              92,
+              29,
+              53
+            ]
+          ],
+          "damage_boxes": [
+            [
+              -4,
+              -5,
+              -2,
+              46,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 4,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                4
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                0,
+                -5,
+                -3,
+                47,
+                10,
+                95
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -25,
+                -17,
+                22,
+                112,
+                23,
+                31
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -29,
+                -17,
+                21,
+                133,
+                29,
+                37
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 4,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [
+            [
+              -25,
+              -17,
+              22,
+              112,
+              23,
+              31
+            ],
+            [
+              -29,
+              -17,
+              21,
+              133,
+              29,
+              37
+            ]
+          ],
+          "damage_boxes": [
+            [
+              0,
+              -5,
+              -3,
+              47,
+              10,
+              95
+            ]
+          ]
+        },
+        {
+          "frame": 5,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                5
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -1,
+                -5,
+                -3,
+                49,
+                10,
+                94
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 5,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -1,
+              -5,
+              -3,
+              49,
+              10,
+              94
+            ]
+          ]
+        },
+        {
+          "frame": 6,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                6
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -1,
+                -5,
+                -3,
+                49,
+                10,
+                94
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 6,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -1,
+              -5,
+              -3,
+              49,
+              10,
+              94
+            ]
+          ]
+        },
+        {
+          "frame": 7,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                6
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -1,
+                -5,
+                -3,
+                49,
+                10,
+                94
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 6,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -1,
+              -5,
+              -3,
+              49,
+              10,
+              94
+            ]
+          ]
+        },
+        {
+          "frame": 8,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                6
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -1,
+                -5,
+                -3,
+                49,
+                10,
+                94
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 6,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -1,
+              -5,
+              -3,
+              49,
+              10,
+              94
+            ]
+          ]
+        },
+        {
+          "frame": 9,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                6
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                150
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -1,
+                -5,
+                -3,
+                49,
+                10,
+                94
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 6,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 150,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -1,
+              -5,
+              -3,
+              49,
+              10,
+              94
+            ]
+          ]
+        }
+      ],
+      "total_raw_delay_ms": 600,
+      "attack_box_frames": [
+        3,
+        4
+      ],
+      "long_hold_frames": [],
+      "source": "character/swordman/animation/attack1.ani",
+      "source_sha256": "9c79bc169e33453b42117b8aa9ad2d318d1d80df65cc0895f1affd1e33a25ddc"
+    },
+    "attack2": {
+      "header": [
+        {
+          "tag": "[FRAME MAX]",
+          "values": [
+            11
+          ]
+        },
+        {
+          "tag": "[IMAGE PATH]",
+          "values": [
+            "Character/Swordman/Equipment/Avatar/skin/sm_body%04d.img"
+          ]
+        },
+        {
+          "tag": "[/IMAGE PATH]",
+          "values": []
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                7
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                1,
+                -5,
+                -2,
+                49,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 7,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              1,
+              -5,
+              -2,
+              49,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 1,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                7
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                1,
+                -5,
+                -2,
+                49,
+                10,
+                93
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 7,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              1,
+              -5,
+              -2,
+              49,
+              10,
+              93
+            ]
+          ]
+        },
+        {
+          "frame": 2,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                8
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                0,
+                -5,
+                -2,
+                53,
+                10,
+                92
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                31,
+                -17,
+                40,
+                108,
+                61,
+                40
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -5,
+                -10,
+                10,
+                164,
+                20,
+                88
+              ]
+            },
+            {
+              "tag": "[SET FLAG]",
+              "values": [
+                1
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 8,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [
+            [
+              31,
+              -17,
+              40,
+              108,
+              61,
+              40
+            ],
+            [
+              -5,
+              -10,
+              10,
+              164,
+              20,
+              88
+            ]
+          ],
+          "damage_boxes": [
+            [
+              0,
+              -5,
+              -2,
+              53,
+              10,
+              92
+            ]
+          ]
+        },
+        {
+          "frame": 3,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                9
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -15,
+                -5,
+                -3,
+                48,
+                10,
+                100
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -38,
+                -22,
+                29,
+                84,
+                60,
+                42
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -5,
+                -10,
+                10,
+                164,
+                20,
+                88
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 9,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [
+            [
+              -38,
+              -22,
+              29,
+              84,
+              60,
+              42
+            ],
+            [
+              -5,
+              -10,
+              10,
+              164,
+              20,
+              88
+            ]
+          ],
+          "damage_boxes": [
+            [
+              -15,
+              -5,
+              -3,
+              48,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 4,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                10
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -19,
+                -5,
+                -3,
+                49,
+                10,
+                100
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -5,
+                -10,
+                10,
+                164,
+                20,
+                88
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 10,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [
+            [
+              -5,
+              -10,
+              10,
+              164,
+              20,
+              88
+            ]
+          ],
+          "damage_boxes": [
+            [
+              -19,
+              -5,
+              -3,
+              49,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 5,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                11
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -19,
+                -5,
+                -3,
+                49,
+                10,
+                100
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 11,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -19,
+              -5,
+              -3,
+              49,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 6,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                12
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -19,
+                -5,
+                -3,
+                49,
+                10,
+                100
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 12,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -19,
+              -5,
+              -3,
+              49,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 7,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                13
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -19,
+                -5,
+                -3,
+                49,
+                10,
+                100
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 13,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -19,
+              -5,
+              -3,
+              49,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 8,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                13
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -19,
+                -5,
+                -3,
+                49,
+                10,
+                100
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 13,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -19,
+              -5,
+              -3,
+              49,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 9,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                13
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -19,
+                -5,
+                -3,
+                49,
+                10,
+                100
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 13,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -19,
+              -5,
+              -3,
+              49,
+              10,
+              100
+            ]
+          ]
+        },
+        {
+          "frame": 10,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                13
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                150
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -19,
+                -5,
+                -3,
+                49,
+                10,
+                100
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 13,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 150,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -19,
+              -5,
+              -3,
+              49,
+              10,
+              100
+            ]
+          ]
+        }
+      ],
+      "total_raw_delay_ms": 650,
+      "attack_box_frames": [
+        2,
+        3,
+        4
+      ],
+      "long_hold_frames": [],
+      "source": "character/swordman/animation/attack2.ani",
+      "source_sha256": "9c566515053f80ef017aaccf925ba144a849390e4c60e40b8b607875662028be"
+    },
+    "attack3": {
+      "header": [
+        {
+          "tag": "[FRAME MAX]",
+          "values": [
+            9
+          ]
+        },
+        {
+          "tag": "[IMAGE PATH]",
+          "values": [
+            "Character/Swordman/Equipment/Avatar/skin/sm_body%04d.img"
+          ]
+        },
+        {
+          "tag": "[/IMAGE PATH]",
+          "values": []
+        }
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                14
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                -10,
+                -5,
+                -4,
+                52,
+                10,
+                92
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 14,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              -10,
+              -5,
+              -4,
+              52,
+              10,
+              92
+            ]
+          ]
+        },
+        {
+          "frame": 1,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                15
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                1,
+                -5,
+                -4,
+                56,
+                10,
+                80
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 15,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              1,
+              -5,
+              -4,
+              56,
+              10,
+              80
+            ]
+          ]
+        },
+        {
+          "frame": 2,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                16
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                55,
+                -5,
+                -1,
+                48,
+                10,
+                81
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -32,
+                -13,
+                0,
+                179,
+                26,
+                94
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                -32,
+                -10,
+                0,
+                179,
+                23,
+                94
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 16,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [
+            [
+              -32,
+              -13,
+              0,
+              179,
+              26,
+              94
+            ],
+            [
+              -32,
+              -10,
+              0,
+              179,
+              23,
+              94
+            ]
+          ],
+          "damage_boxes": [
+            [
+              55,
+              -5,
+              -1,
+              48,
+              10,
+              81
+            ]
+          ]
+        },
+        {
+          "frame": 3,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                17
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                55,
+                -5,
+                -3,
+                48,
+                10,
+                102
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                35,
+                -13,
+                1,
+                137,
+                26,
+                138
+              ]
+            },
+            {
+              "tag": "[ATTACK BOX]",
+              "values": [
+                15,
+                -10,
+                1,
+                156,
+                23,
+                138
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 17,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [
+            [
+              35,
+              -13,
+              1,
+              137,
+              26,
+              138
+            ],
+            [
+              15,
+              -10,
+              1,
+              156,
+              23,
+              138
+            ]
+          ],
+          "damage_boxes": [
+            [
+              55,
+              -5,
+              -3,
+              48,
+              10,
+              102
+            ]
+          ]
+        },
+        {
+          "frame": 4,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                18
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                54,
+                -5,
+                -3,
+                49,
+                10,
+                101
+              ]
+            },
+            {
+              "tag": "[OFFSET]",
+              "values": [
+                "EnableMometarySlash",
+                0,
+                0,
+                0
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 18,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              54,
+              -5,
+              -3,
+              49,
+              10,
+              101
+            ]
+          ]
+        },
+        {
+          "frame": 5,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                19
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                54,
+                -5,
+                -2,
+                48,
+                10,
+                101
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 19,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              54,
+              -5,
+              -2,
+              48,
+              10,
+              101
+            ]
+          ]
+        },
+        {
+          "frame": 6,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                20
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                54,
+                -5,
+                -2,
+                48,
+                10,
+                101
+              ]
+            },
+            {
+              "tag": "[SET FLAG]",
+              "values": [
+                65534
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 20,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              54,
+              -5,
+              -2,
+              48,
+              10,
+              101
+            ]
+          ]
+        },
+        {
+          "frame": 7,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                20
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                50
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                54,
+                -5,
+                -2,
+                48,
+                10,
+                101
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 20,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 50,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              54,
+              -5,
+              -2,
+              48,
+              10,
+              101
+            ]
+          ]
+        },
+        {
+          "frame": 8,
+          "sections": [
+            {
+              "tag": "[IMAGE EX]",
+              "values": [
+                0,
+                20
+              ]
+            },
+            {
+              "tag": "[IMAGE POS]",
+              "values": [
+                -232,
+                -333
+              ]
+            },
+            {
+              "tag": "[DELAY]",
+              "values": [
+                150
+              ]
+            },
+            {
+              "tag": "[DAMAGE BOX]",
+              "values": [
+                54,
+                -5,
+                -2,
+                48,
+                10,
+                101
+              ]
+            }
+          ],
+          "image_slot": 0,
+          "image_index": 20,
+          "image_pos": [
+            -232,
+            -333
+          ],
+          "delay_ms": 150,
+          "attack_boxes": [],
+          "damage_boxes": [
+            [
+              54,
+              -5,
+              -2,
+              48,
+              10,
+              101
+            ]
+          ]
+        }
+      ],
+      "total_raw_delay_ms": 550,
+      "attack_box_frames": [
+        2,
+        3
+      ],
+      "long_hold_frames": [],
+      "source": "character/swordman/animation/attack3.ani",
+      "source_sha256": "c81cedb16cbf49913fb79451d3ce5af947499d259d23d954e1d11cd067e704ba"
+    }
+  }
+}
