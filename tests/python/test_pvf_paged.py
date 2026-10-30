@@ -24,7 +24,7 @@ def encrypted(data, key):
     return cipher.update(data) + cipher.finalize()
 
 
-def fixture():
+def fixture(extra_records=()):
     private = rsa.generate_private_key(public_exponent=65537, key_size=1024)
     pem = private.private_bytes(serialization.Encoding.PEM, serialization.PrivateFormat.PKCS8, serialization.NoEncryption())
     metadata = hashlib.sha256(b'public synthetic test metadata').digest()
@@ -43,9 +43,9 @@ def fixture():
     filler = b''.join(hashlib.sha256(struct.pack('<I', i)).digest() for i in range(420))
     group = payload + filler
     body = reader.section(zlib.compress(group), 'mAIn')
-    file_table = struct.pack('<6I', name, directory, 0, 0, len(payload), 2)
+    file_table = b''.join(struct.pack('<6I', *record) for record in extra_records) + struct.pack('<6I', name, directory, 0, 0, len(payload), 2)
     groups = reader.section(struct.pack('<2I', len(body), len(group)), 'Gidx')
-    words = [0x69706B6E, 0, 0, 0, 0, 0, 1, 0, len(body), 1, 4, len(names)]
+    words = [0x69706B6E, 0, 0, 0, 0, 0, len(extra_records) + 1, 0, len(body), 1, 4, len(names)]
     header = reader.section(struct.pack('<12I', *words), 'iNfO')
     plain = header + file_table + bytes(4) + names + groups + body
     assert len(plain) > reader.GUARD
@@ -90,6 +90,21 @@ class PagedTests(unittest.TestCase):
                            (len(raw), encoded[:-1]), (reader.POOL_LIMIT + 1, encoded)]:
             with self.assertRaises((ValueError, zlib.error)):
                 reader.inflate_pool(data, size, 'test')
+
+    def test_missing_and_invalid_unrelated_paths_do_not_abort_roster_extraction(self):
+        records = [(0xFFFFFFFF, 0xFFFFFFFF, 0, 0, 0, 0),
+                   (0, 0x7FFFFFFF, 0, 0, 0, 0)]
+        archive, sealed, exe, payload, _, _ = fixture(records)
+        keys, metadata = reader.client_material(io.BytesIO(exe))
+        source = reader.PagedPVF(io.BytesIO(archive), len(archive), sealed, keys, metadata)
+        self.assertEqual(len(source.entries), 1)
+        self.assertEqual(source.read(source.entries[0]), payload)
+        self.assertEqual(source.lookup_warnings['missing_references'], 1)
+        self.assertEqual(source.lookup_warnings['out_of_range_references'], 1)
+        self.assertEqual(source.lookup_warnings['samples'][0]['reference'], 0x7FFFFFFF)
+        # Missing references never wrap around to the end of a pool.
+        self.assertEqual(source.resolve(-1), '')
+        self.assertEqual(source.resolve(0x80000001), '')
 
     def test_validates_matching_client_and_extracts_payload(self):
         archive, sealed, exe, payload, wide, _ = fixture()

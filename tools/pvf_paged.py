@@ -212,6 +212,7 @@ class PagedPVF:
         self.body_offset = group_offset + len(groups)
         print('Resolving action filenames.', flush=True)
         self.entries = []
+        self.lookup_warnings = dict(missing_references=0, out_of_range_references=0, samples=[])
         classes = ('swordman', 'gunner', 'fighter', 'mage', 'priest')
         prefixes = tuple(f'character/{c}/' for c in classes)
         directories = {}
@@ -232,15 +233,26 @@ class PagedPVF:
                 raise ValueError('Invalid action entry or group boundary')
             self.entries.append(dict(path=path, size=length, padded=length, offset=offset, group=group, data_type=kind))
         print(f'Found {len(self.entries)} character animation/configuration entries.', flush=True)
+        if self.lookup_warnings['out_of_range_references']:
+            print(f'Warning: skipped {self.lookup_warnings["out_of_range_references"]:,} out-of-range string lookups; details are included in the reference index.', flush=True)
 
     def resolve(self, value):
+        # Offsets are signed int32. Negative references denote absent strings.
+        # The retail-compatible resolver also returns empty for out-of-range
+        # offsets, so unrelated missing paths must not abort roster extraction.
+        if value < 0 or value & 0x80000000:
+            self.lookup_warnings['missing_references'] += 1
+            return ''
         wide = value & 1
         pool = self.pools[wide]
         start = (value >> 1) * (2 if wide else 1)
         if not pool and start == 0:
             return ''
         if start >= len(pool):
-            raise ValueError('String reference exceeds its pool')
+            self.lookup_warnings['out_of_range_references'] += 1
+            if len(self.lookup_warnings['samples']) < 20:
+                self.lookup_warnings['samples'].append(dict(reference=value, pool=wide, byte_offset=start, pool_bytes=len(pool)))
+            return ''
         if wide:
             end = start
             while end + 1 < len(pool) and pool[end:end + 2] != b'\0\0':

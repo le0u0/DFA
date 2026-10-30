@@ -139,11 +139,12 @@ def extract(archive, output):
             if not candidates:
                 error = ValueError('No basic character ANI definitions found in this PVF version')
                 error.action_paths = [e['path'] for e in pvf.entries if e['path'].endswith(('.ani', '.chr'))][:5000]
+                error.lookup_warnings = getattr(pvf, 'lookup_warnings', None)
                 raise error
             index = [dict(path=e['path'], bytes=e['size']) for e in pvf.entries if e['path'].startswith(tuple(f'character/{c}/' for c in CLASSES)) and e['path'].endswith(('.ani', '.chr'))]
             print(f'Exporting {len(selected)} selected action/reference files.', flush=True)
             with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as dest:
-                dest.writestr('reference-index.json', json.dumps(dict(header=pvf.header, selected=[e['path'] for e in selected], available=index), indent=2))
+                dest.writestr('reference-index.json', json.dumps(dict(header=pvf.header, selected=[e['path'] for e in selected], available=index, lookup_warnings=getattr(pvf, 'lookup_warnings', None)), indent=2))
                 for entry in sorted(selected, key=lambda e: (e.get('group', 0), e['offset'])):
                     dest.writestr(entry['path'], pvf.read(entry))
                 if hasattr(pvf, 'support_files'):
@@ -171,13 +172,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.output.parent == Path('/output'):
         print('Output folder on your Mac: Documents/DFO-action-reference', flush=True)
-    print('Action reference helper: diagnostic version 2', flush=True)
+    print('Action reference helper: diagnostic version 3', flush=True)
     try:
         extract(args.archive, args.output)
     except Exception as error:
         report = args.output.with_name('DFO-action-diagnostic.zip')
         with zipfile.ZipFile(report, 'w', zipfile.ZIP_DEFLATED) as dest:
-            dest.writestr('diagnostic.json', json.dumps(dict(error=str(error),available_action_paths=getattr(error, 'action_paths', None),validation=getattr(error, 'validation', None), input_members=getattr(error, 'input_members', None), diagnostic_version=2, note='No original game files were modified. PVF variant needs inspection.'), indent=2))
+            dest.writestr('diagnostic.json', json.dumps(dict(error=str(error),available_action_paths=getattr(error, 'action_paths', None),validation=getattr(error, 'validation', None), input_members=getattr(error, 'input_members', None), lookup_warnings=getattr(error, 'lookup_warnings', None), diagnostic_version=3, note='No original game files were modified. PVF variant needs inspection.'), indent=2))
             try:
                 with zipfile.ZipFile(args.archive) as outer:
                     member = next(i for i in outer.infolist() if i.filename.lower().endswith('/script.pvf') or i.filename.lower() == 'script.pvf')

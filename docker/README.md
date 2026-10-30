@@ -78,3 +78,7 @@ Large retail filename pools are decoded to temporary disk storage inside the
 container and removed when it exits. Allow up to 4 GiB of temporary free space in
 Docker Desktop; this still does not unpack the game. The helper prints each
 pool’s compressed and expanded size and reports progress through the file index.
+
+Missing signed string references and references outside their pool resolve to
+empty strings, matching the format reader. Out-of-range lookups are counted with
+bounded examples in `reference-index.json` so the exported roster can be audited.
