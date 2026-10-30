@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "cell_size": [
     128,
     128
@@ -8,8 +8,8 @@
     64,
     112
   ],
-  "columns": 6,
-  "rows": 6,
+  "columns": 8,
+  "rows": 14,
   "clips": {
     "idle_left": {
       "row": 0,
@@ -291,6 +291,742 @@
         2.2,
         2.35,
         2.35
+      ]
+    },
+    "run_left": {
+      "row": 6,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "durations": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "loop": true,
+      "impact_frame": -1,
+      "hands": [
+        [
+          47,
+          75
+        ],
+        [
+          44,
+          74
+        ],
+        [
+          44,
+          75
+        ],
+        [
+          45,
+          76
+        ],
+        [
+          51,
+          76
+        ],
+        [
+          47,
+          75
+        ],
+        [
+          54,
+          72
+        ],
+        [
+          49,
+          76
+        ]
+      ],
+      "sword_angles": [
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35,
+        -2.35
+      ],
+      "source": "character/swordman/animation/dash.ani",
+      "source_image_indices": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    "run_right": {
+      "row": 7,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "durations": [
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.1
+      ],
+      "loop": true,
+      "impact_frame": -1,
+      "hands": [
+        [
+          83,
+          78
+        ],
+        [
+          88,
+          76
+        ],
+        [
+          81,
+          76
+        ],
+        [
+          82,
+          77
+        ],
+        [
+          79,
+          77
+        ],
+        [
+          84,
+          76
+        ],
+        [
+          74,
+          72
+        ],
+        [
+          81,
+          78
+        ]
+      ],
+      "sword_angles": [
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35,
+        2.35
+      ],
+      "source": "character/swordman/animation/dash.ani",
+      "source_image_indices": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    "attack1_left": {
+      "row": 8,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.15
+      ],
+      "loop": false,
+      "impact_frame": 3,
+      "hands": [
+        [
+          51,
+          69
+        ],
+        [
+          54,
+          72
+        ],
+        [
+          44,
+          57
+        ],
+        [
+          37,
+          75
+        ],
+        [
+          46,
+          78
+        ],
+        [
+          41,
+          73
+        ],
+        [
+          49,
+          70
+        ],
+        [
+          49,
+          70
+        ],
+        [
+          49,
+          70
+        ],
+        [
+          49,
+          70
+        ]
+      ],
+      "sword_angles": [
+        -2.35,
+        -2.1,
+        -0.5,
+        -1.5,
+        -2.4,
+        -2.4,
+        -2.4,
+        -2.4,
+        -2.4,
+        -2.4
+      ],
+      "source": "character/swordman/animation/attack1.ani",
+      "source_image_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    "attack2_left": {
+      "row": 9,
+      "cells": [
+        0,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.15
+      ],
+      "loop": false,
+      "impact_frame": 2,
+      "hands": [
+        [
+          43,
+          76
+        ],
+        [
+          43,
+          76
+        ],
+        [
+          41,
+          75
+        ],
+        [
+          49,
+          72
+        ],
+        [
+          43,
+          66
+        ],
+        [
+          36,
+          72
+        ],
+        [
+          40,
+          76
+        ],
+        [
+          43,
+          79
+        ],
+        [
+          43,
+          79
+        ],
+        [
+          43,
+          79
+        ],
+        [
+          43,
+          79
+        ]
+      ],
+      "sword_angles": [
+        -2.4,
+        -2.4,
+        -2.1,
+        -0.6,
+        -1.5,
+        -1.5,
+        -1.5,
+        -1.5,
+        -1.5,
+        -1.5,
+        -1.5
+      ],
+      "source": "character/swordman/animation/attack2.ani",
+      "source_image_indices": [
+        7,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        13,
+        13,
+        13
+      ]
+    },
+    "attack1_right": {
+      "row": 11,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.15
+      ],
+      "loop": false,
+      "impact_frame": 3,
+      "hands": [
+        [
+          76,
+          69
+        ],
+        [
+          83,
+          69
+        ],
+        [
+          72,
+          55
+        ],
+        [
+          83,
+          70
+        ],
+        [
+          71,
+          56
+        ],
+        [
+          74,
+          73
+        ],
+        [
+          81,
+          71
+        ],
+        [
+          81,
+          71
+        ],
+        [
+          81,
+          71
+        ],
+        [
+          81,
+          71
+        ]
+      ],
+      "sword_angles": [
+        2.35,
+        2.1,
+        0.5,
+        1.5,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4,
+        2.4
+      ],
+      "source": "character/swordman/animation/attack1.ani",
+      "source_image_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    "attack3_left": {
+      "row": 10,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6
+      ],
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.15
+      ],
+      "loop": false,
+      "impact_frame": 2,
+      "hands": [
+        [
+          57,
+          102
+        ],
+        [
+          47,
+          72
+        ],
+        [
+          44,
+          58
+        ],
+        [
+          51,
+          31
+        ],
+        [
+          47,
+          19
+        ],
+        [
+          57,
+          32
+        ],
+        [
+          55,
+          21
+        ],
+        [
+          55,
+          21
+        ],
+        [
+          55,
+          21
+        ]
+      ],
+      "sword_angles": [
+        -2.4,
+        -1.6,
+        -0.6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "source": "character/swordman/animation/attack3.ani",
+      "source_image_indices": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        20,
+        20
+      ]
+    },
+    "attack3_right": {
+      "row": 13,
+      "cells": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6
+      ],
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.15
+      ],
+      "loop": false,
+      "impact_frame": 2,
+      "hands": [
+        [
+          71,
+          109
+        ],
+        [
+          80,
+          76
+        ],
+        [
+          77,
+          52
+        ],
+        [
+          76,
+          33
+        ],
+        [
+          74,
+          20
+        ],
+        [
+          67,
+          30
+        ],
+        [
+          73,
+          28
+        ],
+        [
+          73,
+          28
+        ],
+        [
+          73,
+          28
+        ]
+      ],
+      "sword_angles": [
+        2.4,
+        1.6,
+        0.6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "source": "character/swordman/animation/attack3.ani",
+      "source_image_indices": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        20,
+        20
+      ]
+    },
+    "attack2_right": {
+      "row": 12,
+      "cells": [
+        0,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        6,
+        6,
+        6
+      ],
+      "durations": [
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.05,
+        0.15
+      ],
+      "loop": false,
+      "impact_frame": 2,
+      "hands": [
+        [
+          88,
+          96
+        ],
+        [
+          88,
+          96
+        ],
+        [
+          80,
+          68
+        ],
+        [
+          71,
+          67
+        ],
+        [
+          87,
+          67
+        ],
+        [
+          88,
+          66
+        ],
+        [
+          91,
+          66
+        ],
+        [
+          88,
+          69
+        ],
+        [
+          88,
+          69
+        ],
+        [
+          88,
+          69
+        ],
+        [
+          88,
+          69
+        ]
+      ],
+      "sword_angles": [
+        2.4,
+        2.4,
+        2.1,
+        0.6,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        1.5
+      ],
+      "source": "character/swordman/animation/attack2.ani",
+      "source_image_indices": [
+        7,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        13,
+        13,
+        13
       ]
     }
   },
@@ -1198,8 +1934,1172 @@
     }
   ],
   "limitations": [
-    "Right windup holds guard instead of using the generated anatomy-swapped overhead pose.",
-    "Draft pose timing and grip/occlusion need user review; not a complete gameplay animation set."
+    "Source-guided chibi poses are an authored approximation, not pixel-for-pixel original choreography.",
+    "Raw basic attack delays are mapped around the existing gameplay strike time; combat tuning is unchanged.",
+    "Idle/walk and air/dash/heavy attacks retain the previous draft art.",
+    "Generated grip locations and per-pose arm occlusion require further art review."
   ],
-  "source_sha256": "0da600106e29bdda5b977bf6c374e8f36a97b0e7e22135681651611aa5dccb0b"
+  "source_sha256": "0da600106e29bdda5b977bf6c374e8f36a97b0e7e22135681651611aa5dccb0b",
+  "source_motion_registration": [
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 0,
+      "box": [
+        38,
+        81,
+        236,
+        363
+      ],
+      "scale": 0.26,
+      "position": [
+        39,
+        38
+      ],
+      "size": [
+        51,
+        73
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 1,
+      "box": [
+        302,
+        78,
+        523,
+        363
+      ],
+      "scale": 0.26,
+      "position": [
+        36,
+        37
+      ],
+      "size": [
+        57,
+        74
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 2,
+      "box": [
+        554,
+        77,
+        822,
+        362
+      ],
+      "scale": 0.26,
+      "position": [
+        29,
+        37
+      ],
+      "size": [
+        70,
+        74
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 3,
+      "box": [
+        856,
+        76,
+        1067,
+        363
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        37
+      ],
+      "size": [
+        55,
+        75
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 4,
+      "box": [
+        1151,
+        68,
+        1318,
+        342
+      ],
+      "scale": 0.26,
+      "position": [
+        43,
+        35
+      ],
+      "size": [
+        43,
+        71
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 5,
+      "box": [
+        1402,
+        79,
+        1606,
+        365
+      ],
+      "scale": 0.26,
+      "position": [
+        38,
+        38
+      ],
+      "size": [
+        53,
+        74
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 6,
+      "box": [
+        1648,
+        75,
+        1931,
+        353
+      ],
+      "scale": 0.26,
+      "position": [
+        27,
+        37
+      ],
+      "size": [
+        74,
+        72
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "left",
+      "column": 7,
+      "box": [
+        1953,
+        78,
+        2141,
+        363
+      ],
+      "scale": 0.26,
+      "position": [
+        40,
+        37
+      ],
+      "size": [
+        49,
+        74
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 0,
+      "box": [
+        27,
+        403,
+        230,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        38,
+        40
+      ],
+      "size": [
+        53,
+        72
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 1,
+      "box": [
+        263,
+        398,
+        496,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        34,
+        38
+      ],
+      "size": [
+        61,
+        74
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 2,
+      "box": [
+        547,
+        393,
+        823,
+        679
+      ],
+      "scale": 0.26,
+      "position": [
+        28,
+        37
+      ],
+      "size": [
+        72,
+        74
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 3,
+      "box": [
+        868,
+        396,
+        1081,
+        679
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        38
+      ],
+      "size": [
+        55,
+        74
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 4,
+      "box": [
+        1153,
+        385,
+        1327,
+        656
+      ],
+      "scale": 0.26,
+      "position": [
+        42,
+        35
+      ],
+      "size": [
+        45,
+        70
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 5,
+      "box": [
+        1383,
+        397,
+        1595,
+        679
+      ],
+      "scale": 0.26,
+      "position": [
+        37,
+        38
+      ],
+      "size": [
+        55,
+        73
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 6,
+      "box": [
+        1640,
+        392,
+        1920,
+        673
+      ],
+      "scale": 0.26,
+      "position": [
+        28,
+        37
+      ],
+      "size": [
+        73,
+        73
+      ]
+    },
+    {
+      "action": "run",
+      "facing": "right",
+      "column": 7,
+      "box": [
+        1948,
+        402,
+        2140,
+        681
+      ],
+      "scale": 0.26,
+      "position": [
+        39,
+        39
+      ],
+      "size": [
+        50,
+        73
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 0,
+      "box": [
+        15,
+        24,
+        196,
+        220
+      ],
+      "scale": 0.36,
+      "position": [
+        32,
+        41
+      ],
+      "size": [
+        65,
+        71
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 1,
+      "box": [
+        223,
+        25,
+        393,
+        220
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        42
+      ],
+      "size": [
+        61,
+        70
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 2,
+      "box": [
+        411,
+        26,
+        575,
+        220
+      ],
+      "scale": 0.36,
+      "position": [
+        35,
+        42
+      ],
+      "size": [
+        59,
+        70
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 3,
+      "box": [
+        597,
+        27,
+        774,
+        220
+      ],
+      "scale": 0.36,
+      "position": [
+        32,
+        43
+      ],
+      "size": [
+        64,
+        69
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 4,
+      "box": [
+        803,
+        25,
+        965,
+        220
+      ],
+      "scale": 0.36,
+      "position": [
+        35,
+        42
+      ],
+      "size": [
+        58,
+        70
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 5,
+      "box": [
+        994,
+        26,
+        1164,
+        220
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        42
+      ],
+      "size": [
+        61,
+        70
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "left",
+      "column": 6,
+      "box": [
+        1189,
+        27,
+        1350,
+        220
+      ],
+      "scale": 0.36,
+      "position": [
+        35,
+        43
+      ],
+      "size": [
+        58,
+        69
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 0,
+      "box": [
+        17,
+        241,
+        191,
+        426
+      ],
+      "scale": 0.36,
+      "position": [
+        33,
+        45
+      ],
+      "size": [
+        63,
+        67
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 1,
+      "box": [
+        215,
+        241,
+        390,
+        426
+      ],
+      "scale": 0.36,
+      "position": [
+        33,
+        45
+      ],
+      "size": [
+        63,
+        67
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 2,
+      "box": [
+        411,
+        242,
+        581,
+        427
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        45
+      ],
+      "size": [
+        61,
+        67
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 3,
+      "box": [
+        590,
+        243,
+        778,
+        427
+      ],
+      "scale": 0.36,
+      "position": [
+        30,
+        46
+      ],
+      "size": [
+        68,
+        66
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 4,
+      "box": [
+        789,
+        243,
+        976,
+        427
+      ],
+      "scale": 0.36,
+      "position": [
+        31,
+        46
+      ],
+      "size": [
+        67,
+        66
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 5,
+      "box": [
+        992,
+        243,
+        1162,
+        427
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        46
+      ],
+      "size": [
+        61,
+        66
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "left",
+      "column": 6,
+      "box": [
+        1184,
+        242,
+        1347,
+        427
+      ],
+      "scale": 0.36,
+      "position": [
+        35,
+        45
+      ],
+      "size": [
+        59,
+        67
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 0,
+      "box": [
+        21,
+        644,
+        187,
+        826
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        46
+      ],
+      "size": [
+        60,
+        66
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 1,
+      "box": [
+        203,
+        644,
+        372,
+        826
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        46
+      ],
+      "size": [
+        61,
+        66
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 2,
+      "box": [
+        398,
+        645,
+        566,
+        826
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        46
+      ],
+      "size": [
+        60,
+        65
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 3,
+      "box": [
+        588,
+        647,
+        770,
+        826
+      ],
+      "scale": 0.36,
+      "position": [
+        31,
+        47
+      ],
+      "size": [
+        66,
+        64
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 4,
+      "box": [
+        792,
+        640,
+        956,
+        826
+      ],
+      "scale": 0.36,
+      "position": [
+        35,
+        45
+      ],
+      "size": [
+        59,
+        67
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 5,
+      "box": [
+        977,
+        649,
+        1147,
+        826
+      ],
+      "scale": 0.36,
+      "position": [
+        34,
+        48
+      ],
+      "size": [
+        61,
+        64
+      ]
+    },
+    {
+      "action": "attack1",
+      "facing": "right",
+      "column": 6,
+      "box": [
+        1166,
+        651,
+        1342,
+        827
+      ],
+      "scale": 0.36,
+      "position": [
+        33,
+        49
+      ],
+      "size": [
+        63,
+        63
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "left",
+      "column": 0,
+      "box": [
+        12,
+        270,
+        353,
+        683
+      ],
+      "scale": 0.16,
+      "position": [
+        37,
+        45
+      ],
+      "size": [
+        55,
+        66
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "left",
+      "column": 1,
+      "box": [
+        365,
+        235,
+        671,
+        685
+      ],
+      "scale": 0.16,
+      "position": [
+        40,
+        39
+      ],
+      "size": [
+        49,
+        72
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "left",
+      "column": 2,
+      "box": [
+        640,
+        200,
+        968,
+        685
+      ],
+      "scale": 0.16,
+      "position": [
+        38,
+        34
+      ],
+      "size": [
+        52,
+        78
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "left",
+      "column": 3,
+      "box": [
+        945,
+        142,
+        1261,
+        687
+      ],
+      "scale": 0.16,
+      "position": [
+        39,
+        24
+      ],
+      "size": [
+        51,
+        87
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "left",
+      "column": 4,
+      "box": [
+        1252,
+        64,
+        1557,
+        687
+      ],
+      "scale": 0.16,
+      "position": [
+        40,
+        12
+      ],
+      "size": [
+        49,
+        100
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "left",
+      "column": 5,
+      "box": [
+        1566,
+        131,
+        1871,
+        689
+      ],
+      "scale": 0.16,
+      "position": [
+        40,
+        23
+      ],
+      "size": [
+        49,
+        89
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "left",
+      "column": 6,
+      "box": [
+        1874,
+        81,
+        2154,
+        689
+      ],
+      "scale": 0.16,
+      "position": [
+        42,
+        15
+      ],
+      "size": [
+        45,
+        97
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "right",
+      "column": 0,
+      "box": [
+        11,
+        337,
+        387,
+        681
+      ],
+      "scale": 0.16,
+      "position": [
+        34,
+        57
+      ],
+      "size": [
+        60,
+        55
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "right",
+      "column": 1,
+      "box": [
+        402,
+        267,
+        675,
+        676
+      ],
+      "scale": 0.16,
+      "position": [
+        42,
+        46
+      ],
+      "size": [
+        44,
+        65
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "right",
+      "column": 2,
+      "box": [
+        715,
+        233,
+        1004,
+        681
+      ],
+      "scale": 0.16,
+      "position": [
+        41,
+        40
+      ],
+      "size": [
+        46,
+        72
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "right",
+      "column": 3,
+      "box": [
+        1022,
+        162,
+        1295,
+        681
+      ],
+      "scale": 0.16,
+      "position": [
+        42,
+        29
+      ],
+      "size": [
+        44,
+        83
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "right",
+      "column": 4,
+      "box": [
+        1314,
+        83,
+        1580,
+        681
+      ],
+      "scale": 0.16,
+      "position": [
+        43,
+        16
+      ],
+      "size": [
+        43,
+        96
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "right",
+      "column": 5,
+      "box": [
+        1616,
+        125,
+        1886,
+        681
+      ],
+      "scale": 0.16,
+      "position": [
+        43,
+        23
+      ],
+      "size": [
+        43,
+        89
+      ]
+    },
+    {
+      "action": "attack3",
+      "facing": "right",
+      "column": 6,
+      "box": [
+        1917,
+        145,
+        2161,
+        681
+      ],
+      "scale": 0.16,
+      "position": [
+        45,
+        26
+      ],
+      "size": [
+        39,
+        86
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 0,
+      "box": [
+        38,
+        273,
+        357,
+        647
+      ],
+      "scale": 0.17,
+      "position": [
+        37,
+        48
+      ],
+      "size": [
+        54,
+        64
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 1,
+      "box": [
+        363,
+        224,
+        635,
+        647
+      ],
+      "scale": 0.17,
+      "position": [
+        41,
+        40
+      ],
+      "size": [
+        46,
+        72
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 2,
+      "box": [
+        664,
+        210,
+        914,
+        647
+      ],
+      "scale": 0.17,
+      "position": [
+        43,
+        38
+      ],
+      "size": [
+        42,
+        74
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 3,
+      "box": [
+        908,
+        217,
+        1216,
+        647
+      ],
+      "scale": 0.17,
+      "position": [
+        38,
+        39
+      ],
+      "size": [
+        52,
+        73
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 4,
+      "box": [
+        1200,
+        208,
+        1527,
+        647
+      ],
+      "scale": 0.17,
+      "position": [
+        36,
+        37
+      ],
+      "size": [
+        56,
+        75
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 5,
+      "box": [
+        1511,
+        213,
+        1860,
+        647
+      ],
+      "scale": 0.17,
+      "position": [
+        35,
+        38
+      ],
+      "size": [
+        59,
+        74
+      ]
+    },
+    {
+      "action": "attack2",
+      "facing": "right",
+      "column": 6,
+      "box": [
+        1819,
+        212,
+        2143,
+        647
+      ],
+      "scale": 0.17,
+      "position": [
+        37,
+        38
+      ],
+      "size": [
+        55,
+        74
+      ]
+    }
+  ]
 }

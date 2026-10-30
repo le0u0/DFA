@@ -2,7 +2,7 @@
 
 Test through **Start → Slayer → Enter dungeon**, the same flow as every other character. The separate Slayer art demo and animation lab have been removed, along with the main menu's Offline subtitle.
 
-Slayer's latest recreated chibi idle/walk/attack sheet is now connected to gameplay. It has six frames per action/facing, independently authored facings and separate sword equipment. Normal movement, damage, hit windows, collision and equipment stats remain controlled by the existing game code.
+Slayer's atlas now combines the preserved six-frame idle/walk/fallback poses with a [separate run and three source-guided basic combo stages](../source-motions/README.md), independently authored facings and separate sword equipment. Normal movement, damage, hit windows, collision and equipment stats remain controlled by the existing game code.
 
 ## Why these actions do not yet match DFO
 
@@ -13,14 +13,14 @@ base characters. Slayer has a distinct eight-frame run and three attack stages w
 10, 11 and 9 source frame records. Original frame order, raw delays, positions and
 attack boxes are preserved.
 
-Connecting the current Slayer sheet through Start does not retarget those original
-poses. Its attacks remain provisional, the right windup holds guard, and running
-still reuses walk art. The other four classes retain their older four-frame sheets.
-The remaining work is to redraw those motions into the approved chibi designs,
-keeping equipment separate, then verify the combat impact boundary. Original raw
-ANI delays alone do not establish engine transitions or speed scaling.
+Slayer's run and three basic attacks now use redrawn source-guided poses. Those
+poses are an authored approximation; idle/walk, skills and aerial/running attacks
+still use earlier art. The other four classes retain their older four-frame sheets.
+Basic attack timing preserves source ordering and relative delays around the
+existing combat strike boundary. Original raw ANI delays alone do not establish
+engine transitions or speed scaling. See the linked motion update for test steps.
 
-## Extract the missing reference on your Mac
+## Reproduce reference extraction on your Mac
 
 With `~/Documents/DFO.zip` still present and Docker Desktop running, run in this repository (a separate terminal is fine if the game is running):
 
@@ -39,13 +39,13 @@ The reader has tests for classic and paged encrypted fixtures, incorrect metadat
 Use the [Docker/browser setup](../../../../docker/README.md), or open `project.godot` in Godot and press F5.
 
 1. Choose **Start**, select **Slayer** and choose **Training · Immortal goblin** for repeatable checks.
-2. Use arrows to walk and double-tap left/right to run; compare the current fallback visually, without treating it as the original run.
+2. Use arrows to walk and double-tap left/right to run; compare the separate source-guided run against walking.
 3. Use **X** for combos, **Z** for class skill, **C** for jump, **Space** for dodge and **V** to compare separate swords.
 4. Use **Esc** to pause or return through the pause menu.
 
 ## Preserved art sources
 
-Unmodified generated source sheets, prompts and provenance remain here. Runtime atlas, authored timing/grips and registration are in `assets/characters/slayer/animation-proof/`. One source scale is used for all cells. A generated right overhead pose with swapped cursed-arm anatomy was deliberately rejected; the runtime guard hold remains a known visual limitation.
+Unmodified generated source sheets, prompts and provenance remain here. The combined runtime atlas, authored timing/grips and registration are in `assets/characters/slayer/animation-proof/`. The historical proof uses one source scale; the new redraw uses one fixed scale per source sheet. A historical generated overhead pose with swapped cursed-arm anatomy remains excluded; only fallback actions retain that guard hold.
 
 Historical paired-facing inspection captures: [idle](idle-preview.gif), [walk](walk-preview.gif), [attack](attack-preview.gif). They are source-sheet review clips, not evidence of matched original gameplay animation.
 

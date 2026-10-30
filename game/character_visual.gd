@@ -2,8 +2,8 @@ extends Node2D
 
 const SlayerVisual := preload("res://game/slayer_animation_proof.gd")
 
-# Rows: left idle/walk/attack, then right idle/walk/attack. No body mirroring.
-# Slayer uses six columns; other draft classes use four.
+# Slayer clips select registered rows/cells from metadata, without body mirroring.
+# Other draft classes retain left/right idle/walk/attack rows with four columns.
 const BODIES := {
 	"sword": preload("res://assets/characters/slayer/animation-proof/body-atlas.png"),
 	"gun": preload("res://assets/characters/gunner/demo-atlas.png"),
@@ -27,6 +27,9 @@ var body: Texture2D
 var equipment: Array
 var weapon_kind := "sword"
 var slayer_visual: Node2D
+var slayer_motion := ""
+var slayer_direction := ""
+var slayer_time := 0.0
 
 func _ready() -> void:
 	actor = get_parent()
@@ -46,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	row = 3 if direction > 0 else 0
 	var attacking: bool = actor.attack_kind != &""
 	if weapon_kind == "sword":
-		_update_slayer()
+		_update_slayer(delta)
 	else:
 		if actor.health <= 0:
 			frame = 3
@@ -68,24 +71,34 @@ func _physics_process(delta: float) -> void:
 		modulate.a = 0.5
 	queue_redraw()
 
-func _update_slayer() -> void:
+func _update_slayer(delta: float) -> void:
 	var action := "idle"
+	var direction := "right" if actor.facing > 0 else "left"
+	if actor.health > 0:
+		if actor.attack_kind == &"basic":
+			action = "attack%d" % clampi(actor.combo, 1, 3)
+		elif actor.attack_kind != &"":
+			action = "attack"
+		elif actor.velocity.length() > 1 and actor.stun <= 0:
+			action = "run" if actor.running else "walk"
+	if action != slayer_motion or direction != slayer_direction:
+		slayer_time = 0.0
+		slayer_motion = action
+		slayer_direction = direction
+	else:
+		slayer_time += delta
+	slayer_visual.action = action
+	slayer_visual.facing = direction
 	if actor.health <= 0:
 		frame = 5
-	elif actor.attack_kind != &"":
-		action = "attack"
+	elif action.begins_with("attack") and action != "attack":
+		frame = slayer_visual.frame_at_attack_time(actor.attack_elapsed, actor.attack_duration, actor.strike_time)
+	elif action == "attack":
 		var progress: float = clampf(actor.attack_elapsed / maxf(actor.attack_duration, 0.001), 0.0, 0.999)
-		# Preserve gameplay's one-third impact boundary; this is still draft art.
 		frame = 0 if progress < 1.0 / 6.0 else 1 if progress < 1.0 / 3.0 else 2 if progress < 0.55 else 3 if progress < 0.75 else 4 if progress < 0.9 else 5
-	elif actor.velocity.length() > 1 and actor.stun <= 0:
-		action = "walk"
-		# Original run definitions/retargeted run art are not available yet.
-		frame = int(clock * (12 if actor.running else 8)) % 6
 	else:
-		frame = int(clock / 0.18) % 6
-	row = (3 if actor.facing > 0 else 0) + ["idle", "walk", "attack"].find(action)
-	slayer_visual.action = action
-	slayer_visual.facing = "right" if actor.facing > 0 else "left"
+		frame = slayer_visual.frame_at_time(slayer_time, true)
+	row = slayer_visual.clip()["row"]
 	slayer_visual.weapon_index = weapon_index
 	slayer_visual.seek(frame)
 

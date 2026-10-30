@@ -20,9 +20,9 @@ All five classes now use chibi pixel body animation with separate equipment spri
 
 ## Animation status
 
-All character testing uses **Start → character → dungeon**. Slayer now uses the latest six-frame chibi idle/walk/attack artwork in normal gameplay; the other classes retain four-frame prototype strips. **V** changes equipment appearance. Separate Slayer demo screens have been removed.
+All character testing uses **Start → character → dungeon**. Slayer has a separate eight-frame run and three basic combo stages redrawn from source references, alongside the earlier idle/walk and skill poses. The other classes retain four-frame prototype strips. **V** changes equipment appearance. Separate Slayer demo screens have been removed.
 
-Original DFO sprite images and [31 basic motion definitions](docs/art/roster/dfo-actions/README.md) have been imported as authoring references. Current run and attack animations are provisional and do not faithfully reproduce the original game. See [animation status and action-reference extraction](docs/art/slayer/animation-proof/README.md).
+Original DFO sprite images and [31 basic motion definitions](docs/art/roster/dfo-actions/README.md) have been imported as authoring references. Slayer’s new run/basic attacks are source-guided approximations; a complete source-faithful animation set is still unfinished. See the [Slayer motion update and test steps](docs/art/slayer/source-motions/README.md). See [animation status and action-reference extraction](docs/art/slayer/animation-proof/README.md).
 
 ## First two dungeons
 

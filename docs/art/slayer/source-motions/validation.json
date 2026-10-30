@@ -1,0 +1,30 @@
+{
+  "native": {
+    "engine": "Godot 4.6.3 headless",
+    "demo": 25,
+    "roster": 69,
+    "dungeons": 339,
+    "art": 68,
+    "failed": 0
+  },
+  "python": {
+    "passed": 25,
+    "failed": 0
+  },
+  "web": {
+    "export": "Docker Web release export succeeded",
+    "browser": "Chromium with software WebGL",
+    "route": "Start / Slayer / dungeon",
+    "checks": [
+      "Both run facings via double-tap input",
+      "Basic attacks through X input",
+      "Separate sword swap through V",
+      "Pause/resume through Escape",
+      "No browser script or console errors"
+    ]
+  },
+  "limitations": [
+    "Source-guided pose redraw remains approximate",
+    "Other four classes and non-basic Slayer attacks retain earlier art"
+  ]
+}

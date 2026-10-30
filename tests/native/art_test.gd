@@ -31,7 +31,7 @@ func run() -> void:
 	app.arena.goblin.ai_enabled = false
 	var visual: Node2D = player.art
 	check(visual != null, "Start installs Slayer renderer")
-	check(visual.body.get_size() == Vector2(768, 768), "Slayer body atlas has 36 fixed cells")
+	check(visual.body.get_size() == Vector2(1024, 1792), "Slayer atlas includes distinct run and three source-guided attacks")
 	check(visual.row == 3, "Right idle uses authored right-facing row")
 	player.facing = -1
 	await tick()
@@ -39,6 +39,16 @@ func run() -> void:
 	Input.action_press("move_left")
 	await tick(4)
 	check(visual.row == 1, "Movement selects walk strip")
+	Input.action_release("move_left")
+	await tick()
+	Input.action_press("move_left")
+	await tick(3)
+	Input.action_release("move_left")
+	await tick(2)
+	Input.action_press("move_left")
+	await tick(4)
+	check(player.running and visual.slayer_visual.action == "run" and visual.row == 6, "Double-tap selects the separate eight-frame left run")
+	check(visual.slayer_visual.clip()["cells"].size() == 8, "Run keeps eight source frame records")
 	Input.action_release("move_left")
 	await tick()
 	var original_damage := player.character.damage
@@ -49,9 +59,20 @@ func run() -> void:
 	check(player.character.damage == original_damage, "Art swap preserves combat tuning")
 	player.begin_attack(&"basic", 0.6, 0.2)
 	await tick()
-	check(visual.row == 2 and visual.frame == 0, "Attack starts with anticipation")
+	check(visual.row == 8 and visual.frame == 0, "Attack starts with anticipation")
 	await tick(14)
-	check(visual.frame == 2, "Impact pose follows existing strike timing")
+	check(visual.frame >= visual.slayer_visual.clip()["impact_frame"] and player.strike_fired, "Attack reaches its strike pose when damage fires")
+	for stage in range(1, 4):
+		player.combo = stage
+		player.begin_attack(&"basic", 0.6, 0.2)
+		await tick()
+		var body_player: Node2D = visual.slayer_visual
+		check(body_player.action == "attack%d" % stage, "Combo selects its own authored attack stage")
+		check(body_player.frame_at_attack_time(0.2, 0.6, 0.2) == body_player.clip()["impact_frame"], "Each combo strike matches the preserved damage boundary")
+		check(body_player.frame_at_attack_time(0.6, 0.6, 0.2) == body_player.clip()["durations"].size() - 1, "Each attack retains its final recovery record")
+	player.combo = 1
+	player.begin_attack(&"basic", 0.6, 0.2)
+	await tick(14)
 	app.pause_game()
 	var previous_clock: float = visual.clock
 	var previous_frame: int = visual.frame
@@ -76,7 +97,7 @@ func run() -> void:
 		visual = player.art
 		var prefix := definition.display_name + ": "
 		check(visual != null and visual.weapon_kind == definition.weapon, prefix + "class renderer selected")
-		check(visual.body.get_size() == (Vector2(768, 768) if definition.weapon == "sword" else Vector2(512, 768)), prefix + "class atlas available")
+		check(visual.body.get_size() == (Vector2(1024, 1792) if definition.weapon == "sword" else Vector2(512, 768)), prefix + "class atlas available")
 		check(visual.equipment.size() == 2, prefix + "two independent equipment sprites")
 		player.facing = -1
 		Input.action_press("move_left")
@@ -85,7 +106,7 @@ func run() -> void:
 		Input.action_release("move_left")
 		player.begin_attack(&"basic", 0.6, 0.2)
 		await tick(15)
-		check(visual.row == 2 and visual.frame == (2 if definition.weapon == "sword" else 1), prefix + "left attack impact")
+		check(visual.row == (8 if definition.weapon == "sword" else 2) and (visual.frame >= visual.slayer_visual.clip()["impact_frame"] if definition.weapon == "sword" else visual.frame == 1) and player.strike_fired, prefix + "left attack impact")
 		await tick(30)
 		player.facing = 1
 		player.begin_attack(&"heavy", 0.6, 0.2)

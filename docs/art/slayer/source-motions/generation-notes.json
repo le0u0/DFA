@@ -1,0 +1,16 @@
+{
+  "tool": "image_gen",
+  "inputs": [
+    "docs/art/slayer/chibi-pixel-reference-v6.png",
+    "docs/art/roster/dfo-actions/slayer-poses.png"
+  ],
+  "prompt_summaries": {
+    "run.png": "Two rows of eight forward-leaning run phases; left then right; chibi v6 costume, asymmetric arms, empty hands, transparent gutters.",
+    "attacks-corrected.png": "Seven columns, six rows: three basic attack stages left then right; correction requested consistent facing in the top half. Only rows 0, 1, 3 accepted.",
+    "uppercut-left.png": "Seven left-facing crouch-to-rising uppercut phases; beige right working hand raises, magenta left arm stays down.",
+    "uppercut-right.png": "Seven independently generated right-facing crouch-to-rising uppercut phases; same anatomical color assignments.",
+    "reverse-right.png": "Seven right-facing reverse horizontal-cut phases, empty normal right sword hand; clear windup, strike and recovery."
+  },
+  "rejected": "Mixed-facing uppercut rows and touching lower-row figures from the corrected large sheet are not used.",
+  "transparent_background": true
+}

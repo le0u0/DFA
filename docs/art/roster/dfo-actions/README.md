@@ -39,8 +39,7 @@ it. `attack_box_frames` locates source attack boxes, not a verified damage-event
 
 ## Remaining gameplay work
 
-Start still uses the existing generated chibi pose strips. Its run reuses walk art;
-its attacks are provisional. These references supply the actual poses and order for
+Start now uses a [source-guided Slayer run and three-stage basic combo](../../slayer/source-motions/README.md). Those poses are approximate redraws; the other four classes and remaining Slayer actions still use earlier strips. These references supply the actual poses and order for
 redrawing the five approved designs, keeping equipment separate and checking the
 combat impact boundary. Importing data does not make the existing art source-faithful.
 No more game uploads are needed for these basic motions. Running attacks, aerial attacks
