@@ -108,23 +108,6 @@ func scenarios() -> bool:
 						app.find_child("NextDungeonButton", true, false).pressed.emit()
 						await tick()
 						check(app.arena.dungeon_index == 1 and not paused, "next dungeon starts fresh")
-	# A projectile must hit the first crossed enemy, even if the roster is reversed.
-	app.dungeon_index = 0
-	app.selected_character = app.CHARACTERS[1]
-	app.start_dungeon()
-	await tick()
-	var ranged: DemoArena = app.arena
-	quiet(ranged)
-	ranged.player.position = Vector2(300, 430)
-	ranged.enemies[0].position = Vector2(600, 430)
-	ranged.enemies[1].position = Vector2(450, 430)
-	ranged._on_strike(ranged.player, 10, 700, 0)
-	await tick(25)
-	check(ranged.enemies[0].health == 45 and ranged.enemies[1].health == 35, "projectile strikes nearest crossed enemy")
-	ranged.enemies[1].take_hit(999, 1, 0)
-	ranged._on_strike(ranged.player, 10, 700, 0)
-	await tick(30)
-	check(ranged.enemies[0].health == 35, "dead frontline enemy does not absorb projectiles")
 	app.selected_character = app.CHARACTERS[0]
 	app.start_dungeon()
 	await tick()

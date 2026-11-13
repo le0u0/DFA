@@ -2,13 +2,12 @@
 
 ## Character art direction
 
-The [roster art demo](docs/art/roster/gameplay-demo.md) now covers all five classes, each with 24 body frames, separate facings, per-frame hand anchors and two independently swappable equipment appearances. `game/character_visual.gd` owns the shared rendering. Existing gameplay owns timing and collision; V changes appearance only. The goblin remains primitive-rendered.
+The project is being redesigned around Slayer. Previous player actions and animation are disabled while a new visual direction and action set are developed.
 
-The [gameplay animation asset plan](docs/art/roster/animation-assets.md) records existing action coverage and separates body frames, weapons, projectiles and effects. Prove one class and two same-grip weapons before expanding to the full roster. Frame budgets and logical sprite dimensions in that plan are provisional.
+Keep Slayer's body and weapon assets separate. Define animation frames and weapon grips after choosing the new visual direction.
 
-**Interchangeable equipment:** body art must not bake in a class's current weapon. Weapons and held books use separate sprites with authored grip points, per-frame hand anchors and layer order. Weapon families may require different grip poses and attacks; changing a weapon is not necessarily a sprite swap alone. See the [body/equipment art contract](docs/art/roster/character-equipment.md). The new Mage and Priest references supersede their initial concepts; corrected empty-hand bases are recorded there. No runtime equipment system has been added.
+**Interchangeable equipment:** Character art and weapon art must remain separate; weapon types may need different grips and attacks.
 
-Slayer revision 6 was accepted as the style reference on 2026-10-28. The other existing classes have [matching chibi pixel concepts](docs/art/roster/README.md): male Gunner, female Fighter, female Mage and male Priest. The user's corrected Mage/Priest v2 bases guide their runtime sheets. These are integrated demo assets; full production animation cleanup remains pending.
 
 The clearer full-body artwork supplied on 2026-10-28 is the authoritative appearance reference, superseding hair interpretations from the small gameplay screenshot. Slayer has **tall cream-blond upright spikes, long dark navy side locks, and a wide glossy blue forehead guard with a dark border**, worn low above the eyes. Do not add invented trailing cloth ties or emblems. Latest candidate: [reference revision 6](docs/art/slayer/chibi-pixel-reference-v6.md), awaiting visual approval.
 
@@ -32,7 +31,7 @@ Godot 4.7.2, GDScript, Compatibility renderer, fixed 60 Hz physics, 1280×720 re
 
 Acceptance: launch native app; Start → choose any of five classes → enter arena; move, jump, dodge and land hits; goblin survives repeated attacks and can hit back; pause freezes combat; defeat and restart work; main menu and Quit work.
 
-Class definitions are shared, read-only typed resources under `game/characters/`. Each defines weapon, color, reach, timing, damage and class skill. Gunner and Mage spawn finite-range projectiles with swept horizontal hit checks, lane/height checks and a fixed firing trajectory aimed at short targets. Projectiles inherit arena pause and are freed with the arena.
+Class definitions are shared, read-only typed resources under `game/characters/`. Each defines weapon, color, reach, timing, damage and class skill.
 
 ## Authored dungeon slice
 

@@ -1,56 +1,12 @@
 # Dungeon Fighter Arad (DFA)
 
+> Redesign in progress: Slayer is the only selectable character. Player controls and the previous character animation are currently disabled while actions are redesigned. The gameplay description and checks below describe the earlier prototype and are not current.
+
 A side-view action game inspired by Dungeon Fighter, built with **Godot 4.7.2 and GDScript**. DFA is heading toward roguelike dungeon runs. Development currently focuses on macOS, with Windows builds also supported.
 
-## Current gameplay
+## Current status
 
-Choose **Slayer, Gunner, Fighter, Mage or Priest**, then choose one of two authored dungeons or the training arena with an immortal goblin. Each class has a distinct weapon, attack timing, reach and class skill.
-
-| Class | Basic attack | Z skill |
-| --- | --- | --- |
-| Slayer | Sword combo | Upward Slash |
-| Gunner | Pistol shots | Rising Shot |
-| Fighter | Fast punches | Uppercut |
-| Mage | Magic bolts | Flame Burst |
-| Priest | Heavy cross swings | Smite |
-
-Classes share movement and health. Flame Burst and Smite strike around the player; the other class skills strike forward. The goblin reacts to hits, knockback and launches, and telegraphs its own attacks. The player can be defeated and restart. Hits and total damage appear in the HUD.
-
-All five classes now use chibi pixel body animation with separate equipment sprites. Choose **Start**, select a class and enter the arena; press **V** to switch between two equipment appearances. The **Slayer art demo** shortcut still enters Slayer directly. Idle, walk and attack strips have separate left/right frames. The goblin remains a geometric placeholder. Additional actions currently reuse these draft poses. See [roster art demo details](docs/art/roster/gameplay-demo.md).
-
-## First two dungeons
-
-- **Mosswood Outskirts:** Forest approach → Briar Sentinel elite → Root King boss. Root King alternates a forward strike with a stomp that can be jumped or avoided by changing lanes.
-- **Emberstone Ruins:** Ash courtyard → Obsidian Warden elite → Furnace Lord boss. Furnace Lord alternates a forward strike with an extended sweep; dodge or move out of its marked lane.
-
-Each dungeon has three authored rooms, mortal enemies, enemy health bars and red attack-area warnings. Defeat every enemy to unlock **Next room**. Entering the next room restores 25 HP, capped at 100; health and hit totals otherwise carry between rooms. Boss clear offers the next dungeon or replay. Both dungeons are directly selectable with any class. Restart begins the selected dungeon from room one. Training remains available in the dungeon dropdown and through the Slayer art demo.
-
-Enemies and scenery use drawing primitives; these are playable encounter blockouts with prototype tuning.
-
-Procedural generation, progression, equipment stats, saves, audio and co-op are future work. Current combat uses prototype tuning; advancement trees are not implemented.
-
-## Play
-
-With a Godot export available, open `build/macos/Dungeon Fighter Arad.app` on macOS or `build/windows/Dungeon Fighter Arad.exe` on Windows. Builds are generated locally and are not included in the repository.
-
-1. Choose **Start**.
-2. Select a class and dungeon from the dropdown, then **Enter dungeon**.
-3. Move, attack, jump and dodge. Avoid red attack warnings. Clear each room, then choose **Next room**.
-4. Press **Esc** to pause, restart, change class, return to the main menu or quit.
-
-## Controls
-
-| Action | Key |
-| --- | --- |
-| Move along ground plane | Arrow keys |
-| Run | Double-tap left/right; hold second tap |
-| Basic combo / jump attack / running attack | X |
-| Class skill | Z |
-| Jump | C |
-| Dodge with brief invulnerability | Space |
-| Swap equipment appearance | V |
-| Pause / resume / back | Esc |
-| Menu navigation / activate | Arrows / Enter |
+Slayer is the only selectable character. The previous player actions are disabled during redesign. Existing dungeon rooms remain prototype content.
 
 ## Development
 
@@ -65,12 +21,11 @@ Run the headless gameplay checks:
 ```sh
 godot --headless --path . --import
 godot --headless --path . --script res://tests/native/demo_test.gd
-godot --headless --path . --script res://tests/native/roster_test.gd
 godot --headless --path . --script res://tests/native/art_test.gd
 godot --headless --path . --script res://tests/native/dungeon_test.gd
 ```
 
-These cover menu flow, all five classes, combat, range and lane separation, projectiles, immortality, jumping, dodging, pause, defeat and restart. Dungeon checks cover all five classes in both routes, elite/boss encounters, room gates, recovery, boss warning hit areas, defeat, retry and dungeon transitions. Window rendering and physical keyboard input require separate checks.
+These checks target the previous prototype and require revision before they can validate the redesigned game.
 
 ## Build
 

@@ -7,7 +7,7 @@ var screen := "main"
 var health_label: Label
 var stats_label: Label
 var pause_panel: Control
-const CHARACTERS = [preload("res://game/characters/slayer.tres"), preload("res://game/characters/gunner.tres"), preload("res://game/characters/fighter.tres"), preload("res://game/characters/mage.tres"), preload("res://game/characters/priest.tres")]
+const CHARACTERS = [preload("res://game/characters/slayer.tres")]
 var dungeon_index := 0
 var encounter_label: Label
 var selected := false

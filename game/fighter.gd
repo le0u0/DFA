@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name DemoFighter
 
-const CharacterVisual := preload("res://game/character_visual.gd")
 var art: Node2D
 var enemy_data: Dictionary = {}
 var max_health := 100
@@ -55,10 +54,6 @@ func _ready() -> void:
 	shape.shape = circle
 	shape.position = Vector2(0, -8)
 	add_child(shape)
-	if is_player:
-		art = CharacterVisual.new()
-		art.name = "CharacterArt"
-		add_child(art)
 	queue_redraw()
 
 func _physics_process(delta: float) -> void:
@@ -107,45 +102,7 @@ func _physics_process(delta: float) -> void:
 	queue_redraw()
 
 func _player_input() -> void:
-	if is_instance_valid(art) and Input.is_action_just_pressed(&"swap_weapon"):
-		art.cycle_weapon()
-	if Input.is_action_just_pressed(&"attack"):
-		attack_buffer = 0.12
-	if Input.is_action_just_pressed(&"heavy"):
-		heavy_buffer = 0.12
-	if stun > 0:
-		return
-	var direction := Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
-	var horizontal := Input.get_axis(&"move_left", &"move_right")
-	if Input.is_action_just_pressed(&"move_left") or Input.is_action_just_pressed(&"move_right"):
-		var now := Time.get_ticks_msec() / 1000.0
-		running = horizontal != 0 and horizontal == last_direction and now - last_tap <= 0.26
-		last_tap = now
-		last_direction = horizontal
-	if horizontal == 0:
-		running = false
-	if attack_kind == &"":
-		if horizontal != 0:
-			facing = signf(horizontal)
-		var speed := 385.0 if running else 255.0
-		velocity = Vector2(direction.x * speed, direction.y * speed * 0.65)
-		if Input.is_action_just_pressed(&"jump") and jump_height == 0:
-			jump_velocity = 460.0
-			jump_height = 1.0
-		if Input.is_action_just_pressed(&"dash") and dash_cooldown == 0:
-			dash_remaining = 0.17
-			dash_cooldown = 0.7
-			invulnerability = maxf(invulnerability, 0.22)
-		if heavy_buffer > 0 and heavy_cooldown == 0 and jump_height == 0:
-			heavy_buffer = 0
-			heavy_cooldown = character.heavy_cooldown
-			begin_attack(&"heavy", character.heavy_duration, character.heavy_duration / 3.0)
-		elif attack_buffer > 0 or Input.is_action_pressed(&"attack"):
-			attack_buffer = 0
-			combo = combo % 3 + 1 if combo_timeout > 0 else 1
-			combo_timeout = 0.65
-			var kind: StringName = &"air" if jump_height > 0 else &"dash" if dash_remaining > 0 or running else &"basic"
-			begin_attack(kind, character.attack_duration, character.attack_duration / 3.0)
+	pass
 
 func enemy_reach() -> float:
 	var reach := float(enemy_data.get("reach", 105.0))
@@ -243,22 +200,7 @@ func _draw() -> void:
 			draw_arc(feet + Vector2(0, -25), character.heavy_reach, 0, TAU, 40, character.tint, 4)
 		if not is_player and not strike_fired:
 			draw_arc(feet + Vector2(0, -24), 48, 0, TAU, 24, Color(1, 0.3, 0.25), 3)
-	if is_player and character.weapon == "gun":
-		weapon_end = hand + Vector2(facing * 37, 0)
-		draw_line(hand, weapon_end, Color.GRAY, 9)
-		draw_line(hand, hand + Vector2(0, 13), Color.GRAY, 6)
-	elif is_player and character.weapon == "fists":
-		draw_circle(hand + Vector2(facing * (35 if attack_kind != &"" else 7), 0), 11, character.tint.lightened(0.3))
-	elif is_player and character.weapon == "staff":
-		weapon_end = hand + Vector2(facing * 24, -45)
-		draw_line(hand + Vector2(-facing * 10, 25), weapon_end, Color.SADDLE_BROWN, 6)
-		draw_circle(weapon_end, 10, character.tint.lightened(0.3))
-	else:
-		if is_player and character.weapon == "cross":
-			var axis := (weapon_end - hand).normalized()
-			var perpendicular := Vector2(-axis.y, axis.x) * 19
-			draw_line(weapon_end - axis * 18 - perpendicular, weapon_end - axis * 18 + perpendicular, Color.GOLDENROD, 10)
-		draw_line(hand, weapon_end, Color(0.85, 0.87, 0.9) if is_player else Color(0.65, 0.43, 0.25), 5)
+	draw_line(hand, weapon_end, Color(0.85, 0.87, 0.9) if is_player else Color(0.65, 0.43, 0.25), 5)
 	var title := "GOBLIN ∞" if immortal else str(enemy_data.get("name", "Goblin"))
 	var rank: String = enemy_data.get("rank", "normal")
 	if rank != "normal":

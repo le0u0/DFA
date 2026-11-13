@@ -5,7 +5,7 @@ A native offline side-view action game with a future roguelike dungeon structure
 ## First playable demo
 
 - Main menu: Start and Quit.
-- Character selection: Slayer, Gunner, Fighter, Mage and Priest.
+- Character selection: Slayer.
 - Dungeon: one plain arena, one immortal goblin.
 - Movement, run, basic/dash/air attacks, launcher, jump and dodge.
 - Goblin telegraphs and counters; player defeat supports retry.
@@ -18,4 +18,4 @@ Use the installed gamedev skills throughout development and verification. Preser
 
 ## First dungeon expansion
 
-The requested next slice adds two selectable authored dungeons: Mosswood Outskirts and Emberstone Ruins. Each has three rooms with regular enemies, one elite encounter and one boss encounter. Clear gates, modest health recovery, defeat/retry and dungeon completion make each route playable. Preserve training and all five classes. Procedural generation and persistent progression remain future scope.
+The requested next slice adds two selectable authored dungeons: Mosswood Outskirts and Emberstone Ruins. Each has three rooms with regular enemies, one elite encounter and one boss encounter. Clear gates, modest health recovery, defeat/retry and dungeon completion make each route playable. Preserve training and Slayer. Procedural generation and persistent progression remain future scope.
